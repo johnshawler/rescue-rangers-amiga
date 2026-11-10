@@ -5,7 +5,7 @@ mkdir -p "$ROOT/logs" "$ROOT/port/build"
 : "${VASM:?Set VASM to the pinned assembler executable}"
 : "${PUAE_CORE:?Set PUAE_CORE to the pinned puae_libretro.so}"
 : "${HEADLESS:?Set HEADLESS to the compiled recovered scripts/headless.c}"
-for test in test_native_background test_native_sprites test_rescue_game test_rescue_title test_rescue_title_queue; do
+for test in test_native_background test_native_sprites test_rescue_game test_rescue_title test_rescue_title_queue recovery_test_reset_ram recovery_test_reset_mapper; do
  python "$ROOT/port/tests/$test.py" | tee "$ROOT/logs/recovery-$test.log"
 done
 python "$ROOT/port/tools/build_title.py" | tee "$ROOT/logs/recovery-build.log"

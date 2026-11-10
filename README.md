@@ -19,7 +19,11 @@ native game-code translation and Amiga rendering, not a general NES interpreter.
   stage or audible sound is implemented by this recovered source baseline.
 - A newly written, isolated reset-RAM helper matches original instructions at
   $FE24–$FE42, including all 2,064 ordered RAM writes. It is not integrated into
-  title boot; hardware warmup, mapper setup and later startup remain incomplete.
+  title boot; hardware warmup and later startup remain incomplete.
+- A separate new mapper-publication helper continues $FE43–$FE66 with an
+  explicit ordered journal: 20 logical MMC1 writes plus 14 original RAM writes.
+  Its 2,048 original-ROM/native cases preserve register, stack and busy-state
+  semantics. This does not yet select native resources or implement audio.
 - Captured initial title state remains a private development fixture. New work
   will replace that dependency with verified original reset/resource logic.
 
@@ -31,13 +35,15 @@ Amiga display output. These are correctness results, not gameplay-speed claims.
 The separately preserved later Z/X ADF is an older, silent, incomplete playable
 binary. Its recovery smoke test does not imply that its source is present here.
 See [recovery provenance](docs/RECOVERY.md) and the validation summary. The new helper is documented in
-[the reset boundary report](port/analysis/recovery_reset_ram.md).
+[the reset boundary report](port/analysis/recovery_reset_ram.md) and
+[mapper-publication report](port/analysis/recovery_reset_mapper.md).
 
 ## Build and test
 
 Install Python dependencies from `requirements-dev.txt`. Supply vasm via the
 `VASM` environment variable. `bash tools/test_public.sh` runs the two synthetic
-assembled-code renderer suites without a game ROM or firmware.
+assembled-code renderer suites, restore-safety tests and reset-helper assembly
+without a game ROM or firmware.
 
 Private original-ROM tests require the hash-checked European cartridge at
 `input/rescue-rangers-europe.nes`. The full title build also needs the original
