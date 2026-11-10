@@ -1,0 +1,127 @@
+{
+  "status": "PASS_EARLY_SOURCE_AND_LATER_BINARY_SMOKE_ONLY",
+  "source_scope": "Initial native title/menu foundation only; later gameplay/audio source not recovered",
+  "title_rebuild_byte_identical": true,
+  "title_ADF_sha256": "03b774d76a6b547ff6b4b3ffd71428d381247f4802a40bab1a56eb3d1ea2b475",
+  "differential_cases": 142896,
+  "native_selftests": 16,
+  "renderer_cases": 27,
+  "target_scenarios": {
+    "title": {
+      "native_boot_status": 0,
+      "native_sprite_status": 0,
+      "native_vs_original_nes_different_pixels": 0,
+      "display_vs_native_framebuffer_different_pixels": 0,
+      "display_offset": [
+        40,
+        18
+      ],
+      "free_chip_bytes": 1938344,
+      "title_phase": 1,
+      "native_game_selftest_status": 0,
+      "native_timer_ticks": 481,
+      "input_edges_seen_hex": "0000",
+      "isolated_background_eclock_ticks_display_dma_off": 39024,
+      "isolated_sprite_eclock_ticks_display_dma_off": 15092,
+      "timing_limit": "Isolated static fixture, emulator target; not a gameplay or full-speed measurement"
+    },
+    "two-player": {
+      "native_boot_status": 0,
+      "native_sprite_status": 0,
+      "native_vs_original_nes_different_pixels": 0,
+      "display_vs_native_framebuffer_different_pixels": 0,
+      "display_offset": [
+        40,
+        18
+      ],
+      "free_chip_bytes": 1938344,
+      "title_phase": 1,
+      "native_game_selftest_status": 0,
+      "native_timer_ticks": 480,
+      "input_edges_seen_hex": "0100",
+      "isolated_background_eclock_ticks_display_dma_off": 39024,
+      "isolated_sprite_eclock_ticks_display_dma_off": 15092,
+      "timing_limit": "Isolated static fixture, emulator target; not a gameplay or full-speed measurement"
+    },
+    "character-chip": {
+      "native_boot_status": 0,
+      "native_sprite_status": 0,
+      "native_vs_original_nes_different_pixels": 0,
+      "display_vs_native_framebuffer_different_pixels": 0,
+      "display_offset": [
+        40,
+        18
+      ],
+      "free_chip_bytes": 1938344,
+      "title_phase": 2,
+      "native_game_selftest_status": 0,
+      "native_timer_ticks": 480,
+      "input_edges_seen_hex": "1000",
+      "isolated_background_eclock_ticks_display_dma_off": 39024,
+      "isolated_sprite_eclock_ticks_display_dma_off": 15092,
+      "timing_limit": "Isolated static fixture, emulator target; not a gameplay or full-speed measurement"
+    },
+    "character-dale": {
+      "native_boot_status": 0,
+      "native_sprite_status": 0,
+      "native_vs_original_nes_different_pixels": 0,
+      "display_vs_native_framebuffer_different_pixels": 0,
+      "display_offset": [
+        40,
+        18
+      ],
+      "free_chip_bytes": 1938344,
+      "title_phase": 2,
+      "native_game_selftest_status": 0,
+      "native_timer_ticks": 479,
+      "input_edges_seen_hex": "1100",
+      "isolated_background_eclock_ticks_display_dma_off": 39024,
+      "isolated_sprite_eclock_ticks_display_dma_off": 15092,
+      "timing_limit": "Isolated static fixture, emulator target; not a gameplay or full-speed measurement"
+    },
+    "handoff": {
+      "native_boot_status": 0,
+      "native_sprite_status": 0,
+      "native_vs_original_nes_different_pixels": 0,
+      "display_vs_native_framebuffer_different_pixels": 0,
+      "display_offset": [
+        40,
+        18
+      ],
+      "free_chip_bytes": 1938344,
+      "title_phase": 3,
+      "native_game_selftest_status": 0,
+      "native_timer_ticks": 480,
+      "input_edges_seen_hex": "1100",
+      "isolated_background_eclock_ticks_display_dma_off": 39024,
+      "isolated_sprite_eclock_ticks_display_dma_off": 15092,
+      "timing_limit": "Isolated static fixture, emulator target; not a gameplay or full-speed measurement"
+    }
+  },
+  "later_ZX_binary_smoke": {
+    "physical_frames": 4500,
+    "native_updates": 2089,
+    "native_fault": 0,
+    "render_calls": 2090,
+    "renderer_fault": 0,
+    "stack_guards_passed": true,
+    "controller_injection": "Real keyboard callbacks, scheduled by read-only native tick observation; no RAM fixtures/writes",
+    "scope": "No newly repeated gameplay differential or performance proof"
+  },
+  "firmware_sha256": "6d43840d4099a74170ea0f0425b6257c3891ebcaa39c4d1840075a9ab22b5707",
+  "original_cartridge_sha256": "051ea9bda7e1ae771f4c196e5bd4b35ec8db2b305dd3b1d26ad250f379d06411",
+  "tools": {
+    "PUAE": {
+      "repository": "https://github.com/libretro/libretro-uae.git",
+      "commit": "d366f77c60e5a5f059f129cc3773d3048306083b",
+      "executable_sha256": "84878d50ed9aa9419ce8876998acc45fe1e8dd1600f67f470dae8e2a037a4456"
+    },
+    "vasm": {
+      "repository": "https://github.com/BartmanAbyss/vscode-amiga-debug.git",
+      "commit": "055097bba74dd1b2f764dcb90781d2017bd1d499",
+      "executable_sha256": "bbbf4e7edf2b2f7bc184624f23481a241a766e93c7d3d967470bb37faeecf7c3"
+    },
+    "headless_recovered_source_sha256": "85d5dac7f40c3ee4bc28249742a3a0d1bbf3843bf46d2f7aeeb8f53e0eb60997",
+    "recovery_harness_source_sha256": "f429b6989199476cd394b2c2b3f0f802c8fcb091266c439bcfccd5f139862d1d"
+  }
+}

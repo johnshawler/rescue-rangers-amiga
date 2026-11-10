@@ -1,0 +1,23 @@
+# Private supplied cartridge, firmware, reference fixtures and generated outputs
+input/
+artifacts/
+logs/
+port/assets/
+port/build/
+restore-inputs/
+.deps/
+.tools/
+.restore-check/
+__pycache__/
+*.pyc
+*.rom
+*.nes
+*.bin
+*.adf
+*.zip
+*.png
+*.ppm
+*.raw
+*.wav
+scripts/headless
+port/analysis/*-original-disassembly.txt
