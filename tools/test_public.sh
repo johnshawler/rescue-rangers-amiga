@@ -10,3 +10,4 @@ TMP=$(mktemp -d)
 trap 'rm -rf "$TMP"' EXIT
 "$VASM" -quiet -m68020 -Fbin -o "$TMP/reset.bin" "$ROOT/port/src/recovery_reset_ram.s"
 "$VASM" -quiet -m68020 -Fbin -o "$TMP/mapper.bin" "$ROOT/port/src/recovery_reset_mapper.s"
+python "$ROOT/port/tools/build_recovery_reset_probe.py"

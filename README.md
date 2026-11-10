@@ -24,6 +24,12 @@ native game-code translation and Amiga rendering, not a general NES interpreter.
   explicit ordered journal: 20 logical MMC1 writes plus 14 original RAM writes.
   Its 2,048 original-ROM/native cases preserve register, stack and busy-state
   semantics. This does not yet select native resources or implement audio.
+- New video-clear and first-dispatch helpers extend the bounded path to $C574.
+  A continuous original-ROM comparison covers all four helpers, including
+  2,188 ordered PPU events, without inserting captured game state between them.
+  They remain separate from the stable title and stop before the first task.
+- A [separate stock-A1200 probe](port/analysis/recovery_reset_probe.md) executes
+  those four helpers and matches all original RAM, context and journal records.
 - Captured initial title state remains a private development fixture. New work
   will replace that dependency with verified original reset/resource logic.
 
@@ -36,13 +42,15 @@ The separately preserved later Z/X ADF is an older, silent, incomplete playable
 binary. Its recovery smoke test does not imply that its source is present here.
 See [recovery provenance](docs/RECOVERY.md) and the validation summary. The new helper is documented in
 [the reset boundary report](port/analysis/recovery_reset_ram.md) and
-[mapper-publication report](port/analysis/recovery_reset_mapper.md).
+[mapper-publication report](port/analysis/recovery_reset_mapper.md), plus the
+[video-clear](port/analysis/recovery_reset_video.md) and
+[first-dispatch](port/analysis/recovery_reset_dispatch.md) reports.
 
 ## Build and test
 
 Install Python dependencies from `requirements-dev.txt`. Supply vasm via the
 `VASM` environment variable. `bash tools/test_public.sh` runs the two synthetic
-assembled-code renderer suites, restore-safety tests and reset-helper assembly
+assembled-code renderer suites, restore-safety tests and reset-probe assembly
 without a game ROM or firmware.
 
 Private original-ROM tests require the hash-checked European cartridge at

@@ -1,0 +1,80 @@
+; Independent Amiga reset-boundary probe. No cartridge bytes or title fixtures.
+; Exercises newly translated FE24 through first task dispatch, then stops.
+; Boot enters user mode: use custom interrupt/DMA shutdown, no privileged SR write.
+        lea     $dff000,a5
+        move.w  #$7fff,$9a(a5)
+        move.w  #$7fff,$96(a5)
+        move.w  #$7fff,$9c(a5)
+        move.w  #$0200,$100(a5)
+        lea     probe_stack_end(pc),sp
+        lea     probe_report(pc),a6
+        lea     probe_ram(pc),a0
+        lea     probe_context(pc),a1
+        move.l  a0,16(a6)
+        move.l  a1,20(a6)
+        lea     probe_mapper(pc),a2
+        move.l  a2,24(a6)
+        lea     probe_video(pc),a3
+        move.l  a3,28(a6)
+        lea     probe_stack(pc),a3
+        move.l  a3,32(a6)
+        move.l  sp,36(a6)
+        bsr.w   recovery_reset_ram
+        cmpi.l  #1,d0
+        bne.s   probe_fail
+        addq.l  #1,12(a6)
+        bsr.w   recovery_reset_mapper
+        cmpi.l  #1,d0
+        bne.s   probe_fail
+        addq.l  #1,12(a6)
+        lea     probe_video(pc),a2
+        bsr.w   recovery_reset_video
+        cmpi.l  #1,d0
+        bne.s   probe_fail
+        addq.l  #1,12(a6)
+        bsr.w   recovery_reset_dispatch
+        cmpi.l  #1,d0
+        bne.s   probe_fail
+        addq.l  #1,12(a6)
+        move.l  sp,40(a6)
+        clr.l   8(a6)
+        move.w  #$0070,$180(a5)
+probe_stop:
+        bra.s   probe_stop
+probe_fail:
+        move.l  d0,8(a6)
+        move.l  sp,40(a6)
+        move.w  #$0700,$180(a5)
+        bra.s   probe_stop
+
+        include "recovery_reset_ram.s"
+        include "recovery_reset_mapper.s"
+        include "recovery_reset_video.s"
+        include "recovery_reset_dispatch.s"
+
+        even
+probe_report:
+        dc.b    'CDRRST01'
+        dc.l    $ffffffff,0,0,0,0,0,0,0,0
+        dcb.b   16,$5a
+probe_ram:
+        dcb.b   2048,$a5
+        dcb.b   16,$5a
+        dcb.b   16,$5a
+probe_context:
+        dc.w    $fe24
+        dc.b    $17,$33,0,$24,$fd,$a7
+        dcb.b   16,$5a
+        dcb.b   16,$5a
+probe_mapper:
+        dcb.b   82,$a5
+        dcb.b   16,$5a
+        dcb.b   16,$5a
+probe_video:
+        dcb.b   8754,$a5
+        dcb.b   16,$5a
+        dcb.b   16,$5a
+probe_stack:
+        dcb.b   4096,$ee
+probe_stack_end:
+        dcb.b   16,$5a

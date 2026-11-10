@@ -1,0 +1,38 @@
+#!/usr/bin/env python3
+"""Build a source-only reset-boundary ADF, separate from all game disks."""
+from pathlib import Path
+import hashlib
+import json
+import os
+import struct
+import subprocess
+
+P = Path(__file__).resolve().parents[1]
+B = P/'build'
+B.mkdir(exist_ok=True)
+vasm = os.environ['VASM']
+payload_file = B/'recovery-reset-probe.bin'
+subprocess.run([vasm,'-m68020','-Fbin','-quiet','-I'+str(P/'src'),
+                '-o',str(payload_file),str(P/'src/recovery_reset_probe.s')], check=True)
+payload = payload_file.read_bytes()
+rounded = (len(payload)+511)//512*512
+boot_file = B/'recovery-reset-probe-boot.bin'
+subprocess.run([vasm,'-m68020','-Fbin','-quiet',f'-DPAYLOAD_BYTES={rounded}',
+                '-o',str(boot_file),str(P/'src/boot.s')],check=True)
+boot = boot_file.read_bytes()
+assert len(boot) <= 1024 and rounded <= 901120-1024
+disk = bytearray(901120)
+disk[:len(boot)] = boot
+disk[1024:1024+len(payload)] = payload
+checksum = 0
+for offset in range(0,1024,4):
+    checksum += struct.unpack_from('>I',disk,offset)[0]
+    checksum = (checksum&0xffffffff)+(checksum>>32)
+struct.pack_into('>I',disk,4,(~checksum)&0xffffffff)
+out = B/'recovery-reset-probe.adf'
+out.write_bytes(disk)
+report = {'artifact':out.name,'purpose':'Isolated FE24-to-C574 reset boundary, not game boot',
+          'payload_bytes':len(payload),'allocation_bytes':rounded,
+          'sha256':hashlib.sha256(disk).hexdigest(),'proprietary_inputs':False}
+(B/'recovery-reset-probe-build.json').write_text(json.dumps(report,indent=2)+'\n')
+print(json.dumps(report,indent=2))
