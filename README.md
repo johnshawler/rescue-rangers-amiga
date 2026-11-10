@@ -17,6 +17,9 @@ native game-code translation and Amiga rendering, not a general NES interpreter.
 - The title milestone rebuilds byte-for-byte to its original development ADF.
 - Its menu handoff intentionally stops before untranslated gameplay. No native
   stage or audible sound is implemented by this recovered source baseline.
+- A newly written, isolated reset-RAM helper matches original instructions at
+  $FE24–$FE42, including all 2,064 ordered RAM writes. It is not integrated into
+  title boot; hardware warmup, mapper setup and later startup remain incomplete.
 - Captured initial title state remains a private development fixture. New work
   will replace that dependency with verified original reset/resource logic.
 
@@ -27,7 +30,8 @@ Amiga display output. These are correctness results, not gameplay-speed claims.
 
 The separately preserved later Z/X ADF is an older, silent, incomplete playable
 binary. Its recovery smoke test does not imply that its source is present here.
-See [recovery provenance](docs/RECOVERY.md) and the validation summary.
+See [recovery provenance](docs/RECOVERY.md) and the validation summary. The new helper is documented in
+[the reset boundary report](port/analysis/recovery_reset_ram.md).
 
 ## Build and test
 

@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 ROOT=$(cd "$(dirname "$0")" && pwd)
+mkdir -p "$ROOT/logs" "$ROOT/port/build"
 : "${VASM:?Set VASM to the pinned assembler executable}"
 : "${PUAE_CORE:?Set PUAE_CORE to the pinned puae_libretro.so}"
 : "${HEADLESS:?Set HEADLESS to the compiled recovered scripts/headless.c}"
