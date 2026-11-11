@@ -111,3 +111,4 @@ done
 
 # Private resident startup/audio extension; baseline probe outputs above are prerequisites.
 bash "$ROOT/validate_resident_startup.sh"
+bash "$ROOT/validate_title_chr.sh"

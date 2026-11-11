@@ -1,0 +1,7 @@
+{
+  "port/src/recovery_music_active_command02.s": "a7c7db397aafcbf25c5a47ac87d49bf046c7f23f36e05a76dd38a56ece514f28",
+  "port/tests/recovery_test_active_command02_contract.py": "cbec96ad845ff7d32df05b10f759a220ed7cffb9dea2150375951b88a2401036",
+  "port/tests/recovery_test_active_command02_rom.py": "50a92376fe27d76116aa92d1bbadae7298646bc3f6fd645f012a158d2d85b250",
+  "port/tests/recovery_test_repeated_command02_audio.py": "ab3ea4633d246ee657fdd51d2e5378d57b1bef6e767546df730d4a36130e0b18",
+  "port/analysis/recovery_repeated_command02_audio.md": "e29a2e75552754b5ec585f8242e5c47bd2796060aa8c150e00c9de6362e532f1"
+}

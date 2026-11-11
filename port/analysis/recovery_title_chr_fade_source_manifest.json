@@ -1,0 +1,13 @@
+{
+  "port/src/recovery_title_yield_entry.s": "220e6780990985fb5fa2a5d867283d0bcb2e90adfc4077056b0944439174ac82",
+  "port/src/recovery_title_fade_entry.s": "029fe201ab55eb9f9d1b1ed6f6c3522c1e2eefaf0aa7a8e206b0d44c0c3e7b60",
+  "port/src/recovery_chr_nmi_prefix.s": "fd94dd732b6a34043412c2dc31591c7545b28d26125cbbb73cb3cc21c499f167",
+  "port/tests/recovery_test_title_fade_yield.py": "434f7e5267611deaf7450fd094bb818cbd4c2e607d3c5b7de01e73ed219888f7",
+  "port/tests/recovery_test_resident_title_chr_fade.py": "7ebcaa4da05e467ddca8640cae4c44df9ef2c5ec96811e31854926b411e700ea",
+  "port/tests/recovery_chr_nmi_harness.py": "b5cef0ab53c476ca658b0cdb7b02e1412c0865136b1fb6d7df66e3c2726309f2",
+  "port/tests/recovery_test_chr_nmi_contract.py": "65cae6c4d7ffebef8662bdae57b780c4f642c9512fd3ef3952d91d76d9170c7c",
+  "port/tests/recovery_test_chr_nmi_rom.py": "930ee544bc67120060515a5c04aef52930ca41179046d3524d2eb1a020f893a4",
+  "port/tests/recovery_test_chr_nmi_latch.py": "7fffda388ffcbb56b5804f3f6c4069c170fc3e290ca5d830b4300ca98e2cce89",
+  "port/analysis/recovery_chr_nmi_prefix.md": "ce041a8f7747d9e655a55927d6190a4ea0c872676796177f547aafac92ec04a3",
+  "port/analysis/recovery_title_chr_fade.md": "3626cc188a622875022b343539eba0d0a9a9cbbeac6b6bb273ff4516373bee91"
+}

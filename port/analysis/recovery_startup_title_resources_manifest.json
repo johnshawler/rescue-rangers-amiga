@@ -1,0 +1,12 @@
+{
+  "port/src/recovery_startup_bank_select.s": "d80a4d7ff4609fc00f6e473e4f5e0dbf806d1869d16e5cae4891bb2ab07adc99",
+  "port/src/recovery_startup_resource_load.s": "92d7ac253f4088b1f83169df5fcacb7deabed90c2530426d74506f02b9be857e",
+  "port/src/recovery_startup_title_setup.s": "514e4f9f05dfd2427b74541fa9f678538945c6f7ec3a5d7ff49fcc7c0c5dc1f4",
+  "port/tests/recovery_test_startup_bank_select.py": "b29ca94eff8ecea4b06d91e2c58e21d9a8b3e06d1fb3beccffedda7b747c5f58",
+  "port/tests/recovery_test_startup_resource_load.py": "b0915c9bc5d092183eb7cad9ba969f479c6734b027056d7b16024846d496e67c",
+  "port/tests/recovery_test_startup_title_setup.py": "c2985a305bc592f38f7100f1602365c08a25d47f919563f359efec6ef3cf49a8",
+  "port/tests/recovery_test_resident_startup_bank.py": "b647076c75091c4e613159f0beee7f4f085394624f53f3f2d91d3f0bf118223c",
+  "port/tests/recovery_test_resident_startup_resources.py": "b42945ff89610130593c46aa2c8ebfa81e0d9f9056f0eee0304568042dbcef0b",
+  "port/analysis/recovery_startup_resource_progress.md": "f15dba560e35fe3bb113fada001ba13f877e21a0b24113b87ec525a7d3f474ae",
+  "port/analysis/recovery_startup_title_resources.md": "93024434191169a46478b635c60a7eda42df2c98ab4d5f36f6679c6073268851"
+}

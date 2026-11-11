@@ -11,6 +11,18 @@ native game-code translation and Amiga rendering, not a general NES interpreter.
 
 ## Current verified source
 
+The newest isolated [resident startup diagnostic](port/analysis/recovery_resident_chr_fade_target.md)
+reaches $C5D1 through 1,024 native helper calls and 35 logical NMIs. Four
+independent full-reset stock A1200 runs collectively capture every complete RAM
+boundary while each checks every context and journal. Maximum diagnostic
+allocation is 1,075,200 bytes of Chip RAM with zero Fast RAM. Genuine pending
+CHR requests are consumed and title fade-in completes. This remains diagnostic
+startup validation, not an integrated playable game, displayed native boot,
+audible music or a performance measurement. The later playable source is still
+unrecovered. See the [host proof](port/analysis/recovery_title_chr_fade.md) and
+[separate command02 music tests](port/analysis/recovery_repeated_command02_audio.md)
+for their distinct coverage and remaining boundaries.
+
 - Native title player-count and Chip/Dale selection, input edges, timer/random
   primitives, sound-request queue and title nametable updates.
 - Native background and sprite rendering with source-independent synthetic tests.
