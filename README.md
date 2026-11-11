@@ -72,15 +72,27 @@ native game-code translation and Amiga rendering, not a general NES interpreter.
   [private channel-setup target](port/analysis/recovery_music_channel_setup_target.md)
   now continues through commands06 and07 on the emulated stock A1200, with
   twenty-two calls to nineteen helpers. Six intermediate contexts, full state
-  and seventeen resource-read records match. Command08 is not yet consumed;
-  the first active music tick and audible playback remain incomplete.
+  and seventeen resource-read records match. The subsequent
+  [private first-channel event target](port/analysis/recovery_music_first_channel_target.md)
+  now completes instrument/control setup and the first rest event through the
+  original channel return: thirty calls, twenty-three helpers and thirty-three
+  resource records. Remaining channels, pitched notes, the complete active tick
+  and audible playback remain incomplete.
 - A separate new [player-initialization helper](port/analysis/recovery_gameplay_player_init.md)
   matches 131,072 original-ROM cases. Its
   [source-only stock-target probe](port/analysis/recovery_gameplay_player_init_target.md)
   verifies six invented states, including inactive players and stack wrap.
-  It enters $C6BD synthetically and stops before $C700: preceding bank-4
-  initialization and subsequent stage setup remain untranslated. This is not
-  integrated gameplay, and does not alter the title or delivered playable disk.
+  It enters $C6BD synthetically and stops before $C700. A new
+  [source-only fade-entry target](port/analysis/recovery_gameplay_fade_entry_target.md)
+  continues the same live state through the first palette attenuation pass,
+  including raw decimal status and original nested call frames.
+- A [private stage-resource target](port/analysis/recovery_stage_resource_target.md)
+  now starts earlier at $C6B5, initializes bank-4 pointers and composes player
+  setup plus fade entry. It requires no deferred audio ($F6=0), an empty mapper
+  latch and PRG mode3. Live title-to-stage entry, deferred-audio handling, frame
+  synchronization and remaining stage loading are still incomplete. All stage
+  probes stop before $FF04 synchronization and are not integrated gameplay.
+  The title and delivered playable disk remain unchanged.
 - Captured initial title state remains a private development fixture. New work
   will replace that dependency with verified original reset/resource logic.
 
@@ -102,7 +114,7 @@ See [recovery provenance](docs/RECOVERY.md) and the validation summary. The new 
 Install Python dependencies from `requirements-dev.txt`. Supply vasm via the
 `VASM` environment variable. `bash tools/test_public.sh` runs the two synthetic
 assembled-code renderer suites, restore-safety tests, a synthetic twelve-helper
-contract regression, synthetic music/player-helper contracts and nine source-only
+contract regression, synthetic music/stage-helper contracts and ten source-only
 probe assemblies
 without a game ROM or firmware.
 

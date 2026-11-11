@@ -27,8 +27,10 @@ modes.add_argument('--music07', action='store_true', help='Verify private comman
 modes.add_argument('--music-fetch', action='store_true')
 modes.add_argument('--music-command04', action='store_true')
 modes.add_argument('--music-channel-setup', action='store_true')
+modes.add_argument('--music-first-channel', action='store_true')
 args = parser.parse_args()
-command04_mode = args.music_command04 or args.music_channel_setup
+channel_setup_mode = args.music_channel_setup or args.music_first_channel
+command04_mode = args.music_command04 or channel_setup_mode
 music_fetch_mode = args.music_fetch or command04_mode
 music07_mode = args.music07 or music_fetch_mode
 palette_nmi_mode = args.palette_nmi or music07_mode
@@ -39,11 +41,11 @@ audio_entry_mode = args.nmi_audio_entry or audio_reset_mode
 first_yield_mode = args.first_yield or audio_entry_mode
 chip = args.chip_dump.read_bytes()
 assert len(chip) == 2*1024*1024, 'Expected stock 2 MiB Chip RAM dump'
-marker = b'CDRMCS01' if args.music_channel_setup else b'CDRMC041' if args.music_command04 else b'CDRRMFT1' if args.music_fetch else b'CDRRM071' if music07_mode else b'CDRRPAL1' if args.palette_nmi else b'CDRRSET1' if args.resumed_task_setup else b'CDRRRES1' if args.scheduler_resume else b'CDRRRTI1' if args.nmi_return else b'CDRRAPU1' if args.audio_reset else b'CDRRAUD1' if args.nmi_audio_entry else b'CDRRYLD1' if first_yield_mode else b'CDRRST01'
+marker = b'CDRMFC01' if args.music_first_channel else b'CDRMCS01' if args.music_channel_setup else b'CDRMC041' if args.music_command04 else b'CDRRMFT1' if args.music_fetch else b'CDRRM071' if music07_mode else b'CDRRPAL1' if args.palette_nmi else b'CDRRSET1' if args.resumed_task_setup else b'CDRRRES1' if args.scheduler_resume else b'CDRRRTI1' if args.nmi_return else b'CDRRAPU1' if args.audio_reset else b'CDRRAUD1' if args.nmi_audio_entry else b'CDRRYLD1' if first_yield_mode else b'CDRRST01'
 assert chip.count(marker) == 1, 'Expected one live probe report'
 offset = chip.index(marker)
 status,steps,ram,ctx,mapper,video,stack,stack_end,sp = struct.unpack_from('>9I',chip,offset+8)
-assert (status,steps) == (0,22 if args.music_channel_setup else 16 if args.music_command04 else 15 if music_fetch_mode else 14 if music07_mode else 12 if palette_nmi_mode else 11 if args.resumed_task_setup else 10 if args.scheduler_resume else 9 if args.nmi_return else 8 if args.audio_reset else 7 if args.nmi_audio_entry else 5 if first_yield_mode else 4), (status,steps)
+assert (status,steps) == (0,30 if args.music_first_channel else 22 if args.music_channel_setup else 16 if args.music_command04 else 15 if music_fetch_mode else 14 if music07_mode else 12 if palette_nmi_mode else 11 if args.resumed_task_setup else 10 if args.scheduler_resume else 9 if args.nmi_return else 8 if args.audio_reset else 7 if args.nmi_audio_entry else 5 if first_yield_mode else 4), (status,steps)
 assert stack_end-stack == 4096 and sp == stack_end
 ranges = [(ram,2048),(ctx,8),(mapper,82),(video,8754),(stack,4096)]
 if first_yield_mode:
@@ -73,10 +75,14 @@ if music_fetch_mode:
 if command04_mode:
     music_command04 = struct.unpack_from('>I',chip,offset+88)[0]
     ranges.append((music_command04,14))
-if args.music_channel_setup:
+if channel_setup_mode:
     channel_pointers = struct.unpack_from('>7I',chip,offset+92)
     channel_sizes = (6,18,6,14,6,14,48)
     ranges.extend(zip(channel_pointers,channel_sizes))
+if args.music_first_channel:
+    event_pointers = struct.unpack_from('>9I',chip,offset+120)
+    event_sizes = (6,22,6,14,6,14,6,10,64)
+    ranges.extend(zip(event_pointers,event_sizes))
 for address,size in ranges:
     assert 16 <= address and address+size+16 <= len(chip)
     assert chip[address-16:address] == bytes([0x5a])*16
@@ -112,6 +118,8 @@ fetch_started = False
 command_started = False
 channel_snapshots = []
 channel_stage = -1
+event_snapshots = []
+event_stage = 0
 for instructions in range(100000):
     if ref.pc == 0xc574:
         entered_task = True
@@ -141,13 +149,18 @@ for instructions in range(100000):
         fetch_started = True
     if music_fetch_mode and fetch_started and ref.pc == 0x83a0:
         command_started = True
-    if args.music_channel_setup and command_started:
+    if channel_setup_mode and command_started:
         if channel_stage == -1 and ref.pc == 0x839d:
             channel_stage = 0
-        elif channel_stage >= 0 and ref.pc == (0x83a0 if channel_stage % 2 == 0 else 0x839d):
+        elif 0 <= channel_stage < 6 and ref.pc == (0x83a0 if channel_stage % 2 == 0 else 0x839d):
             channel_snapshots.append(struct.pack('>H6B',ref.pc,ref.a,ref.x,ref.y,ref.p,ref.sp,0xa7))
             channel_stage += 1
-    reached_boundary = (channel_stage == 6) if args.music_channel_setup else (command_started and ref.pc == 0x839d) if args.music_command04 else (fetch_started and ref.pc == 0x83a0) if args.music_fetch else (second_nmi and ref.pc == 0xc0f3) if music07_mode else (second_nmi and ref.pc == 0xc0bf) if args.palette_nmi else (resumed_task and ref.pc == 0xfe8d) if args.resumed_task_setup else (returned_context is not None and ref.pc == 0xc584) if args.scheduler_resume else (injected and ref.pc == 0xfe8d) if args.nmi_return else (injected and ref.pc == 0xc0f3) if args.audio_reset else (injected and ref.pc == 0x8003) if audio_entry_mode else (entered_task and ref.pc == 0xfe8d) if first_yield_mode else ref.pc == 0xc574
+    if args.music_first_channel and channel_stage == 6:
+        next_pc = 0x8085 if event_stage == 7 else 0x83a0 if event_stage % 2 == 0 else 0x839d
+        if ref.pc == next_pc:
+            event_snapshots.append(struct.pack('>H6B',ref.pc,ref.a,ref.x,ref.y,ref.p,ref.sp,0xa7))
+            event_stage += 1
+    reached_boundary = (event_stage == 8) if args.music_first_channel else (channel_stage == 6) if args.music_channel_setup else (command_started and ref.pc == 0x839d) if args.music_command04 else (fetch_started and ref.pc == 0x83a0) if args.music_fetch else (second_nmi and ref.pc == 0xc0f3) if music07_mode else (second_nmi and ref.pc == 0xc0bf) if args.palette_nmi else (resumed_task and ref.pc == 0xfe8d) if args.resumed_task_setup else (returned_context is not None and ref.pc == 0xc584) if args.scheduler_resume else (injected and ref.pc == 0xfe8d) if args.nmi_return else (injected and ref.pc == 0xc0f3) if args.audio_reset else (injected and ref.pc == 0x8003) if audio_entry_mode else (entered_task and ref.pc == 0xfe8d) if first_yield_mode else ref.pc == 0xc574
     if reached_boundary:
         break
     if audio_reset_mode and 0x8000 <= ref.pc < 0xc000:
@@ -155,6 +168,10 @@ for instructions in range(100000):
         banked_audio_instructions += 1
     if fetch_started and ref.pc in (0x857a,0x802c,0x8030):
         address = ((bus[0xc1]|bus[0xc2]<<8)+ref.y)&65535
+        assert 0x8000 <= address <= 0xbfff and bus.bank == 3
+        bus.events.append(('resource',address,bus[address],0))
+    if args.music_first_channel and event_stage and ref.pc in (0x868c,0x8693,0x83ba,0x83c1):
+        address = 0x8a02 if ref.pc == 0x868c else 0x8a01 if ref.pc == 0x8693 else (0x8585 if ref.pc == 0x83ba else 0x858c)+ref.y
         assert 0x8000 <= address <= 0xbfff and bus.bank == 3
         bus.events.append(('resource',address,bus[address],0))
     ref.step()
@@ -168,7 +185,7 @@ raw_oracle_ctx = expected_ctx
 if nmi_return_mode:
     assert returned_context[5] == 0xb4
     if music07_mode:
-        assert second_nmi and ref.sp == (0xab if music_fetch_mode else 0xb1)
+        assert second_nmi and ref.sp == (0xad if args.music_first_channel else 0xab if music_fetch_mode else 0xb1)
         if not music_fetch_mode: assert ref.p == 0x24
         assert bytes(bus[0x1b2:0x1b9]) == bytes((0,0xb8,0,0xb4,0xa4,0x8d,0xfe))
         assert bytes(bus[0x1b9:0x1c0]) == bytes((0xff,0x10,0xa7,0xc2,4,0x93,0xc5))
@@ -229,25 +246,38 @@ if music07_mode:
     assert chip[music_apu:music_apu+30] == journal('apu',start=7,end=14)
 if music_fetch_mode:
     assert chip[music_fetch:music_fetch+6] == journal('resource',end=1)
-    assert len([e for e in bus.events if e[0]=='resource']) == (17 if args.music_channel_setup else 4 if args.music_command04 else 1)
+    assert len([e for e in bus.events if e[0]=='resource']) == (33 if args.music_first_channel else 17 if args.music_channel_setup else 4 if args.music_command04 else 1)
 if command04_mode:
     assert chip[music_command04:music_command04+14] == journal('resource',start=1,end=4)
-if args.music_channel_setup:
+if channel_setup_mode:
     start = 4
     for address,count in zip(channel_pointers[:6],(1,4,1,3,1,3)):
         assert chip[address:address+2+count*4] == journal('resource',start=start,end=start+count), 'Channel resource journal mismatch'
         start += count
     assert len(channel_snapshots) == 6
     assert chip[channel_pointers[6]:channel_pointers[6]+48] == b''.join(map(architectural_status_view,channel_snapshots)), 'Intermediate context mismatch'
-    assert ref.pc == 0x839d and ref.sp == 0xab
-    assert (bus[0x753]|bus[0x757]<<8) == 0xa2ca
-    assert bus[0xa2ca] == 8, 'Next command08 must remain unconsumed'
-    assert (bus[0x767],bus[0x737],bus[0xc8],bus[0xc9],bus[0xca]) == (0x96,0x3f,0,2,0x49)
+    if not args.music_first_channel:
+        assert ref.pc == 0x839d and ref.sp == 0xab
+        assert (bus[0x753]|bus[0x757]<<8) == 0xa2ca
+        assert bus[0xa2ca] == 8, 'Next command08 must remain unconsumed'
+        assert (bus[0x767],bus[0x737],bus[0xc8],bus[0xc9],bus[0xca]) == (0x96,0x3f,0,2,0x49)
+if args.music_first_channel:
+    start = 17
+    for address,size,count in zip(event_pointers[:8],event_sizes[:8],(1,5,1,3,1,3,1,1)):
+        expected = journal('resource',start=start,end=start+count)
+        assert chip[address:address+size] == expected+bytes(size-len(expected)), 'Event resource journal mismatch'
+        start += count
+    assert len(event_snapshots) == 8
+    assert chip[event_pointers[8]:event_pointers[8]+64] == b''.join(map(architectural_status_view,event_snapshots)), 'Event intermediate context mismatch'
+    assert expected_ctx == bytes.fromhex('8085ff2b18a4ada7')
+    assert (bus[0x753]|bus[0x757]<<8) == 0xa2d1
+    assert [bus[a] for a in (0x72b,0x72f,0x737,0x75b,0x763,0x76b,0xc3,0xc5,0xc6)] == [0x23,0xb,0xff,1,0x18,0xff,1,0x67,0x8b]
+    assert bytes(bus[0xc8:0xcb]) == bytes((0,2,0x49))
 ppu = [e for e in bus.events if e[0]=='ppu'][:2188]
 for latch in (0,1):
     cleared,_,_ = apply_ppu(ppu,bytes([0xa5])*2048,latch)
     assert cleared == bytes(2048)
-report = {'status':'PASS','boundary':('FE24 through stream command07 volume, stop 839D before next fetch/command08' if args.music_channel_setup else 'FE24 through first command04, before next stream fetch 839D' if args.music_command04 else 'FE24 through first stream fetch, before 83A0' if args.music_fetch else 'FE24 through second NMI request intake and command07 initialization, before C0F3 tick' if music07_mode else 'FE24 through second logical NMI palette publication, before C0BF audio dispatch' if args.palette_nmi else 'FE24 through resumed task palette setup, before nested FE8D scheduler instruction' if args.resumed_task_setup else 'FE24 through first scheduler resume, before C584 task instruction' if args.scheduler_resume else 'FE24 through first silent tick and RTI, before FE8D scheduler instruction' if args.nmi_return else 'FE24 through startup APU reset command return C0F3' if args.audio_reset else 'FE24 through explicit NMI to bank-3 8003 entry' if audio_entry_mode else 'FE24 to first FE8D yield' if first_yield_mode else 'FE24 to C574'),'native_helper_count':19 if args.music_channel_setup else 15 if args.music_command04 else 14 if music_fetch_mode else 13 if music07_mode else steps,
+report = {'status':'PASS','boundary':('FE24 through first-channel rest RTS, PC8085' if args.music_first_channel else 'FE24 through stream command07 volume, stop 839D before next fetch/command08' if args.music_channel_setup else 'FE24 through first command04, before next stream fetch 839D' if args.music_command04 else 'FE24 through first stream fetch, before 83A0' if args.music_fetch else 'FE24 through second NMI request intake and command07 initialization, before C0F3 tick' if music07_mode else 'FE24 through second logical NMI palette publication, before C0BF audio dispatch' if args.palette_nmi else 'FE24 through resumed task palette setup, before nested FE8D scheduler instruction' if args.resumed_task_setup else 'FE24 through first scheduler resume, before C584 task instruction' if args.scheduler_resume else 'FE24 through first silent tick and RTI, before FE8D scheduler instruction' if args.nmi_return else 'FE24 through startup APU reset command return C0F3' if args.audio_reset else 'FE24 through explicit NMI to bank-3 8003 entry' if audio_entry_mode else 'FE24 to first FE8D yield' if first_yield_mode else 'FE24 to C574'),'native_helper_count':23 if args.music_first_channel else 19 if args.music_channel_setup else 15 if args.music_command04 else 14 if music_fetch_mode else 13 if music07_mode else steps,
           'ram_bytes_equal':2048,'context_bytes_equal':8,'mapper_records_equal':35 if music07_mode else 30 if nmi_return_mode else 25 if audio_entry_mode else 20,
           'ppu_records_equal':2248 if palette_nmi_mode else 2199 if audio_entry_mode else 2189 if first_yield_mode else 2188,
           'guard_regions_intact':len(ranges)*2,'native_stack_balanced':True,
@@ -292,10 +322,12 @@ if music07_mode:
         native_registers_preserved_for_new_calls=True,
         distribution='PRIVATE cartridge-bearing diagnostic; not source-only')
 if music_fetch_mode:
-    report.update(resource_read_records_equal=17 if args.music_channel_setup else 4 if args.music_command04 else 1,
+    report.update(resource_read_records_equal=33 if args.music_first_channel else 17 if args.music_channel_setup else 4 if args.music_command04 else 1,
         arithmetic_scope='Helper14 D=0: generic py65 decimal ADC oracle scope, not a NES requirement',
         preserved_original_NMI_and_task_frames=True,
         limit='Bounded semantic target checkpoint; no gameplay, full tick, RTI, audible Paula or speed claim')
 if args.music_channel_setup:
     report.update(intermediate_context_snapshots_equal=6, new_resource_journal_counts=[1,4,1,3,1,3], final_channel_pointer='A2CA', next_command08_unconsumed=True)
+if args.music_first_channel:
+    report.update(intermediate_context_snapshots_equal=14, new_event_context_snapshots_equal=8, new_resource_journal_counts=[1,5,1,3,1,3,1,1], final_channel_pointer='A2D1', final_PC='8085', final_SP='AD', complete_first_channel_rest=True)
 print(json.dumps(report,indent=2))

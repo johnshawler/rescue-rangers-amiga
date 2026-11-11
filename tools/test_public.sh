@@ -12,6 +12,9 @@ python "$ROOT/port/tests/test_recovery_music_command04_contract.py"
 python "$ROOT/port/tests/test_recovery_music_stream_command05_contract.py"
 python "$ROOT/port/tests/test_recovery_music_channel_setup_contract.py"
 python "$ROOT/port/tests/test_recovery_gameplay_player_init_contract.py"
+python "$ROOT/port/tests/test_recovery_gameplay_fade_entry_contract.py"
+python "$ROOT/port/tests/test_recovery_stage_resource_contract.py"
+python "$ROOT/port/tests/recovery_test_music_event_contract.py"
 # Assemble the new reset helpers without any cartridge/firmware input.
 TMP=$(mktemp -d)
 trap 'rm -rf "$TMP"' EXIT
@@ -26,6 +29,7 @@ python "$ROOT/port/tools/build_recovery_reset_probe.py" --scheduler-resume
 python "$ROOT/port/tools/build_recovery_reset_probe.py" --resumed-task-setup
 python "$ROOT/port/tools/build_recovery_reset_probe.py" --palette-nmi
 python "$ROOT/port/tools/build_recovery_gameplay_player_init_probe.py"
+python "$ROOT/port/tools/build_recovery_gameplay_fade_entry_probe.py"
 # Existing probe modes must remain byte-identical when an opt-in mode is added.
 python - "$ROOT" <<'PY'
 import hashlib, sys
@@ -41,8 +45,9 @@ expected = {
  'recovery-resumed-task-setup-probe': '052dbe2f97730d822931cbd988793be985aa7f0804bd51d3292284a70312b048',
  'recovery-palette-nmi-probe': 'a0027f8fb69546e64d67a3d9172a90e0389efd26164db14051000eb2dade6cdc',
  'recovery-gameplay-player-init-probe': 'bdc80369cb6efdaf6953016af92b3f5458716f532c5b0c95c90d5d14f8582ee3',
+ 'recovery-gameplay-fade-entry-probe': '34a4f6073e9b7eeef1597bc3ebde27fabef6ace085dcbc48cbc5addf77dbfcda',
 }
 for name, digest in expected.items():
  assert hashlib.sha256((build/(name+'.adf')).read_bytes()).hexdigest() == digest, name
-print('PASS nine pinned source-only probe ADF hashes')
+print('PASS ten pinned source-only probe ADF hashes')
 PY
