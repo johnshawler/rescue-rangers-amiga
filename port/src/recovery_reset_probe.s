@@ -1,4 +1,4 @@
-; Independent Amiga reset-boundary probe. No cartridge bytes or title fixtures.
+; Independent diagnostic probe. MUSIC07 alone includes private cartridge data.
 ; Exercises newly translated FE24 through first task dispatch, then stops.
 ; Boot enters user mode: use custom interrupt/DMA shutdown, no privileged SR write.
         lea     $dff000,a5
@@ -19,6 +19,14 @@
         lea     probe_stack(pc),a3
         move.l  a3,32(a6)
         move.l  sp,36(a6)
+        ifd MUSIC07
+        lea     probe_music_entry(pc),a3
+        move.l  a3,72(a6)
+        lea     probe_music_apu(pc),a3
+        move.l  a3,76(a6)
+        lea     probe_music_resource(pc),a3
+        move.l  a3,80(a6)
+        endc
         ifd PALETTE_NMI
         lea     probe_palette_nmi(pc),a3
         move.l  a3,68(a6)
@@ -173,6 +181,53 @@ probe_palette_abi_fail:
         bra.w   probe_fail
 probe_palette_abi_done:
         endc
+        ifd MUSIC07
+        lea     probe_music_entry(pc),a2
+        movem.l d1-d7/a0-a6,-(sp)
+        bsr.w   recovery_nmi_audio_entry
+        cmpi.l  #1,d0
+        bne.w   probe_fail
+        movem.l d1-d7/a0-a6,-(sp)
+        move.l  sp,a3
+        lea     56(sp),a4
+        moveq   #13,d0
+probe_music_entry_abi:
+        move.l  (a3)+,d1
+        cmp.l   (a4)+,d1
+        bne.w   probe_music_entry_abi_fail
+        dbra    d0,probe_music_entry_abi
+        movem.l (sp)+,d1-d7/a0-a6
+        lea     56(sp),sp
+        addq.l  #1,12(a6)
+        bra.s   probe_music_entry_abi_done
+probe_music_entry_abi_fail:
+        moveq   #-2,d0
+        bra.w   probe_fail
+probe_music_entry_abi_done:
+        lea     probe_music_apu(pc),a2
+        lea     probe_music_resource(pc),a3
+        movem.l d1-d7/a0-a6,-(sp)
+        bsr.w   recovery_music07_command
+        cmpi.l  #1,d0
+        bne.w   probe_fail
+        movem.l d1-d7/a0-a6,-(sp)
+        move.l  sp,a3
+        lea     56(sp),a4
+        moveq   #13,d0
+probe_music_apu_abi:
+        move.l  (a3)+,d1
+        cmp.l   (a4)+,d1
+        bne.w   probe_music_apu_abi_fail
+        dbra    d0,probe_music_apu_abi
+        movem.l (sp)+,d1-d7/a0-a6
+        lea     56(sp),sp
+        addq.l  #1,12(a6)
+        bra.s   probe_music_apu_abi_done
+probe_music_apu_abi_fail:
+        moveq   #-2,d0
+        bra.w   probe_fail
+probe_music_apu_abi_done:
+        endc
         move.l  sp,40(a6)
         clr.l   8(a6)
         move.w  #$0070,$180(a5)
@@ -217,8 +272,15 @@ probe_fail:
         include "recovery_palette_nmi_prefix.s"
         endc
 
+        ifd MUSIC07
+        include "recovery_music07_command.s"
+        endc
+
         even
 probe_report:
+        ifd MUSIC07
+        dc.b    'CDRRM071'
+        else
         ifd PALETTE_NMI
         dc.b    'CDRRPAL1'
         else
@@ -248,6 +310,7 @@ probe_report:
         endc
         endc
         endc
+        endc
         dc.l    $ffffffff,0,0,0,0,0,0,0,0
         ifd FIRST_YIELD
         dc.l    0
@@ -266,6 +329,9 @@ probe_report:
         endc
         ifd PALETTE_NMI
         dc.l    0
+        endc
+        ifd MUSIC07
+        dc.l    0,0,0
         endc
         dcb.b   16,$5a
 probe_ram:
@@ -325,7 +391,24 @@ probe_palette_nmi:
         dcb.b   16,$5a
         dcb.b   16,$5a
         endc
+        ifd MUSIC07
+probe_music_entry:
+        dcb.b   22,$a5
+        dcb.b   16,$5a
+        dcb.b   16,$5a
+probe_music_apu:
+        dcb.b   30,$a5
+        dcb.b   16,$5a
+        dcb.b   16,$5a
+        endc
 probe_stack:
         dcb.b   4096,$ee
 probe_stack_end:
         dcb.b   16,$5a
+        ifd MUSIC07
+        dcb.b   16,$5a
+probe_music_resource:
+; Data only. Builder validates private ROM and writes read-only ignored input.
+        incbin  "recovery-music07-private-bank3.bin"
+        dcb.b   16,$5a
+        endc

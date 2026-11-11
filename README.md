@@ -58,10 +58,20 @@ native game-code translation and Amiga rendering, not a general NES interpreter.
   follows the second logical interrupt through palette publication and timer
   updates. Twelve helpers preserve the real nested interrupt frame, all 49 new
   video events and a second OAM snapshot; queued music remains unconsumed.
+- An opt-in [private music-initialization probe](port/analysis/recovery_music07_target.md)
+  consumes the queued command and initializes its channel pointers. Fourteen
+  calls use thirteen distinct helpers; the subsequent music tick is not run.
+  This diagnostic contains a private cartridge resource view and must not be
+  distributed as a source-only disk.
+- New [first-byte fetch](port/analysis/recovery_music_tick_fetch.md) and
+  [command04](port/analysis/recovery_music_command04.md) helpers have host-only
+  original-code comparisons and ROM-free public contract tests. They advance
+  through the first stream command, stopping before the next fetch at $839D.
+  They do not yet have Amiga target evidence or complete the music tick.
 - Captured initial title state remains a private development fixture. New work
   will replace that dependency with verified original reset/resource logic.
 
-Recovery validation passed 142,896 original-ROM differential cases, 27 synthetic
+Recovered title baseline validation passed 142,896 original-ROM differential cases, 27 synthetic
 renderer cases and 16 native selftests. Five cycle-exact emulated PAL A1200 menu
 scenarios were pixel-exact against preserved original references and actual
 Amiga display output. These are correctness results, not gameplay-speed claims.
@@ -79,7 +89,8 @@ See [recovery provenance](docs/RECOVERY.md) and the validation summary. The new 
 Install Python dependencies from `requirements-dev.txt`. Supply vasm via the
 `VASM` environment variable. `bash tools/test_public.sh` runs the two synthetic
 assembled-code renderer suites, restore-safety tests, a synthetic twelve-helper
-contract regression and reset-probe assembly
+contract regression, three synthetic music-helper contracts and source-only
+probe assembly
 without a game ROM or firmware.
 
 Private original-ROM tests require the hash-checked European cartridge at

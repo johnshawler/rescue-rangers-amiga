@@ -6,6 +6,9 @@ python "$ROOT/port/tests/test_native_background.py"
 python "$ROOT/port/tests/test_native_sprites.py"
 python "$ROOT/port/tests/test_recovery_input_restore.py"
 python "$ROOT/port/tests/test_recovery_synthetic_chain.py"
+python "$ROOT/port/tests/test_recovery_music07_contract.py"
+python "$ROOT/port/tests/test_recovery_music_tick_fetch_contract.py"
+python "$ROOT/port/tests/test_recovery_music_command04_contract.py"
 # Assemble the new reset helpers without any cartridge/firmware input.
 TMP=$(mktemp -d)
 trap 'rm -rf "$TMP"' EXIT
