@@ -81,8 +81,19 @@ disable at F3D5 remains untranslated. New [SFX phase/dispatch translation](port/
 continues genuine phase accumulation, channel-3 music processing and the
 channel-2 SFX call to 82B0, preserving the still-pending NMI and real return
 frames. Independent original-instruction checks pass; this is host correctness,
-not completed SFX playback or integrated audio. Channel ticking at 82B0,
-alternate-character confirmation and live gameplay are unfinished.
+not completed SFX playback or integrated audio. The new
+[SFX tick entry and command parser](port/analysis/recovery_sfx_command_mask.md)
+then performs genuine instrument/channel changes and reaches event action 831B
+after 1,216 helpers. It preserves the pending NMI and real caller frames, with
+62 new RAM writes and 13 resource reads on the cursor path. Independent raw
+status/stack and original-instruction tests pass. The subsequent
+[SFX event action](port/analysis/recovery_sfx_event_action.md) now returns to
+the real caller and allows the frozen helpers to complete the first mixed
+music/SFX NMI: 1,231 helpers, 41 logical NMIs and 39 completed returns, with
+bank 2 restored. The next NMI still stops at fixed-bank C0F6 because the frozen
+control does not support active SFX. Sustained SFX, envelope 86B2, alternate
+character confirmation and gameplay remain unfinished. This is host evidence,
+not audible output or Amiga game-speed validation.
 
 The [state-driven startup dispatcher](port/analysis/recovery_state_dispatch_startup.md)
 completes resource loading, genuine CHR requests and title fade-in through C5D1.
@@ -96,10 +107,12 @@ are reported separately.
 
 Run tools/test_native_title_public.sh, tools/test_scene_sound_public.sh,
 tools/test_runtime_sound_public.sh, tools/test_state_startup_public.sh and
-tools/test_state_menu_public.sh and tools/test_sfx_phase_public.sh for
+tools/test_state_menu_public.sh, tools/test_sfx_phase_public.sh and
+tools/test_sfx_parser_public.sh and tools/test_sfx_event_public.sh for
 ROM-free contracts. Their corresponding private extensions are
 validate_native_title.sh, validate_scene_sound.sh, validate_runtime_sound.sh and
-validate_state_startup.sh, validate_state_menu.sh and validate_sfx_phase.sh.
+validate_state_startup.sh, validate_state_menu.sh, validate_sfx_phase.sh and
+validate_sfx_parser.sh and validate_sfx_event.sh.
 The new startup/display extension needs only the
 approved private cartridge and firmware, not old captured fixtures.
 

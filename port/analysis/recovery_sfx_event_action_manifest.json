@@ -1,0 +1,100 @@
+{
+  "scope": "Static SFX event action through genuine channel RTS and uninterrupted mixed NMI completion; host-only recovery development.",
+  "files": [
+    {
+      "path": "port/src/recovery_sfx_event_action.s",
+      "bytes": 11003,
+      "sha256": "81e2508b591df7941670660de5def74b8ce9b650b839ebe1e3595a33b116b39c"
+    },
+    {
+      "path": "port/tests/recovery_test_sfx_event_action.py",
+      "bytes": 9216,
+      "sha256": "95f13ca67834357c70f85f0c03dd86ecc3dd912311440440b075e4a526e9bd54"
+    },
+    {
+      "path": "port/tests/recovery_test_resident_sfx_event_action.py",
+      "bytes": 34096,
+      "sha256": "acc976525c73c6b81e0f8948a7c5bbd7d67c1c3acb165ab1c47a24826495b2c9"
+    },
+    {
+      "path": "port/analysis/recovery_sfx_event_action.md",
+      "bytes": 8517,
+      "sha256": "3d0991f5793f7e190561ae4ffc685b8197049464927cd66c1a1b59104787a75c"
+    },
+    {
+      "path": "port/analysis/recovery_sfx_event_action_frozen.json",
+      "bytes": 93776,
+      "sha256": "36c0ed10f03886e7841f1654e37dd3b832c4e8ba427c7e6b31306c9203b54639"
+    }
+  ],
+  "predecessor_manifest": {
+    "path": "port/analysis/recovery_sfx_command_mask_manifest.json",
+    "bytes": 3231,
+    "sha256": "8d8ef6a594d83199b510af2205a51e8b4646836afbcd228fc3390e662e0f4273"
+  },
+  "standalone": {
+    "bytes": 1876,
+    "sha256": "0e1a928c5f69c08d578e297b6f4f7768d154797a975cfe0a1830f8421ed78eb7"
+  },
+  "composite": {
+    "bytes": 34442,
+    "sha256": "a7b58a5eb95852f549d7ae1c834e7735792ff0bda9776ea479203b1fc0648891"
+  },
+  "coverage": {
+    "original_rom_accepted": 77825,
+    "declarative_accepted": 77825,
+    "inert_rejects_each": 114938,
+    "isolated_rom_and_private_imports_denied_accepted": 77825,
+    "isolated_inert_rejects": 114938,
+    "continuous_inputs": [
+      0,
+      16,
+      1,
+      2
+    ],
+    "next_tick_inert_boundary_inputs": [
+      1,
+      2
+    ],
+    "predecessor_continuous_regressions": 12,
+    "frozen_files_unchanged": 737
+  },
+  "live_event": {
+    "entry": "831B3A023A25F3A7",
+    "exit": "807A20020424F5A7",
+    "ram_writes": 16,
+    "resource_reads": 3,
+    "apu_writes": 0,
+    "right_trace_sha256": "93f85448996dc83dbae3dc2e9a82a88c51f619272a093ab647b4edb2d7a18a77",
+    "left_trace_sha256": "966d587f79dcc4c581e2189b7f76d8769a2f0b744cc2a143c8008445ae6e2544"
+  },
+  "completed_mixed_nmi": {
+    "context": "FE9000100026FFA7",
+    "helpers": 1231,
+    "nmis": 41,
+    "completed_returns": 39,
+    "mapper_bank": 2,
+    "additional_effects_from_parser_checkpoint": {
+      "ram": 123,
+      "resource": 28,
+      "mapper": 5,
+      "apu": 4
+    }
+  },
+  "next_boundary": {
+    "context": "C0F688030027F8A7",
+    "helpers": 1238,
+    "nmis": 42,
+    "completed_returns": 39,
+    "mapper_bank": 3,
+    "reason": "Frozen music-only C0F6 control rejects active SFX state atomically; original dispatch toward 8224 not yet translated in this entry contract."
+  },
+  "other_unsupported": "SFX envelope 86B2 remains unsupported.",
+  "claims_excluded": [
+    "Recovered lost later playable/audio source",
+    "Amiga target execution or stock A1200 speed",
+    "Integrated or audible Paula audio",
+    "Playability or full game completion",
+    "Completion of the following NMI"
+  ]
+}

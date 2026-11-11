@@ -1,0 +1,63 @@
+{
+  "scope": "Static SFX tick entry and countdown; preserved narrow checkpoint, host-only evidence.",
+  "files": [
+    {
+      "path": "port/src/recovery_sfx_tick_entry.s",
+      "bytes": 5135,
+      "sha256": "c808a9129018be993dabda3be7fa978633aba5b6b0e8ae890434eef8fc637907"
+    },
+    {
+      "path": "port/tests/recovery_test_sfx_tick_entry.py",
+      "bytes": 7607,
+      "sha256": "436b028dd0c6364edb86748173ebc1ac02068c4aecbb83f4a31cbc7b5e309b4c"
+    },
+    {
+      "path": "port/tests/recovery_test_resident_sfx_tick_entry.py",
+      "bytes": 31868,
+      "sha256": "b9d40676dee3a5a0c7972b123ac9aae5b2c6c0a577b7d624c89f250a55f06ed3"
+    },
+    {
+      "path": "port/analysis/recovery_sfx_tick_entry.md",
+      "bytes": 4401,
+      "sha256": "184266f52ba0063cc84c759b67e55de4b6b6e3718bbd80102a1ca21896924438"
+    },
+    {
+      "path": "port/analysis/recovery_sfx_tick_entry_frozen.json",
+      "bytes": 58366,
+      "sha256": "0f04c997892498e592cacde3ae8d1e4d314d0f7f2db2c60f2ffc53a1f4a22143"
+    }
+  ],
+  "predecessor_manifest": {
+    "path": "port/analysis/recovery_sfx_phase_dispatch_manifest.json",
+    "bytes": 3446,
+    "sha256": "54ea70517effd9f3f0a39d6c4d369d67fe5e3c2b5e068be0d8d451a5e97c6543"
+  },
+  "standalone": {
+    "bytes": 884,
+    "sha256": "b0d1ffec8d307d1898f99d5807b6e0733930dedbe22303bcd4b64d6afe1a6456"
+  },
+  "composite": {
+    "bytes": 30850,
+    "sha256": "f5a6e0391238771e8334ca2948cb0672d09dbe7c20c15d03082d4d25098ec7a2"
+  },
+  "coverage": {
+    "original_accepted": 147456,
+    "declarative_accepted": 147457,
+    "inert_rejects": 194558,
+    "isolated_source_only_pass": true,
+    "continuous_inputs": [
+      0,
+      16,
+      1,
+      2
+    ],
+    "frozen_predecessor_inputs": [
+      0,
+      16,
+      1,
+      2
+    ],
+    "frozen_files_unchanged": 482
+  },
+  "boundary": "Bank3 PC82DC; context82DC02020025F3A7, actual8079 and C0F8 frames live. Alternate envelope86B2 unsupported."
+}

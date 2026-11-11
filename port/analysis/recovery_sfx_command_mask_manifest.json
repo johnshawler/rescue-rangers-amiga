@@ -1,0 +1,103 @@
+{
+  "scope": "Static bank3 SFX command-mask parser with genuine inline-table callbacks and instrument/channel state changes; host-only new recovery development.",
+  "files": [
+    {
+      "path": "port/src/recovery_sfx_command_mask.s",
+      "bytes": 9506,
+      "sha256": "b7ac4205b3a0fdb1d5d8f8d6a0fe06a24f288e1c212325a617c93aa6c0938e19"
+    },
+    {
+      "path": "port/tests/recovery_test_sfx_command_mask.py",
+      "bytes": 11172,
+      "sha256": "0dcd8e6e7109ba7caef183cd67b863d54db93c358d1ffc80bac193b5a2b75228"
+    },
+    {
+      "path": "port/tests/recovery_test_resident_sfx_command_mask.py",
+      "bytes": 33482,
+      "sha256": "275a908463ca70bf5b042dca6749b41176187548204805cdc26f63bdb2dccb35"
+    },
+    {
+      "path": "port/analysis/recovery_sfx_command_mask.md",
+      "bytes": 8123,
+      "sha256": "7f7ba886493d21faa57a2ae79c1c310825061de7c3cc3e9a0a21673f6ea5f221"
+    },
+    {
+      "path": "port/analysis/recovery_sfx_command_mask_frozen.json",
+      "bytes": 59077,
+      "sha256": "a87d4b75efc8c066ae73240d59d43b880fb006100bcfb29f29fed7877e2909d9"
+    }
+  ],
+  "predecessor_manifest": {
+    "path": "port/analysis/recovery_sfx_tick_entry_manifest.json",
+    "bytes": 1927,
+    "sha256": "f667e7f836290ac7ba7c2ea6215072dec3908f3df90e61406c09a1698d16ee57"
+  },
+  "standalone": {
+    "bytes": 1708,
+    "sha256": "dbd4c928c62246b0b9cd95ec0ba961f7551f44d1ab2fbb748849dde48068ed2c"
+  },
+  "composite": {
+    "bytes": 32562,
+    "sha256": "f073ee5e8cefcd71d8f2e02ef8ac90374adef368c4ca9837a691567590387174"
+  },
+  "coverage": {
+    "original_rom_accepted": 65536,
+    "declarative_accepted": 77713,
+    "inert_rejects": 117794,
+    "isolated_rom_and_private_imports_denied_accepted": 77713,
+    "isolated_inert_rejects": 117794,
+    "continuous_inputs": [
+      0,
+      16,
+      1,
+      2
+    ],
+    "narrow_predecessor_inputs": [
+      0,
+      16,
+      1,
+      2
+    ],
+    "frozen_phase_predecessor_inputs": [
+      0,
+      16,
+      1,
+      2
+    ],
+    "frozen_files_unchanged": 488,
+    "preexisting_manifest_file_entries_verified": 82
+  },
+  "continuous_added_portions": {
+    "tick_entry": {
+      "helpers": 1,
+      "ram_writes": 0,
+      "resource_events": 0,
+      "apu_writes": 0,
+      "checkpoint": "82DC02020025F3A7"
+    },
+    "command_mask": {
+      "helpers": 1,
+      "ram_writes": 62,
+      "resource_events": 13,
+      "validation_reads": 11,
+      "apu_writes": 0,
+      "callbacks_completed": 3,
+      "stream_bytes_consumed": 5,
+      "checkpoint": "831B3A023A25F3A7",
+      "helper_count": 1216,
+      "nmis": 41,
+      "completed_audio_returns": 38,
+      "right_trace_sha256": "39c572dfd2755c26cfd0f2fb67243a1f9666063efb63c8cb253bc2d8b87ed4dd",
+      "left_trace_sha256": "a839dfade01af94dbe2d9dfec6676a1b1eefa2f606c7dd25d25012c2ab52fdd2"
+    }
+  },
+  "boundary": "Bank3 PC831B LDA $0704,X, X2; actual8079 and C0F8 frames live. Zero event stops830B. SFX envelope86B2 remains unsupported.",
+  "claims_excluded": [
+    "Completed pending NMI",
+    "Completed SFX event action or envelope",
+    "Recovered lost later gameplay/audio source",
+    "Amiga target execution or stock A1200 speed",
+    "Integrated or audible Paula audio",
+    "Playability or full-game completion"
+  ]
+}
