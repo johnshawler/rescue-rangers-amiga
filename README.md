@@ -54,6 +54,10 @@ native game-code translation and Amiga rendering, not a general NES interpreter.
   nested scheduler yield. Eleven helpers preserve the pending palette and audio
   requests, which still need later interrupt support. This slice guards D=0 to
   avoid generic py65 decimal arithmetic differing from the NES CPU.
+- An opt-in [palette-NMI probe](port/analysis/recovery_palette_nmi_target.md)
+  follows the second logical interrupt through palette publication and timer
+  updates. Twelve helpers preserve the real nested interrupt frame, all 49 new
+  video events and a second OAM snapshot; queued music remains unconsumed.
 - Captured initial title state remains a private development fixture. New work
   will replace that dependency with verified original reset/resource logic.
 
@@ -74,7 +78,7 @@ See [recovery provenance](docs/RECOVERY.md) and the validation summary. The new 
 
 Install Python dependencies from `requirements-dev.txt`. Supply vasm via the
 `VASM` environment variable. `bash tools/test_public.sh` runs the two synthetic
-assembled-code renderer suites, restore-safety tests, a synthetic eleven-helper
+assembled-code renderer suites, restore-safety tests, a synthetic twelve-helper
 contract regression and reset-probe assembly
 without a game ROM or firmware.
 

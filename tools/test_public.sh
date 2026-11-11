@@ -18,6 +18,7 @@ python "$ROOT/port/tools/build_recovery_reset_probe.py" --audio-reset
 python "$ROOT/port/tools/build_recovery_reset_probe.py" --nmi-return
 python "$ROOT/port/tools/build_recovery_reset_probe.py" --scheduler-resume
 python "$ROOT/port/tools/build_recovery_reset_probe.py" --resumed-task-setup
+python "$ROOT/port/tools/build_recovery_reset_probe.py" --palette-nmi
 # Existing probe modes must remain byte-identical when an opt-in mode is added.
 python - "$ROOT" <<'PY'
 import hashlib, sys
@@ -31,8 +32,9 @@ expected = {
  'recovery-nmi-return-probe': '267303fd0d998937d45052c26063904b96f82c5c44f43b197febd19503a831ba',
  'recovery-scheduler-resume-probe': 'bc3b564980423790d874a5c5c686eb2aa365b6f0c97f3b7e2706f8eb23e660ae',
  'recovery-resumed-task-setup-probe': '052dbe2f97730d822931cbd988793be985aa7f0804bd51d3292284a70312b048',
+ 'recovery-palette-nmi-probe': 'a0027f8fb69546e64d67a3d9172a90e0389efd26164db14051000eb2dade6cdc',
 }
 for name, digest in expected.items():
  assert hashlib.sha256((build/(name+'.adf')).read_bytes()).hexdigest() == digest, name
-print('PASS seven pinned source-only probe ADF hashes')
+print('PASS eight pinned source-only probe ADF hashes')
 PY
