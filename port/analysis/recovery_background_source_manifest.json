@@ -1,0 +1,38 @@
+{
+  "base_commit": "cd6d8336f8de8ca7072d068064d6d6bcc0eaf02e",
+  "matching_local_commit": "df66f1235cf2d201b8e06fa899000529fc6e8fb2",
+  "base_tree": "2b3fc8a7aa4645094d816e04f736b5aa8faf159b",
+  "files": [
+    {
+      "path": "port/src/recovery_background_single_read.s",
+      "bytes": 2355,
+      "sha256": "308b68dc4da05fe40d63a3ba1cd10c56a45ce647937d9caace6f56a5e3cdc8ce"
+    },
+    {
+      "path": "port/tools/recovery_background_build.py",
+      "bytes": 3153,
+      "sha256": "61f18240a69587c5012d3cb2253596a3f473053446f0b1f9497b9916f62df328"
+    },
+    {
+      "path": "port/tests/recovery_background_public_test.py",
+      "bytes": 2840,
+      "sha256": "fa10d10aa7d5eedb076c9bd105b1ff513c5deb261d70179e80247075ea8a9a41"
+    },
+    {
+      "path": "port/tests/recovery_background_compare.py",
+      "bytes": 3338,
+      "sha256": "0f1254b1ea67e736d3e330f8f00f4c1ea487879d2b22c223917d0f54feffb936"
+    },
+    {
+      "path": "port/analysis/recovery_background_target.md",
+      "bytes": 8329,
+      "sha256": "afe621b73e373cfc2efee2b4934af5ce29e6a23a3d45d07f73239b221949d5e5"
+    },
+    {
+      "path": "port/analysis/recovery_background_restore.md",
+      "bytes": 3623,
+      "sha256": "62ce93b77e86f6dfa339718e364f94886dbbfcaac253b72fe4697370d2292ee9"
+    }
+  ],
+  "scope": "Six new generic source/test/build/report files; this manifest is the seventh allowed file. No private inputs, generated outputs, prior implementation edits or publication. Background-only matched uninstrumented target candidate."
+}

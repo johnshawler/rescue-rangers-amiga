@@ -11,6 +11,15 @@ native game-code translation and Amiga rendering, not a general NES interpreter.
 
 ## Current verified source
 
+The additive [background-only variant](port/analysis/recovery_background_target.md)
+reduces the measured final render from 89.725 to 81.154 ms with display DMA on
+(9.55%), and from 79.808 to 71.292 ms with it off (10.67%). Fresh uninstrumented
+stock captures preserve original state, pixels and audio checks. The display-on
+allocation is 811,520 Chip bytes with zero Fast RAM. This remains one final menu
+render, well above a 20 ms budget, not continuous gameplay or a frame-rate result.
+The frozen renderer and delivered disk stay unchanged. Public equivalence checks
+run with `bash tools/test_background_public.sh`.
+
 The additive [cost profiler](port/analysis/recovery_profile_target.md) identifies
 background drawing as the largest part of the final render: 61.57 ms background,
 24.53 ms sprites and 2.63 ms CHR copying in the instrumented display-on run.
@@ -24,7 +33,7 @@ It also covers Return, Tab and arrows. This is input-only validation, not yet
 integration into the menu/gameplay loop. Public tests for both additions run with
 `bash tools/test_profile_input_public.sh`; no game ROM or firmware is required.
 
-The [native menu/Paula diagnostic](port/analysis/recovery_menu_paula_target.md)
+The unchanged baseline [native menu/Paula diagnostic](port/analysis/recovery_menu_paula_target.md)
 now plays actual native title/menu writes through four Paula DMA voices. Original
 state and ordered effects match for both character choices and move-back; real
 stereo captures verify bounded pitch/channel checks, native silence and clean
