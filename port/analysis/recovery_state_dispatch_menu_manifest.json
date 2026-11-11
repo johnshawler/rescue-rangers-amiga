@@ -1,0 +1,818 @@
+{
+  "status": "PASS",
+  "scope": "Host-only state-driven menu, default confirmation and genuine 900-countdown route",
+  "new_files": [
+    {
+      "path": "port/analysis/recovery_state_dispatch_menu.md",
+      "bytes": 12750,
+      "sha256": "2c57a0f943f5f069f5e783fafed4da141c38d2e5fe1275d9550f4abc6edf2fc8"
+    },
+    {
+      "path": "port/analysis/recovery_state_dispatch_menu_results.json",
+      "bytes": 28111,
+      "sha256": "f43431f160b25ae21e9cf6660bf185faba1b56f333ccaddcbf201c805c92de7a"
+    },
+    {
+      "path": "port/src/recovery_state_dispatch_menu.s",
+      "bytes": 6371,
+      "sha256": "b3a83c1ed57e3e8a6eb064c1e1be29e7ee69dc4ce9fd0a4d56b5ca3bb5ffa8c9"
+    },
+    {
+      "path": "port/tests/recovery_state_dispatch_menu_contract.py",
+      "bytes": 4869,
+      "sha256": "ba5c81ab72a7a0fc35b9f675a0ff9bbe46b996be1db3de940e53b732449cf9a9"
+    },
+    {
+      "path": "port/tests/recovery_state_dispatch_menu_harness.py",
+      "bytes": 6359,
+      "sha256": "5a532a5cf34e7f1ada42d1abe06805f373b6001f60c0b2914ebdab608b11865b"
+    },
+    {
+      "path": "port/tests/recovery_state_dispatch_menu_long_contract.py",
+      "bytes": 1724,
+      "sha256": "0e0437c5e52831da23015e0ffd2cc1fe01157ed3bf4b1a411fa0b28510f8c08b"
+    },
+    {
+      "path": "port/tests/recovery_state_dispatch_menu_long_rom.py",
+      "bytes": 2451,
+      "sha256": "7bb6bb6f3880d3280af7b57ff1c75595e5411a36e8fb5148a2b9d72ca647e29b"
+    },
+    {
+      "path": "port/tests/recovery_state_dispatch_menu_music_contract.py",
+      "bytes": 3636,
+      "sha256": "a2eff94aa4b1fbb632c240467c486e5e0ee225ea5fde91f5365dfe51d622d855"
+    },
+    {
+      "path": "port/tests/recovery_state_dispatch_menu_oracle.py",
+      "bytes": 1785,
+      "sha256": "33bb64ba5a6ffe56fcb8e2d746593d63a225caa66af784fd123d720a9fe12be9"
+    },
+    {
+      "path": "port/tests/recovery_state_dispatch_menu_rom.py",
+      "bytes": 9546,
+      "sha256": "18f3ecc3342a3eb58496b72436d1738aa217b6135c295bcc5c7ae66b34d8f203"
+    }
+  ],
+  "frozen_dependencies": [
+    {
+      "path": "port/analysis/recovery_state_dispatch_active.md",
+      "bytes": 8017,
+      "sha256": "c602e1d4bb0b5a19ef20690731e20ef4e3b6979a62f24210fbc0508ae4af9248"
+    },
+    {
+      "path": "port/analysis/recovery_state_dispatch_active_manifest.json",
+      "bytes": 9354,
+      "sha256": "87e478126232ebb089fbff82dd369dfc69a5997417db14e29de50946027460b0"
+    },
+    {
+      "path": "port/analysis/recovery_state_dispatch_active_results.json",
+      "bytes": 16060,
+      "sha256": "8f25b19af7219d78b149e4b1624e606924bd67ca3cab9b87ea9bf5cb39963b21"
+    },
+    {
+      "path": "port/analysis/recovery_state_dispatch_palette.md",
+      "bytes": 7007,
+      "sha256": "ee683dab73e72592325347bafd047e92450357db28370f9a03cbb261bf606537"
+    },
+    {
+      "path": "port/analysis/recovery_state_dispatch_palette_manifest.json",
+      "bytes": 4648,
+      "sha256": "1224964117c97eb637d6d552fecb650bfa8f05dc671aaca42adf7fb45f5c24ca"
+    },
+    {
+      "path": "port/analysis/recovery_state_dispatch_palette_results.json",
+      "bytes": 7984,
+      "sha256": "6afa5282ff26c583bbc5a9a2e64ee99c6d2dd984237466105f14b6a3cea450a4"
+    },
+    {
+      "path": "port/analysis/recovery_state_dispatch_prefix_manifest.json",
+      "bytes": 4868,
+      "sha256": "3021f189d432eff9adfc0c60b8c5601a1f654765e62975a8e92ae6c074cf74c0"
+    },
+    {
+      "path": "port/analysis/recovery_state_dispatch_scheduler.md",
+      "bytes": 9214,
+      "sha256": "133ad9934f78e0c035ac65e445e6a2d00cdb5593e922dc20b65429012f9ebf29"
+    },
+    {
+      "path": "port/analysis/recovery_state_dispatch_scheduler_manifest.json",
+      "bytes": 14387,
+      "sha256": "6231f7e61ade7c68e4b46dce94d0e7b56760f6660869a2a63aa4fae168f3667c"
+    },
+    {
+      "path": "port/analysis/recovery_state_dispatch_scheduler_results.json",
+      "bytes": 46003,
+      "sha256": "8e9a6cab317f03af54665e207aaa8593e31c6bef8ec53fdf328c77a0b1a8860d"
+    },
+    {
+      "path": "port/analysis/recovery_state_dispatch_startup.md",
+      "bytes": 10115,
+      "sha256": "676de02876a8bd8957d6198f1775cef351e746681f21851f6d199f8d9598e3fb"
+    },
+    {
+      "path": "port/analysis/recovery_state_dispatch_startup_manifest.json",
+      "bytes": 21842,
+      "sha256": "9f167ea54fef8786e18558b809980ebe0ea0019568d249a1f11a4b1a40b6905a"
+    },
+    {
+      "path": "port/analysis/recovery_state_dispatch_startup_results.json",
+      "bytes": 209997,
+      "sha256": "664ebabcfe60c62bf46a67da9ee305984e048a97cf86da1ac4047556dace10fe"
+    },
+    {
+      "path": "port/src/recovery_active_nmi_return.s",
+      "bytes": 1816,
+      "sha256": "ac20b42ca9873be158104e945e540a16206818649598b19ea6a2da4cf4cc2e64"
+    },
+    {
+      "path": "port/src/recovery_audio_reset_command.s",
+      "bytes": 3599,
+      "sha256": "9c5148ecd1108fc92b604bdca57931e0217554c01294c5d5a8044a33450f5080"
+    },
+    {
+      "path": "port/src/recovery_character_menu_setup.s",
+      "bytes": 1026,
+      "sha256": "cd4a317a8c6f8ea398194cfc73bc836fd002f8f114c1e8d1c495fb5649e7c927"
+    },
+    {
+      "path": "port/src/recovery_character_selection_dispatch.s",
+      "bytes": 2021,
+      "sha256": "76686227cd2797120f1952fff40e54506158b6d3b39633be58978b2d93c19918"
+    },
+    {
+      "path": "port/src/recovery_chr_nmi_prefix.s",
+      "bytes": 5447,
+      "sha256": "fd94dd732b6a34043412c2dc31591c7545b28d26125cbbb73cb3cc21c499f167"
+    },
+    {
+      "path": "port/src/recovery_first_nmi_prefix.s",
+      "bytes": 3840,
+      "sha256": "ac1872087561afa2064cff253056a6c9cf89066a32a93c92e70954472278ffc7"
+    },
+    {
+      "path": "port/src/recovery_first_yield.s",
+      "bytes": 2090,
+      "sha256": "5fe7f904dcb44925c0ef589075c88d470910a5db9fb8812bce1053ef4daa108e"
+    },
+    {
+      "path": "port/src/recovery_gameplay_frame_yield.s",
+      "bytes": 2345,
+      "sha256": "8c143aeb217db1d246416853a975a28cc00938bb0c23d21ab9acd8f15e86b300"
+    },
+    {
+      "path": "port/src/recovery_general_task_scheduler.s",
+      "bytes": 4675,
+      "sha256": "929994d1d3609b3e21ebacc11029c726e1dc2cea42f8f6e900dcf96d5a606c1c"
+    },
+    {
+      "path": "port/src/recovery_music07_command.s",
+      "bytes": 3364,
+      "sha256": "62f15853ecfdb4a470fd7f8f1eefc400c8a61903ecf8a8c7ec643c0ab76c93d0"
+    },
+    {
+      "path": "port/src/recovery_music_active_command01.s",
+      "bytes": 3572,
+      "sha256": "42ece6ef98a0e4936c57d1fa9a953b7149ddb0ee5f3ebd5d17e7b194576b8606"
+    },
+    {
+      "path": "port/src/recovery_music_active_command02.s",
+      "bytes": 4323,
+      "sha256": "a7c7db397aafcbf25c5a47ac87d49bf046c7f23f36e05a76dd38a56ece514f28"
+    },
+    {
+      "path": "port/src/recovery_music_active_command03.s",
+      "bytes": 4280,
+      "sha256": "e0f9ea562dc7ff8bf51db990d0c294b355adfec63756293c205a9c56cac1f75f"
+    },
+    {
+      "path": "port/src/recovery_music_active_command0e.s",
+      "bytes": 6202,
+      "sha256": "5e667f1a018a5d20d36a6b7a56cf3e2f1a18f5e68d2a6afdd6a54ce07889bf7e"
+    },
+    {
+      "path": "port/src/recovery_music_active_command0f.s",
+      "bytes": 6347,
+      "sha256": "f72840069b5f8dd2743d176d98459b7ca6c5e5a39e1489eafe34c06e262201b8"
+    },
+    {
+      "path": "port/src/recovery_music_active_command12.s",
+      "bytes": 6290,
+      "sha256": "28abb7213e2443938231541314d1f5d97bf92ee8677876640ed3edab73cb7121"
+    },
+    {
+      "path": "port/src/recovery_music_active_command13.s",
+      "bytes": 6290,
+      "sha256": "286e3ca7d2d4f2c7dbd8d3f16331a392fa8c9cca174fb52da7e1b7d7106a91c4"
+    },
+    {
+      "path": "port/src/recovery_music_active_control.s",
+      "bytes": 8901,
+      "sha256": "fe0b41ba934dafa2388a4fd2d5701362828b23426effe1853fc304db7920f69e"
+    },
+    {
+      "path": "port/src/recovery_music_active_envelope.s",
+      "bytes": 26737,
+      "sha256": "c61e40421e3d1452497ef37f7d78dffac9eb902597946e8c5aad3407c86a8e48"
+    },
+    {
+      "path": "port/src/recovery_music_channel_iteration.s",
+      "bytes": 5359,
+      "sha256": "059def4fef52ca857de2148cb6e4f2414267aa803cb8c870c97163003539ccde"
+    },
+    {
+      "path": "port/src/recovery_music_duration_prepare.s",
+      "bytes": 2886,
+      "sha256": "096aa7b2fbc0f85333edd9b7c9b76988a667758dc12c16ed011504bd13c2d2e1"
+    },
+    {
+      "path": "port/src/recovery_music_duration_progress.s",
+      "bytes": 2589,
+      "sha256": "dbf9fe81080d740e261faf4946479d114a9906b95286db3c5110ae05ab3490b6"
+    },
+    {
+      "path": "port/src/recovery_music_empty_queue_entry.s",
+      "bytes": 856,
+      "sha256": "af4b7308f408ae3936f6aa3cf6b92ca2e56fabded0751ad5d3abfd28c6626520"
+    },
+    {
+      "path": "port/src/recovery_music_indexed_commands.s",
+      "bytes": 9658,
+      "sha256": "20d112327e628c0727a6604f87dc1cd3b7bce16087bbce781c008e1e96820312"
+    },
+    {
+      "path": "port/src/recovery_music_indexed_fetch.s",
+      "bytes": 2011,
+      "sha256": "eee1a1c93b13f4e48e8cd9ba223bb0a5b9b4aed314d77b40f45a3a22e00e167a"
+    },
+    {
+      "path": "port/src/recovery_music_indexed_rest.s",
+      "bytes": 3340,
+      "sha256": "74b717ccf13063f441e1f1f583ad6270af3956bddc2d6682c61773e70ea5c30a"
+    },
+    {
+      "path": "port/src/recovery_music_pitched_gate.s",
+      "bytes": 4566,
+      "sha256": "906440490eaa30ece78c49c87f9816246e3cdeabb34b173304bf9e1471d3e566"
+    },
+    {
+      "path": "port/src/recovery_music_pitched_note.s",
+      "bytes": 7026,
+      "sha256": "c590ef403355614378a13c066c0ae7c26c04bbdf2dbf81c6cd1f88896d5e4ace"
+    },
+    {
+      "path": "port/src/recovery_music_tick_fetch.s",
+      "bytes": 3258,
+      "sha256": "e59d42bcfbc2a86e8d92ac29947f63b4fe3ea01e57efc1a4e7fb436ecf57a15b"
+    },
+    {
+      "path": "port/src/recovery_nmi_audio_entry.s",
+      "bytes": 1897,
+      "sha256": "d0c1c3da60f020448d9e12bdf31798c8a988eba31efe31e458c5a60328714a83"
+    },
+    {
+      "path": "port/src/recovery_palette_nmi_prefix.s",
+      "bytes": 4428,
+      "sha256": "4a9cf5588c24f704af5cc0412adc916de20611296fc0a7dd7f149cb6eb181681"
+    },
+    {
+      "path": "port/src/recovery_queued_video_nmi_prefix.s",
+      "bytes": 6708,
+      "sha256": "ba46f5bc1a82fd2e0477791669be48bfb472401f3f24dd79a6cfbf7c22831a8f"
+    },
+    {
+      "path": "port/src/recovery_reset_dispatch.s",
+      "bytes": 1636,
+      "sha256": "e6751034246add44222f7c534bd9f5c040521e3ea232ec6b33f37c1f391cb9f2"
+    },
+    {
+      "path": "port/src/recovery_reset_mapper.s",
+      "bytes": 2275,
+      "sha256": "4d1a4cf7e03a286d5a889f826324039d26c94dac4632aa6b498e250fe9249d0a"
+    },
+    {
+      "path": "port/src/recovery_reset_ram.s",
+      "bytes": 1662,
+      "sha256": "6dc8974aeebb0be917011b518361618443fabb8f20eba70a5133b0d11d6bfbea"
+    },
+    {
+      "path": "port/src/recovery_reset_video.s",
+      "bytes": 3012,
+      "sha256": "bdf63828ccae88389108529b9c87693995d206b9e19f885d201babc1d4a4749d"
+    },
+    {
+      "path": "port/src/recovery_resumed_task_setup.s",
+      "bytes": 2670,
+      "sha256": "97cb8a421e32ca9da08de69660c4c9ffc88b382f781f2fd8e22a09bbea6cb6f7"
+    },
+    {
+      "path": "port/src/recovery_scheduler_resume.s",
+      "bytes": 3244,
+      "sha256": "0836efbe53dac974fb692a027bf2bd7da3f87122ec7feb5000191ce7da19be8a"
+    },
+    {
+      "path": "port/src/recovery_silent_tick_rti.s",
+      "bytes": 3060,
+      "sha256": "4d97d7b6b87b83079a0b56d598623132e2a0e4438d102ac1919362caf6722f0f"
+    },
+    {
+      "path": "port/src/recovery_startup_bank_select.s",
+      "bytes": 1008,
+      "sha256": "d80a4d7ff4609fc00f6e473e4f5e0dbf806d1869d16e5cae4891bb2ab07adc99"
+    },
+    {
+      "path": "port/src/recovery_startup_fade_continue.s",
+      "bytes": 3786,
+      "sha256": "d8a60fd4a1d52e3e09692a8315237658e90ca885ca138cd6c80a25bb04d81d48"
+    },
+    {
+      "path": "port/src/recovery_startup_resource_load.s",
+      "bytes": 2817,
+      "sha256": "92d7ac253f4088b1f83169df5fcacb7deabed90c2530426d74506f02b9be857e"
+    },
+    {
+      "path": "port/src/recovery_startup_title_setup.s",
+      "bytes": 1808,
+      "sha256": "514e4f9f05dfd2427b74541fa9f678538945c6f7ec3a5d7ff49fcc7c0c5dc1f4"
+    },
+    {
+      "path": "port/src/recovery_startup_video_clear.s",
+      "bytes": 2186,
+      "sha256": "bc74eeeb57501d261e91b604682d1355ec242001ea7a2c28d5fafed0d1991b29"
+    },
+    {
+      "path": "port/src/recovery_state_dispatch_active.s",
+      "bytes": 4406,
+      "sha256": "d4c55668fa3d966c6edd16bdc23408c9986771a79d52dc5d3f62074cdacbab6e"
+    },
+    {
+      "path": "port/src/recovery_state_dispatch_palette.s",
+      "bytes": 2573,
+      "sha256": "b71fc2b7038b79818163e25e70325531fc8ac135c1c795d57aa8fab32209f429"
+    },
+    {
+      "path": "port/src/recovery_state_dispatch_prefix.s",
+      "bytes": 4602,
+      "sha256": "70c8ed697d2662c89bca7f72378fdeed5c74a94dba512a3e05956438551892c7"
+    },
+    {
+      "path": "port/src/recovery_state_dispatch_scheduler.s",
+      "bytes": 6991,
+      "sha256": "37317cecfbeaeff8d90e5a6fb5ef37ea7dc5d259885b6001e211da850f17a214"
+    },
+    {
+      "path": "port/src/recovery_state_dispatch_startup.s",
+      "bytes": 8156,
+      "sha256": "b5551570a27e86011566d139294697184cd4e1685856164c7bd0d7fba1f9f195"
+    },
+    {
+      "path": "port/src/recovery_title_engine_tables.s",
+      "bytes": 1188,
+      "sha256": "05c8e4e904d4b6a57b878ee071b4330429b0b624cda714c7eb8ea536a2f3e5b3"
+    },
+    {
+      "path": "port/src/recovery_title_fade_entry.s",
+      "bytes": 2300,
+      "sha256": "029fe201ab55eb9f9d1b1ed6f6c3522c1e2eefaf0aa7a8e206b0d44c0c3e7b60"
+    },
+    {
+      "path": "port/src/recovery_title_menu_countdown.s",
+      "bytes": 1730,
+      "sha256": "8b2bfd2fbf48f7b42ebffba207681d73a344f62dc0940d3f576c9fc98d57d15d"
+    },
+    {
+      "path": "port/src/recovery_title_menu_dispatch.s",
+      "bytes": 1798,
+      "sha256": "5c1d9efa3e629d5a67bd28e8dc9008273fe2f746e72237cc2c91f9ae2f17b664"
+    },
+    {
+      "path": "port/src/recovery_title_menu_exit.s",
+      "bytes": 1392,
+      "sha256": "f49de3afa617a935d54955fabce0ec768aba2367c2b2c1ba409f607ec5e9cc21"
+    },
+    {
+      "path": "port/src/recovery_title_yield_entry.s",
+      "bytes": 807,
+      "sha256": "220e6780990985fb5fa2a5d867283d0bcb2e90adfc4077056b0944439174ac82"
+    },
+    {
+      "path": "port/tests/recovery_active_return_harness.py",
+      "bytes": 1339,
+      "sha256": "e23d8bca3f24a01c021a0e13c73327c1d84fc7b1a408cd41b1fad947a24c76d1"
+    },
+    {
+      "path": "port/tests/recovery_chr_nmi_harness.py",
+      "bytes": 1052,
+      "sha256": "b5cef0ab53c476ca658b0cdb7b02e1412c0865136b1fb6d7df66e3c2726309f2"
+    },
+    {
+      "path": "port/tests/recovery_fade_entry_harness.py",
+      "bytes": 3372,
+      "sha256": "bfe6c2d74b3e81e07e3ca6fbb8fad252e42457d0e98fbdefeac821fab6630456"
+    },
+    {
+      "path": "port/tests/recovery_frame_yield_harness.py",
+      "bytes": 245,
+      "sha256": "35ac69a6bbc05cebf485dec732362e3efb5f3d66529f0811a18148d9f3ecd052"
+    },
+    {
+      "path": "port/tests/recovery_general_scheduler_harness.py",
+      "bytes": 3796,
+      "sha256": "aeb6590a64d70959b54b588916e9e6755c1269884fa80bbf83bcb71bd75c53ab"
+    },
+    {
+      "path": "port/tests/recovery_music_envelope_declarative.py",
+      "bytes": 7505,
+      "sha256": "e820aa7d3ed2a072362492737624a2621fb50a84c55c4d9d7b96c62713978be3"
+    },
+    {
+      "path": "port/tests/recovery_queued_video_harness.py",
+      "bytes": 3963,
+      "sha256": "cdddff0ee916bd71bb44f6356b60095e7163606fed531f3a92cd6c02d79e5ac5"
+    },
+    {
+      "path": "port/tests/recovery_state_dispatch_active_harness.py",
+      "bytes": 5148,
+      "sha256": "ec3f9a737273e56bd9e63767f7d3b45ab6e2e69627221623e4ef4821a030e6d7"
+    },
+    {
+      "path": "port/tests/recovery_state_dispatch_active_oracle.py",
+      "bytes": 1440,
+      "sha256": "6c35857b61773a2fc7919f672f5c8e900b3fcbf38de0edefeba5cdd7d8ba4454"
+    },
+    {
+      "path": "port/tests/recovery_state_dispatch_palette_harness.py",
+      "bytes": 4685,
+      "sha256": "c7567831e921f7339399f48e4ea810d4bda75e18e89b2edee909d8a00e50b87f"
+    },
+    {
+      "path": "port/tests/recovery_state_dispatch_palette_oracle.py",
+      "bytes": 587,
+      "sha256": "32e80a21772f5b9561acaa46fab942c3a8055b7aafe9dd0e30ba33896f51772c"
+    },
+    {
+      "path": "port/tests/recovery_state_dispatch_prefix_oracle.py",
+      "bytes": 4921,
+      "sha256": "9a02b7cab5bc2fb94e48f31617b09c1f750139165fc792836178a87a67ff6013"
+    },
+    {
+      "path": "port/tests/recovery_state_dispatch_scheduler_harness.py",
+      "bytes": 1428,
+      "sha256": "fb90e0f3eeb60b28f2b61efc210ac835ee233005bfe311325dfa19a1f9952db9"
+    },
+    {
+      "path": "port/tests/recovery_state_dispatch_scheduler_oracle.py",
+      "bytes": 1995,
+      "sha256": "8a6c748576c6c9314b969ecfb209e5a48d21b9eafef69c6085293c7ff313e399"
+    },
+    {
+      "path": "port/tests/recovery_state_dispatch_startup_contract.py",
+      "bytes": 9864,
+      "sha256": "438dfb2ea1a956bc8dd47fbe545b9db8ed9fc6a8de75446a28b86ff05ffcef34"
+    },
+    {
+      "path": "port/tests/recovery_state_dispatch_startup_harness.py",
+      "bytes": 5876,
+      "sha256": "a0e9e838dd1854f3cbb8dd3fb2eebfb4670d7651e1970966d3cfec8a0bdc8235"
+    },
+    {
+      "path": "port/tests/recovery_state_dispatch_startup_oracle.py",
+      "bytes": 2074,
+      "sha256": "de365bc2bd2352f3df7f96e225b48eef4c02d83c881290097ed7622ada6276f0"
+    },
+    {
+      "path": "port/tests/recovery_state_dispatch_startup_rom.py",
+      "bytes": 6784,
+      "sha256": "63b810d35f2ab431da5680136b3e5b3394678f2acc86f79736e838e98fdd9598"
+    },
+    {
+      "path": "port/tests/recovery_test_active_command01_contract.py",
+      "bytes": 5430,
+      "sha256": "55e80604c7bdc807d3db35540086f2dfcab2c3478328a478fa19afd8b1a61392"
+    },
+    {
+      "path": "port/tests/recovery_test_active_command02_contract.py",
+      "bytes": 5012,
+      "sha256": "cbec96ad845ff7d32df05b10f759a220ed7cffb9dea2150375951b88a2401036"
+    },
+    {
+      "path": "port/tests/recovery_test_active_command03_contract.py",
+      "bytes": 5011,
+      "sha256": "75c80809660f28a2baafc72a6a76ae52e562004d9cdcfdb1c0ef7128642fcfbb"
+    },
+    {
+      "path": "port/tests/recovery_test_active_command0e_contract.py",
+      "bytes": 7702,
+      "sha256": "f43eb5ba758bc0f816c389f0408404b1abd6c24216003b6f42ac9ae4b224e4da"
+    },
+    {
+      "path": "port/tests/recovery_test_active_command0e_rom.py",
+      "bytes": 2827,
+      "sha256": "855218af379d05ea917bbb677b05d79a2e2fae99bc839323d41083896ad438eb"
+    },
+    {
+      "path": "port/tests/recovery_test_active_command0f_contract.py",
+      "bytes": 7689,
+      "sha256": "ff7f7a59a095abf2a7acccffb7199fd9cc3dd1240ecacedadc16bff55020c84b"
+    },
+    {
+      "path": "port/tests/recovery_test_active_command12_contract.py",
+      "bytes": 7657,
+      "sha256": "ed29f4381c0c533b3e1cafade4cdc9e09261dafb47fd758aea1d3eba521f5999"
+    },
+    {
+      "path": "port/tests/recovery_test_active_command13_contract.py",
+      "bytes": 7653,
+      "sha256": "adbb8f7f0fb3fdf2b4981045b0a033be2f96bc2c6e194c9515daac8726daa257"
+    },
+    {
+      "path": "port/tests/recovery_test_active_control_contract.py",
+      "bytes": 7132,
+      "sha256": "b987f11259290a5266e7ea13623e0dbdde01f642fface7f248218d91d05042aa"
+    },
+    {
+      "path": "port/tests/recovery_test_active_control_rom.py",
+      "bytes": 2255,
+      "sha256": "cbb6f56fa32703d8abfa880b9768f740bc1ba1f7ceadb8edb566d7f246d85434"
+    },
+    {
+      "path": "port/tests/recovery_test_active_envelope_rom.py",
+      "bytes": 5849,
+      "sha256": "6610a55ba15ef05e1ffb056c8dd79dd1eeee83c8a430d2af400330338e7dced0"
+    },
+    {
+      "path": "port/tests/recovery_test_active_nmi_runtime_chain.py",
+      "bytes": 38755,
+      "sha256": "67788332d7ea5ba8d038f6e5b8dfc712923550436070409981d25b114d3c949f"
+    },
+    {
+      "path": "port/tests/recovery_test_character_menu_setup.py",
+      "bytes": 5578,
+      "sha256": "3a7a07fecbba0432adb39b20be28c6858aca1d9de73a97774cdca687ea74583e"
+    },
+    {
+      "path": "port/tests/recovery_test_character_selection_dispatch.py",
+      "bytes": 2874,
+      "sha256": "c900ff0942c22e44a77bcb817597edfd0c75d1951bcb23f72fbfdf423b7c6dd3"
+    },
+    {
+      "path": "port/tests/recovery_test_chr_nmi_contract.py",
+      "bytes": 2884,
+      "sha256": "65cae6c4d7ffebef8662bdae57b780c4f642c9512fd3ef3952d91d76d9170c7c"
+    },
+    {
+      "path": "port/tests/recovery_test_chr_nmi_latch.py",
+      "bytes": 2588,
+      "sha256": "7fffda388ffcbb56b5804f3f6c4069c170fc3e290ca5d830b4300ca98e2cce89"
+    },
+    {
+      "path": "port/tests/recovery_test_chr_nmi_rom.py",
+      "bytes": 2586,
+      "sha256": "930ee544bc67120060515a5c04aef52930ca41179046d3524d2eb1a020f893a4"
+    },
+    {
+      "path": "port/tests/recovery_test_gameplay_fade_entry.py",
+      "bytes": 5231,
+      "sha256": "ded19a8b9719cfe411bb6133680773e2b18ab9c68765520894b691f155af293f"
+    },
+    {
+      "path": "port/tests/recovery_test_music_channel_iteration_contract.py",
+      "bytes": 5504,
+      "sha256": "0e6b27854ec0b2f8a218313fbb45a9474bb672a4e556332359f44accec21e6b1"
+    },
+    {
+      "path": "port/tests/recovery_test_music_duration_prepare_contract.py",
+      "bytes": 6310,
+      "sha256": "dae36ebcf16b4832e697a8252b169a861a10d6dd7706bbb62fa5e3e4cee63883"
+    },
+    {
+      "path": "port/tests/recovery_test_music_duration_progress_contract.py",
+      "bytes": 4270,
+      "sha256": "06fc1eacbdaf466343c1424a25ca803d3947b3769b199fd15f6f6990b07d4cce"
+    },
+    {
+      "path": "port/tests/recovery_test_music_indexed_contract.py",
+      "bytes": 11551,
+      "sha256": "7f8cd9a6c2b45d935ae4b9a9055d95fcfe330283f1b3360eb7e51fbe3d1d0943"
+    },
+    {
+      "path": "port/tests/recovery_test_music_indexed_rom.py",
+      "bytes": 3138,
+      "sha256": "cf96f657e3943bc5e354b4d6e7d18b6e5a1c48861cdc73b06308f11d8d598346"
+    },
+    {
+      "path": "port/tests/recovery_test_music_pitched_event_chain.py",
+      "bytes": 33259,
+      "sha256": "6758728c756ab517d25e1a0c268b0a4f8fe118d5121cb8ade19ed51c06246548"
+    },
+    {
+      "path": "port/tests/recovery_test_music_pitched_gate_contract.py",
+      "bytes": 6969,
+      "sha256": "04fea71bfca8dfe08b6ddc68d95a0c18f8b60ff19697937afa9d6c52a5b79e2a"
+    },
+    {
+      "path": "port/tests/recovery_test_music_pitched_gate_rom.py",
+      "bytes": 1960,
+      "sha256": "ee53ec8e8364f2aea02b510b7e2a06ac6d1952434394e7f5ca8df7dc95d3c624"
+    },
+    {
+      "path": "port/tests/recovery_test_music_pitched_note_contract.py",
+      "bytes": 9799,
+      "sha256": "03a53d2268cd01b0561a8a918e3f309888fda34383f239235e33939d32648100"
+    },
+    {
+      "path": "port/tests/recovery_test_music_pitched_note_rom.py",
+      "bytes": 1890,
+      "sha256": "f398e8bb6958f0b8aeeca7a60b089708c6c4ebc0cd383423198a20faa97952cc"
+    },
+    {
+      "path": "port/tests/recovery_test_queued_video_nmi.py",
+      "bytes": 5367,
+      "sha256": "4802b101a25160afdf82c346fee339d311065db2fc3fdc7825cd2d95a2804f8c"
+    },
+    {
+      "path": "port/tests/recovery_test_repeated_active_audio.py",
+      "bytes": 10072,
+      "sha256": "a98a40bd6398ee8e7d891a24612d53eb3922023251f51bb181bb8bcbc538456b"
+    },
+    {
+      "path": "port/tests/recovery_test_repeated_command02_audio.py",
+      "bytes": 11182,
+      "sha256": "ab3ea4633d246ee657fdd51d2e5378d57b1bef6e767546df730d4a36130e0b18"
+    },
+    {
+      "path": "port/tests/recovery_test_reset_video.py",
+      "bytes": 9996,
+      "sha256": "3488777b5dcb01634ac78adc5ff16d1a705f67e25d90ba6fd9bd7180c1af5a8f"
+    },
+    {
+      "path": "port/tests/recovery_test_resident_startup_fade.py",
+      "bytes": 17250,
+      "sha256": "6d4e5d3ead70002da4bc17930d5a7b2863f090850e8d76c64ec207e4c707bfd9"
+    },
+    {
+      "path": "port/tests/recovery_test_resident_startup_resources.py",
+      "bytes": 19873,
+      "sha256": "b42945ff89610130593c46aa2c8ebfa81e0d9f9056f0eee0304568042dbcef0b"
+    },
+    {
+      "path": "port/tests/recovery_test_resident_title_chr_fade.py",
+      "bytes": 21448,
+      "sha256": "7ebcaa4da05e467ddca8640cae4c44df9ef2c5ec96811e31854926b411e700ea"
+    },
+    {
+      "path": "port/tests/recovery_test_startup_bank_select.py",
+      "bytes": 5555,
+      "sha256": "b29ca94eff8ecea4b06d91e2c58e21d9a8b3e06d1fb3beccffedda7b747c5f58"
+    },
+    {
+      "path": "port/tests/recovery_test_startup_fade_continue.py",
+      "bytes": 6467,
+      "sha256": "d4031a203b5630f5244caf6b25ba4cb9c5c800f3906028dc0af085bdb62e6343"
+    },
+    {
+      "path": "port/tests/recovery_test_startup_resource_load.py",
+      "bytes": 8828,
+      "sha256": "b0915c9bc5d092183eb7cad9ba969f479c6734b027056d7b16024846d496e67c"
+    },
+    {
+      "path": "port/tests/recovery_test_startup_title_setup.py",
+      "bytes": 6026,
+      "sha256": "c2985a305bc592f38f7100f1602365c08a25d47f919563f359efec6ef3cf49a8"
+    },
+    {
+      "path": "port/tests/recovery_test_startup_video_clear.py",
+      "bytes": 5967,
+      "sha256": "dca4ff49c8dd8b4f2fa31a6db08d3276d5d3c0e88bf7eeee30de626a5aa1c46f"
+    },
+    {
+      "path": "port/tests/recovery_test_state_dispatch_active_contract.py",
+      "bytes": 7602,
+      "sha256": "5484538ce808352552f8974807bd583bbb674002163fc51a3a4417898c24fc1f"
+    },
+    {
+      "path": "port/tests/recovery_test_state_dispatch_active_rom.py",
+      "bytes": 5551,
+      "sha256": "2d8e0ed5c47588b0cb4c5a24962345d9dfeb20220187e42327d1a3c78accfbb9"
+    },
+    {
+      "path": "port/tests/recovery_test_state_dispatch_palette_contract.py",
+      "bytes": 5538,
+      "sha256": "f8004e348ced59411cf0aa60dd8ee0790bc30522b7ef13f737fe86409bcb7e70"
+    },
+    {
+      "path": "port/tests/recovery_test_state_dispatch_palette_rom.py",
+      "bytes": 4087,
+      "sha256": "2f398574076d32f6a6aefa74367aace65b1e1709d13def560804d2e3138ad131"
+    },
+    {
+      "path": "port/tests/recovery_test_state_dispatch_scheduler_contract.py",
+      "bytes": 8117,
+      "sha256": "35ef8a883a3aa1517af7f422d10793caa44217d03b6c5d6f9899917f8f14b2c7"
+    },
+    {
+      "path": "port/tests/recovery_test_state_dispatch_scheduler_rom.py",
+      "bytes": 6260,
+      "sha256": "032a6b2eac55a60777e1383e639f098e469780da132e66e16b2e1e725bd6c89e"
+    },
+    {
+      "path": "port/tests/recovery_test_title_engine_tables.py",
+      "bytes": 5700,
+      "sha256": "51f2c250843e012fca6fe9c72831c09440fb8fbd465921e95fd30fdfe1530191"
+    },
+    {
+      "path": "port/tests/recovery_test_title_fade_yield.py",
+      "bytes": 3071,
+      "sha256": "434f7e5267611deaf7450fd094bb818cbd4c2e607d3c5b7de01e73ed219888f7"
+    },
+    {
+      "path": "port/tests/recovery_test_title_menu_loop.py",
+      "bytes": 3920,
+      "sha256": "b53a1874f6d415f9c91e0110d12dc67b15c077835a80c7460e50a0eeb0a2d24f"
+    },
+    {
+      "path": "port/tests/test_recovery_active_return_contract.py",
+      "bytes": 2156,
+      "sha256": "1c9e83d053f4daa4ce6f33ee5a7d7d2bfe51cab7bf2592213546c6e49e64c67b"
+    },
+    {
+      "path": "port/tests/test_recovery_frame_yield_contract.py",
+      "bytes": 1721,
+      "sha256": "630e49f8ef10ccef897c0b51d3c9f2a7f97d5c208035df34377183cad04b3262"
+    },
+    {
+      "path": "port/tests/test_recovery_general_scheduler_contract.py",
+      "bytes": 3607,
+      "sha256": "fc108f167c01e243ac44f0d3490394c06c01e64cd3e8d16adcb4b12f2efcec95"
+    },
+    {
+      "path": "port/tests/test_recovery_music07_contract.py",
+      "bytes": 8667,
+      "sha256": "f1ee5c35c9fb71b428780ea533379e5980b891c47b6e565bc6f375035cbb07f9"
+    },
+    {
+      "path": "port/tests/test_recovery_music_tick_fetch_contract.py",
+      "bytes": 8740,
+      "sha256": "eabe7b57fbb5c2ca5f73552a0c296d844a291ef43834bdc7ac3f8b9f6ad8ab20"
+    },
+    {
+      "path": "port/tests/test_recovery_startup_fade_native_contract.py",
+      "bytes": 6982,
+      "sha256": "ae67a26988e333488112b6520124e184255eab39da294593d43639a97c6f2b3d"
+    },
+    {
+      "path": "port/tests/verify_recovery_runtime_probe.py",
+      "bytes": 10692,
+      "sha256": "513fb02b58b96e23b3056b4ec22bc47a49acf51d108c764a00080b70db2bab08"
+    },
+    {
+      "path": "requirements-dev.txt",
+      "bytes": 58,
+      "sha256": "dc9587928310e42976590aac375b4a0716836d5233bb752e3bbcb11691be3b4d"
+    }
+  ],
+  "predecessor_manifest": {
+    "path": "port/analysis/recovery_state_dispatch_startup_manifest.json",
+    "bytes": 21842,
+    "sha256": "9f167ea54fef8786e18558b809980ebe0ea0019568d249a1f11a4b1a40b6905a"
+  },
+  "composite": {
+    "code_bytes": 31628,
+    "code_sha256": "ac4b5d9cdca6da92badce8ca6ffffb1a1bc0077c0d10f77fb98c47a678f6e135"
+  },
+  "coverage": {
+    "continuous_histories": 10,
+    "continuous_helper_boundaries": 65195,
+    "ordered_APU_writes": 16702,
+    "public_successes": 73225,
+    "public_inert_rejections": 90794,
+    "private_checkpoint_rejections": 22364,
+    "private_unsupported_endpoint_rejections": 9,
+    "predecessor_listed_files_unchanged": 114,
+    "long_script_original_cases": 4,
+    "long_script_journal_record_counts": [
+      33300,
+      33339
+    ]
+  },
+  "ABI": {
+    "journal_capacity": 134638,
+    "native_scratch_stack_minimum": 1024,
+    "oversize_diagnostic": {
+      "helper_id": 48,
+      "size_word": 65535,
+      "actual_capacity": 134638
+    }
+  },
+  "boundaries": [
+    "F379 title sound27 queue",
+    "A07B character cursor resource/SFX",
+    "C5F8 post-confirmation/demo/gameplay"
+  ],
+  "limits": [
+    "Host M68EC020 logical runtime only",
+    "No live display, audible audio, keyboard, target-speed or gameplay integration",
+    "No cartridge payloads or captured RAM fixtures",
+    "Frozen predecessors and delivered ADF unchanged"
+  ],
+  "superseded_candidate_manifest_sha256": "169f1d7de3c6f87af6d254babf46f3167aac273bc1fcea0730e7e9ad5350e4c8"
+}

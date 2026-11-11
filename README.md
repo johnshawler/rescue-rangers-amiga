@@ -11,6 +11,18 @@ native game-code translation and Amiga rendering, not a general NES interpreter.
 
 ## Current verified source
 
+The additive [state-driven menu dispatcher](port/analysis/recovery_state_dispatch_menu.md)
+now follows genuine Start input into character selection, consumes the queued
+video work, and handles held/released/repressed Start to confirm the default
+character. Ten uninterrupted original-first host comparisons match 65,195
+native boundaries and 16,702 ordered APU writes. Neutral and ignored-A paths
+each complete all 900 countdowns and the full title music sequence. This is
+host logical-runtime evidence, not live input, target rendering or audible
+sound. Title selection SFX at F379, character cursor/SFX at A07B and gameplay
+after C5F8 remain outside this composition. Its 134,638-byte journal capacity
+and size sentinel are documented; old callers must not use their smaller
+startup journal with this new entry.
+
 The new [state-driven startup display](port/analysis/recovery_state_startup_display.md)
 executes 990 native operations selected from live game state, completes startup
 resource loading and fade-in, then draws the title on an emulated stock PAL A1200.
@@ -62,17 +74,19 @@ alternate-character confirmation and live gameplay are unfinished.
 The [state-driven startup dispatcher](port/analysis/recovery_state_dispatch_startup.md)
 completes resource loading, genuine CHR requests and title fade-in through C5D1.
 Eight original-first histories each match 990 native operations and 35 logical
-NMIs. C5D1 title-engine/menu processing remains outside this dispatcher. Its
+NMIs. C5D1 title-engine/menu processing remains outside this frozen startup
+entry and is supplied by the separate menu dispatcher above. Its
 32,770-byte journal and 1 KiB native scratch stack are caller requirements.
 Helper boundaries differ from the old fixed-schedule probes, so the lower call
 count is not a speedup. Full host correctness and the bounded target evidence
 are reported separately.
 
 Run tools/test_native_title_public.sh, tools/test_scene_sound_public.sh,
-tools/test_runtime_sound_public.sh and tools/test_state_startup_public.sh for
+tools/test_runtime_sound_public.sh, tools/test_state_startup_public.sh and
+tools/test_state_menu_public.sh for
 ROM-free contracts. Their corresponding private extensions are
 validate_native_title.sh, validate_scene_sound.sh, validate_runtime_sound.sh and
-validate_state_startup.sh. The new startup/display extension needs only the
+validate_state_startup.sh and validate_state_menu.sh. The new startup/display extension needs only the
 approved private cartridge and firmware, not old captured fixtures.
 
 An earlier isolated [resident startup diagnostic](port/analysis/recovery_resident_chr_fade_target.md)

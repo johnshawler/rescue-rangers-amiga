@@ -1,0 +1,1253 @@
+{
+  "status": "PASS",
+  "public_menu": {
+    "status": "PASS",
+    "scope": "PUBLIC invented-state host contracts",
+    "successes": 67840,
+    "inert_rejections": 28928,
+    "by_helper": {
+      "43": 256,
+      "44": 65792,
+      "45": 256,
+      "46": 256,
+      "47": 256,
+      "48": 256,
+      "49": 512,
+      "50": 256
+    },
+    "code_bytes": 31628,
+    "code_sha256": "ac4b5d9cdca6da92badce8ca6ffffb1a1bc0077c0d10f77fb98c47a678f6e135"
+  },
+  "public_music": {
+    "status": "PASS",
+    "scope": "PUBLIC invented-state music adapters",
+    "successes": 5381,
+    "inert_rejections": 61834,
+    "by_helper": {
+      "51": 1081,
+      "52": 1025,
+      "53": 1097,
+      "54": 1097,
+      "55": 1081
+    },
+    "code_bytes": 31628,
+    "code_sha256": "ac4b5d9cdca6da92badce8ca6ffffb1a1bc0077c0d10f77fb98c47a678f6e135"
+  },
+  "public_long_scripts": {
+    "status": "PASS",
+    "scope": "PUBLIC invented finite long scripts",
+    "code_bytes": 31628,
+    "code_sha256": "ac4b5d9cdca6da92badce8ca6ffffb1a1bc0077c0d10f77fb98c47a678f6e135",
+    "cases": [
+      {
+        "case": 0,
+        "records": 33300,
+        "expected_runtime": "1e03070200000030ffffd501",
+        "inert_rejections": 8
+      },
+      {
+        "case": 1,
+        "records": 33339,
+        "expected_runtime": "1e03070200000030ffffd501",
+        "inert_rejections": 8
+      },
+      {
+        "case": 2,
+        "records": 33300,
+        "expected_runtime": "1e03070200000030ffffd501",
+        "inert_rejections": 8
+      },
+      {
+        "case": 3,
+        "records": 33339,
+        "expected_runtime": "1e03070200000030ffffd501",
+        "inert_rejections": 8
+      }
+    ]
+  },
+  "private_long_scripts": {
+    "status": "PASS",
+    "scope": "PRIVATE original-first finite long scripts",
+    "code_bytes": 31628,
+    "code_sha256": "ac4b5d9cdca6da92badce8ca6ffffb1a1bc0077c0d10f77fb98c47a678f6e135",
+    "cases": [
+      {
+        "case": 0,
+        "records": 33300,
+        "original_instructions": 166518,
+        "context": "c0bf00100026f6a7",
+        "runtime": "1e03070200000030ffffd501"
+      },
+      {
+        "case": 1,
+        "records": 33339,
+        "original_instructions": 166690,
+        "context": "c0bf00100026f6a7",
+        "runtime": "1e03070200000030ffffd501"
+      },
+      {
+        "case": 2,
+        "records": 33300,
+        "original_instructions": 166518,
+        "context": "c0bf7a10006ff9a7",
+        "runtime": "1e03070200000030ffffd501"
+      },
+      {
+        "case": 3,
+        "records": 33339,
+        "original_instructions": 166690,
+        "context": "c0bf7310006ff8a7",
+        "runtime": "1e03070200000030ffffd501"
+      }
+    ]
+  },
+  "private": {
+    "status": "PASS",
+    "scope": "PRIVATE original-ROM, host M68EC020",
+    "code_bytes": 31628,
+    "code_sha256": "ac4b5d9cdca6da92badce8ca6ffffb1a1bc0077c0d10f77fb98c47a678f6e135",
+    "cases": [
+      {
+        "history": "confirm",
+        "countdown_visits": 2,
+        "music_checkpoint": null,
+        "startup_checkpoint": {
+          "calls": 990,
+          "nmis": 35,
+          "context": "c5d1f0f0ffa5bfa7"
+        },
+        "selection_checkpoint": {
+          "calls": 1091,
+          "nmis": 38,
+          "context": "a06cffffffa4bda7",
+          "pending_video": 0
+        },
+        "pads": [
+          16,
+          0
+        ],
+        "resume_pads": [
+          16,
+          0
+        ],
+        "delayed_polls": 2,
+        "waits": 129,
+        "advanced_calls": 1229,
+        "logical_NMIs": 43,
+        "original_instructions": 91651,
+        "APU_writes": 322,
+        "inert_rejections": 487,
+        "final_context": "c5f8f800ff27bfa7",
+        "helper_completions": {
+          "1": 1,
+          "2": 1,
+          "3": 1,
+          "4": 1,
+          "5": 1,
+          "6": 14,
+          "7": 2,
+          "0": 1,
+          "8": 1,
+          "9": 1,
+          "10": 1,
+          "11": 4,
+          "12": 1,
+          "13": 1,
+          "15": 19,
+          "14": 37,
+          "16": 4,
+          "25": 249,
+          "17": 13,
+          "18": 13,
+          "20": 17,
+          "31": 34,
+          "32": 33,
+          "23": 15,
+          "24": 16,
+          "26": 204,
+          "27": 204,
+          "28": 204,
+          "29": 2,
+          "33": 26,
+          "34": 1,
+          "35": 1,
+          "36": 1,
+          "37": 1,
+          "38": 1,
+          "40": 24,
+          "41": 25,
+          "42": 25,
+          "39": 1,
+          "43": 1,
+          "45": 3,
+          "50": 8,
+          "44": 2,
+          "47": 1,
+          "48": 1,
+          "49": 11,
+          "46": 1
+        },
+        "final_mapper": [
+          30,
+          31,
+          31,
+          2
+        ],
+        "unsupported_boundary": "0xc5f8",
+        "input_sample_runs": [
+          {
+            "pads": [
+              0,
+              0
+            ],
+            "samples": 36
+          },
+          {
+            "pads": [
+              16,
+              0
+            ],
+            "samples": 4
+          },
+          {
+            "pads": [
+              0,
+              0
+            ],
+            "samples": 2
+          },
+          {
+            "pads": [
+              16,
+              0
+            ],
+            "samples": 1
+          }
+        ],
+        "boundary_trace_entries": 219,
+        "boundary_trace_sha256": "8f26420859ccbf6f8e34969051ae30455c729eba74911aadce1ee6ae32750832",
+        "input_samples_sha256": "a3e2f3c1eac667562cb27f0e4625f1838019723ef56a737a24537c8b9fa95292"
+      },
+      {
+        "history": "char_right",
+        "countdown_visits": 2,
+        "music_checkpoint": null,
+        "startup_checkpoint": {
+          "calls": 990,
+          "nmis": 35,
+          "context": "c5d1f0f0ffa5bfa7"
+        },
+        "selection_checkpoint": {
+          "calls": 1091,
+          "nmis": 38,
+          "context": "a06cffffffa4bda7",
+          "pending_video": 0
+        },
+        "pads": [
+          1,
+          0
+        ],
+        "resume_pads": [
+          1,
+          0
+        ],
+        "delayed_polls": 2,
+        "waits": 129,
+        "advanced_calls": 1228,
+        "logical_NMIs": 43,
+        "original_instructions": 91266,
+        "APU_writes": 322,
+        "inert_rejections": 487,
+        "final_context": "a07b01ff0124bda7",
+        "helper_completions": {
+          "1": 1,
+          "2": 1,
+          "3": 1,
+          "4": 1,
+          "5": 1,
+          "6": 14,
+          "7": 2,
+          "0": 1,
+          "8": 1,
+          "9": 1,
+          "10": 1,
+          "11": 4,
+          "12": 1,
+          "13": 1,
+          "15": 19,
+          "14": 37,
+          "16": 4,
+          "25": 249,
+          "17": 13,
+          "18": 13,
+          "20": 17,
+          "31": 34,
+          "32": 33,
+          "23": 15,
+          "24": 16,
+          "26": 204,
+          "27": 204,
+          "28": 204,
+          "29": 2,
+          "33": 26,
+          "34": 1,
+          "35": 1,
+          "36": 1,
+          "37": 1,
+          "38": 1,
+          "40": 24,
+          "41": 25,
+          "42": 25,
+          "39": 1,
+          "43": 1,
+          "45": 3,
+          "50": 8,
+          "44": 2,
+          "47": 1,
+          "48": 1,
+          "49": 11
+        },
+        "final_mapper": [
+          30,
+          31,
+          31,
+          2
+        ],
+        "unsupported_boundary": "0xa07b",
+        "input_sample_runs": [
+          {
+            "pads": [
+              0,
+              0
+            ],
+            "samples": 36
+          },
+          {
+            "pads": [
+              16,
+              0
+            ],
+            "samples": 4
+          },
+          {
+            "pads": [
+              0,
+              0
+            ],
+            "samples": 2
+          },
+          {
+            "pads": [
+              1,
+              0
+            ],
+            "samples": 1
+          }
+        ],
+        "boundary_trace_entries": 218,
+        "boundary_trace_sha256": "637889eb0e361e9928cd1bab9348cf339aeb0ec171e4e97e57db8dd189670e9c",
+        "input_samples_sha256": "b682003721e9f8fde6f4be5b1418eee6e013e70f2f516e21c59f59cae948c207"
+      },
+      {
+        "history": "char_left",
+        "countdown_visits": 2,
+        "music_checkpoint": null,
+        "startup_checkpoint": {
+          "calls": 990,
+          "nmis": 35,
+          "context": "c5d1f0f0ffa5bfa7"
+        },
+        "selection_checkpoint": {
+          "calls": 1091,
+          "nmis": 38,
+          "context": "a06cffffffa4bda7",
+          "pending_video": 0
+        },
+        "pads": [
+          2,
+          0
+        ],
+        "resume_pads": [
+          2,
+          0
+        ],
+        "delayed_polls": 2,
+        "waits": 129,
+        "advanced_calls": 1228,
+        "logical_NMIs": 43,
+        "original_instructions": 91266,
+        "APU_writes": 322,
+        "inert_rejections": 487,
+        "final_context": "a07b00ff0026bda7",
+        "helper_completions": {
+          "1": 1,
+          "2": 1,
+          "3": 1,
+          "4": 1,
+          "5": 1,
+          "6": 14,
+          "7": 2,
+          "0": 1,
+          "8": 1,
+          "9": 1,
+          "10": 1,
+          "11": 4,
+          "12": 1,
+          "13": 1,
+          "15": 19,
+          "14": 37,
+          "16": 4,
+          "25": 249,
+          "17": 13,
+          "18": 13,
+          "20": 17,
+          "31": 34,
+          "32": 33,
+          "23": 15,
+          "24": 16,
+          "26": 204,
+          "27": 204,
+          "28": 204,
+          "29": 2,
+          "33": 26,
+          "34": 1,
+          "35": 1,
+          "36": 1,
+          "37": 1,
+          "38": 1,
+          "40": 24,
+          "41": 25,
+          "42": 25,
+          "39": 1,
+          "43": 1,
+          "45": 3,
+          "50": 8,
+          "44": 2,
+          "47": 1,
+          "48": 1,
+          "49": 11
+        },
+        "final_mapper": [
+          30,
+          31,
+          31,
+          2
+        ],
+        "unsupported_boundary": "0xa07b",
+        "input_sample_runs": [
+          {
+            "pads": [
+              0,
+              0
+            ],
+            "samples": 36
+          },
+          {
+            "pads": [
+              16,
+              0
+            ],
+            "samples": 4
+          },
+          {
+            "pads": [
+              0,
+              0
+            ],
+            "samples": 2
+          },
+          {
+            "pads": [
+              2,
+              0
+            ],
+            "samples": 1
+          }
+        ],
+        "boundary_trace_entries": 218,
+        "boundary_trace_sha256": "432e24887330c9183cd97db866cbd8656c0a92d4fed59cc8376269f609aa4182",
+        "input_samples_sha256": "44bff98dc2e23b09554c3290ef2211e27a6dc3415fccf4d8b19b98ad4f1137e7"
+      },
+      {
+        "history": "char_idle",
+        "countdown_visits": 2,
+        "music_checkpoint": null,
+        "startup_checkpoint": {
+          "calls": 990,
+          "nmis": 35,
+          "context": "c5d1f0f0ffa5bfa7"
+        },
+        "selection_checkpoint": {
+          "calls": 1091,
+          "nmis": 38,
+          "context": "a06cffffffa4bda7",
+          "pending_video": 0
+        },
+        "pads": [
+          0,
+          0
+        ],
+        "resume_pads": [
+          0,
+          0
+        ],
+        "delayed_polls": 2,
+        "waits": 129,
+        "advanced_calls": 1227,
+        "logical_NMIs": 43,
+        "original_instructions": 91258,
+        "APU_writes": 322,
+        "inert_rejections": 487,
+        "final_context": "a06cffffffa4bda7",
+        "helper_completions": {
+          "1": 1,
+          "2": 1,
+          "3": 1,
+          "4": 1,
+          "5": 1,
+          "6": 14,
+          "7": 2,
+          "0": 1,
+          "8": 1,
+          "9": 1,
+          "10": 1,
+          "11": 4,
+          "12": 1,
+          "13": 1,
+          "15": 19,
+          "14": 37,
+          "16": 4,
+          "25": 249,
+          "17": 13,
+          "18": 13,
+          "20": 17,
+          "31": 34,
+          "32": 33,
+          "23": 15,
+          "24": 16,
+          "26": 204,
+          "27": 204,
+          "28": 204,
+          "29": 2,
+          "33": 26,
+          "34": 1,
+          "35": 1,
+          "36": 1,
+          "37": 1,
+          "38": 1,
+          "40": 24,
+          "41": 25,
+          "42": 25,
+          "39": 1,
+          "43": 1,
+          "45": 3,
+          "50": 8,
+          "44": 2,
+          "47": 1,
+          "48": 1,
+          "49": 10
+        },
+        "final_mapper": [
+          30,
+          31,
+          31,
+          2
+        ],
+        "unsupported_boundary": "0xa06c",
+        "input_sample_runs": [
+          {
+            "pads": [
+              0,
+              0
+            ],
+            "samples": 36
+          },
+          {
+            "pads": [
+              16,
+              0
+            ],
+            "samples": 4
+          },
+          {
+            "pads": [
+              0,
+              0
+            ],
+            "samples": 3
+          }
+        ],
+        "boundary_trace_entries": 217,
+        "boundary_trace_sha256": "83be3fcd937ea6baac53217210ca6046234308bef5d6edaa44e12393c78c81c9",
+        "input_samples_sha256": "472885cd34d764b0a4cf454c588eb96f4bc013bfb0b8baf11c854354eff3b833"
+      },
+      {
+        "history": "held_release",
+        "countdown_visits": 4,
+        "music_checkpoint": null,
+        "startup_checkpoint": {
+          "calls": 990,
+          "nmis": 35,
+          "context": "c5d1f0f0ffa5bfa7"
+        },
+        "selection_checkpoint": {
+          "calls": 1155,
+          "nmis": 40,
+          "context": "a06cffffffa4bda7",
+          "pending_video": 0
+        },
+        "pads": [
+          16,
+          0
+        ],
+        "resume_pads": [
+          16,
+          0
+        ],
+        "delayed_polls": 2,
+        "waits": 135,
+        "advanced_calls": 1311,
+        "logical_NMIs": 45,
+        "original_instructions": 96086,
+        "APU_writes": 344,
+        "inert_rejections": 517,
+        "final_context": "c5f8f800ff27bfa7",
+        "helper_completions": {
+          "1": 1,
+          "2": 1,
+          "3": 1,
+          "4": 1,
+          "5": 1,
+          "6": 14,
+          "7": 2,
+          "0": 1,
+          "8": 1,
+          "9": 1,
+          "10": 1,
+          "11": 4,
+          "12": 1,
+          "13": 1,
+          "15": 19,
+          "14": 44,
+          "16": 4,
+          "25": 263,
+          "17": 17,
+          "18": 17,
+          "20": 17,
+          "31": 34,
+          "32": 33,
+          "23": 15,
+          "24": 16,
+          "26": 216,
+          "27": 216,
+          "28": 216,
+          "29": 2,
+          "33": 28,
+          "34": 1,
+          "35": 1,
+          "36": 1,
+          "37": 1,
+          "38": 1,
+          "40": 26,
+          "41": 27,
+          "42": 27,
+          "39": 1,
+          "43": 1,
+          "45": 5,
+          "50": 10,
+          "44": 4,
+          "47": 1,
+          "48": 1,
+          "49": 11,
+          "30": 3,
+          "46": 1
+        },
+        "final_mapper": [
+          30,
+          31,
+          31,
+          2
+        ],
+        "unsupported_boundary": "0xc5f8",
+        "input_sample_runs": [
+          {
+            "pads": [
+              16,
+              0
+            ],
+            "samples": 36
+          },
+          {
+            "pads": [
+              0,
+              0
+            ],
+            "samples": 2
+          },
+          {
+            "pads": [
+              16,
+              0
+            ],
+            "samples": 4
+          },
+          {
+            "pads": [
+              0,
+              0
+            ],
+            "samples": 2
+          },
+          {
+            "pads": [
+              16,
+              0
+            ],
+            "samples": 1
+          }
+        ],
+        "boundary_trace_entries": 236,
+        "boundary_trace_sha256": "ee1328941645f8c840b984b52ffb17096e3a80b928628a2799669d11701aafe7",
+        "input_samples_sha256": "fe6e1c6babb218b7db1df8d8e78a61e6c0a979eec2d97805792121567ec05b8f"
+      },
+      {
+        "history": "neutral",
+        "countdown_visits": 900,
+        "music_checkpoint": {
+          "calls": 2241,
+          "nmis": 78,
+          "context": "83a00e2a00a4aca7",
+          "timer": 858
+        },
+        "startup_checkpoint": {
+          "calls": 990,
+          "nmis": 35,
+          "context": "c5d1f0f0ffa5bfa7"
+        },
+        "selection_checkpoint": null,
+        "pads": [
+          0,
+          0
+        ],
+        "resume_pads": [
+          0,
+          0
+        ],
+        "delayed_polls": 2,
+        "waits": 2805,
+        "advanced_calls": 27884,
+        "logical_NMIs": 935,
+        "original_instructions": 1355698,
+        "APU_writes": 7136,
+        "inert_rejections": 9294,
+        "final_context": "c5f8f800ff27bfa7",
+        "helper_completions": {
+          "1": 1,
+          "2": 1,
+          "3": 1,
+          "4": 1,
+          "5": 1,
+          "6": 14,
+          "7": 2,
+          "0": 1,
+          "8": 1,
+          "9": 1,
+          "10": 1,
+          "11": 4,
+          "12": 1,
+          "13": 1,
+          "15": 191,
+          "14": 728,
+          "16": 59,
+          "25": 5601,
+          "17": 311,
+          "18": 311,
+          "20": 17,
+          "31": 34,
+          "32": 33,
+          "23": 15,
+          "24": 16,
+          "26": 4664,
+          "27": 4664,
+          "28": 4664,
+          "29": 13,
+          "33": 918,
+          "34": 1,
+          "35": 1,
+          "36": 1,
+          "37": 1,
+          "38": 1,
+          "40": 917,
+          "41": 917,
+          "42": 917,
+          "39": 1,
+          "43": 1,
+          "45": 900,
+          "50": 900,
+          "44": 900,
+          "30": 10,
+          "51": 121,
+          "52": 17,
+          "53": 4,
+          "54": 2,
+          "55": 1,
+          "46": 1
+        },
+        "final_mapper": [
+          30,
+          31,
+          31,
+          2
+        ],
+        "unsupported_boundary": "0xc5f8",
+        "input_sample_runs": [
+          {
+            "pads": [
+              0,
+              0
+            ],
+            "samples": 935
+          }
+        ],
+        "boundary_trace_entries": 6628,
+        "boundary_trace_sha256": "09cdec8d8df31502074c8ac8d28b4515077c8dbcc736de2a9af14fdd157e0b55",
+        "input_samples_sha256": "9736a95d55bd040355564975737efce9a4213af817664c7ae3daca1c867de33c"
+      },
+      {
+        "history": "right",
+        "countdown_visits": 2,
+        "music_checkpoint": null,
+        "startup_checkpoint": {
+          "calls": 990,
+          "nmis": 35,
+          "context": "c5d1f0f0ffa5bfa7"
+        },
+        "selection_checkpoint": null,
+        "pads": [
+          1,
+          0
+        ],
+        "resume_pads": [
+          1,
+          0
+        ],
+        "delayed_polls": 2,
+        "waits": 111,
+        "advanced_calls": 1068,
+        "logical_NMIs": 37,
+        "original_instructions": 81447,
+        "APU_writes": 266,
+        "inert_rejections": 437,
+        "final_context": "f3792788ff25bba7",
+        "helper_completions": {
+          "1": 1,
+          "2": 1,
+          "3": 1,
+          "4": 1,
+          "5": 1,
+          "6": 14,
+          "7": 2,
+          "0": 1,
+          "8": 1,
+          "9": 1,
+          "10": 1,
+          "11": 4,
+          "12": 1,
+          "13": 1,
+          "15": 19,
+          "14": 37,
+          "16": 4,
+          "25": 215,
+          "17": 13,
+          "18": 13,
+          "20": 17,
+          "31": 34,
+          "32": 33,
+          "23": 15,
+          "24": 16,
+          "26": 176,
+          "27": 176,
+          "28": 176,
+          "29": 2,
+          "33": 20,
+          "34": 1,
+          "35": 1,
+          "36": 1,
+          "37": 1,
+          "38": 1,
+          "40": 19,
+          "41": 19,
+          "42": 19,
+          "39": 1,
+          "43": 1,
+          "45": 3,
+          "50": 2,
+          "44": 2
+        },
+        "final_mapper": [
+          30,
+          31,
+          31,
+          2
+        ],
+        "unsupported_boundary": "0xf379",
+        "input_sample_runs": [
+          {
+            "pads": [
+              0,
+              0
+            ],
+            "samples": 36
+          },
+          {
+            "pads": [
+              1,
+              0
+            ],
+            "samples": 1
+          }
+        ],
+        "boundary_trace_entries": 176,
+        "boundary_trace_sha256": "41f3c8f84755963f3a44753f8fe319bb8d2397d07d4cf4e77a135f57ea6785c0",
+        "input_samples_sha256": "9237f7c36636ff363ec14cf341c36437c01884a55a1d4f4150399a24513204d9"
+      },
+      {
+        "history": "left",
+        "countdown_visits": 2,
+        "music_checkpoint": null,
+        "startup_checkpoint": {
+          "calls": 990,
+          "nmis": 35,
+          "context": "c5d1f0f0ffa5bfa7"
+        },
+        "selection_checkpoint": null,
+        "pads": [
+          2,
+          0
+        ],
+        "resume_pads": [
+          2,
+          0
+        ],
+        "delayed_polls": 2,
+        "waits": 111,
+        "advanced_calls": 1068,
+        "logical_NMIs": 37,
+        "original_instructions": 81446,
+        "APU_writes": 266,
+        "inert_rejections": 437,
+        "final_context": "f3792728ff25bba7",
+        "helper_completions": {
+          "1": 1,
+          "2": 1,
+          "3": 1,
+          "4": 1,
+          "5": 1,
+          "6": 14,
+          "7": 2,
+          "0": 1,
+          "8": 1,
+          "9": 1,
+          "10": 1,
+          "11": 4,
+          "12": 1,
+          "13": 1,
+          "15": 19,
+          "14": 37,
+          "16": 4,
+          "25": 215,
+          "17": 13,
+          "18": 13,
+          "20": 17,
+          "31": 34,
+          "32": 33,
+          "23": 15,
+          "24": 16,
+          "26": 176,
+          "27": 176,
+          "28": 176,
+          "29": 2,
+          "33": 20,
+          "34": 1,
+          "35": 1,
+          "36": 1,
+          "37": 1,
+          "38": 1,
+          "40": 19,
+          "41": 19,
+          "42": 19,
+          "39": 1,
+          "43": 1,
+          "45": 3,
+          "50": 2,
+          "44": 2
+        },
+        "final_mapper": [
+          30,
+          31,
+          31,
+          2
+        ],
+        "unsupported_boundary": "0xf379",
+        "input_sample_runs": [
+          {
+            "pads": [
+              0,
+              0
+            ],
+            "samples": 36
+          },
+          {
+            "pads": [
+              2,
+              0
+            ],
+            "samples": 1
+          }
+        ],
+        "boundary_trace_entries": 176,
+        "boundary_trace_sha256": "cccc8a9194f66319cdb954ea1e7a2793413cc8aa6565981abce4373c7918844f",
+        "input_samples_sha256": "667907f81e81f49d46ad163a0f2520c73e325c5e6969cba0641a7258b702646c"
+      },
+      {
+        "history": "select",
+        "countdown_visits": 2,
+        "music_checkpoint": null,
+        "startup_checkpoint": {
+          "calls": 990,
+          "nmis": 35,
+          "context": "c5d1f0f0ffa5bfa7"
+        },
+        "selection_checkpoint": null,
+        "pads": [
+          32,
+          0
+        ],
+        "resume_pads": [
+          32,
+          0
+        ],
+        "delayed_polls": 2,
+        "waits": 111,
+        "advanced_calls": 1068,
+        "logical_NMIs": 37,
+        "original_instructions": 81442,
+        "APU_writes": 266,
+        "inert_rejections": 437,
+        "final_context": "f3792788ff25bba7",
+        "helper_completions": {
+          "1": 1,
+          "2": 1,
+          "3": 1,
+          "4": 1,
+          "5": 1,
+          "6": 14,
+          "7": 2,
+          "0": 1,
+          "8": 1,
+          "9": 1,
+          "10": 1,
+          "11": 4,
+          "12": 1,
+          "13": 1,
+          "15": 19,
+          "14": 37,
+          "16": 4,
+          "25": 215,
+          "17": 13,
+          "18": 13,
+          "20": 17,
+          "31": 34,
+          "32": 33,
+          "23": 15,
+          "24": 16,
+          "26": 176,
+          "27": 176,
+          "28": 176,
+          "29": 2,
+          "33": 20,
+          "34": 1,
+          "35": 1,
+          "36": 1,
+          "37": 1,
+          "38": 1,
+          "40": 19,
+          "41": 19,
+          "42": 19,
+          "39": 1,
+          "43": 1,
+          "45": 3,
+          "50": 2,
+          "44": 2
+        },
+        "final_mapper": [
+          30,
+          31,
+          31,
+          2
+        ],
+        "unsupported_boundary": "0xf379",
+        "input_sample_runs": [
+          {
+            "pads": [
+              0,
+              0
+            ],
+            "samples": 36
+          },
+          {
+            "pads": [
+              32,
+              0
+            ],
+            "samples": 1
+          }
+        ],
+        "boundary_trace_entries": 176,
+        "boundary_trace_sha256": "164e54e236cd2bf0b965c0247cfb2bf55d94392fcf5a0103752cab2fb65e596f",
+        "input_samples_sha256": "fe2e0083f8188120228699a6da61daad4e9b87379e1671107ceabb717285b1ca"
+      },
+      {
+        "history": "ignored",
+        "countdown_visits": 900,
+        "music_checkpoint": {
+          "calls": 2241,
+          "nmis": 78,
+          "context": "83a00e2a00a4aca7",
+          "timer": 858
+        },
+        "startup_checkpoint": {
+          "calls": 990,
+          "nmis": 35,
+          "context": "c5d1f0f0ffa5bfa7"
+        },
+        "selection_checkpoint": null,
+        "pads": [
+          128,
+          0
+        ],
+        "resume_pads": [
+          128,
+          0
+        ],
+        "delayed_polls": 2,
+        "waits": 2805,
+        "advanced_calls": 27884,
+        "logical_NMIs": 935,
+        "original_instructions": 1355698,
+        "APU_writes": 7136,
+        "inert_rejections": 9294,
+        "final_context": "c5f8f800ff27bfa7",
+        "helper_completions": {
+          "1": 1,
+          "2": 1,
+          "3": 1,
+          "4": 1,
+          "5": 1,
+          "6": 14,
+          "7": 2,
+          "0": 1,
+          "8": 1,
+          "9": 1,
+          "10": 1,
+          "11": 4,
+          "12": 1,
+          "13": 1,
+          "15": 191,
+          "14": 728,
+          "16": 59,
+          "25": 5601,
+          "17": 311,
+          "18": 311,
+          "20": 17,
+          "31": 34,
+          "32": 33,
+          "23": 15,
+          "24": 16,
+          "26": 4664,
+          "27": 4664,
+          "28": 4664,
+          "29": 13,
+          "33": 918,
+          "34": 1,
+          "35": 1,
+          "36": 1,
+          "37": 1,
+          "38": 1,
+          "40": 917,
+          "41": 917,
+          "42": 917,
+          "39": 1,
+          "43": 1,
+          "45": 900,
+          "50": 900,
+          "44": 900,
+          "30": 10,
+          "51": 121,
+          "52": 17,
+          "53": 4,
+          "54": 2,
+          "55": 1,
+          "46": 1
+        },
+        "final_mapper": [
+          30,
+          31,
+          31,
+          2
+        ],
+        "unsupported_boundary": "0xc5f8",
+        "input_sample_runs": [
+          {
+            "pads": [
+              0,
+              0
+            ],
+            "samples": 36
+          },
+          {
+            "pads": [
+              128,
+              0
+            ],
+            "samples": 899
+          }
+        ],
+        "boundary_trace_entries": 6628,
+        "boundary_trace_sha256": "09cdec8d8df31502074c8ac8d28b4515077c8dbcc736de2a9af14fdd157e0b55",
+        "input_samples_sha256": "61d72a87f67b78f95e40dae7f8859430cfe1c72c1ff03bde8510deeabdd194bb"
+      }
+    ]
+  },
+  "frozen_startup_regression": {
+    "status": "PASS",
+    "scope": "PUBLIC invented states, no ROM/private imports",
+    "successes": 12801,
+    "inert_rejections": 55779,
+    "successes_by_id": {
+      "29": 256,
+      "30": 256,
+      "31": 512,
+      "32": 4864,
+      "33": 2560,
+      "34": 256,
+      "35": 256,
+      "36": 257,
+      "37": 256,
+      "38": 256,
+      "39": 256,
+      "40": 256,
+      "41": 256,
+      "42": 256,
+      "23": 2048
+    },
+    "code_bytes": 23586,
+    "code_sha256": "a071d72a986a812fb09d4cc3a38a03fad693a7ff9d2ba7fdeb69c471de0c1f19"
+  },
+  "superseded_candidate": {
+    "manifest_sha256": "169f1d7de3c6f87af6d254babf46f3167aac273bc1fcea0730e7e9ad5350e4c8",
+    "preserved_files_verified": 9,
+    "old_binary_regression_cases": 4,
+    "old_binary_incorrect_runtime": "1e1f1f0200000030ffffd501"
+  }
+}
