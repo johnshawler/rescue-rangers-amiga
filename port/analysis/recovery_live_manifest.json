@@ -1,0 +1,49 @@
+{
+  "scope": "Bounded real-keyboard title/menu and reviewed scene preparation to FF53; no gameplay-completion claim. Generic source only.",
+  "public_allowlist": [
+    "port/analysis/recovery_live_target.md",
+    "port/src/recovery_live_bridge.s",
+    "port/src/recovery_live_dispatch.s",
+    "port/src/recovery_live_paula_adapter.c",
+    "port/src/recovery_live_scanout.s",
+    "port/tests/recovery_live_dispatch_test.py",
+    "port/tests/recovery_live_oracle.py",
+    "port/tests/recovery_live_public_contract.py",
+    "port/tests/recovery_live_rejection_test.py",
+    "port/tests/recovery_live_ring_test.py",
+    "port/tests/recovery_live_scene_pixels.py",
+    "port/tests/recovery_live_verify.py",
+    "port/tools/recovery_live_build.py",
+    "port/tools/recovery_live_package.py",
+    "port/tools/recovery_live_public.sh",
+    "port/tools/recovery_live_run.sh",
+    "port/tools/recovery_live_source.py",
+    "port/analysis/recovery_live_manifest.json"
+  ],
+  "source_hashes": {
+    "port/analysis/recovery_live_target.md": "3497ac46b9aeea3a8116dc166236035e3c4890b4c33e7a6f5cd5ce2e8598975f",
+    "port/src/recovery_live_bridge.s": "eef2b3df47f0709fb53af1a8d3d4574d5bc792b88e9a36a2dba1efc2c9765999",
+    "port/src/recovery_live_dispatch.s": "d8b0354501a4ece06d817e1ce6c589143c4fab05cb89b3cbcedb952f31e0cf65",
+    "port/src/recovery_live_paula_adapter.c": "de9b976fe817934b8dfabc849d170753923471c04c1a67ed2849f239dd026651",
+    "port/src/recovery_live_scanout.s": "afa39e4e2d8263e640e7f0834edb87e2c00bf022d40fab6141b3239bba4cdbe8",
+    "port/tests/recovery_live_dispatch_test.py": "ce6ca0edbf166a2e7cb646b62b1990bb48b5649c078c9c63f5bc97edd8c8b9ae",
+    "port/tests/recovery_live_oracle.py": "ff2ad14f3a2a7d9c01c71b84a4cab90796233a8d971e62a1dd3f50d92f81e5eb",
+    "port/tests/recovery_live_public_contract.py": "bb44040edc06349ddac9a58b1a218fbb67248cc2f8d0b6790f71caef02b2472a",
+    "port/tests/recovery_live_rejection_test.py": "4c28d649a9414317249c72fee0e1a7f95c0a601f88cbb4745b7ed4223f4bfed5",
+    "port/tests/recovery_live_ring_test.py": "0ba1b6f4dcd23499560c691156c3b3af8aae06b0ac4f473d8f45c6c1b46e1536",
+    "port/tests/recovery_live_scene_pixels.py": "e21eb69b294810c9a932b9e2a8c3f5ed1b891c2fba4f8a12beaf711550a33e53",
+    "port/tests/recovery_live_verify.py": "95eb03703eadc3cd4b809b0476555fb772e2049c9fed336dbad2b311980cb1da",
+    "port/tools/recovery_live_build.py": "bc581a5c9a2f29e2c5f9eee0e587f4110dec5ed5cccd24365f6b1d2a1aeb5cf1",
+    "port/tools/recovery_live_package.py": "36f08429290bbdf96ed6cb91f0cdcfa8a277d7887f35319cf232de2bdc3db830",
+    "port/tools/recovery_live_public.sh": "cbeac9ad5b759f187a376ca370ee8b378d44ff89c1ae97929e6d33f5cdcd7e5d",
+    "port/tools/recovery_live_run.sh": "98544e86a856187afb080020b4fdd65ec4360c65b3b6d33af9c96e1349bf457b",
+    "port/tools/recovery_live_source.py": "a948a1e223a1b1d6d7b9cb3e4452345fbed87dbe9c97cc251017fabdef3a7bbb"
+  },
+  "runtime_dependencies": [
+    "port/src/recovery_redraw_invalidate.s",
+    "port/src/recovery_zx_keyboard.s",
+    "port/analysis/recovery_scene_continue_manifest.json"
+  ],
+  "runtime_reference": "v12 scene target, byte-identical v13 provenance rebuild; fresh final phase and long captures are separate.",
+  "performance_limit": "Final dirty/full scene captures differ in actual controller sampling and are not a matched speed comparison."
+}

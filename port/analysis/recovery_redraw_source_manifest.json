@@ -1,0 +1,53 @@
+{
+  "format": 1,
+  "source_only": true,
+  "files": [
+    {
+      "path": "port/src/recovery_redraw_invalidate.s",
+      "bytes": 1795,
+      "sha256": "d2b724f908c9bc5380aa4a2918c3a0495b3994a0ecb67a541c1e8505df4da363"
+    },
+    {
+      "path": "port/tests/recovery_redraw_public_test.py",
+      "bytes": 6592,
+      "sha256": "a54fadfb0e83e3cdf3504c9e5dc20971875e0e2536ea632c8362dab49bba10a2"
+    },
+    {
+      "path": "port/analysis/recovery_redraw_contract.md",
+      "bytes": 4630,
+      "sha256": "d1753082f79a7f9f13ace6e0f05b4575a4b1e96a35bba1cd552c04318dc44109"
+    },
+    {
+      "path": "port/analysis/recovery_redraw_restore.md",
+      "bytes": 2069,
+      "sha256": "f7342fad47d4515ed16f2deda61a9a7faa2070194bb337900dc908e6fd2e0d89"
+    }
+  ],
+  "manifest_path": "port/analysis/recovery_redraw_source_manifest.json",
+  "frozen_dependencies": [
+    {
+      "path": "port/src/recovery_background_single_read.s",
+      "bytes": 2355,
+      "sha256": "308b68dc4da05fe40d63a3ba1cd10c56a45ce647937d9caace6f56a5e3cdc8ce"
+    },
+    {
+      "path": "port/src/native_sprite_blitter.s",
+      "bytes": 4459,
+      "sha256": "7d28cea0544f91591c9eaeabbd82ae6e9615dd86bf36ed6633c9b97a45d106b0"
+    },
+    {
+      "path": "port/tests/test_native_background.py",
+      "bytes": 4979,
+      "sha256": "7e6ed0f74bccc9dbf2c8628c6366c3487aace3ae347732bbe42e2aaee86b76f2"
+    },
+    {
+      "path": "port/tests/test_native_sprites.py",
+      "bytes": 5519,
+      "sha256": "fef2fc39db6484421230e768b86fbd548570e976830e6e82b852a5e2271a8f6e"
+    }
+  ],
+  "assembled": {
+    "bytes": 124,
+    "sha256": "2f629d11b82789a640e9ec1a62dab82a412fed37aed9d0316a54e0ba1c74e486"
+  }
+}

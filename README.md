@@ -11,6 +11,38 @@ native game-code translation and Amiga rendering, not a general NES interpreter.
 
 ## Current verified source
 
+The new [bounded live integration](port/analysis/recovery_live_target.md) uses real
+CIA keyboard input for title/character selection and continues the authentic
+scene preparation through rendering disable, nametable clear and saved-bank
+restore to FF53. Z=B, X=A, Return=Start, Tab=Select and arrows are wired through
+the original controller interface. FF53 remains an explicit loader stop, not a
+playable stage. The later lost gameplay source has not been recovered.
+
+Final-source stock-emulator captures verify the visible title and character
+menu, both choices, held/released/repressed input and a 617-update long path.
+Original state, ordered effects, displayed pixels and bounded actual PCM checks
+pass independent review. Allocation is 815,616 Chip bytes with zero Fast RAM.
+The character-menu redraw measures 35.727 ms, and all 177 updates in the shorter
+scene run miss the 20 ms interval. This is not full PAL speed or game FPS.
+The final dirty/full scene captures differ in controller sampling and are not a
+matched performance comparison. Audio fidelity and later gameplay remain limited.
+
+The reviewed [sprite-footprint invalidator](port/analysis/recovery_redraw_contract.md)
+restores old sprite coverage before repeated composition without changing the
+frozen sprite renderer. The [scene continuation](port/analysis/recovery_scene_continue_report.md)
+preserves genuine stack, mapper, video and audio behavior through FF53. Assembly-only
+public checks run with `bash tools/test_redraw_public.sh` and
+`bash tools/test_live_scene_assembly_public.sh`. The dedicated ROM-free compiled
+adapter checks use `bash port/tools/recovery_live_public.sh` with the pinned GCC14
+toolchain. These are separate from actual target capture validation.
+
+This live diagnostic has explicit helper, input-log and audio limits; title
+900-countdown/demo paths, two-player confirmation and arbitrary key combinations
+are not fully qualified. All limit/error stops mute and drain audio. Original
+inputs, historical captures and the delivered Z/X disk remain unchanged.
+
+### Earlier preserved checkpoints
+
 The additive [background-only variant](port/analysis/recovery_background_target.md)
 reduces the measured final render from 89.725 to 81.154 ms with display DMA on
 (9.55%), and from 79.808 to 71.292 ms with it off (10.67%). Fresh uninstrumented
@@ -44,8 +76,8 @@ This is still scripted development, not full-rate gameplay. With active five-pla
 scanout, the default path has 40 of 43 completed updates already beyond its 20 ms
 minimum interval, and its single final render takes 89.73 ms. Earlier scanout uses
 blank diagnostic planes. Audio continues its previous plan during long work;
-that is not timely per-frame updating. Live keyboard, later gameplay and accurate
-NES synthesis remain unfinished. The delivered Z/X disk is unchanged.
+that is not timely per-frame updating. At that predecessor checkpoint, live keyboard, later gameplay and accurate
+NES synthesis remained unfinished. The delivered Z/X disk is unchanged.
 
 Dedicated pinned GCC14 tests run with `bash tools/test_menu_paula_public.sh` using
 synthetic data only. `bash validate_menu_paula.sh` runs the four private stock
