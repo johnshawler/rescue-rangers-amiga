@@ -1,0 +1,56 @@
+{
+  "format": 1,
+  "purpose": "Additive generic source-only bank5 object region allowlist, not a standalone baseline closure",
+  "baseline": "recovery/title-baseline-2026-11-10 local bf7807e remote 9b4f5d81",
+  "entry": "recovery_object_region",
+  "helper_id": 90,
+  "journal_bytes": 60002,
+  "minimum_native_stack_bytes": 2304,
+  "binary_bytes": 5512,
+  "binary_sha256": "be69923025893d466d3c32e8ffcb77b914dbd12c97619d4fd663a84d72f76a21",
+  "files": [
+    {
+      "path": "port/src/recovery_object_region.s",
+      "bytes": 33824,
+      "sha256": "ce8f1197ae0534a29b5929e439a915d2a2f5cc86661ecdd0528a12bc310e211b"
+    },
+    {
+      "path": "port/tools/recovery_object_region_generate.py",
+      "bytes": 7787,
+      "sha256": "9f46f694c17f81327739f5aa6da376bfcd8c3ba5ce06440a0d5d39d979dc35e1"
+    },
+    {
+      "path": "port/tests/recovery_object_region_test.py",
+      "bytes": 7854,
+      "sha256": "992129f140d7db51be3cfd41762e9eac15d2cbca24c313a21e671439a9d9a763"
+    },
+    {
+      "path": "port/tests/recovery_object_region_branches.py",
+      "bytes": 2146,
+      "sha256": "e11c231977917c4b82e44f53c16d2f9924f34a37a0343a81f81fc888e2f67b0d"
+    },
+    {
+      "path": "port/tests/recovery_object_region_route.py",
+      "bytes": 2148,
+      "sha256": "86c30db6036bda0b04feed4f9ed1138bb42286f5e5527d069411ce331b843bf4"
+    },
+    {
+      "path": "port/analysis/recovery_object_region_report.md",
+      "bytes": 8064,
+      "sha256": "6e4148b197a6cd6b94540254a6f19879c6a34cea90cb433b54b1a1cbfa07c487"
+    }
+  ],
+  "exclude": [
+    "input/",
+    "port/build/",
+    "artifacts/",
+    "ROM",
+    "firmware",
+    "disks",
+    "captures",
+    "journals",
+    "RAM snapshots",
+    "audio"
+  ],
+  "dependencies": "Existing preserved baseline Python oracle modules; external VASM/machine68k, and py65 for private reference tests. See report."
+}

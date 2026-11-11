@@ -1,0 +1,20 @@
+{
+  "scope": "Frozen bank5 sprite-caller/NMI composition through911C; excludes all dialogue work",
+  "public_allowlist": {
+    "port/src/recovery_bank_loader_object_dispatch.s": "1a869425a5b653a622e5397a8a7ff3bbffeb9dea403bc15baecfdad539f6708a",
+    "port/src/recovery_bank_loader_object_bridge.s": "1e95f8761b217f929c5203849ec1fa3ff542c8caa7224a4a313c856fd05a7d79",
+    "port/tests/recovery_bank_loader_object_contract.py": "dcbfcb6bd18504ae6e25075da0c990bc8b5425fcbbbdefd057eb5f05c8b44e70",
+    "port/tests/recovery_bank_loader_object_harness.py": "159e4990d3c37c232665680e917cd1f1190d1ae236819e7f60ed62d5ad5fa8f5",
+    "port/tests/recovery_bank_loader_object_oracle.py": "34a8bce78a032f538cb04f0f49201068d62c7b930f652937205e293ca8ea8f1e",
+    "port/tests/recovery_bank_loader_object_rom.py": "ef3cac12da8bb08276f8f8ed9334bf6a2d641ecc0fd932f666f90774072eab1c"
+  },
+  "dependencies": {
+    "port/src/recovery_object_region.s": "ce8f1197ae0534a29b5929e439a915d2a2f5cc86661ecdd0528a12bc310e211b",
+    "port/analysis/recovery_bank_loader_manifest.json": "e2b377f78a3028bd403b436fcdaa3c40741a21e26fa376f8ae4aab3e0781cf99"
+  },
+  "native_scratch_stack_minimum": 2304,
+  "tested_scratch_range": 4096,
+  "helper90_journal_bytes": 60002,
+  "composite_bytes": 56836,
+  "composite_sha256": "f1433927f4a44f3baa8c4b02d6c72edbc56a3b2fc06f74e51dbd7033f9e770fd"
+}

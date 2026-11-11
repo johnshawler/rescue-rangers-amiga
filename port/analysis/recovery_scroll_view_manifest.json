@@ -1,0 +1,14 @@
+{
+  "module": "recovery_scroll_view",
+  "scope": "Source-only synthetic horizontal viewport, no target integration or performance qualification",
+  "files": {
+    "port/src/recovery_scroll_view_draw.s": "f008fbd4797bd6d19586fddd3496b8b107b4d2427fcb32d6ae086d0ded372b41",
+    "port/tests/recovery_scroll_view_test.py": "63a5582746def6e4f90ced2dac24566ceebc461bb184b9b44b0c4c14e5299808",
+    "port/analysis/recovery_scroll_view.md": "bcbc0dab371d79d05fb562de63acce35e51e4719b168c8593a590f5c7904a5b4",
+    "port/analysis/recovery_scroll_view_restore.md": "d05ebb23f90033888ad72f12486bf653774daffa0c45603f9ebb6e61ba974b51"
+  },
+  "read_only_baseline_dependencies": {
+    "port/src/native_sprite_blitter.s": "7d28cea0544f91591c9eaeabbd82ae6e9615dd86bf36ed6633c9b97a45d106b0",
+    "port/tests/test_native_sprites.py": "fef2fc39db6484421230e768b86fbd548570e976830e6e82b852a5e2271a8f6e"
+  }
+}

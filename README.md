@@ -43,6 +43,16 @@ inputs, historical captures and the delivered Z/X disk remain unchanged.
 
 ### Earlier preserved checkpoints
 
+The new [stage-loading foundation](port/analysis/recovery_stage_foundation.md)
+extends the host-verified native chain beyond FF53 through the bank-2 resource
+loader, fade, bank-5 object update, real NMI/audio work and return to 911C.
+Three continuous original/native histories and independent adversarial tests
+pass. The object translation uses a bounded, inert preflight before committing
+changes. A separate full-redraw renderer passes all 512 horizontal origins
+across two physical nametables. These additions are not yet integrated into the
+stock target or a playable stage, and have no target-speed measurement.
+Source-only checks run with `bash tools/test_stage_foundation_public.sh`.
+
 The additive [background-only variant](port/analysis/recovery_background_target.md)
 reduces the measured final render from 89.725 to 81.154 ms with display DMA on
 (9.55%), and from 79.808 to 71.292 ms with it off (10.67%). Fresh uninstrumented
