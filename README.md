@@ -76,8 +76,8 @@ native game-code translation and Amiga rendering, not a general NES interpreter.
   [private first-channel event target](port/analysis/recovery_music_first_channel_target.md)
   now completes instrument/control setup and the first rest event through the
   original channel return: thirty calls, twenty-three helpers and thirty-three
-  resource records. Remaining channels, pitched notes, the complete active tick
-  and audible playback remain incomplete.
+  resource records. The later resident runtime probe below completes the remaining channels
+  and initial active tick; subsequent ticks and audible playback remain incomplete.
 - A separate new [player-initialization helper](port/analysis/recovery_gameplay_player_init.md)
   matches 131,072 original-ROM cases. Its
   [source-only stock-target probe](port/analysis/recovery_gameplay_player_init_target.md)
@@ -93,6 +93,20 @@ native game-code translation and Amiga rendering, not a general NES interpreter.
   synchronization and remaining stage loading are still incomplete. All stage
   probes stop before $FF04 synchronization and are not integrated gameplay.
   The title and delivered playable disk remain unchanged.
+- A new [bounded resident runtime target](port/analysis/recovery_runtime_target.md)
+  runs reset, first silent NMI, actual FE90 idle scan, second NMI, the complete
+  initial music tick, bank restore/RTI and genuine saved-task resumption at
+  $C2A8. The emulated stock A1200 runs 68 native calls with resident RAM/context.
+  All 68 full state snapshots, 40 mapper, 2,248 PPU, 14 APU, 36 controller and
+  94 resource records plus 512 DMA bytes match continuous original execution.
+  Its private diagnostic carries cartridge data and must not be distributed.
+- New general scheduler, frame-yield and idle-NMI helpers also compose with the
+  synthetic stage initialization without fabricating readiness. Indexed music
+  commands, rest/pitched events and the active interrupt return now have
+  exhaustive synthetic and original-ROM checks. The first startup fade
+  countdown at $C2A8, subsequent active envelopes/callbacks, nonempty video
+  queues and authentic title-to-stage loading remain incomplete.
+  This is not yet a continuously running native frame loop or audible output.
 - Captured initial title state remains a private development fixture. New work
   will replace that dependency with verified original reset/resource logic.
 
@@ -114,8 +128,8 @@ See [recovery provenance](docs/RECOVERY.md) and the validation summary. The new 
 Install Python dependencies from `requirements-dev.txt`. Supply vasm via the
 `VASM` environment variable. `bash tools/test_public.sh` runs the two synthetic
 assembled-code renderer suites, restore-safety tests, a synthetic twelve-helper
-contract regression, synthetic music/stage-helper contracts and ten source-only
-probe assemblies
+contract regression, synthetic music/stage/runtime-helper contracts (including
+inert rejection and boundary checks) and ten source-only probe assemblies
 without a game ROM or firmware.
 
 Private original-ROM tests require the hash-checked European cartridge at
@@ -127,7 +141,9 @@ The helper validates every included fixture and refuses to replace mismatching
 existing files. `python tools/restore_private_inputs.py --help` describes inputs.
 
 For full validation, set `VASM`, `PUAE_CORE` and `HEADLESS`, then run
-`bash validate_recovery.sh`. Pinned tool revisions and hashes are recorded in
+`bash validate_recovery.sh`. This includes seventeen separate emulated-target
+diagnostics, negative dump/build-gate checks and five title-display scenarios.
+Pinned tool revisions and hashes are recorded in
 `docs/recovery-validation.json`. Compile `scripts/headless.c` against the
 libretro headers with `-ldl -Wl,--no-as-needed -lm`.
 

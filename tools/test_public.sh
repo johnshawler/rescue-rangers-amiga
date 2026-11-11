@@ -15,6 +15,10 @@ python "$ROOT/port/tests/test_recovery_gameplay_player_init_contract.py"
 python "$ROOT/port/tests/test_recovery_gameplay_fade_entry_contract.py"
 python "$ROOT/port/tests/test_recovery_stage_resource_contract.py"
 python "$ROOT/port/tests/recovery_test_music_event_contract.py"
+# ROM-free contracts for the bounded resident runtime and stage-yield extensions.
+for test in test_recovery_frame_yield_contract test_recovery_general_scheduler_contract test_recovery_idle_nmi_contract recovery_test_music_channel_iteration_contract recovery_test_music_indexed_contract recovery_test_music_indexed_rejection recovery_test_music_pitched_gate_contract recovery_test_music_pitched_note_contract test_recovery_active_return_contract; do
+ python "$ROOT/port/tests/$test.py"
+done
 # Assemble the new reset helpers without any cartridge/firmware input.
 TMP=$(mktemp -d)
 trap 'rm -rf "$TMP"' EXIT

@@ -8,6 +8,10 @@ mkdir -p "$ROOT/logs" "$ROOT/port/build"
 for test in test_native_background test_native_sprites test_rescue_game test_rescue_title test_rescue_title_queue recovery_test_reset_ram recovery_test_reset_mapper recovery_test_reset_video recovery_test_reset_dispatch recovery_test_first_yield recovery_test_first_nmi_prefix recovery_test_nmi_audio_entry recovery_test_audio_reset_command recovery_test_silent_tick_rti recovery_test_scheduler_resume recovery_test_resumed_task_setup recovery_test_palette_nmi_prefix recovery_test_music07_command recovery_test_music_tick_fetch recovery_test_music_command04 recovery_test_music_stream_command05 recovery_test_music_channel_setup recovery_test_gameplay_player_init recovery_test_gameplay_fade_entry recovery_test_stage_resource_init recovery_test_stage_resource_composition recovery_test_music_event_block; do
  python "$ROOT/port/tests/$test.py" | tee "$ROOT/logs/recovery-$test.log"
 done
+# Native helper chains compared with independently executing original cartridge code.
+for test in recovery_test_frame_yield recovery_test_frame_yield_composition recovery_test_general_scheduler recovery_test_general_scheduler_stage_composition recovery_test_general_scheduler_startup_composition recovery_test_idle_nmi_prefix recovery_test_idle_nmi_stage_composition recovery_test_music_channel_iteration recovery_test_music_channel_iteration_chain recovery_test_music_indexed_rom recovery_test_music_indexed_chain recovery_test_music_indexed_continuation recovery_test_music_pitched_gate_rom recovery_test_music_pitched_note_rom recovery_test_music_pitched_event_composition recovery_test_music_pitched_event_chain recovery_test_active_return_rom recovery_test_active_nmi_runtime_chain; do
+ python "$ROOT/port/tests/$test.py" | tee "$ROOT/logs/recovery-$test.log"
+done
 python "$ROOT/port/tools/build_recovery_reset_probe.py" | tee "$ROOT/logs/recovery-reset-probe-build.log"
 PUAE_MODEL=A1200OG RAM_OUT="$ROOT/port/build/recovery-reset-probe-chip.bin" \
  timeout 90 "$HEADLESS" "$PUAE_CORE" "$ROOT/port/build/recovery-reset-probe.adf" "$ROOT/artifacts/a1200-system" 600 "$ROOT/port/build/recovery-reset-probe.ppm" > "$ROOT/logs/recovery-reset-probe-amiga.log" 2>&1
@@ -73,6 +77,17 @@ PUAE_MODEL=A1200OG RAM_OUT="$ROOT/port/build/recovery-stage-resource-probe-chip.
  timeout 90 "$HEADLESS" "$PUAE_CORE" "$ROOT/port/build/recovery-stage-resource-probe.adf" "$ROOT/artifacts/a1200-system" 600 "$ROOT/port/build/recovery-stage-resource-probe.ppm" > "$ROOT/logs/recovery-stage-resource-amiga.log" 2>&1
 python "$ROOT/port/tests/verify_recovery_stage_resource_probe.py" "$ROOT/port/build/recovery-stage-resource-probe-chip.bin" | tee "$ROOT/logs/recovery-stage-resource-verified.json"
 python "$ROOT/port/tests/recovery_test_stage_resource_target.py" | tee "$ROOT/logs/recovery-stage-resource-negative.log"
+# Private bounded resident runtime: actual idle/NMI/music/RTI/task continuity.
+python "$ROOT/port/tools/build_recovery_runtime_probe.py" | tee "$ROOT/logs/recovery-runtime-probe-build.log"
+PUAE_MODEL=A1200OG RAM_OUT="$ROOT/port/build/recovery-runtime-probe-chip.bin" \
+ timeout 90 "$HEADLESS" "$PUAE_CORE" "$ROOT/port/build/recovery-runtime-probe.adf" "$ROOT/artifacts/a1200-system" 600 "$ROOT/port/build/recovery-runtime-probe.ppm" > "$ROOT/logs/recovery-runtime-probe-amiga.log" 2>&1
+python "$ROOT/port/tests/verify_recovery_runtime_probe.py" "$ROOT/port/build/recovery-runtime-probe-chip.bin" --amiga-log "$ROOT/logs/recovery-runtime-probe-amiga.log" | tee "$ROOT/logs/recovery-runtime-probe-verified.json"
+old_dumps=()
+for dump in "$ROOT"/port/build/recovery-*-probe-chip.bin; do
+ [[ "$dump" == "$ROOT/port/build/recovery-runtime-probe-chip.bin" ]] || old_dumps+=(--old-dump "$dump")
+done
+python "$ROOT/port/tests/test_recovery_runtime_probe_rejection.py" "$ROOT/port/build/recovery-runtime-probe-chip.bin" --amiga-log "$ROOT/logs/recovery-runtime-probe-amiga.log" "${old_dumps[@]}" | tee "$ROOT/logs/recovery-runtime-probe-rejection.json"
+python "$ROOT/port/tests/test_recovery_runtime_build.py" | tee "$ROOT/logs/recovery-runtime-build-tests.log"
 python "$ROOT/port/tools/build_title.py" | tee "$ROOT/logs/recovery-build.log"
 python - "$ROOT" <<'PY'
 import hashlib,sys
