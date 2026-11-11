@@ -45,6 +45,10 @@ native game-code translation and Amiga rendering, not a general NES interpreter.
   completes the first silent tick, restores the original bank and interrupt
   context, and stops before the scheduler resumes. Its canonical status ABI
   preserves all physical flags while explicitly distinguishing py65's virtual B bit.
+- An opt-in [scheduler-resume probe](port/analysis/recovery_scheduler_resume_target.md)
+  continues through task selection and complete standard-controller polling,
+  preserving all eighteen serial-input records and the original task stack.
+  Ten helpers now reach $C584; the resumed task remains untranslated.
 - Captured initial title state remains a private development fixture. New work
   will replace that dependency with verified original reset/resource logic.
 
@@ -65,7 +69,7 @@ See [recovery provenance](docs/RECOVERY.md) and the validation summary. The new 
 
 Install Python dependencies from `requirements-dev.txt`. Supply vasm via the
 `VASM` environment variable. `bash tools/test_public.sh` runs the two synthetic
-assembled-code renderer suites, restore-safety tests, a synthetic nine-helper
+assembled-code renderer suites, restore-safety tests, a synthetic ten-helper
 contract regression and reset-probe assembly
 without a game ROM or firmware.
 

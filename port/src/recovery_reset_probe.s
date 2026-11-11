@@ -19,6 +19,10 @@
         lea     probe_stack(pc),a3
         move.l  a3,32(a6)
         move.l  sp,36(a6)
+        ifd SCHEDULER_RESUME
+        lea     probe_controller(pc),a3
+        move.l  a3,64(a6)
+        endc
         ifd NMI_RETURN
         lea     probe_restore(pc),a3
         move.l  a3,60(a6)
@@ -107,6 +111,15 @@
         bne.w   probe_fail
         addq.l  #1,12(a6)
         endc
+        ifd SCHEDULER_RESUME
+        lea     probe_controller(pc),a2
+        moveq   #0,d0
+        moveq   #0,d1
+        bsr.w   recovery_scheduler_resume
+        cmpi.l  #1,d0
+        bne.w   probe_fail
+        addq.l  #1,12(a6)
+        endc
         move.l  sp,40(a6)
         clr.l   8(a6)
         move.w  #$0070,$180(a5)
@@ -139,8 +152,15 @@ probe_fail:
         include "recovery_silent_tick_rti.s"
         endc
 
+        ifd SCHEDULER_RESUME
+        include "recovery_scheduler_resume.s"
+        endc
+
         even
 probe_report:
+        ifd SCHEDULER_RESUME
+        dc.b    'CDRRRES1'
+        else
         ifd NMI_RETURN
         dc.b    'CDRRRTI1'
         else
@@ -158,6 +178,7 @@ probe_report:
         endc
         endc
         endc
+        endc
         dc.l    $ffffffff,0,0,0,0,0,0,0,0
         ifd FIRST_YIELD
         dc.l    0
@@ -169,6 +190,9 @@ probe_report:
         dc.l    0
         endc
         ifd NMI_RETURN
+        dc.l    0
+        endc
+        ifd SCHEDULER_RESUME
         dc.l    0
         endc
         dcb.b   16,$5a
@@ -214,6 +238,12 @@ probe_apu:
         ifd NMI_RETURN
 probe_restore:
         dcb.b   22,$a5
+        dcb.b   16,$5a
+        dcb.b   16,$5a
+        endc
+        ifd SCHEDULER_RESUME
+probe_controller:
+        dcb.b   74,$a5
         dcb.b   16,$5a
         dcb.b   16,$5a
         endc

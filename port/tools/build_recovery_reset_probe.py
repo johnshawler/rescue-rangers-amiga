@@ -14,11 +14,13 @@ modes.add_argument('--first-yield', action='store_true', help='Build separate fi
 modes.add_argument('--nmi-audio-entry', action='store_true', help='Build separate seven-helper NMI audio-entry probe')
 modes.add_argument('--audio-reset', action='store_true', help='Build separate eight-helper audio reset-command probe')
 modes.add_argument('--nmi-return', action='store_true', help='Build separate ninth-helper silent tick and RTI probe')
+modes.add_argument('--scheduler-resume', action='store_true', help='Build separate tenth-helper scheduler and standard-controller probe')
 args = parser.parse_args()
-audio_reset = args.audio_reset or args.nmi_return
+nmi_return = args.nmi_return or args.scheduler_resume
+audio_reset = args.audio_reset or nmi_return
 audio_entry = args.nmi_audio_entry or audio_reset
 first_yield = args.first_yield or audio_entry
-name = 'recovery-nmi-return-probe' if args.nmi_return else 'recovery-audio-reset-probe' if args.audio_reset else 'recovery-nmi-audio-entry-probe' if args.nmi_audio_entry else 'recovery-first-yield-probe' if first_yield else 'recovery-reset-probe'
+name = 'recovery-scheduler-resume-probe' if args.scheduler_resume else 'recovery-nmi-return-probe' if args.nmi_return else 'recovery-audio-reset-probe' if args.audio_reset else 'recovery-nmi-audio-entry-probe' if args.nmi_audio_entry else 'recovery-first-yield-probe' if first_yield else 'recovery-reset-probe'
 P = Path(__file__).resolve().parents[1]
 B = P/'build'
 B.mkdir(exist_ok=True)
@@ -28,7 +30,8 @@ subprocess.run([vasm,'-m68020','-Fbin','-quiet','-I'+str(P/'src'),
                 *(['-DFIRST_YIELD=1'] if first_yield else []),
                 *(['-DAUDIO_ENTRY=1'] if audio_entry else []),
                 *(['-DAUDIO_RESET=1'] if audio_reset else []),
-                *(['-DNMI_RETURN=1'] if args.nmi_return else []),
+                *(['-DNMI_RETURN=1'] if nmi_return else []),
+                *(['-DSCHEDULER_RESUME=1'] if args.scheduler_resume else []),
                 '-o',str(payload_file),str(P/'src/recovery_reset_probe.s')], check=True)
 payload = payload_file.read_bytes()
 rounded = (len(payload)+511)//512*512
@@ -47,7 +50,7 @@ for offset in range(0,1024,4):
 struct.pack_into('>I',disk,4,(~checksum)&0xffffffff)
 out = B/(name+'.adf')
 out.write_bytes(disk)
-report = {'artifact':out.name,'purpose':('Isolated first silent tick and RTI, stop before scheduler' if args.nmi_return else 'Isolated reset/NMI startup APU command return, no playback' if args.audio_reset else 'Isolated reset/NMI to bank-3 audio entry, no audio execution' if args.nmi_audio_entry else 'Isolated FE24-to-first-FE8D yield, not game boot' if args.first_yield else 'Isolated FE24-to-C574 reset boundary, not game boot'),
+report = {'artifact':out.name,'purpose':('Isolated scheduler resumption with no pressed buttons, stop before C584' if args.scheduler_resume else 'Isolated first silent tick and RTI, stop before scheduler' if args.nmi_return else 'Isolated reset/NMI startup APU command return, no playback' if args.audio_reset else 'Isolated reset/NMI to bank-3 audio entry, no audio execution' if args.nmi_audio_entry else 'Isolated FE24-to-first-FE8D yield, not game boot' if args.first_yield else 'Isolated FE24-to-C574 reset boundary, not game boot'),
           'payload_bytes':len(payload),'allocation_bytes':rounded,
           'sha256':hashlib.sha256(disk).hexdigest(),'proprietary_inputs':False}
 (B/(name+'-build.json')).write_text(json.dumps(report,indent=2)+'\n')
