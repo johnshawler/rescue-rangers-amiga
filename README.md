@@ -63,11 +63,14 @@ native game-code translation and Amiga rendering, not a general NES interpreter.
   calls use thirteen distinct helpers; the subsequent music tick is not run.
   This diagnostic contains a private cartridge resource view and must not be
   distributed as a source-only disk.
-- New [first-byte fetch](port/analysis/recovery_music_tick_fetch.md) and
-  [command04](port/analysis/recovery_music_command04.md) helpers have host-only
-  original-code comparisons and ROM-free public contract tests. They advance
-  through the first stream command, stopping before the next fetch at $839D.
-  They do not yet have Amiga target evidence or complete the music tick.
+- Separate [private fetch and command04 probes](port/analysis/recovery_first_music_target.md)
+  now verify the first music-byte fetch and command on the emulated stock A1200.
+  They stop before $83A0 and $839D, using fifteen and sixteen calls respectively.
+  Full original state, resource reads, original frames and hardware journals match.
+- New [reusable fetch and command05 helpers](port/analysis/recovery_music_stream_command05.md)
+  have host-only original-code comparisons and a ROM-free public contract test.
+  They preserve the next command's tempo updates, stopping before another fetch
+  at $839D. These extensions do not yet have Amiga target evidence.
 - Captured initial title state remains a private development fixture. New work
   will replace that dependency with verified original reset/resource logic.
 
@@ -89,7 +92,7 @@ See [recovery provenance](docs/RECOVERY.md) and the validation summary. The new 
 Install Python dependencies from `requirements-dev.txt`. Supply vasm via the
 `VASM` environment variable. `bash tools/test_public.sh` runs the two synthetic
 assembled-code renderer suites, restore-safety tests, a synthetic twelve-helper
-contract regression, three synthetic music-helper contracts and source-only
+contract regression, synthetic music-helper contracts and source-only
 probe assembly
 without a game ROM or firmware.
 
