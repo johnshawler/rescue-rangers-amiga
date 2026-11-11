@@ -6,3 +6,4 @@ ROOT=$(cd "$(dirname "$0")/.." && pwd)
 python "$ROOT/port/tests/recovery_state_dispatch_menu_contract.py"
 python "$ROOT/port/tests/recovery_state_dispatch_menu_music_contract.py"
 python "$ROOT/port/tests/recovery_state_dispatch_menu_long_contract.py"
+python "$ROOT/port/tests/test_recovery_state_menu_display_device.py"

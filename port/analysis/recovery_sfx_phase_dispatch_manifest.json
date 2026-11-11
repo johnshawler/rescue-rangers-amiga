@@ -1,0 +1,107 @@
+{
+  "scope": "Static bank 3 phase accumulation and authentic mixed music/SFX dispatch; new recovery development, host-only evidence.",
+  "files": [
+    {
+      "path": "port/src/recovery_sfx_phase_dispatch.s",
+      "bytes": 6206,
+      "sha256": "03f4b4f0dcdad1fe00831c3a037f05fdecfa24f3df6711e200ff23f4d3d1eb3e"
+    },
+    {
+      "path": "port/tests/recovery_test_sfx_phase_dispatch.py",
+      "bytes": 8533,
+      "sha256": "2006f848ff8d4dd4e701d6bac202b963d145e5de6e9eef0067776ef9791c5123"
+    },
+    {
+      "path": "port/tests/recovery_test_resident_sfx_phase_dispatch.py",
+      "bytes": 31359,
+      "sha256": "10d32064283c5b8391bb947390756d6e08abb7cb0c5dbeb07f6baf3bfd9aaf77"
+    },
+    {
+      "path": "port/analysis/recovery_sfx_phase_dispatch.md",
+      "bytes": 6868,
+      "sha256": "bf1e213c2a9f2c9cfbf29462560761f66c8e6286c822b8d07da788e5cff9d3d9"
+    },
+    {
+      "path": "port/analysis/recovery_sfx_phase_dispatch_frozen.json",
+      "bytes": 57631,
+      "sha256": "52e9bb68125cfa912a114942a874326b1bf9fe770fcabad3f84cb2089c3d41e2"
+    }
+  ],
+  "predecessor_manifest": {
+    "path": "port/analysis/recovery_sfx_channel_reconfigure_manifest.json",
+    "bytes": 2108,
+    "sha256": "72ce8b7e8ddec7209d549452957eda666c25d86285badc4a8179952b4e5f51c8"
+  },
+  "standalone": {
+    "bytes": 1050,
+    "sha256": "cb7e7bee3588c5722827c80af3adaaee02347aa992bdd9b89ac9c08077c9dfab"
+  },
+  "composite": {
+    "bytes": 29962,
+    "sha256": "98918823d2ea9f5cfed5d6dd7472981af9b94626198be6a35517a01ec0e95fe2"
+  },
+  "boundary": "Bank 3 PC 82B0 LDY $0700,X; raw context 82B000020427F3A7. Actual 8079 and C0F8 frames live.",
+  "coverage": {
+    "original_rom_accepted": 274432,
+    "declarative_accepted": 274433,
+    "inert_rejects": 194557,
+    "isolated_rom_and_private_imports_denied_accepted": 274433,
+    "isolated_inert_rejects": 194557,
+    "continuous_inputs": [
+      0,
+      16,
+      1,
+      2
+    ],
+    "frozen_continuous_inputs": [
+      0,
+      16,
+      1,
+      2
+    ],
+    "frozen_files_unchanged": 476,
+    "preexisting_manifest_file_entries_verified": 72
+  },
+  "continuous_added_slice": {
+    "helper_indexes": [
+      63,
+      33,
+      34,
+      35,
+      63
+    ],
+    "per_helper_effect_counts": [
+      6,
+      12,
+      75,
+      5,
+      3
+    ],
+    "ram_writes": 87,
+    "resource_events": 12,
+    "apu_writes": 2,
+    "right_trace_sha256": [
+      "752d3634053f2db646b99e11886b50c4539854e6b67a84167810e178b871a7e7",
+      "c774bd15e70f96acfb86b77b4853b28d8169ef4a359c13c2322932dd3ba96020",
+      "7aa2788ae636c003058613e5b884c113cbe904ec4605f38fe45fac1e4bf40044",
+      "f12328d350d37d36df8c39bfddd4ae922cb3c1f8e86392ad96d654f2e7071202",
+      "baf216ca4d9cbf8e93661c5d8e0ee9de79a7ef8411329635f03e5b348c14fc28"
+    ],
+    "left_trace_sha256": [
+      "0a2bdb1308ab0c4594a7595df9dd712ea893515fb2b73e013a764fbfd1ca3b98",
+      "acfe6d718b5f47800103677098a7356ce61b0978f4011d211746fed8ad09dbb4",
+      "ee49f6004927a448feb0833f26c84dc874f211ae7368b6a8d3e166de803b71ef",
+      "199633fc1d5896dfc5bbbd636e50eddc107c836c68178ee0c0d35f297e02ea2d",
+      "c4345d8c483e9ba4a87aeb32bb5a45b6b24ced6ad6380f9ae847c71dbdcdd6a7"
+    ]
+  },
+  "claims_excluded": [
+    "Completed pending NMI",
+    "Later SFX channel tick",
+    "Recovered missing later gameplay/audio source",
+    "Amiga target execution",
+    "Stock A1200 speed",
+    "Integrated or audible Paula audio",
+    "Playability or full-game completion"
+  ]
+}

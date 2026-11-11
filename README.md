@@ -11,6 +11,15 @@ native game-code translation and Amiga rendering, not a general NES interpreter.
 
 ## Current verified source
 
+The [state-driven character-menu display](port/analysis/recovery_state_menu_display.md)
+now reaches and renders CHIP / DALE with the cursor on CHIP on an emulated stock
+PAL A1200. Two independent fresh executions match all 1,091 contexts and
+published journals, the first 64 full RAM boundaries plus final RAM, and every
+captured viewport pixel. It allocates 1,297,920 Chip bytes and zero Fast RAM.
+Inputs and logical interrupts are scripted; it stops at the first A06C menu
+boundary. This is not an interactive selection loop, audible audio or gameplay.
+Diagnostic timing includes journal clearing and captures, not game FPS.
+
 The additive [state-driven menu dispatcher](port/analysis/recovery_state_dispatch_menu.md)
 now follows genuine Start input into character selection, consumes the queued
 video work, and handles held/released/repressed Start to confirm the default
@@ -68,7 +77,11 @@ New host-native comparisons separately cover the complete [title/music timeout](
 continues through [scene fading and sprite hiding](port/analysis/recovery_scene_sprite_hide.md)
 to F3D5. Genuine Left/Right input now completes [SFX channel reconfiguration](port/analysis/recovery_sfx_channel_reconfigure.md)
 and authentic returns to 8060 without skipping the queued sound. Rendering
-disable at F3D5 and mixed music/SFX tick handling at 8060 remain untranslated;
+disable at F3D5 remains untranslated. New [SFX phase/dispatch translation](port/analysis/recovery_sfx_phase_dispatch.md)
+continues genuine phase accumulation, channel-3 music processing and the
+channel-2 SFX call to 82B0, preserving the still-pending NMI and real return
+frames. Independent original-instruction checks pass; this is host correctness,
+not completed SFX playback or integrated audio. Channel ticking at 82B0,
 alternate-character confirmation and live gameplay are unfinished.
 
 The [state-driven startup dispatcher](port/analysis/recovery_state_dispatch_startup.md)
@@ -83,10 +96,11 @@ are reported separately.
 
 Run tools/test_native_title_public.sh, tools/test_scene_sound_public.sh,
 tools/test_runtime_sound_public.sh, tools/test_state_startup_public.sh and
-tools/test_state_menu_public.sh for
+tools/test_state_menu_public.sh and tools/test_sfx_phase_public.sh for
 ROM-free contracts. Their corresponding private extensions are
 validate_native_title.sh, validate_scene_sound.sh, validate_runtime_sound.sh and
-validate_state_startup.sh and validate_state_menu.sh. The new startup/display extension needs only the
+validate_state_startup.sh, validate_state_menu.sh and validate_sfx_phase.sh.
+The new startup/display extension needs only the
 approved private cartridge and firmware, not old captured fixtures.
 
 An earlier isolated [resident startup diagnostic](port/analysis/recovery_resident_chr_fade_target.md)
