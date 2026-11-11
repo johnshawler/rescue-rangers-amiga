@@ -28,6 +28,9 @@ jobs:
       - run: bash port/tools/recovery_bank_loader_video5_public.sh
       - run: bash port/tools/recovery_bank_loader_target_choice_public.sh
       - run: bash port/tools/recovery_bank_loader_candidate_scan_public.sh
+      - run: bash port/tools/recovery_bank_loader_player_contact_public.sh
+      - run: bash port/tools/recovery_bank_loader_player_status_public.sh
+      - run: bash port/tools/recovery_bank_loader_jump_public.sh
       - run: bash port/tools/recovery_bank_loader_play_public.sh
       - run: bash port/tools/recovery_bank_loader_input_public.sh
       - run: bash port/tools/recovery_stage_background_public.sh

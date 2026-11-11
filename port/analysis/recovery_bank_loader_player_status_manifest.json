@@ -1,0 +1,20 @@
+{
+  "scope": "Success140-only canonical publication, raw-before-mask proof and three genuine240-frame histories; no target qualification",
+  "public_allowlist": {
+    "port/analysis/recovery_bank_loader_player_status_report.md": "fb2e8163ac88b87f87f1cd7343cb2dd75e7976a6a025e4b975ade3a2150c4e7d",
+    "port/src/recovery_bank_loader_player_status_dispatch.s": "d3d32b4892e0987dc9aa9daa8811b03062cacf40f84cb653831e3be368c1d600",
+    "port/tests/recovery_bank_loader_player_status_callers.py": "2f8bfede7e446c2d3cac94c0f478d38f9eeddf70f2ae506ac83190d4995f8dba",
+    "port/tests/recovery_bank_loader_player_status_edge_rom.py": "f2ad062927cf5be1e1a0edd1d6424d52400ff2bc1bf5dbfe401eef1e9559514f",
+    "port/tests/recovery_bank_loader_player_status_harness.py": "5fab77887fdb6c3dee9293e2162d7e6bf1ea9153b4f97a762480d01a99a60b4f",
+    "port/tests/recovery_bank_loader_player_status_oracle.py": "b24c4c8a7ed7b935274c8a30db7856766391811bd4dae954238c7f51cf3155ab",
+    "port/tests/recovery_bank_loader_player_status_public.py": "56d86024256512ea62ce8ad1f9a9b7e8e237827702d3c5c74571ce0a96a48684",
+    "port/tests/recovery_bank_loader_player_status_rom.py": "3d818741605883463ad427dc659483ecee2ac66c3bf1645abbba7ce949411a7f",
+    "port/tests/recovery_bank_loader_player_status_test.py": "aa1db3c556f3dee17bbc02a053afb3fb9d55928a7b5aaf348b989fdd152c7f2d",
+    "port/tools/recovery_bank_loader_player_status_public.sh": "5ee0f00f15e7d999ed0b2b4f3ac64c593b3385eaaf2002a99baa3a8c6aa00c93"
+  },
+  "dependencies": {
+    "port/analysis/recovery_bank_loader_player_contact_manifest.json": "2fa678a456ff77ec1c2b5bfcbfbe8c025494dbde7981cab9ccbb45bb8e6a02c8"
+  },
+  "composite_bytes": 222722,
+  "composite_sha256": "5b2bcd0b303084522b208b0f03ca45c2e16dabddbc46cd37263a62d4064e1850"
+}

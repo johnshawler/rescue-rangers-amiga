@@ -1,0 +1,24 @@
+{
+  "scope": "Static F92B player contact154 through genuine raw140 publication mismatch; no adapter/target qualification",
+  "public_allowlist": {
+    "port/analysis/recovery_bank_loader_player_contact_report.md": "da68f74c48b839f36f60821bb840f27be172de37c4d6bdced3cc972092c10045",
+    "port/src/recovery_bank_loader_player_contact_dispatch.s": "0532538debfa41e2561a1081a87163fa669e9b9a3e1fc5498bc3ffa0b3eb91d8",
+    "port/src/recovery_bank_loader_player_contact_region.s": "a604c5db6f00915c4b0e1f32cb373cfe14917111b6eb1fc3564f0a4648c10c4d",
+    "port/tests/recovery_bank_loader_player_contact_edge_rom.py": "9656686bf84124b6aa6ca07eb8c9e5973e015f642824ee7e74e308770b0d6d33",
+    "port/tests/recovery_bank_loader_player_contact_edges.py": "8db6e8068a055ac35bde43cc93d5c08a9e5db4eeccd0dee818cafb1131c93418",
+    "port/tests/recovery_bank_loader_player_contact_harness.py": "e2fa9e94b06888dda64b06e713d6b349664f551c25f4b1ff743a60a8671ace24",
+    "port/tests/recovery_bank_loader_player_contact_oracle.py": "a0ba08a9d6c9697d0b445c7368b46dc068c65e6bf3210e75edfbba62bfe89d4f",
+    "port/tests/recovery_bank_loader_player_contact_raw_boundary.py": "a6e552dedaa368c4be76a181d13371ce67336bc5d65253b686fdc65a11402af5",
+    "port/tests/recovery_bank_loader_player_contact_returns.py": "a5daa3fdc4cfe695134f9f8c6568835cde9d54534d2c28bf8933126f3b229b44",
+    "port/tests/recovery_bank_loader_player_contact_rom.py": "95a05717ceaa9f636b8d9bc7f225ae31f19af2ee9520a329fd03c9bc9b41e325",
+    "port/tests/recovery_bank_loader_player_contact_test.py": "9e7bc26f4c633eba00784367212e1a59e478ce1bd77b47b5a96a8666448ab7c1",
+    "port/tests/recovery_bank_loader_player_contact_wrapper_test.py": "9de5eb5e097e5dade5a0d904f86f04e2b451f5f2ceb57d8f9bccb1598250ae36",
+    "port/tools/recovery_bank_loader_player_contact_generate.py": "6b5a072e8e36eeac6ce2b5298dff50d7a3c02fdd54ed932f1f4de210112eabcb",
+    "port/tools/recovery_bank_loader_player_contact_public.sh": "8a88795fa3b83832155f0b6cecd446dc2bdf8b56c5788d6a4e694c2b4337f192"
+  },
+  "dependencies": {
+    "port/analysis/recovery_bank_loader_candidate_scan_manifest.json": "e601703c5cc95f3a080fe12b3d1505d21b03e45ed6efbe2d86ca483c6e2395df"
+  },
+  "composite_bytes": 222684,
+  "composite_sha256": "0ff6d517c3d41786f4f2e144c24863753c0a3d4bff55a532ab8ecca8a8870346"
+}

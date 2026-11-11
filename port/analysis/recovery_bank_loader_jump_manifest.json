@@ -1,0 +1,15 @@
+{
+  "scope": "Diagnostic-only grounded A jump and landing through90 genuine frames; unchanged native runtime",
+  "public_allowlist": {
+    "port/analysis/recovery_bank_loader_jump_report.md": "9094708ef27be4b9b1e1f233fd55f1805fae2922b88a1d39fcb8398e71f391d8",
+    "port/tests/recovery_bank_loader_jump_compare.py": "5870cd92144de7e557cfb899e88370a15495bacce733f251a1d2e67df7190de8",
+    "port/tests/recovery_bank_loader_jump_probe.py": "097eadfcfb53c976c881c618731ae15e13a19d40e77d30b963724046e43e5388",
+    "port/tests/recovery_bank_loader_jump_rom.py": "7075b3b938d429793508986b73979a14afdf24cff545e936df972fa8a1ed7a5b",
+    "port/tools/recovery_bank_loader_jump_public.sh": "585acc5d31f35fd866617b0c8dcacdd9f00786320f0d7e9d8898b0b9a2a1a61f"
+  },
+  "dependencies": {
+    "port/analysis/recovery_bank_loader_player_status_manifest.json": "c1ed85a93607dbfd34432f031e4b404e4954dedddc2492728a29df456a9b40e5"
+  },
+  "composite_bytes": 222722,
+  "composite_sha256": "5b2bcd0b303084522b208b0f03ca45c2e16dabddbc46cd37263a62d4064e1850"
+}
