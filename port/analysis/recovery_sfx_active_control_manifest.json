@@ -1,0 +1,86 @@
+{
+  "scope": "Static active-SFX control continuation through the following live SFX envelope boundary; host-only recovery development.",
+  "files": [
+    {
+      "path": "port/src/recovery_sfx_active_control.s",
+      "bytes": 3944,
+      "sha256": "4a9174b059be63962deba6ed7b37caa1ac2d126562d444e90a30a60074afa9f7"
+    },
+    {
+      "path": "port/tests/recovery_test_sfx_active_control.py",
+      "bytes": 6540,
+      "sha256": "92fd4fcd30706581f82223e91274612cb50fb4abb291eea12a2a8a79187c484d"
+    },
+    {
+      "path": "port/tests/recovery_test_sfx_active_control_isolated.py",
+      "bytes": 1512,
+      "sha256": "7e3c9f4a26de5c763df04f221e348367ade503d6df4cfde641420a3f43f901d1"
+    },
+    {
+      "path": "port/tests/recovery_test_resident_sfx_active_control.py",
+      "bytes": 34197,
+      "sha256": "10771b9bffc40e0d1d91e054e425f0af23f096dc9a0fa6e26bd25844bd90e139"
+    },
+    {
+      "path": "port/analysis/recovery_sfx_active_control.md",
+      "bytes": 6120,
+      "sha256": "0b910889faf8ae6ed678d9928063caf005a397d37a8d973dd21a13ec295a0a72"
+    },
+    {
+      "path": "port/analysis/recovery_sfx_active_control_frozen.json",
+      "bytes": 94499,
+      "sha256": "80fd4442088ea8abe6b93a1f0035c5b088ef7a518e02fbc0df409dddbfacce73"
+    }
+  ],
+  "predecessor_manifest": {
+    "path": "port/analysis/recovery_sfx_event_action_manifest.json",
+    "bytes": 3202,
+    "sha256": "494d576a3d208c79c37a77f8ab716b0538adfdd119fd8274a578dab80eb401c9"
+  },
+  "standalone": {
+    "bytes": 658,
+    "sha256": "8caf26030580df181ebd2f1e34f0b57020d7a658958d6aa14579c3e63b145cda"
+  },
+  "composite": {
+    "bytes": 35240,
+    "sha256": "123016ffcbdd540a426ea29efa6a0444a8cfb3ef04afb7c88732b60eae9217a1"
+  },
+  "coverage": {
+    "accepted_each": 132864,
+    "inert_rejects_each": 65534,
+    "declarative": true,
+    "original_rom": true,
+    "isolated_rom_and_private_imports_denied": true,
+    "continuous_inputs": [
+      0,
+      16,
+      1,
+      2
+    ],
+    "predecessor_continuous_regressions": 12,
+    "frozen_files_unchanged": 743
+  },
+  "live_control": {
+    "entry": "C0F688030027F8A7",
+    "exit": "8224EF0308A4F4A7",
+    "ram_writes": 6,
+    "resource_reads": 0
+  },
+  "next_boundary": {
+    "context": "86B204021324F1A7",
+    "helpers": 1246,
+    "nmis": 42,
+    "completed_returns": 39,
+    "mapper_bank": 3,
+    "additional_helpers": 8,
+    "ordered_effects_since_former_boundary": 123,
+    "reason": "SFX X02 envelope unqualified; direct SFX publication, D6/D8 pitch scaling and raw PHP/PLP need separate proof."
+  },
+  "claims_excluded": [
+    "Second mixed NMI completed",
+    "Audible or integrated Paula audio",
+    "Amiga execution or stock PAL A1200 performance",
+    "Playability",
+    "Recovery of lost later implementation"
+  ]
+}

@@ -90,10 +90,14 @@ status/stack and original-instruction tests pass. The subsequent
 [SFX event action](port/analysis/recovery_sfx_event_action.md) now returns to
 the real caller and allows the frozen helpers to complete the first mixed
 music/SFX NMI: 1,231 helpers, 41 logical NMIs and 39 completed returns, with
-bank 2 restored. The next NMI still stops at fixed-bank C0F6 because the frozen
-control does not support active SFX. Sustained SFX, envelope 86B2, alternate
-character confirmation and gameplay remain unfinished. This is host evidence,
-not audible output or Amiga game-speed validation.
+bank 2 restored. New [active-SFX control](port/analysis/recovery_sfx_active_control.md)
+then carries the following interrupt through genuine countdown and mixed
+processing to envelope 86B2: 1,246 helpers, 42 logical NMIs and 39 returns.
+That following interrupt is not complete. The SFX-only envelope publication,
+pitch scaling and raw status-stack paths still need qualification; the frozen
+music guard is unchanged. Sustained SFX, alternate-character confirmation and
+gameplay remain unfinished. This is host evidence, not audible output or Amiga
+game-speed validation.
 
 The [state-driven startup dispatcher](port/analysis/recovery_state_dispatch_startup.md)
 completes resource loading, genuine CHR requests and title fade-in through C5D1.
@@ -108,11 +112,12 @@ are reported separately.
 Run tools/test_native_title_public.sh, tools/test_scene_sound_public.sh,
 tools/test_runtime_sound_public.sh, tools/test_state_startup_public.sh and
 tools/test_state_menu_public.sh, tools/test_sfx_phase_public.sh and
-tools/test_sfx_parser_public.sh and tools/test_sfx_event_public.sh for
+tools/test_sfx_parser_public.sh, tools/test_sfx_event_public.sh and
+tools/test_active_sfx_public.sh for
 ROM-free contracts. Their corresponding private extensions are
 validate_native_title.sh, validate_scene_sound.sh, validate_runtime_sound.sh and
 validate_state_startup.sh, validate_state_menu.sh, validate_sfx_phase.sh and
-validate_sfx_parser.sh and validate_sfx_event.sh.
+validate_sfx_parser.sh, validate_sfx_event.sh and validate_active_sfx.sh.
 The new startup/display extension needs only the
 approved private cartridge and firmware, not old captured fixtures.
 
