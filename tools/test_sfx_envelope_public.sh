@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -euo pipefail
+ROOT=$(cd "$(dirname "$0")/.." && pwd)
+: "${VASM:?Set VASM to the pinned assembler executable}"
+# Complete main, directed and static-audit checks with private reads denied.
+python "$ROOT/port/tests/recovery_test_sfx_envelope_isolated.py"

@@ -20,6 +20,16 @@ Inputs and logical interrupts are scripted; it stops at the first A06C menu
 boundary. This is not an interactive selection loop, audible audio or gameplay.
 Diagnostic timing includes journal clearing and captures, not game FPS.
 
+A separate [minimally instrumented menu diagnostic](port/analysis/recovery_menu_timing.md)
+removes those validation clears and captures while preserving the exact helper
+and rendering code. Two fresh stock runs match final original state and every
+viewport pixel, using 511,488 Chip bytes and zero Fast RAM. Progression takes
+534,491 CIA ticks (0.753463 s); CHR mapping plus one render takes 56,381 ticks
+(79.479376 ms), with display DMA disabled. These are separate, unscheduled
+diagnostic intervals, not game FPS. Full boundary and poisoned-journal checks
+run separately outside the measured path. This is diagnostic-overhead reduction,
+not a gameplay or rendering optimization claim.
+
 The additive [state-driven menu dispatcher](port/analysis/recovery_state_dispatch_menu.md)
 now follows genuine Start input into character selection, consumes the queued
 video work, and handles held/released/repressed Start to confirm the default
@@ -93,11 +103,15 @@ music/SFX NMI: 1,231 helpers, 41 logical NMIs and 39 completed returns, with
 bank 2 restored. New [active-SFX control](port/analysis/recovery_sfx_active_control.md)
 then carries the following interrupt through genuine countdown and mixed
 processing to envelope 86B2: 1,246 helpers, 42 logical NMIs and 39 returns.
-That following interrupt is not complete. The SFX-only envelope publication,
-pitch scaling and raw status-stack paths still need qualification; the frozen
-music guard is unchanged. Sustained SFX, alternate-character confirmation and
-gameplay remain unfinished. This is host evidence, not audible output or Amiga
-game-speed validation.
+The separate [SFX envelope](port/analysis/recovery_sfx_envelope.md) now completes
+that second mixed interrupt and follows both Left and Right histories through
+53 genuine returns. It qualifies direct SFX publication, pitch scaling and raw
+status-stack behavior without changing the frozen music guard. The longer
+histories execute 1,765 helpers and 16 SFX envelopes before stopping at the
+untranslated high-bit stream command at 8235; the sound remains active. These
+original-code proofs begin at FE24 after hardware warmup. Complete SFX playback,
+alternate-character confirmation and gameplay remain unfinished. This is host
+evidence, not audible output, reset-vector warmup or Amiga game-speed validation.
 
 The [state-driven startup dispatcher](port/analysis/recovery_state_dispatch_startup.md)
 completes resource loading, genuine CHR requests and title fade-in through C5D1.

@@ -1,0 +1,121 @@
+{
+  "scope": "Separately qualified native 68020 SFX envelope; continuous FE24 execution after NES hardware warmup, second mixed NMI completion and bounded later ticks. Host-only recovery development.",
+  "files": [
+    {
+      "path": "port/src/recovery_sfx_envelope.s",
+      "bytes": 26615,
+      "sha256": "8121d070caa017ed91cbf13677ada9262e26b00681343fe9ddf0a65bb9664559"
+    },
+    {
+      "path": "port/tests/recovery_sfx_envelope_model.py",
+      "bytes": 7217,
+      "sha256": "7a0ab71221a0f5e8e9d5085f5303c5ed26d2a603e596395d9780906864ceacc1"
+    },
+    {
+      "path": "port/tests/recovery_test_sfx_envelope.py",
+      "bytes": 8295,
+      "sha256": "0ba8df1cf67f3ab6c85b2e4ff8b90837e0fc3ecfae97c3e2f1316efb62a94de0"
+    },
+    {
+      "path": "port/tests/recovery_test_sfx_envelope_edges.py",
+      "bytes": 2175,
+      "sha256": "93210f5bb29f92c82f867cafdabb26b3a2d083dff2f839e1968e0e621f1492d8"
+    },
+    {
+      "path": "port/tests/recovery_test_sfx_envelope_audit.py",
+      "bytes": 2904,
+      "sha256": "00b41d70cc46cf3f5f824c67a25ade7cfe7dc1df293303265f1bbc49e0568c8e"
+    },
+    {
+      "path": "port/tests/recovery_test_sfx_envelope_isolated.py",
+      "bytes": 1978,
+      "sha256": "d9124168743225a4e420810d9be2574e6e46b27f7f6dd6d582b3d24a34288da3"
+    },
+    {
+      "path": "port/tests/recovery_test_resident_sfx_envelope.py",
+      "bytes": 36304,
+      "sha256": "a8dc068ff9ca5172a4cf1b9f4b12599307f668d2650c52cdd2881c35f5cc6f5f"
+    },
+    {
+      "path": "port/analysis/recovery_sfx_envelope.md",
+      "bytes": 8532,
+      "sha256": "4591e62bd313e2a4b2e04980df4d7385954a9c9b596e06797b3e73571bddf416"
+    },
+    {
+      "path": "port/analysis/recovery_sfx_envelope_frozen.json",
+      "bytes": 95363,
+      "sha256": "bcb9c705233f4b748e2afb3344983a9e959361b161e71984e785a5b04374196e"
+    }
+  ],
+  "predecessor_manifest": {
+    "path": "port/analysis/recovery_sfx_active_control_manifest.json",
+    "bytes": 2752,
+    "sha256": "efafbbb9eb987243b8ed18ff3ee33b4ebe8f59d4796d94ac517ee7834a3f3820"
+  },
+  "frozen_predecessor_files": 750,
+  "standalone": {
+    "bytes": 4544,
+    "sha256": "980bdb5a2de84e4fc99914bed83935153b2571067e9a1535b8593a944ecb727e"
+  },
+  "composite": {
+    "bytes": 39790,
+    "sha256": "03773a0682b8697aea34ca20a400e82fdc6f6e33e4102928c7cf62967f399b13"
+  },
+  "coverage": {
+    "accepted_main_each": 132864,
+    "inert_rejections_each": 117754,
+    "directed_each": 34448,
+    "declarative": true,
+    "original_rom": true,
+    "all_static_instructions_audited": 343,
+    "reachable_original_instructions_executed": 323,
+    "music_only_unreachable_instructions": 20,
+    "isolated_main_passed": true,
+    "isolated_directed_passed": true,
+    "isolation_default_runs_main_directed_and_static_audit": true,
+    "continuous_inputs": [
+      0,
+      16,
+      1,
+      2
+    ],
+    "long_continuous_inputs": [
+      1,
+      2
+    ],
+    "predecessor_continuous_histories": 16
+  },
+  "second_mixed_return": {
+    "helpers": 1262,
+    "nmis": 42,
+    "completed_returns": 40,
+    "context": "fe9000100026ffa7",
+    "bank": 2
+  },
+  "five_return_checkpoint": {
+    "helpers": 1429,
+    "nmis": 46,
+    "completed_returns": 44,
+    "context": "fe9000100026ffa7",
+    "bank": 2,
+    "sfx_envelope_calls": 5,
+    "sfx_apu_writes": 12
+  },
+  "long_checkpoint": {
+    "helpers": 1765,
+    "nmis": 56,
+    "completed_returns": 53,
+    "context": "8235fe0300a5f2a7",
+    "bank": 3,
+    "sfx_envelope_calls": 16,
+    "sfx_apu_writes": 34,
+    "sfx_still_active": true,
+    "next_instruction": "STY $CE in high-bit stream-command continuation",
+    "safety_nmi_cap": 120
+  },
+  "limits": [
+    "No reset-vector hardware-warmup proof.",
+    "Unsupported high-bit stream-command continuation at PC 8235 is not executed.",
+    "No Paula audibility, target performance, target execution, or playability claim."
+  ]
+}
