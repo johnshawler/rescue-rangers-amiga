@@ -55,6 +55,6 @@ Verified coverage:
 
 The busy-bank deferral path and empty-queue path to `$C0F6`/bank-3 `$8000` are rejected, not approximated. This is the supported nonempty startup branch.
 
-At `$8003`, bank-3 audio initialization/command handling remains completely untranslated. Its eventual return, further queue draining, bank-3 `$8000` update, restoration of `$F1`, register restoration and RTI still require separate work. The original interrupt frame remains active. A ready timer slot does not mean the scheduler has resumed.
+At `$8003`, this helper has not executed any bank-3 audio instruction. The separate `recovery_audio_reset_command` helper now covers the guarded startup `$F0` command and its return. Other commands, further queue draining, bank-3 `$8000` update, restoration of `$F1`, register restoration and RTI remain separate work. The original interrupt frame remains active. A ready timer slot does not mean the scheduler has resumed.
 
 The NMI is an explicit logical event at the selected `$FE8D` boundary, not timing emulation or a claim about when the NES would first interrupt. There is no complete boot, audible output, gameplay, hardware-performance or physical-Amiga claim. Original ROM/assets/dumps and generated binaries remain outside the source deliverable.

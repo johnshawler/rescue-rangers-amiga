@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Public contract regression for five native helpers. No ROM or fixtures.
+"""Public contract regression for eight native helpers. No ROM or fixtures.
 
 Private original-ROM differential tests establish semantic equivalence; this
 synthetic contract test makes basic chain regressions visible in public CI.
@@ -13,7 +13,8 @@ import machine68k
 
 P = Path(__file__).resolve().parents[1]
 NAMES = ('recovery_reset_ram','recovery_reset_mapper','recovery_reset_video',
-         'recovery_reset_dispatch','recovery_first_yield')
+         'recovery_reset_dispatch','recovery_first_yield','recovery_first_nmi_prefix',
+         'recovery_nmi_audio_entry','recovery_audio_reset_command')
 RAM,CTX,JOURNAL,STACK,STOP = 0x10000,0x12000,0x13000,0x1f0000,0x800
 
 def main():
@@ -55,12 +56,13 @@ def main():
     def record(address,value,kind):
         return struct.pack('>HBB',address,value,kind)
     contexts = ('fe431eff0025fda7','fe6700ff0026fda7','fe7cc0000026fda7',
-                'c574c50008a5ffa7','fe8d00bb00a4bba7')
-    for index in range(5):
+                'c574c50008a5ffa7','fe8d00bb00a4bba7','c0bf00100026b4a7',
+                '8003f00100a5b2a7','c0f300ff0c26b4a7')
+    for index in range(8):
         journal_before = bytes(mem.r_block(JOURNAL,8754))
         call(index,1)
         assert bytes(mem.r_block(CTX,8)) == bytes.fromhex(contexts[index])
-        written_size = (0,82,8754,0,6)[index]
+        written_size = (0,82,8754,0,6,298,22,30)[index]
         assert bytes(mem.r_block(JOURNAL+written_size,8754-written_size)) == journal_before[written_size:]
         if index == 1:
             expected = struct.pack('>H',20)
@@ -78,6 +80,21 @@ def main():
             assert bytes(mem.r_block(JOURNAL,len(expected))) == expected
         if index == 4:
             assert bytes(mem.r_block(JOURNAL,6)) == struct.pack('>H',1)+record(0x2000,0x90,1)
+        if index == 5:
+            events = ((0x2000,0x10,1),(0x2002,0,0),(0x2001,0,1),(0x2003,0,1),
+                      (0x4014,2,1),(0x2002,0,0),(0x2005,0,1),(0x2005,0,1),
+                      (0x2001,0x1e,1),(0x2000,0x90,1))
+            expected = struct.pack('>H',10)+b''.join(record(*event) for event in events)
+            expected += bytes([0xf8,0,0,0])*64
+            assert bytes(mem.r_block(JOURNAL,298)) == expected
+        if index == 6:
+            expected = struct.pack('>H',5)+b''.join(record(0xfff0,3>>shift,0) for shift in range(5))
+            assert bytes(mem.r_block(JOURNAL,22)) == expected
+        if index == 7:
+            events = ((0x4000,0x30,1),(0x4004,0x30,1),(0x4008,0,1),(0x400c,0x30,1),
+                      (0x4001,8,1),(0x4005,8,1),(0x4015,0x0f,1))
+            expected = struct.pack('>H',7)+b''.join(record(*event) for event in events)
+            assert bytes(mem.r_block(JOURNAL,30)) == expected
         # Repeating a completed slice must reject without mutating its buffers.
         before = tuple(bytes(mem.r_block(a,n)) for a,n in ((RAM,2048),(CTX,8),(JOURNAL,8754)))
         call(index,-1)
@@ -88,15 +105,17 @@ def main():
     expected_ram = bytearray(2048)
     expected_ram[0xdc:0xe4] = bytes([0x88])*8
     expected_ram[0x200:0x300:4] = bytes([0xf8])*64
-    values = {0x00:0xbf,0x01:0xf0,0x80:1,0x81:1,0x82:0xbb,0x83:0xc5,
-              0x93:1,0x94:0xc5,0xd9:0xf0,0xda:1,0xdc:0xf0,
+    values = {0x00:0xbf,0x01:0xf0,0x80:4,0x82:0xbb,0x83:0xc5,0x90:0xff,0x92:1,
+              0x93:1,0x94:0xc5,0xc1:0x94,0xc2:0x81,0xd9:0xf0,0xda:1,0xdb:1,
               0xf1:6,0xf3:0x10,0xf4:6,0xfe:0x1e,0xff:0x90,
               0x1fd:0xfe,0x1fc:0x88,0x1fb:0xfe,0x1fa:0xd7,
-              0x1bf:0xc5,0x1be:0x83,0x1bd:0xbf,0x1bc:8,0x1bb:0xff,0x1ba:0x0e}
+              0x1bf:0xc5,0x1be:0x83,0x1bd:0xbf,0x1bc:8,0x1bb:0xfe,0x1ba:0x8d,
+              0x1b9:0xa4,0x1b8:0xb4,0x1b6:0xbb,0x1b4:0xc0,0x1b3:0xf2,
+              0x1b2:0x80,0x1b1:0xe5,0x1b0:0x81,0x1af:0x96,0x1ad:0x81,0x1ac:0xcc}
     for address,value in values.items():
         expected_ram[address] = value
     assert bytes(mem.r_block(RAM,2048)) == expected_ram
-    print('PASS public synthetic five-helper chain: full RAM/context, ordered journal contents, guards, ABI and five inert rejections; no ROM/firmware.')
+    print('PASS public synthetic eight-helper chain: full RAM/context, ordered journal/DMA/APU contents, guards, ABI and eight inert rejections; no ROM/firmware.')
     print('Contract regression only; private original-ROM and target tests remain required.')
 
 if __name__ == '__main__':

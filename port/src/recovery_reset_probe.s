@@ -19,6 +19,10 @@
         lea     probe_stack(pc),a3
         move.l  a3,32(a6)
         move.l  sp,36(a6)
+        ifd AUDIO_RESET
+        lea     probe_apu(pc),a3
+        move.l  a3,56(a6)
+        endc
         ifd AUDIO_ENTRY
         lea     probe_nmi(pc),a3
         move.l  a3,48(a6)
@@ -85,6 +89,13 @@
         bne.w   probe_fail
         addq.l  #1,12(a6)
         endc
+        ifd AUDIO_RESET
+        lea     probe_apu(pc),a2
+        bsr.w   recovery_audio_reset_command
+        cmpi.l  #1,d0
+        bne.w   probe_fail
+        addq.l  #1,12(a6)
+        endc
         move.l  sp,40(a6)
         clr.l   8(a6)
         move.w  #$0070,$180(a5)
@@ -109,8 +120,15 @@ probe_fail:
         include "recovery_nmi_audio_entry.s"
         endc
 
+        ifd AUDIO_RESET
+        include "recovery_audio_reset_command.s"
+        endc
+
         even
 probe_report:
+        ifd AUDIO_RESET
+        dc.b    'CDRRAPU1'
+        else
         ifd AUDIO_ENTRY
         dc.b    'CDRRAUD1'
         else
@@ -120,12 +138,16 @@ probe_report:
         dc.b    'CDRRST01'
         endc
         endc
+        endc
         dc.l    $ffffffff,0,0,0,0,0,0,0,0
         ifd FIRST_YIELD
         dc.l    0
         endc
         ifd AUDIO_ENTRY
         dc.l    0,0
+        endc
+        ifd AUDIO_RESET
+        dc.l    0
         endc
         dcb.b   16,$5a
 probe_ram:
@@ -158,6 +180,12 @@ probe_nmi:
         dcb.b   16,$5a
 probe_audio_entry:
         dcb.b   22,$a5
+        dcb.b   16,$5a
+        dcb.b   16,$5a
+        endc
+        ifd AUDIO_RESET
+probe_apu:
+        dcb.b   30,$a5
         dcb.b   16,$5a
         dcb.b   16,$5a
         endc

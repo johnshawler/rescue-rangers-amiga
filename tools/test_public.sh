@@ -14,3 +14,4 @@ trap 'rm -rf "$TMP"' EXIT
 python "$ROOT/port/tools/build_recovery_reset_probe.py"
 python "$ROOT/port/tools/build_recovery_reset_probe.py" --first-yield
 python "$ROOT/port/tools/build_recovery_reset_probe.py" --nmi-audio-entry
+python "$ROOT/port/tools/build_recovery_reset_probe.py" --audio-reset
