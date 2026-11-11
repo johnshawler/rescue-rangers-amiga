@@ -1,5 +1,7 @@
 # Bounded first silent tick and NMI return: research plan only
 
+Historical design checkpoint: the guarded path and recommended architectural-status view are now implemented and tested in `recovery_silent_tick_rti.md`, with separate stock-target evidence in `recovery_nmi_return_target.md`. The original investigation below is retained for its rationale.
+
 No native continuation is implemented by this report. The completed eighth helper ends at `$C0F3`. This research independently executes the following original-ROM path for the established synthetic startup state.
 
 ## Verified next path

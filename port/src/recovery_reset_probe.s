@@ -19,6 +19,10 @@
         lea     probe_stack(pc),a3
         move.l  a3,32(a6)
         move.l  sp,36(a6)
+        ifd NMI_RETURN
+        lea     probe_restore(pc),a3
+        move.l  a3,60(a6)
+        endc
         ifd AUDIO_RESET
         lea     probe_apu(pc),a3
         move.l  a3,56(a6)
@@ -96,6 +100,13 @@
         bne.w   probe_fail
         addq.l  #1,12(a6)
         endc
+        ifd NMI_RETURN
+        lea     probe_restore(pc),a2
+        bsr.w   recovery_silent_tick_rti
+        cmpi.l  #1,d0
+        bne.w   probe_fail
+        addq.l  #1,12(a6)
+        endc
         move.l  sp,40(a6)
         clr.l   8(a6)
         move.w  #$0070,$180(a5)
@@ -124,8 +135,15 @@ probe_fail:
         include "recovery_audio_reset_command.s"
         endc
 
+        ifd NMI_RETURN
+        include "recovery_silent_tick_rti.s"
+        endc
+
         even
 probe_report:
+        ifd NMI_RETURN
+        dc.b    'CDRRRTI1'
+        else
         ifd AUDIO_RESET
         dc.b    'CDRRAPU1'
         else
@@ -139,6 +157,7 @@ probe_report:
         endc
         endc
         endc
+        endc
         dc.l    $ffffffff,0,0,0,0,0,0,0,0
         ifd FIRST_YIELD
         dc.l    0
@@ -147,6 +166,9 @@ probe_report:
         dc.l    0,0
         endc
         ifd AUDIO_RESET
+        dc.l    0
+        endc
+        ifd NMI_RETURN
         dc.l    0
         endc
         dcb.b   16,$5a
@@ -186,6 +208,12 @@ probe_audio_entry:
         ifd AUDIO_RESET
 probe_apu:
         dcb.b   30,$a5
+        dcb.b   16,$5a
+        dcb.b   16,$5a
+        endc
+        ifd NMI_RETURN
+probe_restore:
+        dcb.b   22,$a5
         dcb.b   16,$5a
         dcb.b   16,$5a
         endc

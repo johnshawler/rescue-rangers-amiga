@@ -18,16 +18,18 @@ modes = parser.add_mutually_exclusive_group()
 modes.add_argument('--first-yield', action='store_true', help='Verify separate five-helper first-yield marker and journal')
 modes.add_argument('--nmi-audio-entry', action='store_true', help='Verify separate seven-helper NMI audio-entry probe')
 modes.add_argument('--audio-reset', action='store_true', help='Verify separate eight-helper audio reset-command probe')
+modes.add_argument('--nmi-return', action='store_true', help='Verify ninth-helper silent tick and RTI probe')
 args = parser.parse_args()
-audio_entry_mode = args.nmi_audio_entry or args.audio_reset
+audio_reset_mode = args.audio_reset or args.nmi_return
+audio_entry_mode = args.nmi_audio_entry or audio_reset_mode
 first_yield_mode = args.first_yield or audio_entry_mode
 chip = args.chip_dump.read_bytes()
 assert len(chip) == 2*1024*1024, 'Expected stock 2 MiB Chip RAM dump'
-marker = b'CDRRAPU1' if args.audio_reset else b'CDRRAUD1' if args.nmi_audio_entry else b'CDRRYLD1' if first_yield_mode else b'CDRRST01'
+marker = b'CDRRRTI1' if args.nmi_return else b'CDRRAPU1' if args.audio_reset else b'CDRRAUD1' if args.nmi_audio_entry else b'CDRRYLD1' if first_yield_mode else b'CDRRST01'
 assert chip.count(marker) == 1, 'Expected one live probe report'
 offset = chip.index(marker)
 status,steps,ram,ctx,mapper,video,stack,stack_end,sp = struct.unpack_from('>9I',chip,offset+8)
-assert (status,steps) == (0,8 if args.audio_reset else 7 if args.nmi_audio_entry else 5 if first_yield_mode else 4), (status,steps)
+assert (status,steps) == (0,9 if args.nmi_return else 8 if args.audio_reset else 7 if args.nmi_audio_entry else 5 if first_yield_mode else 4), (status,steps)
 assert stack_end-stack == 4096 and sp == stack_end
 ranges = [(ram,2048),(ctx,8),(mapper,82),(video,8754),(stack,4096)]
 if first_yield_mode:
@@ -36,9 +38,12 @@ if first_yield_mode:
 if audio_entry_mode:
     nmi_prefix,audio_entry = struct.unpack_from('>2I',chip,offset+48)
     ranges.extend(((nmi_prefix,298),(audio_entry,22)))
-if args.audio_reset:
+if audio_reset_mode:
     apu = struct.unpack_from('>I',chip,offset+56)[0]
     ranges.append((apu,30))
+if args.nmi_return:
+    restore = struct.unpack_from('>I',chip,offset+60)[0]
+    ranges.append((restore,22))
 for address,size in ranges:
     assert 16 <= address and address+size+16 <= len(chip)
     assert chip[address-16:address] == bytes([0x5a])*16
@@ -49,7 +54,7 @@ for i,(a,n) in enumerate(ranges):
 
 rom = (P.parent/'input/rescue-rangers-europe.nes').read_bytes()
 assert hashlib.sha256(rom).hexdigest() == SHA
-bus = AudioBus(rom) if args.audio_reset else NmiBus(rom) if audio_entry_mode else OriginalBus(rom)
+bus = AudioBus(rom) if audio_reset_mode else NmiBus(rom) if audio_entry_mode else OriginalBus(rom)
 bus[:2048] = [0xa5]*2048
 ref = MPU(memory=bus)
 ref.pc,ref.a,ref.x,ref.y,ref.p,ref.sp = 0xfe24,0x17,0x33,0,0x24,0xfd
@@ -63,16 +68,25 @@ for instructions in range(100000):
     if audio_entry_mode and entered_task and ref.pc == 0xfe8d and not injected:
         ref.nmi()
         injected = True
-    reached_boundary = (injected and ref.pc == 0xc0f3) if args.audio_reset else (injected and ref.pc == 0x8003) if audio_entry_mode else (entered_task and ref.pc == 0xfe8d) if first_yield_mode else ref.pc == 0xc574
+    reached_boundary = (injected and ref.pc == 0xfe8d) if args.nmi_return else (injected and ref.pc == 0xc0f3) if args.audio_reset else (injected and ref.pc == 0x8003) if audio_entry_mode else (entered_task and ref.pc == 0xfe8d) if first_yield_mode else ref.pc == 0xc574
     if reached_boundary:
         break
-    if args.audio_reset and 0x8000 <= ref.pc < 0xc000:
+    if audio_reset_mode and 0x8000 <= ref.pc < 0xc000:
         assert bus.bank == 3
         banked_audio_instructions += 1
     ref.step()
 else:
     raise AssertionError('Original reset reference did not reach requested boundary')
 expected_ctx = struct.pack('>H6B',ref.pc,ref.a,ref.x,ref.y,ref.p,ref.sp,0xa7)
+def architectural_status_view(context):
+    """Comparison only: canonical B=0/U=1; never mutate oracle P or RAM."""
+    return context[:5]+bytes(((context[5]&0xef)|0x20,))+context[6:]
+raw_oracle_ctx = expected_ctx
+if args.nmi_return:
+    assert ref.p == 0xb4 and bus[0x1b9] == 0xa4 and bus[0x1b8] == 0xb4
+    assert bytes(bus[0x1b5:0x1bc]) == bytes((0,0xbb,0,0xb4,0xa4,0x8d,0xfe))
+    assert bus.bank == 6 and not bus.bits
+    expected_ctx = architectural_status_view(raw_oracle_ctx)
 assert chip[ram:ram+2048] == bytes(bus[:2048]), 'Original/native RAM mismatch'
 assert chip[ctx:ctx+8] == expected_ctx, 'Original/native context mismatch'
 def journal(kind, start=None, end=None):
@@ -87,17 +101,20 @@ if first_yield_mode:
 if audio_entry_mode:
     assert injected and len(bus.dma) == 1
     assert chip[nmi_prefix:nmi_prefix+298] == journal('ppu',start=2189)+bus.dma[0]
-    assert chip[audio_entry:audio_entry+22] == journal('mapper',start=20)
-    assert len([e for e in bus.events if e[0]=='mapper']) == 25
-if args.audio_reset:
+    assert chip[audio_entry:audio_entry+22] == journal('mapper',start=20,end=25)
+    assert len([e for e in bus.events if e[0]=='mapper']) == (30 if args.nmi_return else 25)
+if audio_reset_mode:
     assert chip[apu:apu+30] == journal('apu')
     assert len([e for e in bus.events if e[0]=='apu']) == 7
+if args.nmi_return:
+    assert chip[restore:restore+22] == journal('mapper',start=25)
+    assert ref.p == raw_oracle_ctx[5] == 0xb4
 ppu = [e for e in bus.events if e[0]=='ppu'][:2188]
 for latch in (0,1):
     cleared,_,_ = apply_ppu(ppu,bytes([0xa5])*2048,latch)
     assert cleared == bytes(2048)
-report = {'status':'PASS','boundary':('FE24 through startup APU reset command return C0F3' if args.audio_reset else 'FE24 through explicit NMI to bank-3 8003 entry' if audio_entry_mode else 'FE24 to first FE8D yield' if first_yield_mode else 'FE24 to C574'),'native_helper_count':steps,
-          'ram_bytes_equal':2048,'context_bytes_equal':8,'mapper_records_equal':25 if audio_entry_mode else 20,
+report = {'status':'PASS','boundary':('FE24 through first silent tick and RTI, before FE8D scheduler instruction' if args.nmi_return else 'FE24 through startup APU reset command return C0F3' if args.audio_reset else 'FE24 through explicit NMI to bank-3 8003 entry' if audio_entry_mode else 'FE24 to first FE8D yield' if first_yield_mode else 'FE24 to C574'),'native_helper_count':steps,
+          'ram_bytes_equal':2048,'context_bytes_equal':8,'mapper_records_equal':30 if args.nmi_return else 25 if audio_entry_mode else 20,
           'ppu_records_equal':2199 if audio_entry_mode else 2189 if first_yield_mode else 2188,
           'guard_regions_intact':len(ranges)*2,'native_stack_balanced':True,
           'original_instruction_count':instructions,
@@ -105,6 +122,11 @@ report = {'status':'PASS','boundary':('FE24 through startup APU reset command re
 if audio_entry_mode:
     report['dma_bytes_equal'] = 256
     report['banked_audio_instructions_executed'] = banked_audio_instructions
-if args.audio_reset:
+if audio_reset_mode:
     report['apu_records_equal'] = 7
+if args.nmi_return:
+    report['status_representation'] = {'native_canonical_P':'A4','raw_py65_RTI_P':'B4',
+        'hardware_saved_P':'A4','handler_saved_P':'B4',
+        'comparison':'architectural_status_view clears virtual B, sets U; N/V/D/I/Z/C exact',
+        'oracle_P_and_RAM_unchanged':True,'restored_PRG_bank':bus.bank}
 print(json.dumps(report,indent=2))

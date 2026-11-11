@@ -41,6 +41,10 @@ native game-code translation and Amiga rendering, not a general NES interpreter.
   additionally executes the native startup mute/reset command. Its seven APU
   register writes match the original as explicit data. Sound synthesis, Paula
   playback, the subsequent tick/NMI return and scheduler resumption remain outside it.
+- An opt-in [NMI-return probe](port/analysis/recovery_nmi_return_target.md)
+  completes the first silent tick, restores the original bank and interrupt
+  context, and stops before the scheduler resumes. Its canonical status ABI
+  preserves all physical flags while explicitly distinguishing py65's virtual B bit.
 - Captured initial title state remains a private development fixture. New work
   will replace that dependency with verified original reset/resource logic.
 
@@ -61,7 +65,7 @@ See [recovery provenance](docs/RECOVERY.md) and the validation summary. The new 
 
 Install Python dependencies from `requirements-dev.txt`. Supply vasm via the
 `VASM` environment variable. `bash tools/test_public.sh` runs the two synthetic
-assembled-code renderer suites, restore-safety tests, a synthetic eight-helper
+assembled-code renderer suites, restore-safety tests, a synthetic nine-helper
 contract regression and reset-probe assembly
 without a game ROM or firmware.
 
