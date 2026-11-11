@@ -5,7 +5,7 @@ mkdir -p "$ROOT/logs" "$ROOT/port/build"
 : "${VASM:?Set VASM to the pinned assembler executable}"
 : "${PUAE_CORE:?Set PUAE_CORE to the pinned puae_libretro.so}"
 : "${HEADLESS:?Set HEADLESS to the compiled recovered scripts/headless.c}"
-for test in test_native_background test_native_sprites test_rescue_game test_rescue_title test_rescue_title_queue recovery_test_reset_ram recovery_test_reset_mapper recovery_test_reset_video recovery_test_reset_dispatch recovery_test_first_yield; do
+for test in test_native_background test_native_sprites test_rescue_game test_rescue_title test_rescue_title_queue recovery_test_reset_ram recovery_test_reset_mapper recovery_test_reset_video recovery_test_reset_dispatch recovery_test_first_yield recovery_test_first_nmi_prefix recovery_test_nmi_audio_entry; do
  python "$ROOT/port/tests/$test.py" | tee "$ROOT/logs/recovery-$test.log"
 done
 python "$ROOT/port/tools/build_recovery_reset_probe.py" | tee "$ROOT/logs/recovery-reset-probe-build.log"
@@ -16,6 +16,10 @@ python "$ROOT/port/tools/build_recovery_reset_probe.py" --first-yield | tee "$RO
 PUAE_MODEL=A1200OG RAM_OUT="$ROOT/port/build/recovery-first-yield-probe-chip.bin" \
  timeout 90 "$HEADLESS" "$PUAE_CORE" "$ROOT/port/build/recovery-first-yield-probe.adf" "$ROOT/artifacts/a1200-system" 600 "$ROOT/port/build/recovery-first-yield-probe.ppm" > "$ROOT/logs/recovery-first-yield-probe-amiga.log" 2>&1
 python "$ROOT/port/tests/verify_recovery_reset_probe.py" "$ROOT/port/build/recovery-first-yield-probe-chip.bin" --first-yield | tee "$ROOT/logs/recovery-first-yield-probe-verified.json"
+python "$ROOT/port/tools/build_recovery_reset_probe.py" --nmi-audio-entry | tee "$ROOT/logs/recovery-nmi-audio-entry-probe-build.log"
+PUAE_MODEL=A1200OG RAM_OUT="$ROOT/port/build/recovery-nmi-audio-entry-probe-chip.bin" \
+ timeout 90 "$HEADLESS" "$PUAE_CORE" "$ROOT/port/build/recovery-nmi-audio-entry-probe.adf" "$ROOT/artifacts/a1200-system" 600 "$ROOT/port/build/recovery-nmi-audio-entry-probe.ppm" > "$ROOT/logs/recovery-nmi-audio-entry-probe-amiga.log" 2>&1
+python "$ROOT/port/tests/verify_recovery_reset_probe.py" "$ROOT/port/build/recovery-nmi-audio-entry-probe-chip.bin" --nmi-audio-entry | tee "$ROOT/logs/recovery-nmi-audio-entry-probe-verified.json"
 python "$ROOT/port/tools/build_title.py" | tee "$ROOT/logs/recovery-build.log"
 python - "$ROOT" <<'PY'
 import hashlib,sys

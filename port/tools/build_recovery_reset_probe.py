@@ -9,16 +9,20 @@ import struct
 import subprocess
 
 parser = argparse.ArgumentParser(description=__doc__)
-parser.add_argument('--first-yield', action='store_true', help='Build separate fifth-helper first-yield probe')
+modes = parser.add_mutually_exclusive_group()
+modes.add_argument('--first-yield', action='store_true', help='Build separate fifth-helper first-yield probe')
+modes.add_argument('--nmi-audio-entry', action='store_true', help='Build separate seven-helper NMI audio-entry probe')
 args = parser.parse_args()
-name = 'recovery-first-yield-probe' if args.first_yield else 'recovery-reset-probe'
+first_yield = args.first_yield or args.nmi_audio_entry
+name = 'recovery-nmi-audio-entry-probe' if args.nmi_audio_entry else 'recovery-first-yield-probe' if first_yield else 'recovery-reset-probe'
 P = Path(__file__).resolve().parents[1]
 B = P/'build'
 B.mkdir(exist_ok=True)
 vasm = os.environ['VASM']
 payload_file = B/(name+'.bin')
 subprocess.run([vasm,'-m68020','-Fbin','-quiet','-I'+str(P/'src'),
-                *(['-DFIRST_YIELD=1'] if args.first_yield else []),
+                *(['-DFIRST_YIELD=1'] if first_yield else []),
+                *(['-DAUDIO_ENTRY=1'] if args.nmi_audio_entry else []),
                 '-o',str(payload_file),str(P/'src/recovery_reset_probe.s')], check=True)
 payload = payload_file.read_bytes()
 rounded = (len(payload)+511)//512*512
@@ -37,7 +41,7 @@ for offset in range(0,1024,4):
 struct.pack_into('>I',disk,4,(~checksum)&0xffffffff)
 out = B/(name+'.adf')
 out.write_bytes(disk)
-report = {'artifact':out.name,'purpose':('Isolated FE24-to-first-FE8D yield, not game boot' if args.first_yield else 'Isolated FE24-to-C574 reset boundary, not game boot'),
+report = {'artifact':out.name,'purpose':('Isolated reset/NMI to bank-3 audio entry, no audio execution' if args.nmi_audio_entry else 'Isolated FE24-to-first-FE8D yield, not game boot' if args.first_yield else 'Isolated FE24-to-C574 reset boundary, not game boot'),
           'payload_bytes':len(payload),'allocation_bytes':rounded,
           'sha256':hashlib.sha256(disk).hexdigest(),'proprietary_inputs':False}
 (B/(name+'-build.json')).write_text(json.dumps(report,indent=2)+'\n')

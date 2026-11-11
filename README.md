@@ -32,8 +32,12 @@ native game-code translation and Amiga rendering, not a general NES interpreter.
   those four helpers and matches all original RAM, context and journal records.
 - An opt-in [first-yield probe](port/analysis/recovery_first_yield_target.md)
   adds the task prefix, sound-request enqueue and saved continuation. All five
-  helpers match the original through the first yield. Audio playback and the
-  asynchronous NMI needed to resume the task remain untranslated.
+  helpers match the original through the first yield.
+- An opt-in [NMI audio-entry probe](port/analysis/recovery_nmi_audio_entry_target.md)
+  injects one logical NMI at the chosen first-yield boundary and follows the handler
+  to the bank-3 sound-request entry. It matches RAM, interrupt stack, timer,
+  mapper, PPU and OAM DMA results. No banked audio instruction executes, and
+  audio playback, the rest of NMI and scheduler resumption remain untranslated.
 - Captured initial title state remains a private development fixture. New work
   will replace that dependency with verified original reset/resource logic.
 
@@ -54,7 +58,8 @@ See [recovery provenance](docs/RECOVERY.md) and the validation summary. The new 
 
 Install Python dependencies from `requirements-dev.txt`. Supply vasm via the
 `VASM` environment variable. `bash tools/test_public.sh` runs the two synthetic
-assembled-code renderer suites, restore-safety tests and reset-probe assembly
+assembled-code renderer suites, restore-safety tests, a synthetic five-helper
+contract regression and reset-probe assembly
 without a game ROM or firmware.
 
 Private original-ROM tests require the hash-checked European cartridge at

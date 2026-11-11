@@ -19,32 +19,70 @@
         lea     probe_stack(pc),a3
         move.l  a3,32(a6)
         move.l  sp,36(a6)
+        ifd AUDIO_ENTRY
+        lea     probe_nmi(pc),a3
+        move.l  a3,48(a6)
+        lea     probe_audio_entry(pc),a3
+        move.l  a3,52(a6)
+        endc
         ifd FIRST_YIELD
         lea     probe_yield(pc),a3
         move.l  a3,44(a6)
         endc
         bsr.w   recovery_reset_ram
         cmpi.l  #1,d0
+        ifd AUDIO_ENTRY
+        bne.w   probe_fail
+        else
         bne.s   probe_fail
+        endc
         addq.l  #1,12(a6)
         bsr.w   recovery_reset_mapper
         cmpi.l  #1,d0
+        ifd AUDIO_ENTRY
+        bne.w   probe_fail
+        else
         bne.s   probe_fail
+        endc
         addq.l  #1,12(a6)
         lea     probe_video(pc),a2
         bsr.w   recovery_reset_video
         cmpi.l  #1,d0
+        ifd AUDIO_ENTRY
+        bne.w   probe_fail
+        else
         bne.s   probe_fail
+        endc
         addq.l  #1,12(a6)
         bsr.w   recovery_reset_dispatch
         cmpi.l  #1,d0
+        ifd AUDIO_ENTRY
+        bne.w   probe_fail
+        else
         bne.s   probe_fail
+        endc
         addq.l  #1,12(a6)
         ifd FIRST_YIELD
         lea     probe_yield(pc),a2
         bsr.w   recovery_first_yield
         cmpi.l  #1,d0
+        ifd AUDIO_ENTRY
+        bne.w   probe_fail
+        else
         bne.s   probe_fail
+        endc
+        addq.l  #1,12(a6)
+        endc
+        ifd AUDIO_ENTRY
+        lea     probe_nmi(pc),a2
+        bsr.w   recovery_first_nmi_prefix
+        cmpi.l  #1,d0
+        bne.w   probe_fail
+        addq.l  #1,12(a6)
+        lea     probe_audio_entry(pc),a2
+        bsr.w   recovery_nmi_audio_entry
+        cmpi.l  #1,d0
+        bne.w   probe_fail
         addq.l  #1,12(a6)
         endc
         move.l  sp,40(a6)
@@ -66,16 +104,28 @@ probe_fail:
         include "recovery_first_yield.s"
         endc
 
+        ifd AUDIO_ENTRY
+        include "recovery_first_nmi_prefix.s"
+        include "recovery_nmi_audio_entry.s"
+        endc
+
         even
 probe_report:
+        ifd AUDIO_ENTRY
+        dc.b    'CDRRAUD1'
+        else
         ifd FIRST_YIELD
         dc.b    'CDRRYLD1'
         else
         dc.b    'CDRRST01'
         endc
+        endc
         dc.l    $ffffffff,0,0,0,0,0,0,0,0
         ifd FIRST_YIELD
         dc.l    0
+        endc
+        ifd AUDIO_ENTRY
+        dc.l    0,0
         endc
         dcb.b   16,$5a
 probe_ram:
@@ -98,6 +148,16 @@ probe_video:
         ifd FIRST_YIELD
 probe_yield:
         dcb.b   6,$a5
+        dcb.b   16,$5a
+        dcb.b   16,$5a
+        endc
+        ifd AUDIO_ENTRY
+probe_nmi:
+        dcb.b   298,$a5
+        dcb.b   16,$5a
+        dcb.b   16,$5a
+probe_audio_entry:
+        dcb.b   22,$a5
         dcb.b   16,$5a
         dcb.b   16,$5a
         endc
