@@ -19,6 +19,22 @@
         lea     probe_stack(pc),a3
         move.l  a3,32(a6)
         move.l  sp,36(a6)
+        ifd MUSIC_CHANNEL_SETUP
+        lea     probe_stream_fetch05(pc),a3
+        move.l  a3,92(a6)
+        lea     probe_command05(pc),a3
+        move.l  a3,96(a6)
+        lea     probe_stream_fetch06(pc),a3
+        move.l  a3,100(a6)
+        lea     probe_command06(pc),a3
+        move.l  a3,104(a6)
+        lea     probe_stream_fetch07(pc),a3
+        move.l  a3,108(a6)
+        lea     probe_stream_command07_volume(pc),a3
+        move.l  a3,112(a6)
+        lea     probe_snapshots(pc),a3
+        move.l  a3,116(a6)
+        endc
         ifd MUSIC_FETCH
         lea     probe_music_fetch(pc),a3
         move.l  a3,84(a6)
@@ -286,6 +302,157 @@ probe_music_command04_abi_fail:
         bra.w   probe_fail
 probe_music_command04_abi_done:
         endc
+        ifd MUSIC_CHANNEL_SETUP
+        lea     probe_stream_fetch05(pc),a2
+        lea     probe_music_resource(pc),a3
+        movem.l d1-d7/a0-a6,-(sp)
+        bsr.w   recovery_music_stream_fetch
+        cmpi.l  #1,d0
+        bne.w   probe_fail
+        movem.l d1-d7/a0-a6,-(sp)
+        move.l  sp,a3
+        lea     56(sp),a4
+        moveq   #13,d0
+probe_stream_fetch05_abi:
+        move.l  (a3)+,d1
+        cmp.l   (a4)+,d1
+        bne.w   probe_channel_abi_fail
+        dbra    d0,probe_stream_fetch05_abi
+        movem.l (sp)+,d1-d7/a0-a6
+        lea     56(sp),sp
+        addq.l  #1,12(a6)
+; Snapshot comparison data only; no write to emulated context or RAM.
+        move.l  a4,-(sp)
+        lea     probe_snapshots(pc),a4
+        move.l  (a1),0(a4)
+        move.l  4(a1),4(a4)
+        move.l  (sp)+,a4
+        lea     probe_command05(pc),a2
+        lea     probe_music_resource(pc),a3
+        movem.l d1-d7/a0-a6,-(sp)
+        bsr.w   recovery_music_command05
+        cmpi.l  #1,d0
+        bne.w   probe_fail
+        movem.l d1-d7/a0-a6,-(sp)
+        move.l  sp,a3
+        lea     56(sp),a4
+        moveq   #13,d0
+probe_command05_abi:
+        move.l  (a3)+,d1
+        cmp.l   (a4)+,d1
+        bne.w   probe_channel_abi_fail
+        dbra    d0,probe_command05_abi
+        movem.l (sp)+,d1-d7/a0-a6
+        lea     56(sp),sp
+        addq.l  #1,12(a6)
+; Snapshot comparison data only; no write to emulated context or RAM.
+        move.l  a4,-(sp)
+        lea     probe_snapshots(pc),a4
+        move.l  (a1),8(a4)
+        move.l  4(a1),12(a4)
+        move.l  (sp)+,a4
+        lea     probe_stream_fetch06(pc),a2
+        lea     probe_music_resource(pc),a3
+        movem.l d1-d7/a0-a6,-(sp)
+        bsr.w   recovery_music_stream_fetch
+        cmpi.l  #1,d0
+        bne.w   probe_fail
+        movem.l d1-d7/a0-a6,-(sp)
+        move.l  sp,a3
+        lea     56(sp),a4
+        moveq   #13,d0
+probe_stream_fetch06_abi:
+        move.l  (a3)+,d1
+        cmp.l   (a4)+,d1
+        bne.w   probe_channel_abi_fail
+        dbra    d0,probe_stream_fetch06_abi
+        movem.l (sp)+,d1-d7/a0-a6
+        lea     56(sp),sp
+        addq.l  #1,12(a6)
+; Snapshot comparison data only; no write to emulated context or RAM.
+        move.l  a4,-(sp)
+        lea     probe_snapshots(pc),a4
+        move.l  (a1),16(a4)
+        move.l  4(a1),20(a4)
+        move.l  (sp)+,a4
+        lea     probe_command06(pc),a2
+        lea     probe_music_resource(pc),a3
+        movem.l d1-d7/a0-a6,-(sp)
+        bsr.w   recovery_music_command06
+        cmpi.l  #1,d0
+        bne.w   probe_fail
+        movem.l d1-d7/a0-a6,-(sp)
+        move.l  sp,a3
+        lea     56(sp),a4
+        moveq   #13,d0
+probe_command06_abi:
+        move.l  (a3)+,d1
+        cmp.l   (a4)+,d1
+        bne.w   probe_channel_abi_fail
+        dbra    d0,probe_command06_abi
+        movem.l (sp)+,d1-d7/a0-a6
+        lea     56(sp),sp
+        addq.l  #1,12(a6)
+; Snapshot comparison data only; no write to emulated context or RAM.
+        move.l  a4,-(sp)
+        lea     probe_snapshots(pc),a4
+        move.l  (a1),24(a4)
+        move.l  4(a1),28(a4)
+        move.l  (sp)+,a4
+        lea     probe_stream_fetch07(pc),a2
+        lea     probe_music_resource(pc),a3
+        movem.l d1-d7/a0-a6,-(sp)
+        bsr.w   recovery_music_stream_fetch
+        cmpi.l  #1,d0
+        bne.w   probe_fail
+        movem.l d1-d7/a0-a6,-(sp)
+        move.l  sp,a3
+        lea     56(sp),a4
+        moveq   #13,d0
+probe_stream_fetch07_abi:
+        move.l  (a3)+,d1
+        cmp.l   (a4)+,d1
+        bne.w   probe_channel_abi_fail
+        dbra    d0,probe_stream_fetch07_abi
+        movem.l (sp)+,d1-d7/a0-a6
+        lea     56(sp),sp
+        addq.l  #1,12(a6)
+; Snapshot comparison data only; no write to emulated context or RAM.
+        move.l  a4,-(sp)
+        lea     probe_snapshots(pc),a4
+        move.l  (a1),32(a4)
+        move.l  4(a1),36(a4)
+        move.l  (sp)+,a4
+        lea     probe_stream_command07_volume(pc),a2
+        lea     probe_music_resource(pc),a3
+        movem.l d1-d7/a0-a6,-(sp)
+        bsr.w   recovery_music_stream_command07_volume
+        cmpi.l  #1,d0
+        bne.w   probe_fail
+        movem.l d1-d7/a0-a6,-(sp)
+        move.l  sp,a3
+        lea     56(sp),a4
+        moveq   #13,d0
+probe_stream_command07_volume_abi:
+        move.l  (a3)+,d1
+        cmp.l   (a4)+,d1
+        bne.w   probe_channel_abi_fail
+        dbra    d0,probe_stream_command07_volume_abi
+        movem.l (sp)+,d1-d7/a0-a6
+        lea     56(sp),sp
+        addq.l  #1,12(a6)
+; Snapshot comparison data only; no write to emulated context or RAM.
+        move.l  a4,-(sp)
+        lea     probe_snapshots(pc),a4
+        move.l  (a1),40(a4)
+        move.l  4(a1),44(a4)
+        move.l  (sp)+,a4
+        bra.s   probe_channel_done
+probe_channel_abi_fail:
+        moveq   #-2,d0
+        bra.w   probe_fail
+probe_channel_done:
+        endc
         move.l  sp,40(a6)
         clr.l   8(a6)
         move.w  #$0070,$180(a5)
@@ -340,8 +507,17 @@ probe_fail:
         ifd MUSIC_COMMAND04
         include "recovery_music_command04.s"
         endc
+        ifd MUSIC_CHANNEL_SETUP
+        include "recovery_music_stream_fetch.s"
+        include "recovery_music_command05.s"
+        include "recovery_music_command06.s"
+        include "recovery_music_stream_command07_volume.s"
+        endc
         even
 probe_report:
+        ifd MUSIC_CHANNEL_SETUP
+        dc.b    'CDRMCS01'
+        else
         ifd MUSIC_COMMAND04
         dc.b    'CDRMC041'
         else
@@ -383,6 +559,7 @@ probe_report:
         endc
         endc
         endc
+        endc
         dc.l    $ffffffff,0,0,0,0,0,0,0,0
         ifd FIRST_YIELD
         dc.l    0
@@ -410,6 +587,9 @@ probe_report:
         endc
         ifd MUSIC_COMMAND04
         dc.l    0
+        endc
+        ifd MUSIC_CHANNEL_SETUP
+        dc.l    0,0,0,0,0,0,0
         endc
         dcb.b   16,$5a
 probe_ram:
@@ -488,6 +668,36 @@ probe_music_fetch:
         ifd MUSIC_COMMAND04
 probe_music_command04:
         dcb.b   14,$a5
+        dcb.b   16,$5a
+        dcb.b   16,$5a
+        endc
+        ifd MUSIC_CHANNEL_SETUP
+probe_stream_fetch05:
+        dcb.b   6,$a5
+        dcb.b   16,$5a
+        dcb.b   16,$5a
+probe_command05:
+        dcb.b   18,$a5
+        dcb.b   16,$5a
+        dcb.b   16,$5a
+probe_stream_fetch06:
+        dcb.b   6,$a5
+        dcb.b   16,$5a
+        dcb.b   16,$5a
+probe_command06:
+        dcb.b   14,$a5
+        dcb.b   16,$5a
+        dcb.b   16,$5a
+probe_stream_fetch07:
+        dcb.b   6,$a5
+        dcb.b   16,$5a
+        dcb.b   16,$5a
+probe_stream_command07_volume:
+        dcb.b   14,$a5
+        dcb.b   16,$5a
+        dcb.b   16,$5a
+probe_snapshots:
+        dcb.b   48,$a5
         dcb.b   16,$5a
         dcb.b   16,$5a
         endc

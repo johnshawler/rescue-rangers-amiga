@@ -5,7 +5,7 @@ mkdir -p "$ROOT/logs" "$ROOT/port/build"
 : "${VASM:?Set VASM to the pinned assembler executable}"
 : "${PUAE_CORE:?Set PUAE_CORE to the pinned puae_libretro.so}"
 : "${HEADLESS:?Set HEADLESS to the compiled recovered scripts/headless.c}"
-for test in test_native_background test_native_sprites test_rescue_game test_rescue_title test_rescue_title_queue recovery_test_reset_ram recovery_test_reset_mapper recovery_test_reset_video recovery_test_reset_dispatch recovery_test_first_yield recovery_test_first_nmi_prefix recovery_test_nmi_audio_entry recovery_test_audio_reset_command recovery_test_silent_tick_rti recovery_test_scheduler_resume recovery_test_resumed_task_setup recovery_test_palette_nmi_prefix recovery_test_music07_command recovery_test_music_tick_fetch recovery_test_music_command04 recovery_test_music_stream_command05; do
+for test in test_native_background test_native_sprites test_rescue_game test_rescue_title test_rescue_title_queue recovery_test_reset_ram recovery_test_reset_mapper recovery_test_reset_video recovery_test_reset_dispatch recovery_test_first_yield recovery_test_first_nmi_prefix recovery_test_nmi_audio_entry recovery_test_audio_reset_command recovery_test_silent_tick_rti recovery_test_scheduler_resume recovery_test_resumed_task_setup recovery_test_palette_nmi_prefix recovery_test_music07_command recovery_test_music_tick_fetch recovery_test_music_command04 recovery_test_music_stream_command05 recovery_test_music_channel_setup recovery_test_gameplay_player_init; do
  python "$ROOT/port/tests/$test.py" | tee "$ROOT/logs/recovery-$test.log"
 done
 python "$ROOT/port/tools/build_recovery_reset_probe.py" | tee "$ROOT/logs/recovery-reset-probe-build.log"
@@ -47,13 +47,20 @@ PUAE_MODEL=A1200OG RAM_OUT="$ROOT/port/build/recovery-music07-probe-chip.bin" \
  timeout 90 "$HEADLESS" "$PUAE_CORE" "$ROOT/port/build/recovery-music07-probe.adf" "$ROOT/artifacts/a1200-system" 600 "$ROOT/port/build/recovery-music07-probe.ppm" > "$ROOT/logs/recovery-music07-probe-amiga.log" 2>&1
 python "$ROOT/port/tests/verify_recovery_reset_probe.py" "$ROOT/port/build/recovery-music07-probe-chip.bin" --music07 | tee "$ROOT/logs/recovery-music07-probe-verified.json"
 python "$ROOT/port/tests/recovery_test_music07_target.py" | tee "$ROOT/logs/recovery-music07-probe-negative.log"
-for mode in music-fetch music-command04; do
+for mode in music-fetch music-command04 music-channel-setup; do
  python "$ROOT/port/tools/build_recovery_reset_probe.py" --"$mode" | tee "$ROOT/logs/recovery-$mode-probe-build.log"
  PUAE_MODEL=A1200OG RAM_OUT="$ROOT/port/build/recovery-$mode-probe-chip.bin" \
   timeout 90 "$HEADLESS" "$PUAE_CORE" "$ROOT/port/build/recovery-$mode-probe.adf" "$ROOT/artifacts/a1200-system" 600 "$ROOT/port/build/recovery-$mode-probe.ppm" > "$ROOT/logs/recovery-$mode-probe-amiga.log" 2>&1
  python "$ROOT/port/tests/verify_recovery_reset_probe.py" "$ROOT/port/build/recovery-$mode-probe-chip.bin" --"$mode" | tee "$ROOT/logs/recovery-$mode-probe-verified.json"
 done
 python "$ROOT/port/tests/recovery_test_first_music_target.py" | tee "$ROOT/logs/recovery-first-music-target-negative.log"
+python "$ROOT/port/tests/recovery_test_music_channel_setup_target.py" | tee "$ROOT/logs/recovery-music-channel-setup-target-negative.log"
+# This independent player-initialization diagnostic uses invented source-only fixtures.
+python "$ROOT/port/tools/build_recovery_gameplay_player_init_probe.py" | tee "$ROOT/logs/recovery-gameplay-player-init-build.log"
+PUAE_MODEL=A1200OG RAM_OUT="$ROOT/port/build/recovery-gameplay-player-init-probe-chip.bin" \
+ timeout 90 "$HEADLESS" "$PUAE_CORE" "$ROOT/port/build/recovery-gameplay-player-init-probe.adf" "$ROOT/artifacts/a1200-system" 600 "$ROOT/port/build/recovery-gameplay-player-init-probe.ppm" > "$ROOT/logs/recovery-gameplay-player-init-amiga.log" 2>&1
+python "$ROOT/port/tests/verify_recovery_gameplay_player_init_probe.py" "$ROOT/port/build/recovery-gameplay-player-init-probe-chip.bin" | tee "$ROOT/logs/recovery-gameplay-player-init-verified.json"
+python "$ROOT/port/tests/recovery_test_gameplay_player_init_target.py" | tee "$ROOT/logs/recovery-gameplay-player-init-negative.log"
 python "$ROOT/port/tools/build_title.py" | tee "$ROOT/logs/recovery-build.log"
 python - "$ROOT" <<'PY'
 import hashlib,sys
