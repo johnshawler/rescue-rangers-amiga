@@ -77,7 +77,8 @@ native game-code translation and Amiga rendering, not a general NES interpreter.
   now completes instrument/control setup and the first rest event through the
   original channel return: thirty calls, twenty-three helpers and thirty-three
   resource records. The later resident runtime probe below completes the remaining channels
-  and initial active tick; subsequent ticks and audible playback remain incomplete.
+  and initial active tick; the further resident fade target below verifies repeated
+  ticks. Audible playback remains incomplete.
 - A separate new [player-initialization helper](port/analysis/recovery_gameplay_player_init.md)
   matches 131,072 original-ROM cases. Its
   [source-only stock-target probe](port/analysis/recovery_gameplay_player_init_target.md)
@@ -103,10 +104,27 @@ native game-code translation and Amiga rendering, not a general NES interpreter.
 - New general scheduler, frame-yield and idle-NMI helpers also compose with the
   synthetic stage initialization without fabricating readiness. Indexed music
   commands, rest/pitched events and the active interrupt return now have
-  exhaustive synthetic and original-ROM checks. The first startup fade
-  countdown at $C2A8, subsequent active envelopes/callbacks, nonempty video
-  queues and authentic title-to-stage loading remain incomplete.
-  This is not yet a continuously running native frame loop or audible output.
+  exhaustive synthetic and original-ROM checks. Those original helper-local boundaries remain useful regressions. The newer
+  resident startup target below implements the fade countdown and repeated
+  active envelopes, while callbacks, nonempty video queues and authentic
+  title-to-stage loading remain incomplete.
+- A [private resident startup-fade target](port/analysis/recovery_resident_fade_target.md)
+  now continues from reset through $C597: 533 native calls, 18 logical NMIs,
+  16 subsequent music calls and 114 APU writes in total. The emulated stock PAL
+  A1200 matches all 533 full RAM/context snapshots, ordered hardware/resource
+  journals and 4,608 DMA bytes. Its cleared Chip allocation is 1,374,720 bytes.
+  Target snapshots are distinguished from the host harness's per-access trace.
+  Corrected active-control guards also pass 16,128 arbitrary-return regressions.
+- Separate [resident host video setup](port/analysis/recovery_startup_video_clear.md)
+  extends the same native state to $C5BB in 534 calls. It implements rendering
+  disable, OAM/object/camera initialization and nametable/attribute clearing.
+  This additional slice is host-tested, not included in the 533-call Amiga
+  diagnostic. Bank-2 resources, deferred audio and later CHR/video work remain.
+- [Repeated music tests](port/analysis/recovery_repeated_active_audio.md) cover
+  41 standalone calls per sequence before unsupported command02. They include
+  envelopes, duration changes and command03, with explicit CF-callback guards.
+  Register journals are not sound playback: no integrated Paula renderer,
+  audible game output, gameplay-speed result or new playable disk is supplied.
 - Captured initial title state remains a private development fixture. New work
   will replace that dependency with verified original reset/resource logic.
 
@@ -129,7 +147,8 @@ Install Python dependencies from `requirements-dev.txt`. Supply vasm via the
 `VASM` environment variable. `bash tools/test_public.sh` runs the two synthetic
 assembled-code renderer suites, restore-safety tests, a synthetic twelve-helper
 contract regression, synthetic music/stage/runtime-helper contracts (including
-inert rejection and boundary checks) and ten source-only probe assemblies
+inert rejection and boundary checks), repeated-audio/fade/video contracts, and
+ten source-only probe assemblies
 without a game ROM or firmware.
 
 Private original-ROM tests require the hash-checked European cartridge at
@@ -141,8 +160,11 @@ The helper validates every included fixture and refuses to replace mismatching
 existing files. `python tools/restore_private_inputs.py --help` describes inputs.
 
 For full validation, set `VASM`, `PUAE_CORE` and `HEADLESS`, then run
-`bash validate_recovery.sh`. This includes seventeen separate emulated-target
-diagnostics, negative dump/build-gate checks and five title-display scenarios.
+`bash validate_recovery.sh`. This includes eighteen separate emulated-target diagnostics, negative
+dump/build-gate checks and five title-display scenarios. The appended
+`validate_resident_startup.sh` extension expects the baseline probe outputs
+produced earlier in the full script. For synthetic extension tests alone, run
+`bash tools/test_resident_startup_public.sh`.
 Pinned tool revisions and hashes are recorded in
 `docs/recovery-validation.json`. Compile `scripts/headless.c` against the
 libretro headers with `-ldl -Wl,--no-as-needed -lm`.

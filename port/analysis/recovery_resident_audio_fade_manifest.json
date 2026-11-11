@@ -1,0 +1,47 @@
+{
+  "scope": "New static active-audio helpers and resident reset/startup-fade host proof; separate target/aggregate reports describe later integration",
+  "files": {
+    "port/src/recovery_music_active_control.s": "fe0b41ba934dafa2388a4fd2d5701362828b23426effe1853fc304db7920f69e",
+    "port/src/recovery_music_active_envelope.s": "c61e40421e3d1452497ef37f7d78dffac9eb902597946e8c5aad3407c86a8e48",
+    "port/src/recovery_music_active_command03.s": "e0f9ea562dc7ff8bf51db990d0c294b355adfec63756293c205a9c56cac1f75f",
+    "port/src/recovery_music_duration_prepare.s": "096aa7b2fbc0f85333edd9b7c9b76988a667758dc12c16ed011504bd13c2d2e1",
+    "port/src/recovery_music_duration_progress.s": "dbf9fe81080d740e261faf4946479d114a9906b95286db3c5110ae05ab3490b6",
+    "port/src/recovery_music_empty_queue_entry.s": "af4b7308f408ae3936f6aa3cf6b92ca2e56fabded0751ad5d3abfd28c6626520",
+    "port/tests/recovery_test_active_control_contract.py": "b987f11259290a5266e7ea13623e0dbdde01f642fface7f248218d91d05042aa",
+    "port/tests/recovery_test_active_control_rom.py": "cbb6f56fa32703d8abfa880b9768f740bc1ba1f7ceadb8edb566d7f246d85434",
+    "port/tests/recovery_test_active_envelope_rom.py": "6610a55ba15ef05e1ffb056c8dd79dd1eeee83c8a430d2af400330338e7dced0",
+    "port/tests/recovery_test_active_command03_contract.py": "75c80809660f28a2baafc72a6a76ae52e562004d9cdcfdb1c0ef7128642fcfbb",
+    "port/tests/recovery_test_active_command03_rom.py": "ec3b272f5ea332c36c8824cbcd6fb28b8169605c82acdb6aa95e63d4a570ef4e",
+    "port/tests/recovery_test_empty_queue_entry.py": "ad704835183335723ebaaab43b21f94cd0344276d4fc7bb9b92ba0c7206523b8",
+    "port/tests/recovery_test_repeated_active_audio.py": "a98a40bd6398ee8e7d891a24612d53eb3922023251f51bb181bb8bcbc538456b",
+    "port/tests/recovery_test_resident_startup_fade.py": "6d4e5d3ead70002da4bc17930d5a7b2863f090850e8d76c64ec207e4c707bfd9",
+    "port/tests/recovery_test_music_duration_prepare_contract.py": "dae36ebcf16b4832e697a8252b169a861a10d6dd7706bbb62fa5e3e4cee63883",
+    "port/tests/recovery_test_music_duration_prepare_rom.py": "20600fec8a5ce7075b8c48fbaa274c54b0fee82fd31f9e43ca163a9c1be33e86",
+    "port/tests/recovery_test_music_duration_progress_contract.py": "06fc1eacbdaf466343c1424a25ca803d3947b3769b199fd15f6f6990b07d4cce",
+    "port/tests/recovery_test_music_duration_progress_rom.py": "f2ee7a95a69dcd6bb5be804ec57a3a629ccc9f9fbbab8faf2e12d4f1f47e3196",
+    "port/tests/recovery_music_envelope_declarative.py": "e820aa7d3ed2a072362492737624a2621fb50a84c55c4d9d7b96c62713978be3",
+    "port/tests/recovery_test_envelope_declarative_contract.py": "169c60e92c2bb757c35557dca0be4670e405bd5c3e3efe4d1ae764d6670a4ebe",
+    "port/tests/recovery_test_envelope_declarative_rom.py": "45d0ae8b4eedfff50396e16809e0c785aee62f220e22eb5c068d9b1464f84b54",
+    "port/analysis/recovery_music_duration_progress.md": "1bf3b5ddd8dc9f08af70da8cea534a0db0a69ce158e3d42e9dd3897454edeae1",
+    "port/analysis/recovery_music_envelope_declarative.md": "f5e9cc804f0daf274547dfaf109f2c45f0de19c488a0be30681203c6e5e0e744",
+    "port/analysis/recovery_repeated_active_audio.md": "d763b0e89a0892e351e160faab147a44b3ee40fc642f53520aefc068a53dded3",
+    "port/analysis/recovery_resident_startup_fade.md": "aea186cc6b4fb34873efeae4d8b9d9a40c20fad35a2744e44c09dc2fb7055dcf"
+  },
+  "resident_host": {
+    "native_calls": 533,
+    "real_reference_nmis": 18,
+    "final_pc": "C597",
+    "apu_events": 114,
+    "later_apu_events": 100,
+    "composite_size": 21468,
+    "composite_sha256": "a52ba0c5da9188eb1a5df40bc24eaa67e20978181beb950202c22c52464da5eb"
+  },
+  "active_control_review_correction": {
+    "bounded_return_regressions_per_suite": 16128,
+    "native_size": 1484,
+    "native_sha256": "42a12fb7fab0568f28c3e9784e9f71567d25973a0b113cfa98b2e3fe8173e97a",
+    "exact_reproducer_boundary": "8052",
+    "exact_reproducer_restored_cf": 1,
+    "exact_reproducer_ram_writes": 4
+  }
+}

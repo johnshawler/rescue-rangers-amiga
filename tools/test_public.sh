@@ -55,3 +55,6 @@ for name, digest in expected.items():
  assert hashlib.sha256((build/(name+'.adf')).read_bytes()).hexdigest() == digest, name
 print('PASS ten pinned source-only probe ADF hashes')
 PY
+
+# Reviewed synthetic contracts for repeated audio, startup fade and video setup.
+bash "$ROOT/tools/test_resident_startup_public.sh"

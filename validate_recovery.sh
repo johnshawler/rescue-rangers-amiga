@@ -108,3 +108,6 @@ for name in title two-player character-chip character-dale handoff; do
  timeout 90 "$HEADLESS" "$PUAE_CORE" "$ROOT/port/build/rescue-rangers-title.adf" "$ROOT/artifacts/a1200-system" 600 "$ROOT/port/build/$name-amiga.ppm" > "$ROOT/logs/amiga-$name.log" 2>&1
  python "$ROOT/port/tests/verify_title.py" "$name" "$reference" | tee "$ROOT/logs/recovery-verify-$name.log"
 done
+
+# Private resident startup/audio extension; baseline probe outputs above are prerequisites.
+bash "$ROOT/validate_resident_startup.sh"
