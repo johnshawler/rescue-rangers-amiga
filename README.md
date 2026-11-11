@@ -42,6 +42,18 @@ after C5F8 remain outside this composition. Its 134,638-byte journal capacity
 and size sentinel are documented; old callers must not use their smaller
 startup journal with this new entry.
 
+A newer [state-selected menu/SFX composition](port/analysis/recovery_state_menu_sfx.md)
+joins genuine cursor movement, sound shutdown and continued music to the native
+dispatcher. Fourteen original-first host histories match 59,821 boundaries and
+15,059 APU writes, including delayed, repeated and alternating input. Both
+original- and alternate-character confirmation are verified through actual
+cursor, table and character-marker state, not merely the terminal PC. A separate
+narrow return bridge handles delayed input without relaxing the older tail's
+guard. The full long journal and size sentinel remain required. This composition
+is host-tested only; no new live Amiga menu, audible audio or target timing is
+claimed. Gameplay at C5F8 and the title-direction continuation at A055 remain
+unsupported, along with the documented SFX dispatch limits.
+
 The new [state-driven startup display](port/analysis/recovery_state_startup_display.md)
 executes 990 native operations selected from live game state, completes startup
 resource loading and fade-in, then draws the title on an emulated stock PAL A1200.

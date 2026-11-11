@@ -1,0 +1,53 @@
+{
+  "scope": "Preserved unsuccessful development evidence. Detailed logs and candidate sources remain outside the public project; no ROM or captured state is embedded here.",
+  "evidence": [
+    {
+      "evidence": "attempt1.err",
+      "bytes": 691,
+      "sha256": "abd29860634350f5658113a60955bb8e6d7620a0db14c88be8a9c87ca200637d",
+      "finding": "Initial candidate intercepted all 8003 commands instead of only A27; corrected new selection, leaving frozen helpers unchanged."
+    },
+    {
+      "evidence": "attempt2.err",
+      "bytes": 856,
+      "sha256": "930e4af839c8784e34b143fec813f5fc4510509bb0ae74f6536f04787d7a53bb",
+      "finding": "Nonempty PRG2 C0BF queue was not admitted by the frozen empty-queue route; added real pending-queue helper and serial replay."
+    },
+    {
+      "evidence": "attempt4.err",
+      "bytes": 859,
+      "sha256": "5929f1d572e4f302744d831dc8e380183f23ab31e5b7077cc4408fcedde0f108",
+      "finding": "Delayed input reached 8151 with C0=0D, correctly rejected by frozen C0=01 tail. Added an independently qualified narrow return bridge."
+    },
+    {
+      "evidence": "startup1.err",
+      "bytes": 1077,
+      "sha256": "133af574e748d61e326139cc7c3309cbec58117d66457e7bf2f10e1818cce646",
+      "finding": "Old startup specification expected the smaller journal; it is not a valid new-composition caller."
+    },
+    {
+      "evidence": "startup2.err",
+      "bytes": 1065,
+      "sha256": "675439cb96d0be119e074e04d5d40130096f531eccdc6f91f211696d0be8b6eb",
+      "finding": "Old startup rejection specification rejects queued video now admitted by menu composition. Kept the unchanged startup suite as a separate predecessor test."
+    },
+    {
+      "evidence": "edges1.err",
+      "bytes": 795,
+      "sha256": "2fc8ec4aaa3071b3bfe6344a2807ea57cfea16d3a87f5cfdc9b8c98cbffba6bb",
+      "finding": "PRG6 at C0BF is a legitimate frozen startup pending-queue route, not a wrong-bank rejection for that shared PC."
+    },
+    {
+      "evidence": "edges2.py",
+      "bytes": 2664,
+      "sha256": "2a7497923ce55d948f9ad58610e933aa7f56c4d1edfd9c5fab3d5f515ddd7b1c",
+      "finding": "Preserved edge harness before correcting overlapping machine68k lifetimes. The run segfaulted after cleanup of a second live emulator instance; rerun with sequential ownership passed."
+    },
+    {
+      "evidence": "title_boundaries.err",
+      "bytes": 2476,
+      "sha256": "351c049dcbfcf6a2af1e604fa3548131be0df1a936f168de6f9b737cc52dfff3",
+      "finding": "Frozen private oracle did not list new unlinked A055 stop; added explicit unsupported boundary in the new oracle only."
+    }
+  ]
+}

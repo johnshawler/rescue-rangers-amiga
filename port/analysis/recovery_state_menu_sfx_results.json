@@ -1,0 +1,2391 @@
+{
+  "status": "PASS",
+  "scope": "Private original-first logical correctness; compact public metadata, not captured-state fixtures.",
+  "code_bytes": 46492,
+  "code_sha256": "a8a31217696f2f3d30d629adf570b9723c171d965e25f267294a55dc1534496e",
+  "cases": [
+    {
+      "history": "right_hold",
+      "countdown_visits": 2,
+      "music_checkpoint": {
+        "calls": 2367,
+        "nmis": 78,
+        "context": "83a00e2a00a4aca7",
+        "timer": 898
+      },
+      "startup_checkpoint": {
+        "calls": 990,
+        "nmis": 35,
+        "context": "c5d1f0f0ffa5bfa7"
+      },
+      "selection_checkpoint": {
+        "calls": 1091,
+        "nmis": 38,
+        "context": "a06cffffffa4bda7",
+        "pending_video": 0
+      },
+      "pads": [
+        16,
+        0
+      ],
+      "resume_pads": [
+        16,
+        0
+      ],
+      "delayed_polls": 2,
+      "waits": 234,
+      "advanced_calls": 2391,
+      "logical_NMIs": 78,
+      "original_instructions": 146425,
+      "APU_writes": 607,
+      "inert_rejections": 873,
+      "final_context": "c5f8f8000127bfa7",
+      "confirmations": [
+        {
+          "cursor_x": 136,
+          "selection": "alternate",
+          "table_sha256": "091d1cbde63fdc972a4546761e96763afe00e955d70669fa4d5ccd2050ffcc54",
+          "swapped": true
+        }
+      ],
+      "shutdowns": [
+        {
+          "call": 1777,
+          "nmis": 58,
+          "context": "806000ff0427b0a7",
+          "active_state": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "helper_completions": {
+        "1": 1,
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1,
+        "6": 14,
+        "7": 2,
+        "0": 1,
+        "8": 1,
+        "9": 1,
+        "10": 1,
+        "11": 4,
+        "12": 1,
+        "13": 1,
+        "15": 23,
+        "14": 58,
+        "16": 7,
+        "25": 373,
+        "17": 23,
+        "18": 23,
+        "20": 17,
+        "31": 34,
+        "32": 33,
+        "23": 15,
+        "24": 16,
+        "26": 380,
+        "27": 380,
+        "28": 380,
+        "29": 2,
+        "33": 61,
+        "34": 1,
+        "35": 1,
+        "36": 1,
+        "37": 1,
+        "38": 1,
+        "40": 59,
+        "41": 59,
+        "42": 60,
+        "39": 1,
+        "43": 1,
+        "45": 3,
+        "50": 43,
+        "44": 2,
+        "47": 1,
+        "48": 1,
+        "49": 81,
+        "56": 3,
+        "70": 1,
+        "57": 1,
+        "58": 1,
+        "71": 1,
+        "67": 19,
+        "60": 19,
+        "61": 4,
+        "62": 1,
+        "63": 109,
+        "64": 34,
+        "65": 2,
+        "66": 2,
+        "30": 3,
+        "68": 16,
+        "69": 1,
+        "51": 1,
+        "46": 1
+      },
+      "final_mapper": [
+        30,
+        31,
+        31,
+        2
+      ],
+      "unsupported_boundary": "0xc5f8",
+      "boundary_trace_sha256": "44c70c68fe1c4b3ae29c6c67ab76ebf4a02add1bcd5ee71b02e169a8f3ac6810",
+      "controller_samples_rle": [
+        {
+          "pads": [
+            0,
+            0
+          ],
+          "count": 36
+        },
+        {
+          "pads": [
+            16,
+            0
+          ],
+          "count": 4
+        },
+        {
+          "pads": [
+            0,
+            0
+          ],
+          "count": 2
+        },
+        {
+          "pads": [
+            1,
+            0
+          ],
+          "count": 3
+        },
+        {
+          "pads": [
+            0,
+            0
+          ],
+          "count": 32
+        },
+        {
+          "pads": [
+            16,
+            0
+          ],
+          "count": 1
+        }
+      ],
+      "controller_sample_count": 78,
+      "nmi_frame_count": 78,
+      "nmi_frame_trace_sha256": "2f011107a7c42e1614e17b53c94114f0968756e4996ea4eb2f720e8b24340897"
+    },
+    {
+      "history": "left_hold",
+      "countdown_visits": 2,
+      "music_checkpoint": {
+        "calls": 2367,
+        "nmis": 78,
+        "context": "83a00e2a00a4aca7",
+        "timer": 898
+      },
+      "startup_checkpoint": {
+        "calls": 990,
+        "nmis": 35,
+        "context": "c5d1f0f0ffa5bfa7"
+      },
+      "selection_checkpoint": {
+        "calls": 1091,
+        "nmis": 38,
+        "context": "a06cffffffa4bda7",
+        "pending_video": 0
+      },
+      "pads": [
+        16,
+        0
+      ],
+      "resume_pads": [
+        16,
+        0
+      ],
+      "delayed_polls": 2,
+      "waits": 234,
+      "advanced_calls": 2391,
+      "logical_NMIs": 78,
+      "original_instructions": 146281,
+      "APU_writes": 607,
+      "inert_rejections": 873,
+      "final_context": "c5f8f8000027bfa7",
+      "confirmations": [
+        {
+          "cursor_x": 40,
+          "selection": "original",
+          "table_sha256": "d39d51409944c12c1975a92ed4e9a5ad661804060c69b0074afd3e5be1e51dd9",
+          "swapped": false
+        }
+      ],
+      "shutdowns": [
+        {
+          "call": 1777,
+          "nmis": 58,
+          "context": "806000ff0427b0a7",
+          "active_state": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "helper_completions": {
+        "1": 1,
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1,
+        "6": 14,
+        "7": 2,
+        "0": 1,
+        "8": 1,
+        "9": 1,
+        "10": 1,
+        "11": 4,
+        "12": 1,
+        "13": 1,
+        "15": 23,
+        "14": 58,
+        "16": 7,
+        "25": 373,
+        "17": 23,
+        "18": 23,
+        "20": 17,
+        "31": 34,
+        "32": 33,
+        "23": 15,
+        "24": 16,
+        "26": 380,
+        "27": 380,
+        "28": 380,
+        "29": 2,
+        "33": 61,
+        "34": 1,
+        "35": 1,
+        "36": 1,
+        "37": 1,
+        "38": 1,
+        "40": 59,
+        "41": 59,
+        "42": 60,
+        "39": 1,
+        "43": 1,
+        "45": 3,
+        "50": 43,
+        "44": 2,
+        "47": 1,
+        "48": 1,
+        "49": 81,
+        "56": 3,
+        "70": 1,
+        "57": 1,
+        "58": 1,
+        "71": 1,
+        "67": 19,
+        "60": 19,
+        "61": 4,
+        "62": 1,
+        "63": 109,
+        "64": 34,
+        "65": 2,
+        "66": 2,
+        "30": 3,
+        "68": 16,
+        "69": 1,
+        "51": 1,
+        "46": 1
+      },
+      "final_mapper": [
+        30,
+        31,
+        31,
+        2
+      ],
+      "unsupported_boundary": "0xc5f8",
+      "boundary_trace_sha256": "09ae8ea6a0148e157ee8f2167e606adab2619354815aece2f274733e6aaee485",
+      "controller_samples_rle": [
+        {
+          "pads": [
+            0,
+            0
+          ],
+          "count": 36
+        },
+        {
+          "pads": [
+            16,
+            0
+          ],
+          "count": 4
+        },
+        {
+          "pads": [
+            0,
+            0
+          ],
+          "count": 2
+        },
+        {
+          "pads": [
+            2,
+            0
+          ],
+          "count": 3
+        },
+        {
+          "pads": [
+            0,
+            0
+          ],
+          "count": 32
+        },
+        {
+          "pads": [
+            16,
+            0
+          ],
+          "count": 1
+        }
+      ],
+      "controller_sample_count": 78,
+      "nmi_frame_count": 78,
+      "nmi_frame_trace_sha256": "2f011107a7c42e1614e17b53c94114f0968756e4996ea4eb2f720e8b24340897"
+    },
+    {
+      "history": "right_early",
+      "countdown_visits": 2,
+      "music_checkpoint": {
+        "calls": 2365,
+        "nmis": 78,
+        "context": "83a00e2a00a4aca7",
+        "timer": 898
+      },
+      "startup_checkpoint": {
+        "calls": 990,
+        "nmis": 35,
+        "context": "c5d1f0f0ffa5bfa7"
+      },
+      "selection_checkpoint": {
+        "calls": 1091,
+        "nmis": 38,
+        "context": "a06cffffffa4bda7",
+        "pending_video": 0
+      },
+      "pads": [
+        16,
+        0
+      ],
+      "resume_pads": [
+        16,
+        0
+      ],
+      "delayed_polls": 2,
+      "waits": 249,
+      "advanced_calls": 2525,
+      "logical_NMIs": 83,
+      "original_instructions": 152805,
+      "APU_writes": 636,
+      "inert_rejections": 905,
+      "final_context": "c5f8f8000127bfa7",
+      "confirmations": [
+        {
+          "cursor_x": 136,
+          "selection": "alternate",
+          "table_sha256": "091d1cbde63fdc972a4546761e96763afe00e955d70669fa4d5ccd2050ffcc54",
+          "swapped": true
+        }
+      ],
+      "shutdowns": [
+        {
+          "call": 1711,
+          "nmis": 56,
+          "context": "806000ff0427aea7",
+          "active_state": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "helper_completions": {
+        "1": 1,
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1,
+        "6": 14,
+        "7": 2,
+        "0": 1,
+        "8": 1,
+        "9": 1,
+        "10": 1,
+        "11": 4,
+        "12": 1,
+        "13": 1,
+        "15": 23,
+        "14": 58,
+        "16": 7,
+        "25": 401,
+        "17": 23,
+        "18": 23,
+        "20": 17,
+        "31": 34,
+        "32": 33,
+        "23": 15,
+        "24": 16,
+        "26": 404,
+        "27": 404,
+        "28": 404,
+        "29": 2,
+        "33": 66,
+        "34": 1,
+        "35": 1,
+        "36": 1,
+        "37": 1,
+        "38": 1,
+        "40": 64,
+        "41": 64,
+        "42": 65,
+        "39": 1,
+        "43": 1,
+        "45": 3,
+        "50": 48,
+        "44": 2,
+        "47": 1,
+        "48": 1,
+        "49": 91,
+        "56": 3,
+        "70": 1,
+        "57": 1,
+        "58": 1,
+        "59": 1,
+        "60": 19,
+        "61": 4,
+        "62": 1,
+        "63": 109,
+        "64": 34,
+        "65": 2,
+        "66": 2,
+        "67": 18,
+        "68": 16,
+        "30": 3,
+        "69": 1,
+        "51": 1,
+        "46": 1
+      },
+      "final_mapper": [
+        30,
+        31,
+        31,
+        2
+      ],
+      "unsupported_boundary": "0xc5f8",
+      "boundary_trace_sha256": "52a0197ddb104d6ae9daccf743160d866fb6b4d81503ceff11ddd5c1ef31da5e",
+      "controller_samples_rle": [
+        {
+          "pads": [
+            0,
+            0
+          ],
+          "count": 36
+        },
+        {
+          "pads": [
+            16,
+            0
+          ],
+          "count": 2
+        },
+        {
+          "pads": [
+            0,
+            0
+          ],
+          "count": 1
+        },
+        {
+          "pads": [
+            1,
+            0
+          ],
+          "count": 6
+        },
+        {
+          "pads": [
+            0,
+            0
+          ],
+          "count": 37
+        },
+        {
+          "pads": [
+            16,
+            0
+          ],
+          "count": 1
+        }
+      ],
+      "controller_sample_count": 83,
+      "nmi_frame_count": 83,
+      "nmi_frame_trace_sha256": "ef77cd9690b67d18a95868658c229475e86e1af698b65a1fbafc8a62ae209ae0"
+    },
+    {
+      "history": "left_early",
+      "countdown_visits": 2,
+      "music_checkpoint": {
+        "calls": 2365,
+        "nmis": 78,
+        "context": "83a00e2a00a4aca7",
+        "timer": 898
+      },
+      "startup_checkpoint": {
+        "calls": 990,
+        "nmis": 35,
+        "context": "c5d1f0f0ffa5bfa7"
+      },
+      "selection_checkpoint": {
+        "calls": 1091,
+        "nmis": 38,
+        "context": "a06cffffffa4bda7",
+        "pending_video": 0
+      },
+      "pads": [
+        16,
+        0
+      ],
+      "resume_pads": [
+        16,
+        0
+      ],
+      "delayed_polls": 2,
+      "waits": 249,
+      "advanced_calls": 2525,
+      "logical_NMIs": 83,
+      "original_instructions": 152661,
+      "APU_writes": 636,
+      "inert_rejections": 905,
+      "final_context": "c5f8f8000027bfa7",
+      "confirmations": [
+        {
+          "cursor_x": 40,
+          "selection": "original",
+          "table_sha256": "d39d51409944c12c1975a92ed4e9a5ad661804060c69b0074afd3e5be1e51dd9",
+          "swapped": false
+        }
+      ],
+      "shutdowns": [
+        {
+          "call": 1711,
+          "nmis": 56,
+          "context": "806000ff0427aea7",
+          "active_state": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "helper_completions": {
+        "1": 1,
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1,
+        "6": 14,
+        "7": 2,
+        "0": 1,
+        "8": 1,
+        "9": 1,
+        "10": 1,
+        "11": 4,
+        "12": 1,
+        "13": 1,
+        "15": 23,
+        "14": 58,
+        "16": 7,
+        "25": 401,
+        "17": 23,
+        "18": 23,
+        "20": 17,
+        "31": 34,
+        "32": 33,
+        "23": 15,
+        "24": 16,
+        "26": 404,
+        "27": 404,
+        "28": 404,
+        "29": 2,
+        "33": 66,
+        "34": 1,
+        "35": 1,
+        "36": 1,
+        "37": 1,
+        "38": 1,
+        "40": 64,
+        "41": 64,
+        "42": 65,
+        "39": 1,
+        "43": 1,
+        "45": 3,
+        "50": 48,
+        "44": 2,
+        "47": 1,
+        "48": 1,
+        "49": 91,
+        "56": 3,
+        "70": 1,
+        "57": 1,
+        "58": 1,
+        "59": 1,
+        "60": 19,
+        "61": 4,
+        "62": 1,
+        "63": 109,
+        "64": 34,
+        "65": 2,
+        "66": 2,
+        "67": 18,
+        "68": 16,
+        "30": 3,
+        "69": 1,
+        "51": 1,
+        "46": 1
+      },
+      "final_mapper": [
+        30,
+        31,
+        31,
+        2
+      ],
+      "unsupported_boundary": "0xc5f8",
+      "boundary_trace_sha256": "ba05f6dcaaf424b6236fb737ffe6dfd76daeafefae11ffe3a4acd153860389e1",
+      "controller_samples_rle": [
+        {
+          "pads": [
+            0,
+            0
+          ],
+          "count": 36
+        },
+        {
+          "pads": [
+            16,
+            0
+          ],
+          "count": 2
+        },
+        {
+          "pads": [
+            0,
+            0
+          ],
+          "count": 1
+        },
+        {
+          "pads": [
+            2,
+            0
+          ],
+          "count": 6
+        },
+        {
+          "pads": [
+            0,
+            0
+          ],
+          "count": 37
+        },
+        {
+          "pads": [
+            16,
+            0
+          ],
+          "count": 1
+        }
+      ],
+      "controller_sample_count": 83,
+      "nmi_frame_count": 83,
+      "nmi_frame_trace_sha256": "ef77cd9690b67d18a95868658c229475e86e1af698b65a1fbafc8a62ae209ae0"
+    },
+    {
+      "history": "right_repeat",
+      "countdown_visits": 2,
+      "music_checkpoint": {
+        "calls": 2419,
+        "nmis": 78,
+        "context": "83a00e2a00a4aca7",
+        "timer": 898
+      },
+      "startup_checkpoint": {
+        "calls": 990,
+        "nmis": 35,
+        "context": "c5d1f0f0ffa5bfa7"
+      },
+      "selection_checkpoint": {
+        "calls": 1091,
+        "nmis": 38,
+        "context": "a06cffffffa4bda7",
+        "pending_video": 0
+      },
+      "pads": [
+        16,
+        0
+      ],
+      "resume_pads": [
+        16,
+        0
+      ],
+      "delayed_polls": 2,
+      "waits": 354,
+      "advanced_calls": 3766,
+      "logical_NMIs": 118,
+      "original_instructions": 205461,
+      "APU_writes": 922,
+      "inert_rejections": 1330,
+      "final_context": "c5f8f8000127bfa7",
+      "confirmations": [
+        {
+          "cursor_x": 136,
+          "selection": "alternate",
+          "table_sha256": "091d1cbde63fdc972a4546761e96763afe00e955d70669fa4d5ccd2050ffcc54",
+          "swapped": true
+        }
+      ],
+      "shutdowns": [
+        {
+          "call": 1992,
+          "nmis": 64,
+          "context": "806000ff0427aea7",
+          "active_state": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "call": 3146,
+          "nmis": 98,
+          "context": "806000ff0427b0a7",
+          "active_state": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "helper_completions": {
+        "1": 1,
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1,
+        "6": 14,
+        "7": 2,
+        "0": 1,
+        "8": 1,
+        "9": 1,
+        "10": 1,
+        "11": 4,
+        "12": 1,
+        "13": 1,
+        "15": 33,
+        "14": 90,
+        "16": 8,
+        "25": 492,
+        "17": 36,
+        "18": 36,
+        "20": 17,
+        "31": 34,
+        "32": 33,
+        "23": 15,
+        "24": 16,
+        "26": 580,
+        "27": 580,
+        "28": 580,
+        "29": 3,
+        "33": 101,
+        "34": 1,
+        "35": 1,
+        "36": 1,
+        "37": 1,
+        "38": 1,
+        "40": 99,
+        "41": 97,
+        "42": 100,
+        "39": 1,
+        "43": 1,
+        "45": 3,
+        "50": 83,
+        "44": 2,
+        "47": 1,
+        "48": 1,
+        "49": 161,
+        "56": 9,
+        "70": 3,
+        "57": 3,
+        "58": 3,
+        "71": 2,
+        "67": 44,
+        "60": 45,
+        "61": 12,
+        "62": 2,
+        "63": 260,
+        "64": 80,
+        "65": 6,
+        "66": 6,
+        "30": 3,
+        "68": 37,
+        "59": 1,
+        "69": 2,
+        "51": 8,
+        "46": 1
+      },
+      "final_mapper": [
+        30,
+        31,
+        31,
+        2
+      ],
+      "unsupported_boundary": "0xc5f8",
+      "boundary_trace_sha256": "84889230af4c0addff8101c8bd8f95532b5a540bf8c155e5f528efe5bc772a5a",
+      "controller_samples_rle": [
+        {
+          "pads": [
+            0,
+            0
+          ],
+          "count": 36
+        },
+        {
+          "pads": [
+            16,
+            0
+          ],
+          "count": 4
+        },
+        {
+          "pads": [
+            0,
+            0
+          ],
+          "count": 2
+        },
+        {
+          "pads": [
+            1,
+            0
+          ],
+          "count": 3
+        },
+        {
+          "pads": [
+            0,
+            0
+          ],
+          "count": 2
+        },
+        {
+          "pads": [
+            1,
+            0
+          ],
+          "count": 3
+        },
+        {
+          "pads": [
+            0,
+            0
+          ],
+          "count": 32
+        },
+        {
+          "pads": [
+            1,
+            0
+          ],
+          "count": 3
+        },
+        {
+          "pads": [
+            0,
+            0
+          ],
+          "count": 32
+        },
+        {
+          "pads": [
+            16,
+            0
+          ],
+          "count": 1
+        }
+      ],
+      "controller_sample_count": 118,
+      "nmi_frame_count": 118,
+      "nmi_frame_trace_sha256": "5ed69c88a588f8328f1a94d7dcb44677b364744c12c78605e4de82962e820154"
+    },
+    {
+      "history": "left_repeat",
+      "countdown_visits": 2,
+      "music_checkpoint": {
+        "calls": 2419,
+        "nmis": 78,
+        "context": "83a00e2a00a4aca7",
+        "timer": 898
+      },
+      "startup_checkpoint": {
+        "calls": 990,
+        "nmis": 35,
+        "context": "c5d1f0f0ffa5bfa7"
+      },
+      "selection_checkpoint": {
+        "calls": 1091,
+        "nmis": 38,
+        "context": "a06cffffffa4bda7",
+        "pending_video": 0
+      },
+      "pads": [
+        16,
+        0
+      ],
+      "resume_pads": [
+        16,
+        0
+      ],
+      "delayed_polls": 2,
+      "waits": 354,
+      "advanced_calls": 3766,
+      "logical_NMIs": 118,
+      "original_instructions": 205317,
+      "APU_writes": 922,
+      "inert_rejections": 1330,
+      "final_context": "c5f8f8000027bfa7",
+      "confirmations": [
+        {
+          "cursor_x": 40,
+          "selection": "original",
+          "table_sha256": "d39d51409944c12c1975a92ed4e9a5ad661804060c69b0074afd3e5be1e51dd9",
+          "swapped": false
+        }
+      ],
+      "shutdowns": [
+        {
+          "call": 1992,
+          "nmis": 64,
+          "context": "806000ff0427aea7",
+          "active_state": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "call": 3146,
+          "nmis": 98,
+          "context": "806000ff0427b0a7",
+          "active_state": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "helper_completions": {
+        "1": 1,
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1,
+        "6": 14,
+        "7": 2,
+        "0": 1,
+        "8": 1,
+        "9": 1,
+        "10": 1,
+        "11": 4,
+        "12": 1,
+        "13": 1,
+        "15": 33,
+        "14": 90,
+        "16": 8,
+        "25": 492,
+        "17": 36,
+        "18": 36,
+        "20": 17,
+        "31": 34,
+        "32": 33,
+        "23": 15,
+        "24": 16,
+        "26": 580,
+        "27": 580,
+        "28": 580,
+        "29": 3,
+        "33": 101,
+        "34": 1,
+        "35": 1,
+        "36": 1,
+        "37": 1,
+        "38": 1,
+        "40": 99,
+        "41": 97,
+        "42": 100,
+        "39": 1,
+        "43": 1,
+        "45": 3,
+        "50": 83,
+        "44": 2,
+        "47": 1,
+        "48": 1,
+        "49": 161,
+        "56": 9,
+        "70": 3,
+        "57": 3,
+        "58": 3,
+        "71": 2,
+        "67": 44,
+        "60": 45,
+        "61": 12,
+        "62": 2,
+        "63": 260,
+        "64": 80,
+        "65": 6,
+        "66": 6,
+        "30": 3,
+        "68": 37,
+        "59": 1,
+        "69": 2,
+        "51": 8,
+        "46": 1
+      },
+      "final_mapper": [
+        30,
+        31,
+        31,
+        2
+      ],
+      "unsupported_boundary": "0xc5f8",
+      "boundary_trace_sha256": "845a74d3bf3f930a2f7c8f1bf6919e72a6cbf83619233dc52e36d8674e1d97ea",
+      "controller_samples_rle": [
+        {
+          "pads": [
+            0,
+            0
+          ],
+          "count": 36
+        },
+        {
+          "pads": [
+            16,
+            0
+          ],
+          "count": 4
+        },
+        {
+          "pads": [
+            0,
+            0
+          ],
+          "count": 2
+        },
+        {
+          "pads": [
+            2,
+            0
+          ],
+          "count": 3
+        },
+        {
+          "pads": [
+            0,
+            0
+          ],
+          "count": 2
+        },
+        {
+          "pads": [
+            2,
+            0
+          ],
+          "count": 3
+        },
+        {
+          "pads": [
+            0,
+            0
+          ],
+          "count": 32
+        },
+        {
+          "pads": [
+            2,
+            0
+          ],
+          "count": 3
+        },
+        {
+          "pads": [
+            0,
+            0
+          ],
+          "count": 32
+        },
+        {
+          "pads": [
+            16,
+            0
+          ],
+          "count": 1
+        }
+      ],
+      "controller_sample_count": 118,
+      "nmi_frame_count": 118,
+      "nmi_frame_trace_sha256": "5ed69c88a588f8328f1a94d7dcb44677b364744c12c78605e4de82962e820154"
+    },
+    {
+      "history": "alternating",
+      "countdown_visits": 2,
+      "music_checkpoint": {
+        "calls": 2419,
+        "nmis": 78,
+        "context": "83a00e2a00a4aca7",
+        "timer": 898
+      },
+      "startup_checkpoint": {
+        "calls": 990,
+        "nmis": 35,
+        "context": "c5d1f0f0ffa5bfa7"
+      },
+      "selection_checkpoint": {
+        "calls": 1091,
+        "nmis": 38,
+        "context": "a06cffffffa4bda7",
+        "pending_video": 0
+      },
+      "pads": [
+        16,
+        0
+      ],
+      "resume_pads": [
+        16,
+        0
+      ],
+      "delayed_polls": 2,
+      "waits": 354,
+      "advanced_calls": 3766,
+      "logical_NMIs": 118,
+      "original_instructions": 205461,
+      "APU_writes": 922,
+      "inert_rejections": 1330,
+      "final_context": "c5f8f8000127bfa7",
+      "confirmations": [
+        {
+          "cursor_x": 136,
+          "selection": "alternate",
+          "table_sha256": "091d1cbde63fdc972a4546761e96763afe00e955d70669fa4d5ccd2050ffcc54",
+          "swapped": true
+        }
+      ],
+      "shutdowns": [
+        {
+          "call": 1992,
+          "nmis": 64,
+          "context": "806000ff0427aea7",
+          "active_state": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "call": 3146,
+          "nmis": 98,
+          "context": "806000ff0427b0a7",
+          "active_state": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "helper_completions": {
+        "1": 1,
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1,
+        "6": 14,
+        "7": 2,
+        "0": 1,
+        "8": 1,
+        "9": 1,
+        "10": 1,
+        "11": 4,
+        "12": 1,
+        "13": 1,
+        "15": 33,
+        "14": 90,
+        "16": 8,
+        "25": 492,
+        "17": 36,
+        "18": 36,
+        "20": 17,
+        "31": 34,
+        "32": 33,
+        "23": 15,
+        "24": 16,
+        "26": 580,
+        "27": 580,
+        "28": 580,
+        "29": 3,
+        "33": 101,
+        "34": 1,
+        "35": 1,
+        "36": 1,
+        "37": 1,
+        "38": 1,
+        "40": 99,
+        "41": 97,
+        "42": 100,
+        "39": 1,
+        "43": 1,
+        "45": 3,
+        "50": 83,
+        "44": 2,
+        "47": 1,
+        "48": 1,
+        "49": 161,
+        "56": 9,
+        "70": 3,
+        "57": 3,
+        "58": 3,
+        "71": 2,
+        "67": 44,
+        "60": 45,
+        "61": 12,
+        "62": 2,
+        "63": 260,
+        "64": 80,
+        "65": 6,
+        "66": 6,
+        "30": 3,
+        "68": 37,
+        "59": 1,
+        "69": 2,
+        "51": 8,
+        "46": 1
+      },
+      "final_mapper": [
+        30,
+        31,
+        31,
+        2
+      ],
+      "unsupported_boundary": "0xc5f8",
+      "boundary_trace_sha256": "5962e1a0c34c0f9005d92ef41230308e402ca825c99e8dfe1a4c6652ce3583a5",
+      "controller_samples_rle": [
+        {
+          "pads": [
+            0,
+            0
+          ],
+          "count": 36
+        },
+        {
+          "pads": [
+            16,
+            0
+          ],
+          "count": 4
+        },
+        {
+          "pads": [
+            0,
+            0
+          ],
+          "count": 2
+        },
+        {
+          "pads": [
+            1,
+            0
+          ],
+          "count": 3
+        },
+        {
+          "pads": [
+            0,
+            0
+          ],
+          "count": 2
+        },
+        {
+          "pads": [
+            2,
+            0
+          ],
+          "count": 3
+        },
+        {
+          "pads": [
+            0,
+            0
+          ],
+          "count": 32
+        },
+        {
+          "pads": [
+            1,
+            0
+          ],
+          "count": 3
+        },
+        {
+          "pads": [
+            0,
+            0
+          ],
+          "count": 32
+        },
+        {
+          "pads": [
+            16,
+            0
+          ],
+          "count": 1
+        }
+      ],
+      "controller_sample_count": 118,
+      "nmi_frame_count": 118,
+      "nmi_frame_trace_sha256": "5ed69c88a588f8328f1a94d7dcb44677b364744c12c78605e4de82962e820154"
+    },
+    {
+      "history": "move_back",
+      "countdown_visits": 2,
+      "music_checkpoint": {
+        "calls": 2419,
+        "nmis": 78,
+        "context": "83a00e2a00a4aca7",
+        "timer": 898
+      },
+      "startup_checkpoint": {
+        "calls": 990,
+        "nmis": 35,
+        "context": "c5d1f0f0ffa5bfa7"
+      },
+      "selection_checkpoint": {
+        "calls": 1091,
+        "nmis": 38,
+        "context": "a06cffffffa4bda7",
+        "pending_video": 0
+      },
+      "pads": [
+        16,
+        0
+      ],
+      "resume_pads": [
+        16,
+        0
+      ],
+      "delayed_polls": 2,
+      "waits": 354,
+      "advanced_calls": 3766,
+      "logical_NMIs": 118,
+      "original_instructions": 205317,
+      "APU_writes": 922,
+      "inert_rejections": 1330,
+      "final_context": "c5f8f8000027bfa7",
+      "confirmations": [
+        {
+          "cursor_x": 40,
+          "selection": "original",
+          "table_sha256": "d39d51409944c12c1975a92ed4e9a5ad661804060c69b0074afd3e5be1e51dd9",
+          "swapped": false
+        }
+      ],
+      "shutdowns": [
+        {
+          "call": 1992,
+          "nmis": 64,
+          "context": "806000ff0427aea7",
+          "active_state": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "call": 3146,
+          "nmis": 98,
+          "context": "806000ff0427b0a7",
+          "active_state": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "helper_completions": {
+        "1": 1,
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1,
+        "6": 14,
+        "7": 2,
+        "0": 1,
+        "8": 1,
+        "9": 1,
+        "10": 1,
+        "11": 4,
+        "12": 1,
+        "13": 1,
+        "15": 33,
+        "14": 90,
+        "16": 8,
+        "25": 492,
+        "17": 36,
+        "18": 36,
+        "20": 17,
+        "31": 34,
+        "32": 33,
+        "23": 15,
+        "24": 16,
+        "26": 580,
+        "27": 580,
+        "28": 580,
+        "29": 3,
+        "33": 101,
+        "34": 1,
+        "35": 1,
+        "36": 1,
+        "37": 1,
+        "38": 1,
+        "40": 99,
+        "41": 97,
+        "42": 100,
+        "39": 1,
+        "43": 1,
+        "45": 3,
+        "50": 83,
+        "44": 2,
+        "47": 1,
+        "48": 1,
+        "49": 161,
+        "56": 9,
+        "70": 3,
+        "57": 3,
+        "58": 3,
+        "71": 2,
+        "67": 44,
+        "60": 45,
+        "61": 12,
+        "62": 2,
+        "63": 260,
+        "64": 80,
+        "65": 6,
+        "66": 6,
+        "30": 3,
+        "68": 37,
+        "59": 1,
+        "69": 2,
+        "51": 8,
+        "46": 1
+      },
+      "final_mapper": [
+        30,
+        31,
+        31,
+        2
+      ],
+      "unsupported_boundary": "0xc5f8",
+      "boundary_trace_sha256": "0f802c8bae2e400461a321d999fe9fe9eb7ec633ca8eb5fc2cd09a08ff8f29c8",
+      "controller_samples_rle": [
+        {
+          "pads": [
+            0,
+            0
+          ],
+          "count": 36
+        },
+        {
+          "pads": [
+            16,
+            0
+          ],
+          "count": 4
+        },
+        {
+          "pads": [
+            0,
+            0
+          ],
+          "count": 2
+        },
+        {
+          "pads": [
+            1,
+            0
+          ],
+          "count": 3
+        },
+        {
+          "pads": [
+            0,
+            0
+          ],
+          "count": 2
+        },
+        {
+          "pads": [
+            2,
+            0
+          ],
+          "count": 3
+        },
+        {
+          "pads": [
+            0,
+            0
+          ],
+          "count": 32
+        },
+        {
+          "pads": [
+            2,
+            0
+          ],
+          "count": 3
+        },
+        {
+          "pads": [
+            0,
+            0
+          ],
+          "count": 32
+        },
+        {
+          "pads": [
+            16,
+            0
+          ],
+          "count": 1
+        }
+      ],
+      "controller_sample_count": 118,
+      "nmi_frame_count": 118,
+      "nmi_frame_trace_sha256": "5ed69c88a588f8328f1a94d7dcb44677b364744c12c78605e4de82962e820154"
+    },
+    {
+      "history": "rapid",
+      "countdown_visits": 2,
+      "music_checkpoint": {
+        "calls": 2445,
+        "nmis": 78,
+        "context": "83a00e2a00a4aca7",
+        "timer": 898
+      },
+      "startup_checkpoint": {
+        "calls": 990,
+        "nmis": 35,
+        "context": "c5d1f0f0ffa5bfa7"
+      },
+      "selection_checkpoint": {
+        "calls": 1091,
+        "nmis": 38,
+        "context": "a06cffffffa4bda7",
+        "pending_video": 0
+      },
+      "pads": [
+        16,
+        0
+      ],
+      "resume_pads": [
+        16,
+        0
+      ],
+      "delayed_polls": 2,
+      "waits": 249,
+      "advanced_calls": 2605,
+      "logical_NMIs": 83,
+      "original_instructions": 153758,
+      "APU_writes": 629,
+      "inert_rejections": 944,
+      "final_context": "c5f8f8000127bfa7",
+      "confirmations": [
+        {
+          "cursor_x": 136,
+          "selection": "alternate",
+          "table_sha256": "091d1cbde63fdc972a4546761e96763afe00e955d70669fa4d5ccd2050ffcc54",
+          "swapped": true
+        }
+      ],
+      "shutdowns": [
+        {
+          "call": 2034,
+          "nmis": 64,
+          "context": "806000ff0427b0a7",
+          "active_state": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "helper_completions": {
+        "1": 1,
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1,
+        "6": 14,
+        "7": 2,
+        "0": 1,
+        "8": 1,
+        "9": 1,
+        "10": 1,
+        "11": 4,
+        "12": 1,
+        "13": 1,
+        "15": 23,
+        "14": 58,
+        "16": 7,
+        "25": 364,
+        "17": 23,
+        "18": 23,
+        "20": 17,
+        "31": 34,
+        "32": 33,
+        "23": 15,
+        "24": 16,
+        "26": 404,
+        "27": 404,
+        "28": 404,
+        "29": 2,
+        "33": 66,
+        "34": 1,
+        "35": 1,
+        "36": 1,
+        "37": 1,
+        "38": 1,
+        "40": 64,
+        "41": 61,
+        "42": 65,
+        "39": 1,
+        "43": 1,
+        "45": 3,
+        "50": 48,
+        "44": 2,
+        "47": 1,
+        "48": 1,
+        "49": 91,
+        "56": 12,
+        "70": 4,
+        "57": 4,
+        "58": 4,
+        "71": 4,
+        "67": 27,
+        "60": 27,
+        "61": 14,
+        "62": 1,
+        "63": 157,
+        "64": 45,
+        "65": 7,
+        "66": 7,
+        "30": 3,
+        "68": 19,
+        "69": 1,
+        "51": 1,
+        "46": 1
+      },
+      "final_mapper": [
+        30,
+        31,
+        31,
+        2
+      ],
+      "unsupported_boundary": "0xc5f8",
+      "boundary_trace_sha256": "8cd0b832ddd7f41d9d20f47bfd122a4d11591ee4fc6383de4cb0871ef200a5b7",
+      "controller_samples_rle": [
+        {
+          "pads": [
+            0,
+            0
+          ],
+          "count": 36
+        },
+        {
+          "pads": [
+            16,
+            0
+          ],
+          "count": 4
+        },
+        {
+          "pads": [
+            0,
+            0
+          ],
+          "count": 2
+        },
+        {
+          "pads": [
+            1,
+            0
+          ],
+          "count": 1
+        },
+        {
+          "pads": [
+            0,
+            0
+          ],
+          "count": 1
+        },
+        {
+          "pads": [
+            1,
+            0
+          ],
+          "count": 1
+        },
+        {
+          "pads": [
+            0,
+            0
+          ],
+          "count": 1
+        },
+        {
+          "pads": [
+            2,
+            0
+          ],
+          "count": 1
+        },
+        {
+          "pads": [
+            0,
+            0
+          ],
+          "count": 1
+        },
+        {
+          "pads": [
+            1,
+            0
+          ],
+          "count": 1
+        },
+        {
+          "pads": [
+            0,
+            0
+          ],
+          "count": 33
+        },
+        {
+          "pads": [
+            16,
+            0
+          ],
+          "count": 1
+        }
+      ],
+      "controller_sample_count": 83,
+      "nmi_frame_count": 83,
+      "nmi_frame_trace_sha256": "ef77cd9690b67d18a95868658c229475e86e1af698b65a1fbafc8a62ae209ae0"
+    },
+    {
+      "history": "default",
+      "countdown_visits": 2,
+      "music_checkpoint": null,
+      "startup_checkpoint": {
+        "calls": 990,
+        "nmis": 35,
+        "context": "c5d1f0f0ffa5bfa7"
+      },
+      "selection_checkpoint": {
+        "calls": 1091,
+        "nmis": 38,
+        "context": "a06cffffffa4bda7",
+        "pending_video": 0
+      },
+      "pads": [
+        16,
+        0
+      ],
+      "resume_pads": [
+        16,
+        0
+      ],
+      "delayed_polls": 2,
+      "waits": 129,
+      "advanced_calls": 1229,
+      "logical_NMIs": 43,
+      "original_instructions": 91651,
+      "APU_writes": 322,
+      "inert_rejections": 487,
+      "final_context": "c5f8f800ff27bfa7",
+      "confirmations": [
+        {
+          "cursor_x": 40,
+          "selection": "original",
+          "table_sha256": "d39d51409944c12c1975a92ed4e9a5ad661804060c69b0074afd3e5be1e51dd9",
+          "swapped": false
+        }
+      ],
+      "shutdowns": [],
+      "helper_completions": {
+        "1": 1,
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1,
+        "6": 14,
+        "7": 2,
+        "0": 1,
+        "8": 1,
+        "9": 1,
+        "10": 1,
+        "11": 4,
+        "12": 1,
+        "13": 1,
+        "15": 19,
+        "14": 37,
+        "16": 4,
+        "25": 249,
+        "17": 13,
+        "18": 13,
+        "20": 17,
+        "31": 34,
+        "32": 33,
+        "23": 15,
+        "24": 16,
+        "26": 204,
+        "27": 204,
+        "28": 204,
+        "29": 2,
+        "33": 26,
+        "34": 1,
+        "35": 1,
+        "36": 1,
+        "37": 1,
+        "38": 1,
+        "40": 24,
+        "41": 25,
+        "42": 25,
+        "39": 1,
+        "43": 1,
+        "45": 3,
+        "50": 8,
+        "44": 2,
+        "47": 1,
+        "48": 1,
+        "49": 11,
+        "46": 1
+      },
+      "final_mapper": [
+        30,
+        31,
+        31,
+        2
+      ],
+      "unsupported_boundary": "0xc5f8",
+      "boundary_trace_sha256": "437ac9a2824093f24bcd7e17a51eefebc6decae5d21be923aa3ac1b8078db612",
+      "controller_samples_rle": [
+        {
+          "pads": [
+            0,
+            0
+          ],
+          "count": 36
+        },
+        {
+          "pads": [
+            16,
+            0
+          ],
+          "count": 4
+        },
+        {
+          "pads": [
+            0,
+            0
+          ],
+          "count": 2
+        },
+        {
+          "pads": [
+            16,
+            0
+          ],
+          "count": 1
+        }
+      ],
+      "controller_sample_count": 43,
+      "nmi_frame_count": 43,
+      "nmi_frame_trace_sha256": "d53b8d9cf429075a9af2931f62c412141778d749a4ac86320063de6ece1838ed"
+    },
+    {
+      "history": "neutral",
+      "countdown_visits": 900,
+      "music_checkpoint": {
+        "calls": 2241,
+        "nmis": 78,
+        "context": "83a00e2a00a4aca7",
+        "timer": 858
+      },
+      "startup_checkpoint": {
+        "calls": 990,
+        "nmis": 35,
+        "context": "c5d1f0f0ffa5bfa7"
+      },
+      "selection_checkpoint": null,
+      "pads": [
+        0,
+        0
+      ],
+      "resume_pads": [
+        0,
+        0
+      ],
+      "delayed_polls": 2,
+      "waits": 2805,
+      "advanced_calls": 27884,
+      "logical_NMIs": 935,
+      "original_instructions": 1355698,
+      "APU_writes": 7136,
+      "inert_rejections": 9294,
+      "final_context": "c5f8f800ff27bfa7",
+      "confirmations": [],
+      "shutdowns": [],
+      "helper_completions": {
+        "1": 1,
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1,
+        "6": 14,
+        "7": 2,
+        "0": 1,
+        "8": 1,
+        "9": 1,
+        "10": 1,
+        "11": 4,
+        "12": 1,
+        "13": 1,
+        "15": 191,
+        "14": 728,
+        "16": 59,
+        "25": 5601,
+        "17": 311,
+        "18": 311,
+        "20": 17,
+        "31": 34,
+        "32": 33,
+        "23": 15,
+        "24": 16,
+        "26": 4664,
+        "27": 4664,
+        "28": 4664,
+        "29": 13,
+        "33": 918,
+        "34": 1,
+        "35": 1,
+        "36": 1,
+        "37": 1,
+        "38": 1,
+        "40": 917,
+        "41": 917,
+        "42": 917,
+        "39": 1,
+        "43": 1,
+        "45": 900,
+        "50": 900,
+        "44": 900,
+        "30": 10,
+        "51": 121,
+        "52": 17,
+        "53": 4,
+        "54": 2,
+        "55": 1,
+        "46": 1
+      },
+      "final_mapper": [
+        30,
+        31,
+        31,
+        2
+      ],
+      "unsupported_boundary": "0xc5f8",
+      "boundary_trace_sha256": "29ad7bcc84a1b633a97caa055ff77a0564b9213c38fb607275513e3d26784b61",
+      "controller_samples_rle": [
+        {
+          "pads": [
+            0,
+            0
+          ],
+          "count": 935
+        }
+      ],
+      "controller_sample_count": 935,
+      "nmi_frame_count": 935,
+      "nmi_frame_trace_sha256": "be9ef9ddcb1d2066183f9fc49b312d21aeeeecd062887e45729536ec889177e4"
+    },
+    {
+      "history": "title_right",
+      "countdown_visits": 2,
+      "music_checkpoint": null,
+      "startup_checkpoint": {
+        "calls": 990,
+        "nmis": 35,
+        "context": "c5d1f0f0ffa5bfa7"
+      },
+      "selection_checkpoint": null,
+      "pads": [
+        1,
+        0
+      ],
+      "resume_pads": [
+        1,
+        0
+      ],
+      "delayed_polls": 2,
+      "waits": 111,
+      "advanced_calls": 1069,
+      "logical_NMIs": 37,
+      "original_instructions": 81461,
+      "APU_writes": 266,
+      "inert_rejections": 437,
+      "final_context": "a0550388ffa5bda7",
+      "confirmations": [],
+      "shutdowns": [],
+      "helper_completions": {
+        "1": 1,
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1,
+        "6": 14,
+        "7": 2,
+        "0": 1,
+        "8": 1,
+        "9": 1,
+        "10": 1,
+        "11": 4,
+        "12": 1,
+        "13": 1,
+        "15": 19,
+        "14": 37,
+        "16": 4,
+        "25": 215,
+        "17": 13,
+        "18": 13,
+        "20": 17,
+        "31": 34,
+        "32": 33,
+        "23": 15,
+        "24": 16,
+        "26": 176,
+        "27": 176,
+        "28": 176,
+        "29": 2,
+        "33": 20,
+        "34": 1,
+        "35": 1,
+        "36": 1,
+        "37": 1,
+        "38": 1,
+        "40": 19,
+        "41": 19,
+        "42": 19,
+        "39": 1,
+        "43": 1,
+        "45": 3,
+        "50": 2,
+        "44": 2,
+        "56": 1
+      },
+      "final_mapper": [
+        30,
+        31,
+        31,
+        2
+      ],
+      "unsupported_boundary": "0xa055",
+      "boundary_trace_sha256": "b0c2ff1826eb5be864458c9c5773fa88c51cbdc56fac3a37ee36762b7ebfcdba",
+      "controller_samples_rle": [
+        {
+          "pads": [
+            0,
+            0
+          ],
+          "count": 36
+        },
+        {
+          "pads": [
+            1,
+            0
+          ],
+          "count": 1
+        }
+      ],
+      "controller_sample_count": 37,
+      "nmi_frame_count": 37,
+      "nmi_frame_trace_sha256": "c40538822ea8ed51f4f7bf7af859a08b152d4f7db81cf407527b2229549e773c"
+    },
+    {
+      "history": "title_left",
+      "countdown_visits": 2,
+      "music_checkpoint": null,
+      "startup_checkpoint": {
+        "calls": 990,
+        "nmis": 35,
+        "context": "c5d1f0f0ffa5bfa7"
+      },
+      "selection_checkpoint": null,
+      "pads": [
+        2,
+        0
+      ],
+      "resume_pads": [
+        2,
+        0
+      ],
+      "delayed_polls": 2,
+      "waits": 111,
+      "advanced_calls": 1069,
+      "logical_NMIs": 37,
+      "original_instructions": 81460,
+      "APU_writes": 266,
+      "inert_rejections": 437,
+      "final_context": "a0550328ff25bda7",
+      "confirmations": [],
+      "shutdowns": [],
+      "helper_completions": {
+        "1": 1,
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1,
+        "6": 14,
+        "7": 2,
+        "0": 1,
+        "8": 1,
+        "9": 1,
+        "10": 1,
+        "11": 4,
+        "12": 1,
+        "13": 1,
+        "15": 19,
+        "14": 37,
+        "16": 4,
+        "25": 215,
+        "17": 13,
+        "18": 13,
+        "20": 17,
+        "31": 34,
+        "32": 33,
+        "23": 15,
+        "24": 16,
+        "26": 176,
+        "27": 176,
+        "28": 176,
+        "29": 2,
+        "33": 20,
+        "34": 1,
+        "35": 1,
+        "36": 1,
+        "37": 1,
+        "38": 1,
+        "40": 19,
+        "41": 19,
+        "42": 19,
+        "39": 1,
+        "43": 1,
+        "45": 3,
+        "50": 2,
+        "44": 2,
+        "56": 1
+      },
+      "final_mapper": [
+        30,
+        31,
+        31,
+        2
+      ],
+      "unsupported_boundary": "0xa055",
+      "boundary_trace_sha256": "d04cf14d295684910d44ab761c419bd063cefc694b7706326bcdd769c4a66cbf",
+      "controller_samples_rle": [
+        {
+          "pads": [
+            0,
+            0
+          ],
+          "count": 36
+        },
+        {
+          "pads": [
+            2,
+            0
+          ],
+          "count": 1
+        }
+      ],
+      "controller_sample_count": 37,
+      "nmi_frame_count": 37,
+      "nmi_frame_trace_sha256": "c40538822ea8ed51f4f7bf7af859a08b152d4f7db81cf407527b2229549e773c"
+    },
+    {
+      "history": "title_select",
+      "countdown_visits": 2,
+      "music_checkpoint": null,
+      "startup_checkpoint": {
+        "calls": 990,
+        "nmis": 35,
+        "context": "c5d1f0f0ffa5bfa7"
+      },
+      "selection_checkpoint": null,
+      "pads": [
+        32,
+        0
+      ],
+      "resume_pads": [
+        32,
+        0
+      ],
+      "delayed_polls": 2,
+      "waits": 111,
+      "advanced_calls": 1069,
+      "logical_NMIs": 37,
+      "original_instructions": 81456,
+      "APU_writes": 266,
+      "inert_rejections": 437,
+      "final_context": "a0550388ffa5bda7",
+      "confirmations": [],
+      "shutdowns": [],
+      "helper_completions": {
+        "1": 1,
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1,
+        "6": 14,
+        "7": 2,
+        "0": 1,
+        "8": 1,
+        "9": 1,
+        "10": 1,
+        "11": 4,
+        "12": 1,
+        "13": 1,
+        "15": 19,
+        "14": 37,
+        "16": 4,
+        "25": 215,
+        "17": 13,
+        "18": 13,
+        "20": 17,
+        "31": 34,
+        "32": 33,
+        "23": 15,
+        "24": 16,
+        "26": 176,
+        "27": 176,
+        "28": 176,
+        "29": 2,
+        "33": 20,
+        "34": 1,
+        "35": 1,
+        "36": 1,
+        "37": 1,
+        "38": 1,
+        "40": 19,
+        "41": 19,
+        "42": 19,
+        "39": 1,
+        "43": 1,
+        "45": 3,
+        "50": 2,
+        "44": 2,
+        "56": 1
+      },
+      "final_mapper": [
+        30,
+        31,
+        31,
+        2
+      ],
+      "unsupported_boundary": "0xa055",
+      "boundary_trace_sha256": "42ef27254045cc6f6031ce4cd5ae7f9e989b4e32526d4831887bef0b6657c7e1",
+      "controller_samples_rle": [
+        {
+          "pads": [
+            0,
+            0
+          ],
+          "count": 36
+        },
+        {
+          "pads": [
+            32,
+            0
+          ],
+          "count": 1
+        }
+      ],
+      "controller_sample_count": 37,
+      "nmi_frame_count": 37,
+      "nmi_frame_trace_sha256": "c40538822ea8ed51f4f7bf7af859a08b152d4f7db81cf407527b2229549e773c"
+    }
+  ],
+  "full_private_output_sha256": "b893cb18c19ccaff997fcafbf45c5659961a89bbd90d861704692d124a397b3d"
+}

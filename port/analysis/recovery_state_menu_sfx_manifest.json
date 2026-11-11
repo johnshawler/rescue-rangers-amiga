@@ -1,0 +1,157 @@
+{
+  "status": "READY_FOR_INDEPENDENT_REVIEW",
+  "scope": "Additive state-driven native 68020 title/character menu with separately qualified SFX helpers and narrow independently tested return bridge. Host logical correctness only.",
+  "files": [
+    {
+      "path": "port/src/recovery_state_menu_sfx.s",
+      "bytes": 4891,
+      "sha256": "fbf8ca6f2f8ceb2f7599ca05758bc005ea6d7cb852c8911139e9fb4bd066c1ff"
+    },
+    {
+      "path": "port/src/recovery_state_menu_sfx_tail.s",
+      "bytes": 1000,
+      "sha256": "2f3b36e1fca05144fbc253cb74bbfaaf8cf1b068deba4e9e03372f21effb06d8"
+    },
+    {
+      "path": "port/tests/recovery_state_menu_sfx_audit.py",
+      "bytes": 2796,
+      "sha256": "899cf829ff9afeb03758d9cb6ee16c637034a4ba3df091f87420d88dfbbe5965"
+    },
+    {
+      "path": "port/tests/recovery_state_menu_sfx_contract.py",
+      "bytes": 4589,
+      "sha256": "0a43544533ffbce9539c699d3a9542cabf04c39f189965b5b7d926a472d80d38"
+    },
+    {
+      "path": "port/tests/recovery_state_menu_sfx_edges.py",
+      "bytes": 2704,
+      "sha256": "7a43fb654d2c4a6fc5d5fbe6e33cbe40eb399d5f13c3eb34c5762cca64fa4a48"
+    },
+    {
+      "path": "port/tests/recovery_state_menu_sfx_harness.py",
+      "bytes": 7213,
+      "sha256": "62b18c558edfa0b4169c957b0eb99a36f3a39507775f67d2e41c05e5a0520a2e"
+    },
+    {
+      "path": "port/tests/recovery_state_menu_sfx_long_rom.py",
+      "bytes": 2441,
+      "sha256": "cd6dce20dd1433160cf0ecd993e2cb0ffc4533bcb3d41d239bfc6450af96f559"
+    },
+    {
+      "path": "port/tests/recovery_state_menu_sfx_models.py",
+      "bytes": 1171,
+      "sha256": "4f1b39180762362a9bc3cb9c2faa4a8b3237d9ca30a513e3663c7ad474cb97f7"
+    },
+    {
+      "path": "port/tests/recovery_state_menu_sfx_oracle.py",
+      "bytes": 2518,
+      "sha256": "5a2d8c31b29e5354590fe918421b7454032fc615af7b260e6f0e6e61e4e00474"
+    },
+    {
+      "path": "port/tests/recovery_state_menu_sfx_regression.py",
+      "bytes": 722,
+      "sha256": "287c3901f1d4c4cb0f27024bd275be74ec0e8aa387d5d5fdbf10b4c5e727eba6"
+    },
+    {
+      "path": "port/tests/recovery_state_menu_sfx_rom.py",
+      "bytes": 12173,
+      "sha256": "7c1dfa28f4d8e77ee25518da730217e001c04fb9f2648d9ad0d94eb1269c83ca"
+    },
+    {
+      "path": "port/tests/recovery_state_menu_sfx_tail_contract.py",
+      "bytes": 2501,
+      "sha256": "5b726ffcc36be4106ca78d4124eee1e6533c42e961ca38111ea924cf28c70465"
+    },
+    {
+      "path": "port/analysis/recovery_state_menu_sfx.md",
+      "bytes": 11511,
+      "sha256": "24c1ed871b1d44d9ee484dcb52a09e62f8cdf2b2855ea2ca5340285f673dabe1"
+    },
+    {
+      "path": "port/analysis/recovery_state_menu_sfx_failures.json",
+      "bytes": 2621,
+      "sha256": "68480d035d3524e812441f894071a96aff923d8cc7d113a4282cc2449e32241d"
+    },
+    {
+      "path": "port/analysis/recovery_state_menu_sfx_frozen.json",
+      "bytes": 36465,
+      "sha256": "290f26134b633b61a8143ff0b0826c6bafde3628f4270968a328f4ebce442209"
+    },
+    {
+      "path": "port/analysis/recovery_state_menu_sfx_results.json",
+      "bytes": 46550,
+      "sha256": "410a78f57e2a69ea0163b2b295777ff082d98e76c07c0a4ce76120447b251b06"
+    }
+  ],
+  "composite": {
+    "bytes": 46492,
+    "sha256": "a8a31217696f2f3d30d629adf570b9723c171d965e25f267294a55dc1534496e",
+    "instructions": 13638,
+    "branch_targets": 3299,
+    "max_branch_displacement": 11462,
+    "max_pc_displacement": 45730,
+    "full_format_68020_pc_references": 12
+  },
+  "coverage": {
+    "continuous_histories": 14,
+    "accepted_continuous_boundaries": 59821,
+    "ordered_APU_writes": 15059,
+    "checkpoint_inert_rejections": 20912,
+    "terminal_inert_rejections": 14,
+    "public_adapter_accepted": 161536,
+    "public_adapter_rejected": 56320,
+    "public_edges_accepted": 60,
+    "public_edges_rejected": 1845,
+    "bridge_public_accepted": 131072,
+    "bridge_public_rejected": 327158,
+    "bridge_original_first_accepted": 131072,
+    "bridge_original_first_rejected": 327158,
+    "menu_regression_accepted": 67840,
+    "menu_regression_rejected": 28928,
+    "music_regression_accepted": 5381,
+    "music_regression_rejected": 61834,
+    "public_long_scripts": 4,
+    "private_long_scripts": 4,
+    "public_long_waits": 4,
+    "public_long_rejections": 32,
+    "unchanged_predecessor_startup_accepted": 12801,
+    "unchanged_predecessor_startup_rejected": 55779
+  },
+  "ABI": {
+    "ram": 2048,
+    "context": 8,
+    "journal": 134638,
+    "runtime": 12,
+    "immutable_PRG": 131072,
+    "native_stack_minimum": 1024,
+    "size_word_sentinel": {
+      "helper": 48,
+      "word": 65535,
+      "capacity": 134638
+    }
+  },
+  "frozen_dependency_files": 200,
+  "verified_predecessor_inventory_hashes": 171,
+  "limits": [
+    "No target Amiga execution, rendering, audible output, timing, gameplay or delivered disk change.",
+    "No original-ROM bytes or captured-state fixtures included.",
+    "C5F8 is post-selection/demo boundary; A055 title request continuation is unsupported.",
+    "80FB odd-D7 restart, 8249 loop and 8152 zero header remain unsupported.",
+    "Other helper preflight rejections remain atomic and unchanged."
+  ],
+  "private_input_sha256": "051ea9bda7e1ae771f4c196e5bd4b35ec8db2b305dd3b1d26ad250f379d06411",
+  "predecessor_manifests": [
+    {
+      "path": "port/analysis/recovery_state_dispatch_menu_manifest.json",
+      "sha256": "db470ae116885409b124035a6e0dc879b65b3172f9a799c6b5d39b291ab53a15"
+    },
+    {
+      "path": "port/analysis/recovery_sfx_envelope_manifest.json",
+      "sha256": "68b21e9e8c1fcea4d7d9934726d6efccce5a4e501eb854f5029f864682ee41d4"
+    },
+    {
+      "path": "port/analysis/recovery_sfx_stream_control_manifest.json",
+      "sha256": "d7dd34912262abe8e0b4f05a2b1d563dffd6724c4f861c9fd5e350b59d0c9465"
+    }
+  ]
+}
