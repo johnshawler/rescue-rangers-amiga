@@ -1,0 +1,24 @@
+{
+  "scope": "Frozen original interstitial dialogue throughC6B5; excludes stage110+",
+  "public_allowlist": {
+    "port/analysis/recovery_bank_loader_dialogue_report.md": "6fb8b6d077e1a200bf4ea1922f8f891435438f600e78068f082464b9a25c7ddb",
+    "port/src/recovery_bank_loader_dialogue_bridge.s": "c658f46879de827cd69e0a24c75bd7ba4934e2e0928b0dbb4ebea9da4cd86ce4",
+    "port/src/recovery_bank_loader_dialogue_dispatch.s": "2adfa7c3650e084624f409d5d9ccdbd345beeb285a505eadf53f3d7c78856f27",
+    "port/src/recovery_bank_loader_dialogue_nmi.s": "c7132d5ee512ccf492d5f8a45ef811692612b96876beb37bcf34e0986c9dc6fa",
+    "port/src/recovery_bank_loader_dialogue_region.s": "e93def22cfe640d77b63c3440a13a8c3a342fd247e00db59ea28fcf919b55a05",
+    "port/tests/recovery_bank_loader_dialogue_contract.py": "44d7f342d9802958dd67893c87367c4ca9adc2c07fb3f873c9e101daa050d5ec",
+    "port/tests/recovery_bank_loader_dialogue_harness.py": "6591b4dd525d6389560d9493db552aa994f16a046d9ee33f8198899033d9b228",
+    "port/tests/recovery_bank_loader_dialogue_nmi_harness.py": "7900a0d1343bd9d7fd43e2a0ee5c0189a54485a6548121f439fb407b58dcd149",
+    "port/tests/recovery_bank_loader_dialogue_nmi_test.py": "0815c8e928864f4df90b249cf030fa387615b042710cdfb6d7a9e747270df316",
+    "port/tests/recovery_bank_loader_dialogue_oracle.py": "c66f182a3126f10193c36e131aeace255f453b0d66649cbbfef425e14672161b",
+    "port/tests/recovery_bank_loader_dialogue_rom.py": "9e1b55c551034f15f983113c8210e73874ec593866cfbc5e74204b0e58d363da",
+    "port/tools/recovery_bank_loader_dialogue_bridge_generate.py": "3e738bd4c33ebe90d7979449de59f9c98c8c11de5e647099d03c89c890ff96db",
+    "port/tools/recovery_bank_loader_dialogue_generate.py": "9a734b93bea55daa7efe0c9ccea08c466f0e385f5e1e78fc0b5217ff4ea46138"
+  },
+  "dependencies": {
+    "port/analysis/recovery_bank_loader_manifest.json": "e2b377f78a3028bd403b436fcdaa3c40741a21e26fa376f8ae4aab3e0781cf99",
+    "port/analysis/recovery_bank_loader_object_manifest.json": "284f5fbc9b7cfa04816d22c3b6fb7d1d1fbb12757afa1e010cae8f0d759bd82c"
+  },
+  "composite_bytes": 66504,
+  "composite_sha256": "f76c08628587d9c1a5761946af6a673f8076215a959c0bd417b4e16f80ce4234"
+}

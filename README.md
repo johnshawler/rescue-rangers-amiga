@@ -41,6 +41,22 @@ This live diagnostic has explicit helper, input-log and audio limits; title
 are not fully qualified. All limit/error stops mute and drain audio. Original
 inputs, historical captures and the delivered Z/X disk remain unchanged.
 
+### New host-verified stage loading
+
+The additive [stage-loading sequence](port/analysis/recovery_bank_loader_finish_report.md)
+continues through authentic dialogue, all 144 map expansions, object spawning,
+stage-music initialization and fade-in to C77B, the first stage's main-loop entry.
+Three continuous original/native histories match complete state and ordered
+effects, with 394 or 395 logical NMIs. The separate map and object modules have
+bounded, inert preflight checks and source-only reproduction tests.
+
+This is a loaded-stage semantic checkpoint, not a completed gameplay update.
+It has not yet replaced the stock title/menu diagnostic described above, and
+no new target-speed or audible-output claim is made. Public checks use
+`bash tools/test_stage_load_public.sh`; the original cartridge is required only
+for separate private original-instruction comparisons. The delivered disk stays
+unchanged.
+
 ### Earlier preserved checkpoints
 
 The new [stage-loading foundation](port/analysis/recovery_stage_foundation.md)

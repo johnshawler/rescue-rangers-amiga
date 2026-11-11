@@ -1,0 +1,28 @@
+{
+  "scope": "Frozen stage110\u2013115 and map100 composition throughbank4:8040; excludes116/130+",
+  "public_allowlist": {
+    "port/analysis/recovery_bank_loader_stage_report.md": "cc026036fa56fb3466dc76b1105050fbbcbfe74ec5f0edd84d632c6f8a161960",
+    "port/src/recovery_bank_loader_map_dispatch.s": "11bf630b86389f4465653dc5d373156b0d86b4a5e5a4df91dd68a69bb6ac6ba8",
+    "port/src/recovery_bank_loader_stage_dispatch.s": "015a7973838096b36728d610c514aedaa4b326c24f1bc23929a8c3e6390f3e1b",
+    "port/src/recovery_bank_loader_stage_fixed.s": "b63f9b9048f2e61b3fe556bc12637bfc13c9a8516f31e7706ca649523a6903ac",
+    "port/src/recovery_bank_loader_stage_init.s": "75046d0bd19e641d43d5a2fa295a62f1f79a2348c3f5992c34e4b69318efeac8",
+    "port/tests/recovery_bank_loader_map_harness.py": "e8ab59904da84894d05144df0ed6039dcfa7ec0488fb828f1fe8a21e0a59e4bf",
+    "port/tests/recovery_bank_loader_map_oracle.py": "c7a34fc5caca45d3fcd7e6608d746d0842504068e683688ad5b1cf99b1476a53",
+    "port/tests/recovery_bank_loader_map_rom.py": "86b0bf9063795b56aff7889e8eeb8a897f5e8ae760a1dfad00e226823e7c2f8f",
+    "port/tests/recovery_bank_loader_stage_contract.py": "b8283f12a0b76d8bac5a3339726de1f0ef6d2d1730a099376ff64d4a73c77607",
+    "port/tests/recovery_bank_loader_stage_harness.py": "46d31e0ff779aaa5df1ad11ce5552b0a208c9e6042bb833b0842b3d027c6cb45",
+    "port/tests/recovery_bank_loader_stage_oracle.py": "ffbb61b1586ba788c01d8ca76cb10ee225467212e2a3800a96c214240b1de82c",
+    "port/tests/recovery_bank_loader_stage_rom.py": "33726afcf2ef8711ba41d4d6f47b0062d62dbc6c87db2022daad9feb8c77e4a2",
+    "port/tools/recovery_bank_loader_stage_fixed_generate.py": "a56d19ac931393db579e0dce2c8c9145a673ab17c23125587ff51043053953d6"
+  },
+  "dependencies": {
+    "port/analysis/recovery_bank_loader_dialogue_manifest.json": "b4bd032e0dcee576ce552e81f2a318514d99115d9d24b27497b34dc446495fd9",
+    "port/src/recovery_stage_map_region.s": "9fe5305c0a6f1e436ac2c6812c6cbf0e88e633a51d8abf6a495c9854d80a4a56",
+    "port/src/recovery_gameplay_player_init.s": "eaa7f3df5d8f34038c22f7576a6a642d6129a55f2552d80aadba2e23bdcee568",
+    "port/src/recovery_gameplay_fade_entry.s": "a088031789eebcb1d8bcd75a7c843c6439e93edd6ffc1a61486425273b65b513",
+    "port/tests/test_recovery_stage_resource_contract.py": "a6572658e9b32ddd18d03de2678da6c85d523683c99c9ce96572ea933fc787ba",
+    "port/tests/recovery_stage_resource_harness.py": "a640afbaff502539f0e978a1e3c7abce0fc8216d6c5b46b93f7d48448ce6b4f6"
+  },
+  "composite_bytes": 82170,
+  "composite_sha256": "077273562e71a6aaf863cc05cae707e88a764f4583d5c6f312fdb7ea3f921270"
+}

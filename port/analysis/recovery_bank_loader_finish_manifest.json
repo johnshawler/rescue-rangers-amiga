@@ -1,0 +1,33 @@
+{
+  "scope": "Frozen stage0 completion and music through C77B; excludes gameplay frame extensions",
+  "public_allowlist": {
+    "port/analysis/recovery_bank_loader_finish_report.md": "4ca51937175cbb904ac45debbebb26b82a2df8c859391d161fb2067afb1f9f6f",
+    "port/src/recovery_bank_loader_finish_dispatch.s": "303a3a4081d0e1adbecb9009d8cce3cf334a8aeb4e00a864f26e9204be3b62d2",
+    "port/src/recovery_bank_loader_stage_finish.s": "a3068557b9b28139bd987953fffe7e112adf8dec9b8a4da561b7688a4b35be9b",
+    "port/src/recovery_bank_loader_stage_fade_in.s": "790157d03934cbabb417e4b919852807bb98c4f52b7ca2aef8398020c916e5d6",
+    "port/src/recovery_bank_loader_music_dispatch.s": "907748284136b38485a404921fdcec15edfa737882367d602f0cd6820f3f8871",
+    "port/src/recovery_bank_loader_stage_music.s": "ac1615c5a51546ac504ff1e07abd147fad0518c37b5bc94bfc249cf470b5fc61",
+    "port/tools/recovery_bank_loader_stage_finish_generate.py": "621fabac6e0e3057ca3d626314294ac5cf4625ceac08b3d787929bee30465d67",
+    "port/tools/recovery_bank_loader_stage_music_generate.py": "50d537bfb330a25f6be2448dbc4631b09af3974e942be59164d39caecc1259d1",
+    "port/tests/recovery_bank_loader_finish_harness.py": "0ffefdf699e138d399c5ea12ac67e91cb430163fe742f4aa73aedf6357abf53d",
+    "port/tests/recovery_bank_loader_finish_oracle.py": "9024e14d06145247cce1a38a8cf0eee16cb7fb8e37026b1558d95fdf35797e48",
+    "port/tests/recovery_bank_loader_finish_rom.py": "0ebc13a8fa91156118ae05b1e17075eb9534a10bad6bcced6079f9d6e8193925",
+    "port/tests/recovery_bank_loader_finish_contract.py": "fc88d36863ab90315b948d390e6cbb8eb76eb5ab03306dd800adce8edfb20d84",
+    "port/tests/recovery_bank_loader_music_harness.py": "08428910c5895eb780293ecec12f24c4f4432ddda355d5e7b0f1b041e7d172a7",
+    "port/tests/recovery_bank_loader_music_oracle.py": "9422e5d09d85c8207ddcea8675014980f25b19489dd418d671718c71ffd9f3d0",
+    "port/tests/recovery_bank_loader_music_rom.py": "0873ce4e0775d3fdda8509e8198eae503d7dedd228ecfba347b575fdec9159ed",
+    "port/tests/recovery_bank_loader_music_contract.py": "8572500bd3113f24ffb8de04e3da6d597379000e59efec9989aed9a7da4aec27"
+  },
+  "dependencies": {
+    "port/analysis/recovery_bank_loader_stage_manifest.json": "ad48e2fb811a39610a800468efa262d2238d766acf1cc2c040ad1d52c7c70e5c",
+    "port/analysis/recovery_stage_object_manifest.sha256": "fde4747d26b054901cc47ef54c11bd6e94e56a16cd5ade299d3ab2c4d884aa77",
+    "port/tests/recovery_test_title_fade_yield.py": "434f7e5267611deaf7450fd094bb818cbd4c2e607d3c5b7de01e73ed219888f7",
+    "port/tests/recovery_fade_entry_harness.py": "bfe6c2d74b3e81e07e3ca6fbb8fad252e42457d0e98fbdefeac821fab6630456",
+    "port/src/recovery_stage_object_region.s": "9536077db9233171899cb84efca10b639d5f03c59c437b9c5bef81f4c0407ba0",
+    "port/tools/recovery_stage_object_generate.py": "341c5b2f5737581c3e7395b081ecc8d2343b74eca063df1d74d51884da343ac5",
+    "port/tests/recovery_stage_object_test.py": "b75dc54be026979ca8e1dab6ef816b1f9928119eda3060f955644878f53fd3a7",
+    "port/analysis/recovery_stage_object_report.md": "9e97243998a1545f5c4784306a5b68858ea4cad60717af9c8a7bbf7fa987c4ba"
+  },
+  "composite_bytes": 92408,
+  "composite_sha256": "1ee9d5b9326a4016d7d28e6a54e4ab8b4260aecfddc67d3dc62a006550347184"
+}
