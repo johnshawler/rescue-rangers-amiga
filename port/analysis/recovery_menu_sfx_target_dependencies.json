@@ -1,0 +1,326 @@
+{
+  "checkpoint_commit": "2362bfe0cb7530130e186e3fd00b5fd456b27081",
+  "checkpoint_tree": "c4ccf5d48618d1b4bddfde069d60608b0dba344b",
+  "frozen_dependencies": [
+    {
+      "path": "port/analysis/recovery_menu_timing_dependencies.json",
+      "sha256": "aa89b263fd63010e499d4ccc700ed042754b27246ac49a54e2b9abe453ddade9"
+    },
+    {
+      "path": "port/analysis/recovery_state_menu_sfx_manifest.json",
+      "sha256": "2bd2c5764f3d13798e662c9b8260def979b1188f3d1eeb583ca02bb198821651"
+    },
+    {
+      "path": "port/src/amiga_clock.s",
+      "sha256": "e0cbde6ee4c8f338f213be6327d6ae5938ffc18be2f7cb0fa6c3e31b1a409eb6"
+    },
+    {
+      "path": "port/src/boot.s",
+      "sha256": "a79bde44a3eea650fca966b277a2141c3baf0994edfc0538701b64b108af718f"
+    },
+    {
+      "path": "port/src/native_background.s",
+      "sha256": "0b16d5fc39ae5b590056f98152729c6dd7dd5ca4f1f4ad323f386ca88f29fba8"
+    },
+    {
+      "path": "port/src/native_sprite_blitter.s",
+      "sha256": "7d28cea0544f91591c9eaeabbd82ae6e9615dd86bf36ed6633c9b97a45d106b0"
+    },
+    {
+      "path": "port/src/recovery_active_nmi_return.s",
+      "sha256": "ac20b42ca9873be158104e945e540a16206818649598b19ea6a2da4cf4cc2e64"
+    },
+    {
+      "path": "port/src/recovery_audio_reset_command.s",
+      "sha256": "9c5148ecd1108fc92b604bdca57931e0217554c01294c5d5a8044a33450f5080"
+    },
+    {
+      "path": "port/src/recovery_character_cursor_sound_request.s",
+      "sha256": "600b430d8c2521ddcfaf32cc6792139216f8a882d569c551e3e2c987611b2aa7"
+    },
+    {
+      "path": "port/src/recovery_character_menu_setup.s",
+      "sha256": "cd4a317a8c6f8ea398194cfc73bc836fd002f8f114c1e8d1c495fb5649e7c927"
+    },
+    {
+      "path": "port/src/recovery_character_selection_dispatch.s",
+      "sha256": "76686227cd2797120f1952fff40e54506158b6d3b39633be58978b2d93c19918"
+    },
+    {
+      "path": "port/src/recovery_chr_nmi_prefix.s",
+      "sha256": "fd94dd732b6a34043412c2dc31591c7545b28d26125cbbb73cb3cc21c499f167"
+    },
+    {
+      "path": "port/src/recovery_first_nmi_prefix.s",
+      "sha256": "ac1872087561afa2064cff253056a6c9cf89066a32a93c92e70954472278ffc7"
+    },
+    {
+      "path": "port/src/recovery_first_yield.s",
+      "sha256": "5fe7f904dcb44925c0ef589075c88d470910a5db9fb8812bce1053ef4daa108e"
+    },
+    {
+      "path": "port/src/recovery_gameplay_frame_yield.s",
+      "sha256": "8c143aeb217db1d246416853a975a28cc00938bb0c23d21ab9acd8f15e86b300"
+    },
+    {
+      "path": "port/src/recovery_general_task_scheduler.s",
+      "sha256": "929994d1d3609b3e21ebacc11029c726e1dc2cea42f8f6e900dcf96d5a606c1c"
+    },
+    {
+      "path": "port/src/recovery_music07_command.s",
+      "sha256": "62f15853ecfdb4a470fd7f8f1eefc400c8a61903ecf8a8c7ec643c0ab76c93d0"
+    },
+    {
+      "path": "port/src/recovery_music_active_command01.s",
+      "sha256": "42ece6ef98a0e4936c57d1fa9a953b7149ddb0ee5f3ebd5d17e7b194576b8606"
+    },
+    {
+      "path": "port/src/recovery_music_active_command02.s",
+      "sha256": "a7c7db397aafcbf25c5a47ac87d49bf046c7f23f36e05a76dd38a56ece514f28"
+    },
+    {
+      "path": "port/src/recovery_music_active_command03.s",
+      "sha256": "e0f9ea562dc7ff8bf51db990d0c294b355adfec63756293c205a9c56cac1f75f"
+    },
+    {
+      "path": "port/src/recovery_music_active_command0e.s",
+      "sha256": "5e667f1a018a5d20d36a6b7a56cf3e2f1a18f5e68d2a6afdd6a54ce07889bf7e"
+    },
+    {
+      "path": "port/src/recovery_music_active_command0f.s",
+      "sha256": "f72840069b5f8dd2743d176d98459b7ca6c5e5a39e1489eafe34c06e262201b8"
+    },
+    {
+      "path": "port/src/recovery_music_active_command12.s",
+      "sha256": "28abb7213e2443938231541314d1f5d97bf92ee8677876640ed3edab73cb7121"
+    },
+    {
+      "path": "port/src/recovery_music_active_command13.s",
+      "sha256": "286e3ca7d2d4f2c7dbd8d3f16331a392fa8c9cca174fb52da7e1b7d7106a91c4"
+    },
+    {
+      "path": "port/src/recovery_music_active_control.s",
+      "sha256": "fe0b41ba934dafa2388a4fd2d5701362828b23426effe1853fc304db7920f69e"
+    },
+    {
+      "path": "port/src/recovery_music_active_envelope.s",
+      "sha256": "c61e40421e3d1452497ef37f7d78dffac9eb902597946e8c5aad3407c86a8e48"
+    },
+    {
+      "path": "port/src/recovery_music_channel_iteration.s",
+      "sha256": "059def4fef52ca857de2148cb6e4f2414267aa803cb8c870c97163003539ccde"
+    },
+    {
+      "path": "port/src/recovery_music_duration_prepare.s",
+      "sha256": "096aa7b2fbc0f85333edd9b7c9b76988a667758dc12c16ed011504bd13c2d2e1"
+    },
+    {
+      "path": "port/src/recovery_music_duration_progress.s",
+      "sha256": "dbf9fe81080d740e261faf4946479d114a9906b95286db3c5110ae05ab3490b6"
+    },
+    {
+      "path": "port/src/recovery_music_empty_queue_entry.s",
+      "sha256": "af4b7308f408ae3936f6aa3cf6b92ca2e56fabded0751ad5d3abfd28c6626520"
+    },
+    {
+      "path": "port/src/recovery_music_indexed_commands.s",
+      "sha256": "20d112327e628c0727a6604f87dc1cd3b7bce16087bbce781c008e1e96820312"
+    },
+    {
+      "path": "port/src/recovery_music_indexed_fetch.s",
+      "sha256": "eee1a1c93b13f4e48e8cd9ba223bb0a5b9b4aed314d77b40f45a3a22e00e167a"
+    },
+    {
+      "path": "port/src/recovery_music_indexed_rest.s",
+      "sha256": "74b717ccf13063f441e1f1f583ad6270af3956bddc2d6682c61773e70ea5c30a"
+    },
+    {
+      "path": "port/src/recovery_music_pitched_gate.s",
+      "sha256": "906440490eaa30ece78c49c87f9816246e3cdeabb34b173304bf9e1471d3e566"
+    },
+    {
+      "path": "port/src/recovery_music_pitched_note.s",
+      "sha256": "c590ef403355614378a13c066c0ae7c26c04bbdf2dbf81c6cd1f88896d5e4ace"
+    },
+    {
+      "path": "port/src/recovery_music_tick_fetch.s",
+      "sha256": "e59d42bcfbc2a86e8d92ac29947f63b4fe3ea01e57efc1a4e7fb436ecf57a15b"
+    },
+    {
+      "path": "port/src/recovery_nmi_audio_entry.s",
+      "sha256": "d0c1c3da60f020448d9e12bdf31798c8a988eba31efe31e458c5a60328714a83"
+    },
+    {
+      "path": "port/src/recovery_palette_nmi_prefix.s",
+      "sha256": "4a9cf5588c24f704af5cc0412adc916de20611296fc0a7dd7f149cb6eb181681"
+    },
+    {
+      "path": "port/src/recovery_queued_video_nmi_prefix.s",
+      "sha256": "ba46f5bc1a82fd2e0477791669be48bfb472401f3f24dd79a6cfbf7c22831a8f"
+    },
+    {
+      "path": "port/src/recovery_reset_dispatch.s",
+      "sha256": "e6751034246add44222f7c534bd9f5c040521e3ea232ec6b33f37c1f391cb9f2"
+    },
+    {
+      "path": "port/src/recovery_reset_mapper.s",
+      "sha256": "4d1a4cf7e03a286d5a889f826324039d26c94dac4632aa6b498e250fe9249d0a"
+    },
+    {
+      "path": "port/src/recovery_reset_ram.s",
+      "sha256": "6dc8974aeebb0be917011b518361618443fabb8f20eba70a5133b0d11d6bfbea"
+    },
+    {
+      "path": "port/src/recovery_reset_video.s",
+      "sha256": "bdf63828ccae88389108529b9c87693995d206b9e19f885d201babc1d4a4749d"
+    },
+    {
+      "path": "port/src/recovery_resumed_task_setup.s",
+      "sha256": "97cb8a421e32ca9da08de69660c4c9ffc88b382f781f2fd8e22a09bbea6cb6f7"
+    },
+    {
+      "path": "port/src/recovery_scheduler_resume.s",
+      "sha256": "0836efbe53dac974fb692a027bf2bd7da3f87122ec7feb5000191ce7da19be8a"
+    },
+    {
+      "path": "port/src/recovery_sfx27_table_dispatch.s",
+      "sha256": "a3678ef164a3a2d0486c001fcc25fba9cfe2eab899369c3c12eb888da45df6c7"
+    },
+    {
+      "path": "port/src/recovery_sfx_active_control.s",
+      "sha256": "4a9174b059be63962deba6ed7b37caa1ac2d126562d444e90a30a60074afa9f7"
+    },
+    {
+      "path": "port/src/recovery_sfx_channel_reconfigure.s",
+      "sha256": "9c145d17925ed50aa93b02e6def306dd9d9ddb8b96a584f21f7c798603eabf97"
+    },
+    {
+      "path": "port/src/recovery_sfx_command_mask.s",
+      "sha256": "b7ac4205b3a0fdb1d5d8f8d6a0fe06a24f288e1c212325a617c93aa6c0938e19"
+    },
+    {
+      "path": "port/src/recovery_sfx_duration_math.s",
+      "sha256": "c5fab913baffdee57d5a51fb8f7bbde638c0d0c953753d7bc41fd45b20c7b11e"
+    },
+    {
+      "path": "port/src/recovery_sfx_envelope.s",
+      "sha256": "8121d070caa017ed91cbf13677ada9262e26b00681343fe9ddf0a65bb9664559"
+    },
+    {
+      "path": "port/src/recovery_sfx_event_action.s",
+      "sha256": "81e2508b591df7941670660de5def74b8ce9b650b839ebe1e3595a33b116b39c"
+    },
+    {
+      "path": "port/src/recovery_sfx_header_initialize.s",
+      "sha256": "865591674a5f0f6e99c5d6f9ec7427f380588a0b9dc6630f44b6cfc3a7e65911"
+    },
+    {
+      "path": "port/src/recovery_sfx_initialized_tail.s",
+      "sha256": "c904de178646ff2dfc02a9140a379bc244e1f421f9b0c6d5c2e061112402247e"
+    },
+    {
+      "path": "port/src/recovery_sfx_phase_dispatch.s",
+      "sha256": "03f4b4f0dcdad1fe00831c3a037f05fdecfa24f3df6711e200ff23f4d3d1eb3e"
+    },
+    {
+      "path": "port/src/recovery_sfx_stream_control.s",
+      "sha256": "db2193b25ded15f40068242dd120be2a282ae7ff338015a376af38524bdb508c"
+    },
+    {
+      "path": "port/src/recovery_sfx_stream_entry.s",
+      "sha256": "b4c5e68da9f7c51a49091fe721b830f661cc94286dbfcc64b646f58b7ea9ec29"
+    },
+    {
+      "path": "port/src/recovery_sfx_tick_entry.s",
+      "sha256": "c808a9129018be993dabda3be7fa978633aba5b6b0e8ae890434eef8fc637907"
+    },
+    {
+      "path": "port/src/recovery_silent_tick_rti.s",
+      "sha256": "4d97d7b6b87b83079a0b56d598623132e2a0e4438d102ac1919362caf6722f0f"
+    },
+    {
+      "path": "port/src/recovery_startup_bank_select.s",
+      "sha256": "d80a4d7ff4609fc00f6e473e4f5e0dbf806d1869d16e5cae4891bb2ab07adc99"
+    },
+    {
+      "path": "port/src/recovery_startup_fade_continue.s",
+      "sha256": "d8a60fd4a1d52e3e09692a8315237658e90ca885ca138cd6c80a25bb04d81d48"
+    },
+    {
+      "path": "port/src/recovery_startup_resource_load.s",
+      "sha256": "92d7ac253f4088b1f83169df5fcacb7deabed90c2530426d74506f02b9be857e"
+    },
+    {
+      "path": "port/src/recovery_startup_title_setup.s",
+      "sha256": "514e4f9f05dfd2427b74541fa9f678538945c6f7ec3a5d7ff49fcc7c0c5dc1f4"
+    },
+    {
+      "path": "port/src/recovery_startup_video_clear.s",
+      "sha256": "bc74eeeb57501d261e91b604682d1355ec242001ea7a2c28d5fafed0d1991b29"
+    },
+    {
+      "path": "port/src/recovery_state_dispatch_active.s",
+      "sha256": "d4c55668fa3d966c6edd16bdc23408c9986771a79d52dc5d3f62074cdacbab6e"
+    },
+    {
+      "path": "port/src/recovery_state_dispatch_menu.s",
+      "sha256": "b3a83c1ed57e3e8a6eb064c1e1be29e7ee69dc4ce9fd0a4d56b5ca3bb5ffa8c9"
+    },
+    {
+      "path": "port/src/recovery_state_dispatch_palette.s",
+      "sha256": "b71fc2b7038b79818163e25e70325531fc8ac135c1c795d57aa8fab32209f429"
+    },
+    {
+      "path": "port/src/recovery_state_dispatch_prefix.s",
+      "sha256": "70c8ed697d2662c89bca7f72378fdeed5c74a94dba512a3e05956438551892c7"
+    },
+    {
+      "path": "port/src/recovery_state_dispatch_scheduler.s",
+      "sha256": "37317cecfbeaeff8d90e5a6fb5ef37ea7dc5d259885b6001e211da850f17a214"
+    },
+    {
+      "path": "port/src/recovery_state_dispatch_startup.s",
+      "sha256": "b5551570a27e86011566d139294697184cd4e1685856164c7bd0d7fba1f9f195"
+    },
+    {
+      "path": "port/src/recovery_state_menu_display_device.s",
+      "sha256": "5841cca88b9a2490a7559b7e35a4d388c968ae171bfedd85b9c88f761d3ab106"
+    },
+    {
+      "path": "port/src/recovery_state_menu_sfx.s",
+      "sha256": "fbf8ca6f2f8ceb2f7599ca05758bc005ea6d7cb852c8911139e9fb4bd066c1ff"
+    },
+    {
+      "path": "port/src/recovery_state_menu_sfx_tail.s",
+      "sha256": "2f3b36e1fca05144fbc253cb74bbfaaf8cf1b068deba4e9e03372f21effb06d8"
+    },
+    {
+      "path": "port/src/recovery_title_engine_tables.s",
+      "sha256": "05c8e4e904d4b6a57b878ee071b4330429b0b624cda714c7eb8ea536a2f3e5b3"
+    },
+    {
+      "path": "port/src/recovery_title_fade_entry.s",
+      "sha256": "029fe201ab55eb9f9d1b1ed6f6c3522c1e2eefaf0aa7a8e206b0d44c0c3e7b60"
+    },
+    {
+      "path": "port/src/recovery_title_menu_countdown.s",
+      "sha256": "8b2bfd2fbf48f7b42ebffba207681d73a344f62dc0940d3f576c9fc98d57d15d"
+    },
+    {
+      "path": "port/src/recovery_title_menu_dispatch.s",
+      "sha256": "5c1d9efa3e629d5a67bd28e8dc9008273fe2f746e72237cc2c91f9ae2f17b664"
+    },
+    {
+      "path": "port/src/recovery_title_menu_exit.s",
+      "sha256": "f49de3afa617a935d54955fabce0ec768aba2367c2b2c1ba409f607ec5e9cc21"
+    },
+    {
+      "path": "port/src/recovery_title_yield_entry.s",
+      "sha256": "220e6780990985fb5fa2a5d867283d0bcb2e90adfc4077056b0944439174ac82"
+    },
+    {
+      "path": "port/tests/recovery_state_menu_sfx_harness.py",
+      "sha256": "62b18c558edfa0b4169c957b0eb99a36f3a39507775f67d2e41c05e5a0520a2e"
+    }
+  ]
+}

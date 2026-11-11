@@ -1,0 +1,88 @@
+{
+  "status": "INDEPENDENT_REVIEW_PASS",
+  "scope": "Host functional compatibility only; no Paula integration or measured audio",
+  "files": [
+    {
+      "path": "port/tests/recovery_menu_audio_events.py",
+      "bytes": 4316,
+      "sha256": "e5ae76966e3d328533ca4a9ae2587c301491a76dec2bde33c106da58e3aa47c1"
+    },
+    {
+      "path": "port/tests/recovery_menu_audio_compatibility.py",
+      "bytes": 7715,
+      "sha256": "ef8aa50aacc4aa3cdb854ac24fbeb1538a0d4f8dfe24814594c1681f8b6d2fc1"
+    },
+    {
+      "path": "port/analysis/recovery_menu_audio_compatibility.md",
+      "bytes": 7404,
+      "sha256": "b7eb5ec61577f4ad6348bf157a985becc3f53d1e2155dbfea92d26558767a785"
+    }
+  ],
+  "frozen_dependencies": [
+    {
+      "path": "port/src/experimental_direct_paula.c",
+      "bytes": 984,
+      "sha256": "5c5be6ac34df5fc7d9b72a081343abc262c762d8b67b142c9e585e6a24080420"
+    },
+    {
+      "path": "port/src/experimental_direct_paula.h",
+      "bytes": 618,
+      "sha256": "0bc4e5c7380e3ff681ac7bedfda6f348e6ce8076be1b7906501aac4f90aade2a"
+    },
+    {
+      "path": "port/tests/recovery_state_menu_sfx_rom.py",
+      "bytes": 12173,
+      "sha256": "7c1dfa28f4d8e77ee25518da730217e001c04fb9f2648d9ad0d94eb1269c83ca"
+    },
+    {
+      "path": "port/analysis/recovery_state_menu_sfx_manifest.json",
+      "bytes": 5725,
+      "sha256": "2bd2c5764f3d13798e662c9b8260def979b1188f3d1eeb583ca02bb198821651"
+    }
+  ],
+  "results": {
+    "histories": 14,
+    "APU_writes": 15059,
+    "real_RTI_snapshots": 1966,
+    "native_calls": 18991,
+    "atomic_rejections": 163,
+    "raw_initial_snapshot_rejections": 28,
+    "per_write_transient_rejections": 135,
+    "safe_completed_snapshot_rejections": 0,
+    "audible_timer_ranges": [
+      [
+        166,
+        280
+      ],
+      [
+        78,
+        595
+      ],
+      [
+        140,
+        595
+      ]
+    ]
+  },
+  "private_evidence": "port/build/menu-audio-fresh-20261111/",
+  "original_boundary": "FE24 after NES hardware warmup",
+  "independent_review": {
+    "full_recipe_reproduced": true,
+    "counterexamples": 16,
+    "atomic_reject_counterexamples": 11,
+    "per_write_safe_noise_state_can_accept_audibly": true,
+    "target_audio_tested": false
+  },
+  "private_summary_pins": [
+    {
+      "path": "port/build/menu-audio-fresh-20261111/collection.json",
+      "sha256": "da9d2ec054a14707f32cf22a43f8c38f6666ab02d193ed9b698b21858770917d",
+      "bytes": 4538
+    },
+    {
+      "path": "port/build/menu-audio-fresh-20261111/planner/planner-results.json",
+      "sha256": "18a5bc49d232ed3d87502e44e46cbac7987367ecfed42b7c9030e7ff5590e5ad",
+      "bytes": 13607
+    }
+  ]
+}

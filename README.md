@@ -11,7 +11,25 @@ native game-code translation and Amiga rendering, not a general NES interpreter.
 
 ## Current verified source
 
-The [state-driven character-menu display](port/analysis/recovery_state_menu_display.md)
+The new [stock menu/SFX diagnostic](port/analysis/recovery_menu_sfx_target.md)
+confirms both characters on the emulated stock PAL A1200, including moving
+right then back left. Six fresh boots match complete final native state,
+ordered device/audio journals and every captured viewport pixel. Independent
+review reproduces those results. It uses 788,480 Chip bytes and no Fast RAM.
+Inputs and interrupts are scripted, audio is not attached, and execution stops
+at C5F8 before gameplay. Timings include capture overhead with display DMA off;
+they are diagnostic measurements, not game FPS. The old delivered Z/X disk is
+unchanged.
+
+A separate [audio-event compatibility audit](port/analysis/recovery_menu_audio_compatibility.md)
+checks 15,059 original/native writes and all 1,966 completed-interrupt snapshots
+from 14 histories against the unchanged compiled Paula planner. Every completed
+snapshot passes with explicit muted noise initialization. Intermediate write
+states can reject, so a future integration must accumulate ordered writes and
+update only at genuine completion boundaries. This is input-domain evidence,
+not audible integration, faithful synthesis or real-time performance.
+
+The earlier [state-driven character-menu display](port/analysis/recovery_state_menu_display.md)
 now reaches and renders CHIP / DALE with the cursor on CHIP on an emulated stock
 PAL A1200. Two independent fresh executions match all 1,091 contexts and
 published journals, the first 64 full RAM boundaries plus final RAM, and every
@@ -50,8 +68,8 @@ original- and alternate-character confirmation are verified through actual
 cursor, table and character-marker state, not merely the terminal PC. A separate
 narrow return bridge handles delayed input without relaxing the older tail's
 guard. The full long journal and size sentinel remain required. This composition
-is host-tested only; no new live Amiga menu, audible audio or target timing is
-claimed. Gameplay at C5F8 and the title-direction continuation at A055 remain
+has the separate scripted stock-target qualification above; live Amiga input
+and audible audio remain unimplemented. Gameplay at C5F8 and the title-direction continuation at A055 remain
 unsupported, along with the documented SFX dispatch limits.
 
 The new [state-driven startup display](port/analysis/recovery_state_startup_display.md)
@@ -73,7 +91,9 @@ noise bias and simplified phase/counter handling, not integrated game audio or
 NES fidelity. [Reproduction instructions](port/analysis/experimental_direct_paula_restore.md)
 regenerate the private profile from the approved cartridge; no music data is
 included in the repository. Its dedicated C-toolchain checks are separate from
-the assembler-only public aggregate.
+the assembler-only public aggregate. The new compatibility audit is also
+separate: run `bash validate_menu_audio_compatibility.sh` with the m68k C
+toolchain available. Generated event streams and plans remain private.
 
 The new [stock character-confirmation diagnostic](port/analysis/recovery_character_confirmation_target.md)
 executes 1,196 native calls on the emulated PAL 68020/AGA A1200. Five complete

@@ -1,0 +1,271 @@
+{
+  "status": "INDEPENDENT_REVIEW_PASS",
+  "scope": "Six stock PAL A1200 scripted menu/SFX boots, final state and complete ordered live journals/DMA; no live input, Paula, or gameplay",
+  "source_public_commit": "2362bfe0cb7530130e186e3fd00b5fd456b27081",
+  "source_local_head": "55fea2d36012f16759fb4dc9b2bd414dc51bff93",
+  "source_tree": "c4ccf5d48618d1b4bddfde069d60608b0dba344b",
+  "new_files": [
+    {
+      "path": "port/analysis/recovery_menu_sfx_target.md",
+      "bytes": 10044,
+      "sha256": "f60fc1236ff9f670a60b043ce54f53fbc60b9e6f47843fa9af10f299b91ad141"
+    },
+    {
+      "path": "port/analysis/recovery_menu_sfx_target_dependencies.json",
+      "bytes": 12372,
+      "sha256": "ad31d677dbc033b9d41048fd5172c308dfda2b2fee87880308b7b8674cb87831"
+    },
+    {
+      "path": "port/src/recovery_menu_sfx_target.s",
+      "bytes": 3261,
+      "sha256": "8263deb31a1ac0400767db7d822f545b06c90c3e7a5e3d7069b14db9b5863b78"
+    },
+    {
+      "path": "port/tests/recovery_menu_sfx_target_adapter_test.py",
+      "bytes": 3629,
+      "sha256": "6156e02b8e30d74f301783afd24d6eac9ee8d8af14c8f1ce05e6820389e55a98"
+    },
+    {
+      "path": "port/tests/recovery_menu_sfx_target_build_test.py",
+      "bytes": 2276,
+      "sha256": "3410b55665560fbde38a6b187d74bd0f84075df497edc9a0e7a17465009f990d"
+    },
+    {
+      "path": "port/tests/recovery_menu_sfx_target_contract.py",
+      "bytes": 3611,
+      "sha256": "b222beea58455b5597098f94c441dd27b349914afcc04ca759b9e128545a4ab2"
+    },
+    {
+      "path": "port/tests/recovery_menu_sfx_target_oracle.py",
+      "bytes": 3530,
+      "sha256": "995f23ac7ec555207fa97eda5e0ed2e0421021cd3f808bbddf60db3daa4ff5d5"
+    },
+    {
+      "path": "port/tests/recovery_menu_sfx_target_rejection_test.py",
+      "bytes": 4058,
+      "sha256": "c77d86c16bff3d394c30dd815723996c934a1de16bc84dd071399be7c3e2bc8e"
+    },
+    {
+      "path": "port/tests/verify_recovery_menu_sfx_target.py",
+      "bytes": 4590,
+      "sha256": "7531ca24544838806688f1ba43594ca4041024e8665dde302a2cf5e4b4a58ca2"
+    },
+    {
+      "path": "port/tools/build_recovery_menu_sfx_target.py",
+      "bytes": 4159,
+      "sha256": "4d89d89e4a4e7a21e37cc2acb2759cbc1d1fc85554fe25b46a89ba899a3ee764"
+    }
+  ],
+  "private_evidence": [
+    {
+      "path": "port/build/recovery_menu_sfx_target/verification.json",
+      "bytes": 17908,
+      "sha256": "713f1d6e0867e0c68dc29a910acf1eacba7524040f5de7ece23816b6a7b4db66"
+    },
+    {
+      "path": "port/build/recovery_menu_sfx_target/contract.json",
+      "bytes": 2616,
+      "sha256": "122d61dbff0ac363991e76adf7d992d2c33877d4b2ac827e5d2242fbc9584d81"
+    },
+    {
+      "path": "port/build/recovery_menu_sfx_target/adapter-test.json",
+      "bytes": 1439,
+      "sha256": "580db5bd86390b18e1eb9481011cfe4688e52a7227b0f907b59ea777ab92bb8f"
+    },
+    {
+      "path": "port/build/recovery_menu_sfx_target/build-test.json",
+      "bytes": 2658,
+      "sha256": "78829760200742f4f121b8236e0b0616190602b62d8b156d10bb19e58ef6a81d"
+    },
+    {
+      "path": "port/build/recovery_menu_sfx_target/rejection.json",
+      "bytes": 6753,
+      "sha256": "627fd3c0c551e51b78e87a0450c83d96f0789e71fe9310e2b0596397cc80770f"
+    },
+    {
+      "path": "port/build/recovery_menu_sfx_target/long-original.json",
+      "bytes": 901,
+      "sha256": "0e2c671316725b2d13966e2c049e9f247af356e84d132f4aff48900bb9b7eb4d"
+    },
+    {
+      "path": "port/build/recovery_menu_sfx_target/default/build.json",
+      "bytes": 293,
+      "sha256": "3a797a882ceaf90768ae3ce9060a8067e042b809f7dc06a1ba482fcceb0e2add"
+    },
+    {
+      "path": "port/build/recovery_menu_sfx_target/default/recovery_menu_sfx_target.adf",
+      "bytes": 901120,
+      "sha256": "f9f60bb427c335d8b7d4946bb2ccc42d6a8a0de4469874cd814f0db3e96235da"
+    },
+    {
+      "path": "port/build/recovery_menu_sfx_target/default/recovery_menu_sfx_target.bin",
+      "bytes": 788426,
+      "sha256": "c248a59eed14bbf92a24f53984c7d548e6b8023977bd91cc8ee2f660af121e88"
+    },
+    {
+      "path": "port/build/recovery_menu_sfx_target/default/chip.bin",
+      "bytes": 2097152,
+      "sha256": "6e4bf7be3a53abc3f7886008c0e89d9237d74b0111ef3ff09a366859de24a88c"
+    },
+    {
+      "path": "port/build/recovery_menu_sfx_target/default/repeat-chip.bin",
+      "bytes": 2097152,
+      "sha256": "6e4bf7be3a53abc3f7886008c0e89d9237d74b0111ef3ff09a366859de24a88c"
+    },
+    {
+      "path": "port/build/recovery_menu_sfx_target/default/screen.ppm",
+      "bytes": 619935,
+      "sha256": "62cb849a0f97828c7687b3c8de82af2114b19ab6a8e6ba56b017163e8d28d657"
+    },
+    {
+      "path": "port/build/recovery_menu_sfx_target/default/repeat-screen.ppm",
+      "bytes": 619935,
+      "sha256": "62cb849a0f97828c7687b3c8de82af2114b19ab6a8e6ba56b017163e8d28d657"
+    },
+    {
+      "path": "port/build/recovery_menu_sfx_target/default/amiga.log",
+      "bytes": 25754,
+      "sha256": "26a963e7f97eb3bbcae9b40300bc455ba8d617f3f05d02b912aa0206b1106e7d"
+    },
+    {
+      "path": "port/build/recovery_menu_sfx_target/default/repeat-amiga.log",
+      "bytes": 25754,
+      "sha256": "26a963e7f97eb3bbcae9b40300bc455ba8d617f3f05d02b912aa0206b1106e7d"
+    },
+    {
+      "path": "port/build/recovery_menu_sfx_target/right_hold/build.json",
+      "bytes": 296,
+      "sha256": "6cd12cce2853fada787ea48e4d243de36251f1edfb83773e04c084a3068fe657"
+    },
+    {
+      "path": "port/build/recovery_menu_sfx_target/right_hold/recovery_menu_sfx_target.adf",
+      "bytes": 901120,
+      "sha256": "db471e13acbb8a128886a253788e662f8e09df5636a2f8beccb9ed90b72623ce"
+    },
+    {
+      "path": "port/build/recovery_menu_sfx_target/right_hold/recovery_menu_sfx_target.bin",
+      "bytes": 788426,
+      "sha256": "7d63f59e4af095d37ddee58b0bea8f6b735651080e1c51bc1868a0495eb212d2"
+    },
+    {
+      "path": "port/build/recovery_menu_sfx_target/right_hold/chip.bin",
+      "bytes": 2097152,
+      "sha256": "8b63f43f985dc1ef5e6ccbb29b8c02c9d42ae0b9c5b7543861da68f1b88d08be"
+    },
+    {
+      "path": "port/build/recovery_menu_sfx_target/right_hold/repeat-chip.bin",
+      "bytes": 2097152,
+      "sha256": "8b63f43f985dc1ef5e6ccbb29b8c02c9d42ae0b9c5b7543861da68f1b88d08be"
+    },
+    {
+      "path": "port/build/recovery_menu_sfx_target/right_hold/screen.ppm",
+      "bytes": 619935,
+      "sha256": "5645c708387c895d09cd3cd2cb7d66c0c292a3371420fac8a4aea7feb59f053e"
+    },
+    {
+      "path": "port/build/recovery_menu_sfx_target/right_hold/repeat-screen.ppm",
+      "bytes": 619935,
+      "sha256": "5645c708387c895d09cd3cd2cb7d66c0c292a3371420fac8a4aea7feb59f053e"
+    },
+    {
+      "path": "port/build/recovery_menu_sfx_target/right_hold/amiga.log",
+      "bytes": 25886,
+      "sha256": "d80532cbb379c41b9c85bfc42aa70cea51062f512f8b01f34dba7ba3729e18f6"
+    },
+    {
+      "path": "port/build/recovery_menu_sfx_target/right_hold/repeat-amiga.log",
+      "bytes": 25886,
+      "sha256": "d80532cbb379c41b9c85bfc42aa70cea51062f512f8b01f34dba7ba3729e18f6"
+    },
+    {
+      "path": "port/build/recovery_menu_sfx_target/move_back/build.json",
+      "bytes": 295,
+      "sha256": "14f02b0e5d1290b78477a4a63bae4596859432512da3334a737c9bf80a20be7c"
+    },
+    {
+      "path": "port/build/recovery_menu_sfx_target/move_back/recovery_menu_sfx_target.adf",
+      "bytes": 901120,
+      "sha256": "555bca17820a43cf1bbb3e05bfc51e7621c020d1c61a9853aad0baaa8e89b56b"
+    },
+    {
+      "path": "port/build/recovery_menu_sfx_target/move_back/recovery_menu_sfx_target.bin",
+      "bytes": 788426,
+      "sha256": "d1232c112d592f93e3456b4ed61b40774b50d9b4331b8014e8ba0e15bf782dde"
+    },
+    {
+      "path": "port/build/recovery_menu_sfx_target/move_back/chip.bin",
+      "bytes": 2097152,
+      "sha256": "cc7672ea188afe7cbdfd152d7cade491273f1f5b8731f0d5cd38e3e9ef05de0f"
+    },
+    {
+      "path": "port/build/recovery_menu_sfx_target/move_back/repeat-chip.bin",
+      "bytes": 2097152,
+      "sha256": "cc7672ea188afe7cbdfd152d7cade491273f1f5b8731f0d5cd38e3e9ef05de0f"
+    },
+    {
+      "path": "port/build/recovery_menu_sfx_target/move_back/screen.ppm",
+      "bytes": 619935,
+      "sha256": "62cb849a0f97828c7687b3c8de82af2114b19ab6a8e6ba56b017163e8d28d657"
+    },
+    {
+      "path": "port/build/recovery_menu_sfx_target/move_back/repeat-screen.ppm",
+      "bytes": 619935,
+      "sha256": "62cb849a0f97828c7687b3c8de82af2114b19ab6a8e6ba56b017163e8d28d657"
+    },
+    {
+      "path": "port/build/recovery_menu_sfx_target/move_back/amiga.log",
+      "bytes": 25842,
+      "sha256": "8da758801f256e984988a2162c0e1b2e4ace153cecb4a00a06ca3edd0ec34bf8"
+    },
+    {
+      "path": "port/build/recovery_menu_sfx_target/move_back/repeat-amiga.log",
+      "bytes": 25842,
+      "sha256": "8da758801f256e984988a2162c0e1b2e4ace153cecb4a00a06ca3edd0ec34bf8"
+    }
+  ],
+  "preserved_inputs": [
+    {
+      "path": "input/rescue-rangers-europe.nes",
+      "bytes": 262160,
+      "sha256": "051ea9bda7e1ae771f4c196e5bd4b35ec8db2b305dd3b1d26ad250f379d06411"
+    },
+    {
+      "path": "artifacts/a1200-system/kick40068.A1200",
+      "bytes": 524288,
+      "sha256": "6d43840d4099a74170ea0f0425b6257c3891ebcaa39c4d1840075a9ab22b5707"
+    },
+    {
+      "path": "/workspace/scratch/43ecf79622a5/rescue-recovery-inspection/rescue-rangers-stock-zx.adf",
+      "bytes": 901120,
+      "sha256": "6ffec7c18b1eef69c70048fc84a0b19f0a3daf2b34d67ae98fdb3fbcc765eb17"
+    }
+  ],
+  "tools": [
+    {
+      "path": "/workspace/scratch/43ecf79622a5/amiga-recovery-tools/vscode-amiga-debug/bin/linux/vasmm68k_mot",
+      "bytes": 520696,
+      "sha256": "bbbf4e7edf2b2f7bc184624f23481a241a766e93c7d3d967470bb37faeecf7c3"
+    },
+    {
+      "path": "/workspace/scratch/43ecf79622a5/amiga-recovery-tools/libretro-uae/puae_libretro.so",
+      "bytes": 20417088,
+      "sha256": "84878d50ed9aa9419ce8876998acc45fe1e8dd1600f67f470dae8e2a037a4456"
+    },
+    {
+      "path": "/workspace/scratch/43ecf79622a5/amiga-recovery-tools/headless-recovered-title",
+      "bytes": 21744,
+      "sha256": "eaab1fcd8e1fd86d24a16db76a6318ffe537ffe1811000716e45a365b0885848"
+    }
+  ],
+  "unchanged_tracked_files": true,
+  "allocation_chip_bytes": 788480,
+  "fast_bytes": 0,
+  "frozen_native_code_sha256": "a8a31217696f2f3d30d629adf570b9723c171d965e25f267294a55dc1534496e",
+  "frozen_device_renderer_clock_sha256": "85b142d8ac84d53f4f5bb6f5143b28d1a07183989b71f2aeeeacaa0a3f920bad",
+  "failed_candidate_evidence": "port/build/recovery_menu_sfx_target/failed_candidate_01",
+  "limits": [
+    "No all-boundary stock RAM capture or target access trace",
+    "No audible output or real-time game timing claim",
+    "Delivered disk unchanged; public source checkpoint contains no cartridge, firmware or captured assets"
+  ]
+}
