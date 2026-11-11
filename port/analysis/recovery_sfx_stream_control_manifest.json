@@ -1,0 +1,111 @@
+{
+  "scope": "Separately qualified static native 68020 SFX stream control and shutdown. Continuous FE24 after NES hardware warmup; two cursor directions through shutdown and 22 subsequent completed returns. Host-only recovery development.",
+  "files": [
+    {
+      "path": "port/src/recovery_sfx_stream_control.s",
+      "bytes": 4705,
+      "sha256": "db2193b25ded15f40068242dd120be2a282ae7ff338015a376af38524bdb508c"
+    },
+    {
+      "path": "port/tests/recovery_sfx_stream_control_model.py",
+      "bytes": 1575,
+      "sha256": "4e5d226476ae5f5bd0f08897f6442d7347f3a2876605b6b1f90ff25503b542b6"
+    },
+    {
+      "path": "port/tests/recovery_test_sfx_stream_control.py",
+      "bytes": 5849,
+      "sha256": "13598a2a07a67aee3070ed0e247da0412cf8fc3918475c5b01850f28270dc404"
+    },
+    {
+      "path": "port/tests/recovery_test_sfx_stream_control_audit.py",
+      "bytes": 2286,
+      "sha256": "c186b87c78130e35bc6c4dd70b882c42224e3fdb3e3de2cd4d9b4269c6d2854a"
+    },
+    {
+      "path": "port/tests/recovery_test_sfx_stream_control_isolated.py",
+      "bytes": 1843,
+      "sha256": "0de2372232d53265ed431b38f148ebe5bcc39deb33b10e2492ed34d1fc4be4f7"
+    },
+    {
+      "path": "port/tests/recovery_test_resident_sfx_stream_control.py",
+      "bytes": 37331,
+      "sha256": "129fddb6f0b7e758a859471a68ae66034452606d70133aac9b86399f168639ab"
+    },
+    {
+      "path": "port/analysis/recovery_sfx_stream_control.md",
+      "bytes": 8479,
+      "sha256": "fc5e517613c978f23f36adbbad702f4aaf5309aefbe24940762869430e791b3d"
+    },
+    {
+      "path": "port/analysis/recovery_sfx_stream_control_frozen.json",
+      "bytes": 96540,
+      "sha256": "d9ee186b86a15ec5843d6d009de19f759a06fa2dd272fdd6eb9f633a9c7fdfc0"
+    }
+  ],
+  "predecessor_manifest": {
+    "path": "port/analysis/recovery_sfx_envelope_manifest.json",
+    "bytes": 3853,
+    "sha256": "68b21e9e8c1fcea4d7d9934726d6efccce5a4e501eb854f5029f864682ee41d4"
+  },
+  "frozen_predecessor_files": 760,
+  "standalone": {
+    "bytes": 724,
+    "sha256": "026d41fb20591d128a8cb8e04fed04b86d3ac7d3ddb448ddd7fde27af9b496f7"
+  },
+  "composite": {
+    "bytes": 40520,
+    "sha256": "cbb70a2d5ebfe91b3786b91d1065add90f6591a738c35f84fbff6236a7e536d6"
+  },
+  "coverage": {
+    "accepted_main_each": 133376,
+    "inert_rejections_each": 65535,
+    "additional_original_audit": 512,
+    "all_static_instructions_audited": 55,
+    "all_original_instructions_executed": 55,
+    "declarative": true,
+    "original_rom": true,
+    "source_only_isolation_passed": true,
+    "continuous_inputs": [
+      0,
+      16,
+      1,
+      2
+    ],
+    "long_continuous_inputs": [
+      1,
+      2
+    ],
+    "predecessor_continuous_histories": 20,
+    "isolated_existing_command0e_terminal_checks": 2
+  },
+  "shutdown": {
+    "helpers": 1766,
+    "nmis": 56,
+    "completed_returns": 53,
+    "before_context": "8235fe0300a5f2a7",
+    "after_context": "806000ff0427f4a7",
+    "bank": 3,
+    "apu_writes": 4,
+    "sfx_active": false
+  },
+  "long_checkpoint": {
+    "helpers": 2442,
+    "nmis": 78,
+    "completed_returns": 75,
+    "context": "83a00e2a00a4f2a7",
+    "bank": 3,
+    "sfx_envelope_calls": 16,
+    "sfx_envelope_apu_writes": 34,
+    "sfx_active": false,
+    "completed_returns_after_shutdown": 22,
+    "boundary": "Music command0E at83A0; existing helper contract accepts the state but is deliberately not composed here.",
+    "safety_nmi_cap": 120
+  },
+  "limits": [
+    "No reset-vector hardware-warmup proof.",
+    "Odd-D7 branch stops at80FB after genuine JSR; header dispatch is not executed.",
+    "Preexisting8249 and8152 boundaries unchanged.",
+    "Existing music command0E not integrated in this composition.",
+    "No Paula audibility, target performance, target execution, playability or recovery of lost later source claim."
+  ]
+}

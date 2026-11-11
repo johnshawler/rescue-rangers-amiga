@@ -109,9 +109,15 @@ that second mixed interrupt and follows both Left and Right histories through
 status-stack behavior without changing the frozen music guard. The longer
 histories execute 1,765 helpers and 16 SFX envelopes before stopping at the
 untranslated high-bit stream command at 8235; the sound remains active. These
-original-code proofs begin at FE24 after hardware warmup. Complete SFX playback,
-alternate-character confirmation and gameplay remain unfinished. This is host
-evidence, not audible output, reset-vector warmup or Amiga game-speed validation.
+original-code proofs begin at FE24 after hardware warmup. The subsequent
+[SFX stream control](port/analysis/recovery_sfx_stream_control.md) now follows
+genuine sound shutdown and 22 more completed returns in both cursor-direction
+histories. It reaches 2,442 helpers, 78 logical NMIs and 75 returns. The endpoint
+is an intentional composition stop before music command 0E, whose existing
+helper separately accepts that state. The odd-D7 header path still stops at
+80FB. Full audio integration, alternate-character confirmation and gameplay
+remain unfinished. This is host evidence, not audible output, reset-vector
+warmup or Amiga game-speed validation.
 
 The [state-driven startup dispatcher](port/analysis/recovery_state_dispatch_startup.md)
 completes resource loading, genuine CHR requests and title fade-in through C5D1.
