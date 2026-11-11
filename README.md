@@ -11,12 +11,34 @@ native game-code translation and Amiga rendering, not a general NES interpreter.
 
 ## Current verified source
 
-The new [stock menu/SFX diagnostic](port/analysis/recovery_menu_sfx_target.md)
+The [native menu/Paula diagnostic](port/analysis/recovery_menu_paula_target.md)
+now plays actual native title/menu writes through four Paula DMA voices. Original
+state and ordered effects match for both character choices and move-back; real
+stereo captures verify bounded pitch/channel checks, native silence and clean
+shutdown. Allocation is 811,008 Chip bytes and zero Fast RAM. Independent fault
+regressions cover muted permanent stops and explicit error codes.
+
+This is still scripted development, not full-rate gameplay. With active five-plane
+scanout, the default path has 40 of 43 completed updates already beyond its 20 ms
+minimum interval, and its single final render takes 89.73 ms. Earlier scanout uses
+blank diagnostic planes. Audio continues its previous plan during long work;
+that is not timely per-frame updating. Live keyboard, later gameplay and accurate
+NES synthesis remain unfinished. The delivered Z/X disk is unchanged.
+
+Dedicated pinned GCC14 tests run with `bash tools/test_menu_paula_public.sh` using
+synthetic data only. `bash validate_menu_paula.sh` runs the four private stock
+capture variants and complete-target fault tests; it also needs matplotlib 3.10.8,
+the approved inputs, and the pinned audio frontend/core. These C-toolchain checks
+are separate from the assembler-only public aggregate. See the
+[restore recipe](port/analysis/recovery_menu_paula_restore.md) for exact inputs and
+limits. Generated audio, disks and state remain private.
+
+The earlier [stock menu/SFX diagnostic](port/analysis/recovery_menu_sfx_target.md)
 confirms both characters on the emulated stock PAL A1200, including moving
 right then back left. Six fresh boots match complete final native state,
 ordered device/audio journals and every captured viewport pixel. Independent
 review reproduces those results. It uses 788,480 Chip bytes and no Fast RAM.
-Inputs and interrupts are scripted, audio is not attached, and execution stops
+Its inputs and interrupts are scripted, audio was not attached, and execution stops
 at C5F8 before gameplay. Timings include capture overhead with display DMA off;
 they are diagnostic measurements, not game FPS. The old delivered Z/X disk is
 unchanged.
@@ -25,7 +47,7 @@ A separate [audio-event compatibility audit](port/analysis/recovery_menu_audio_c
 checks 15,059 original/native writes and all 1,966 completed-interrupt snapshots
 from 14 histories against the unchanged compiled Paula planner. Every completed
 snapshot passes with explicit muted noise initialization. Intermediate write
-states can reject, so a future integration must accumulate ordered writes and
+states can reject, so the integration must accumulate ordered writes and
 update only at genuine completion boundaries. This is input-domain evidence,
 not audible integration, faithful synthesis or real-time performance.
 
@@ -68,8 +90,8 @@ original- and alternate-character confirmation are verified through actual
 cursor, table and character-marker state, not merely the terminal PC. A separate
 narrow return bridge handles delayed input without relaxing the older tail's
 guard. The full long journal and size sentinel remain required. This composition
-has the separate scripted stock-target qualification above; live Amiga input
-and audible audio remain unimplemented. Gameplay at C5F8 and the title-direction continuation at A055 remain
+has the separate scripted stock-target qualification above. Live Amiga input
+remains unimplemented; audible qualification is the newer bounded diagnostic. Gameplay at C5F8 and the title-direction continuation at A055 remain
 unsupported, along with the documented SFX dispatch limits.
 
 The new [state-driven startup display](port/analysis/recovery_state_startup_display.md)

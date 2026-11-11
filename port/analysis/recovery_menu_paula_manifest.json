@@ -1,0 +1,93 @@
+{
+  "status": "v7 independently reviewed; bounded checkpoint approved",
+  "added_file_allowlist": [
+    "port/analysis/recovery_menu_paula_restore.md",
+    "port/analysis/recovery_menu_paula_target.md",
+    "port/src/recovery_menu_paula_adapter.c",
+    "port/src/recovery_menu_paula_bridge.s",
+    "port/src/recovery_menu_paula_entry.s",
+    "port/tests/recovery_menu_paula_adapter_test.py",
+    "port/tests/recovery_menu_paula_target_rejection_test.py",
+    "port/tests/recovery_menu_paula_verify.py",
+    "port/tools/recovery_menu_paula_build.py",
+    "port/tools/recovery_menu_paula_excerpt.py",
+    "port/tools/recovery_menu_paula_package.py",
+    "port/tools/recovery_menu_paula_run.sh",
+    "port/analysis/recovery_menu_paula_manifest.json"
+  ],
+  "files": [
+    {
+      "path": "port/analysis/recovery_menu_paula_restore.md",
+      "size": 4093,
+      "sha256": "2820d0d4b963c1bbc7af482080126f87a3179f51b526a9ee283aebb439e0698c"
+    },
+    {
+      "path": "port/analysis/recovery_menu_paula_target.md",
+      "size": 16248,
+      "sha256": "482671350e77ef1f8cbda5e482ffbce8a38ce23dbcd519dbb8ed71d42b8146a4"
+    },
+    {
+      "path": "port/src/recovery_menu_paula_adapter.c",
+      "size": 3759,
+      "sha256": "cff17c2573f200402ed4ad6adef9da60d80cea9fe396f3f3775e7e2eb3e26f41"
+    },
+    {
+      "path": "port/src/recovery_menu_paula_bridge.s",
+      "size": 1190,
+      "sha256": "71c9683ee20452c549383af0ea2e7451ba7d90cc05817b023be0c0fff5f31638"
+    },
+    {
+      "path": "port/src/recovery_menu_paula_entry.s",
+      "size": 193,
+      "sha256": "ede298b331fbcc38d34c44c271100e4509b578952f7f2d67a4b37cd29bc30070"
+    },
+    {
+      "path": "port/tests/recovery_menu_paula_adapter_test.py",
+      "size": 3267,
+      "sha256": "a729e27f38e1a73654e24464c76423b0483a0994f2811328c33159cb008a9e0d"
+    },
+    {
+      "path": "port/tests/recovery_menu_paula_target_rejection_test.py",
+      "size": 6187,
+      "sha256": "cb0f07a26b693cc3291d308eb56705298f804f303ad3383ad3b4338155beb372"
+    },
+    {
+      "path": "port/tests/recovery_menu_paula_verify.py",
+      "size": 8012,
+      "sha256": "25808ce3b92b3936eb82dc24f670ea13bbdcd4ad68d86c0681f6c4093ece3d66"
+    },
+    {
+      "path": "port/tools/recovery_menu_paula_build.py",
+      "size": 6638,
+      "sha256": "fd58f026a867cb3ae467a1115e9341bdfc6c011fed290a928a44e047f025f521"
+    },
+    {
+      "path": "port/tools/recovery_menu_paula_excerpt.py",
+      "size": 1202,
+      "sha256": "4eb1cebfe369234904635f5ddc8cbef0aebabea21b38767a4f9a11b146edfa80"
+    },
+    {
+      "path": "port/tools/recovery_menu_paula_package.py",
+      "size": 3082,
+      "sha256": "b995ae1abcf6edd3b022a221a525b1920daf710c349334ff68ea35e21884fc09"
+    },
+    {
+      "path": "port/tools/recovery_menu_paula_run.sh",
+      "size": 771,
+      "sha256": "b80d238f439cdc9576bc579a57e96edcc4cdf6b755a923bf1dcedc0164a5e4fd"
+    }
+  ],
+  "preserved_delivered_disk_sha256": "6ffec7c18b1eef69c70048fc84a0b19f0a3daf2b34d67ae98fdb3fbcc765eb17",
+  "private_evidence_directory": "port/build/recovery_menu_paula_v7",
+  "fresh_restore_directory": "port/build/recovery_menu_paula_v7_fresh",
+  "validation_wrappers": [
+    {
+      "path": "tools/test_menu_paula_public.sh",
+      "sha256": "ce2cd23a1318af4eaaf5673354a1160ff2e0f289695da183f883308a1c4c52a0"
+    },
+    {
+      "path": "validate_menu_paula.sh",
+      "sha256": "d3d47d2d46971f5c4ab3dcdba7907ac26741fc8a542ffb22558230830c10380c"
+    }
+  ]
+}
