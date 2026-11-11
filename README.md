@@ -30,6 +30,10 @@ native game-code translation and Amiga rendering, not a general NES interpreter.
   They remain separate from the stable title and stop before the first task.
 - A [separate stock-A1200 probe](port/analysis/recovery_reset_probe.md) executes
   those four helpers and matches all original RAM, context and journal records.
+- An opt-in [first-yield probe](port/analysis/recovery_first_yield_target.md)
+  adds the task prefix, sound-request enqueue and saved continuation. All five
+  helpers match the original through the first yield. Audio playback and the
+  asynchronous NMI needed to resume the task remain untranslated.
 - Captured initial title state remains a private development fixture. New work
   will replace that dependency with verified original reset/resource logic.
 

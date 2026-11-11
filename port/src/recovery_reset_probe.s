@@ -19,6 +19,10 @@
         lea     probe_stack(pc),a3
         move.l  a3,32(a6)
         move.l  sp,36(a6)
+        ifd FIRST_YIELD
+        lea     probe_yield(pc),a3
+        move.l  a3,44(a6)
+        endc
         bsr.w   recovery_reset_ram
         cmpi.l  #1,d0
         bne.s   probe_fail
@@ -36,6 +40,13 @@
         cmpi.l  #1,d0
         bne.s   probe_fail
         addq.l  #1,12(a6)
+        ifd FIRST_YIELD
+        lea     probe_yield(pc),a2
+        bsr.w   recovery_first_yield
+        cmpi.l  #1,d0
+        bne.s   probe_fail
+        addq.l  #1,12(a6)
+        endc
         move.l  sp,40(a6)
         clr.l   8(a6)
         move.w  #$0070,$180(a5)
@@ -51,11 +62,21 @@ probe_fail:
         include "recovery_reset_mapper.s"
         include "recovery_reset_video.s"
         include "recovery_reset_dispatch.s"
+        ifd FIRST_YIELD
+        include "recovery_first_yield.s"
+        endc
 
         even
 probe_report:
+        ifd FIRST_YIELD
+        dc.b    'CDRRYLD1'
+        else
         dc.b    'CDRRST01'
+        endc
         dc.l    $ffffffff,0,0,0,0,0,0,0,0
+        ifd FIRST_YIELD
+        dc.l    0
+        endc
         dcb.b   16,$5a
 probe_ram:
         dcb.b   2048,$a5
@@ -74,6 +95,12 @@ probe_video:
         dcb.b   8754,$a5
         dcb.b   16,$5a
         dcb.b   16,$5a
+        ifd FIRST_YIELD
+probe_yield:
+        dcb.b   6,$a5
+        dcb.b   16,$5a
+        dcb.b   16,$5a
+        endc
 probe_stack:
         dcb.b   4096,$ee
 probe_stack_end:

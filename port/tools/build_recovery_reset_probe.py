@@ -1,22 +1,28 @@
 #!/usr/bin/env python3
 """Build a source-only reset-boundary ADF, separate from all game disks."""
 from pathlib import Path
+import argparse
 import hashlib
 import json
 import os
 import struct
 import subprocess
 
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--first-yield', action='store_true', help='Build separate fifth-helper first-yield probe')
+args = parser.parse_args()
+name = 'recovery-first-yield-probe' if args.first_yield else 'recovery-reset-probe'
 P = Path(__file__).resolve().parents[1]
 B = P/'build'
 B.mkdir(exist_ok=True)
 vasm = os.environ['VASM']
-payload_file = B/'recovery-reset-probe.bin'
+payload_file = B/(name+'.bin')
 subprocess.run([vasm,'-m68020','-Fbin','-quiet','-I'+str(P/'src'),
+                *(['-DFIRST_YIELD=1'] if args.first_yield else []),
                 '-o',str(payload_file),str(P/'src/recovery_reset_probe.s')], check=True)
 payload = payload_file.read_bytes()
 rounded = (len(payload)+511)//512*512
-boot_file = B/'recovery-reset-probe-boot.bin'
+boot_file = B/(name+'-boot.bin')
 subprocess.run([vasm,'-m68020','-Fbin','-quiet',f'-DPAYLOAD_BYTES={rounded}',
                 '-o',str(boot_file),str(P/'src/boot.s')],check=True)
 boot = boot_file.read_bytes()
@@ -29,10 +35,10 @@ for offset in range(0,1024,4):
     checksum += struct.unpack_from('>I',disk,offset)[0]
     checksum = (checksum&0xffffffff)+(checksum>>32)
 struct.pack_into('>I',disk,4,(~checksum)&0xffffffff)
-out = B/'recovery-reset-probe.adf'
+out = B/(name+'.adf')
 out.write_bytes(disk)
-report = {'artifact':out.name,'purpose':'Isolated FE24-to-C574 reset boundary, not game boot',
+report = {'artifact':out.name,'purpose':('Isolated FE24-to-first-FE8D yield, not game boot' if args.first_yield else 'Isolated FE24-to-C574 reset boundary, not game boot'),
           'payload_bytes':len(payload),'allocation_bytes':rounded,
           'sha256':hashlib.sha256(disk).hexdigest(),'proprietary_inputs':False}
-(B/'recovery-reset-probe-build.json').write_text(json.dumps(report,indent=2)+'\n')
+(B/(name+'-build.json')).write_text(json.dumps(report,indent=2)+'\n')
 print(json.dumps(report,indent=2))
