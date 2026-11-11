@@ -29,12 +29,15 @@ seconds in nominal PAL-equivalent units, and every update is late. The
 reduces matched final redraw by 49.874%, with five-plane display DMA active and
 zero Fast RAM. This is redraw cost, not game FPS or playable speed.
 
-The additive [native host continuation](port/analysis/recovery_bank_loader_video5_report.md)
-handles queued sound commands, status publication and queued video service
-through 104 complete frames for held Right and Right+A, retaining original
-state and ordered effects. It then stops inertly at the untranslated F328
-routine. These are host semantic tests, not 104 displayed target frames or
-proof of jumping, pickup/throw or complete gameplay.
+The additive [native host continuation](port/analysis/recovery_bank_loader_candidate_scan_report.md)
+now includes the original F328 targeting and F977 candidate-scan routines.
+Three genuine input histories (held Right, held Right+A, and A release/press)
+retain original state and ordered effects through 104 complete host-tested
+frames, then stop inertly at untranslated F92B. The edge test delivers A through
+the original controller path; it does not establish a visible jump. These are
+host semantic tests, not 104 displayed target frames or complete gameplay.
+See the [input-continuation checkpoint](docs/native-input-continuation-2026-11-11.md)
+for tested scope, rejection limits and remaining work.
 
 The [combined optimized five-frame comparison](port/analysis/recovery_play_clock_report.md)
 now joins separately reviewed runtime evidence with the corrected audio gates

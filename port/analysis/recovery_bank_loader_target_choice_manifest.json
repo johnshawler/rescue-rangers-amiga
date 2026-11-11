@@ -1,0 +1,20 @@
+{
+  "scope": "Static F328 targeting helper152, genuine input continuation to inert F977; no target qualification",
+  "public_allowlist": {
+    "port/src/recovery_bank_loader_target_choice_region.s": "562028d7f29da668f4f15fd6f8aa1617c511524002f4860ce2d966fba1159f38",
+    "port/src/recovery_bank_loader_target_choice_dispatch.s": "36bc7cb4bea92ba7df8710c78420cff63cfc2d74479a442e7fba832e9eed9f90",
+    "port/tools/recovery_bank_loader_target_choice_generate.py": "963a6fb2674c8f715e781ffe5b5663a9ddcb0811da742247726cc5b09f3a24d3",
+    "port/tools/recovery_bank_loader_target_choice_public.sh": "6f187ea080d6e9acff312fe4d61ee618325d7baca700d1d6ef040fd1ec518aad",
+    "port/analysis/recovery_bank_loader_target_choice_report.md": "e5295a9ab5494f38bf856afc2e4dff1d77b81396c1687096a09179892dc1bbe8",
+    "port/tests/recovery_bank_loader_target_choice_harness.py": "3068e0427346f1dd47037eaf9b19e90a8ba0855309e5f039be97a0494392e2e5",
+    "port/tests/recovery_bank_loader_target_choice_oracle.py": "d842e5a4f552754f44f15805a40998085023a8a8ffca9907c316e18cbe5d04dd",
+    "port/tests/recovery_bank_loader_target_choice_rom.py": "4448607a8445345bda4b8228194d63f4366d96090208f0f560a9d60b0c053b6b",
+    "port/tests/recovery_bank_loader_target_choice_test.py": "85c567f3f5fee9168a35df17cc095d937ddd33bcd3a2ac954ce946fed62889dc",
+    "port/tests/recovery_bank_loader_target_choice_wrapper_test.py": "25c77ec1a9d40ddf0726a892831b08b97a1136e312885ffaa9441be678e7b375"
+  },
+  "dependencies": {
+    "port/analysis/recovery_bank_loader_video5_manifest.json": "c460dbc030b7eddb3613cfad13474b8255a9326fe6c47a4fe1bd66dddf978867"
+  },
+  "composite_bytes": 219238,
+  "composite_sha256": "81718774c14ed498e6aa747d5b6d21a75a86d8662b35c291ba87946c4d736fdb"
+}

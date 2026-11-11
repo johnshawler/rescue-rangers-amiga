@@ -1,0 +1,23 @@
+{
+  "scope": "Static F977 candidate scan153 and genuine input continuation to inert F92B; no target qualification",
+  "public_allowlist": {
+    "port/analysis/recovery_bank_loader_candidate_scan_report.md": "ee572de2dbef578feb563e39cb55deac4a904e76771313988f12f8b2710484e1",
+    "port/src/recovery_bank_loader_candidate_scan_dispatch.s": "fdce79d69d069c29dcfadb3978d80325e121f19e848a7eff1e384b49691544f1",
+    "port/src/recovery_bank_loader_candidate_scan_region.s": "0d4b709255ee0a7ee6f79997c5d1b410bca4e5057433c2b5869f806d36323da0",
+    "port/tests/recovery_bank_loader_candidate_scan_branches.py": "c5ed5d1a880866f9e7b111f9add3db4681f7efdaf31d1e9725a9edc67fa2013c",
+    "port/tests/recovery_bank_loader_candidate_scan_edge_rom.py": "3fbb16e8391d9da816b3d3740dce27f9a43f1b6b0df9bbbd9d1b17cca384a63c",
+    "port/tests/recovery_bank_loader_candidate_scan_edges.py": "49d8acb821a0db0bab1ed2a16e6eaf010af8ddc48b38006220f9d348b66dbb24",
+    "port/tests/recovery_bank_loader_candidate_scan_harness.py": "77ccee1c7392446b4baf5807266ff4c27012f8f23af3b8c440afaa1d66bfda73",
+    "port/tests/recovery_bank_loader_candidate_scan_oracle.py": "931be82ea25e1901610353a3c15db5fbeb7518892bcfd0a2b948e7c5021e03ec",
+    "port/tests/recovery_bank_loader_candidate_scan_rom.py": "5ddef91442f222e1aa068caeb50e94aeed393c52f277f160ea99903e38b52def",
+    "port/tests/recovery_bank_loader_candidate_scan_test.py": "99533b7e8b06a2c97dae618ceb41128ef896bf96229c2a4488b7778bdf968923",
+    "port/tests/recovery_bank_loader_candidate_scan_wrapper_test.py": "d25110d955908f95a1320e0fa13d0ad453f3299113083e3b089a5fac32c84e6c",
+    "port/tools/recovery_bank_loader_candidate_scan_generate.py": "4400f3c50c2edc0714f76b8dd4f5f3b4fec6c8f739c27c2eba920711a8cd5678",
+    "port/tools/recovery_bank_loader_candidate_scan_public.sh": "5b9510c9585717f040be80661feb79285642a71e1ee99a3b4ab740c9ec8febc3"
+  },
+  "dependencies": {
+    "port/analysis/recovery_bank_loader_target_choice_manifest.json": "e9ba029cb81bf2c2335f15e5f530f812a08072ea14a8d6098c68d21e1a2e84bb"
+  },
+  "composite_bytes": 221230,
+  "composite_sha256": "b58b121286cb066ddd72c694214ecdca271d4e96f37ef4207f71dae120c72747"
+}
