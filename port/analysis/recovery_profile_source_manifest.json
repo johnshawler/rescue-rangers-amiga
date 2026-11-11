@@ -1,0 +1,42 @@
+{
+  "base_commit": "069cdc71e453e637dccf531530b498ffe635a652",
+  "base_tree": "b23a90fe2fe6359e7ce0cc5f8f7394a80ad4bf2a",
+  "files": [
+    {
+      "path": "port/tools/recovery_profile_build.py",
+      "bytes": 5194,
+      "sha256": "0ef035bc3c7bc6cda87290f2efabfcb4d0a48523957a781a6bb9c3716a75a580"
+    },
+    {
+      "path": "port/tests/recovery_profile_probe_test.py",
+      "bytes": 1587,
+      "sha256": "fa275aef3f193eb2a7b30d0526ceb92dea902f55d93861eb5ed61076760300e5"
+    },
+    {
+      "path": "port/tests/recovery_profile_public_test.py",
+      "bytes": 1255,
+      "sha256": "975127f64c3eea59db75644d524dec71d52e86118282a181ae3b9af5fdeb1a28"
+    },
+    {
+      "path": "port/tests/recovery_profile_report.py",
+      "bytes": 2017,
+      "sha256": "f2cd0df66ebdf459f4b33c194ace4497b59bc7b3d4bfd796fe67b9d904912c2b"
+    },
+    {
+      "path": "port/tests/recovery_profile_verify.py",
+      "bytes": 1254,
+      "sha256": "52218c252752e5dd2f5c4ed769621825507fd451a7cf3b5ac64d4b5e63c6e8eb"
+    },
+    {
+      "path": "port/analysis/recovery_profile_target.md",
+      "bytes": 8947,
+      "sha256": "3ced1e76643f4321710fb2baa024edecc883a21be25f1458071aa82f1bc12702"
+    },
+    {
+      "path": "port/analysis/recovery_profile_restore.md",
+      "bytes": 3623,
+      "sha256": "afd5889adfc1c71417c480d616133e76253f94b222ff1cf6c7b67748a1ccf38d"
+    }
+  ],
+  "scope": "Seven additive generic source/report files; manifest is the eighth allowed file. No private inputs or generated outputs. No optimized target or speed claim."
+}

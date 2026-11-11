@@ -11,6 +11,19 @@ native game-code translation and Amiga rendering, not a general NES interpreter.
 
 ## Current verified source
 
+The additive [cost profiler](port/analysis/recovery_profile_target.md) identifies
+background drawing as the largest part of the final render: 61.57 ms background,
+24.53 ms sprites and 2.63 ms CHR copying in the instrumented display-on run.
+Matched fresh controls reproduce the earlier timings. Instrumentation itself
+adds about 42% to progression time, so these are diagnostic measurements, not
+an optimization or a game-speed result.
+
+The separate [Z/X input probe](port/docs/recovery_zx_input_validation.md) verifies
+actual Amiga CIA serial presses and releases, including simultaneous Z=B and X=A.
+It also covers Return, Tab and arrows. This is input-only validation, not yet
+integration into the menu/gameplay loop. Public tests for both additions run with
+`bash tools/test_profile_input_public.sh`; no game ROM or firmware is required.
+
 The [native menu/Paula diagnostic](port/analysis/recovery_menu_paula_target.md)
 now plays actual native title/menu writes through four Paula DMA voices. Original
 state and ordered effects match for both character choices and move-back; real

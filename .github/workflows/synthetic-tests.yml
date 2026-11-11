@@ -19,4 +19,5 @@ jobs:
           git -C "$RUNNER_TEMP/amiga-tools" checkout 055097bba74dd1b2f764dcb90781d2017bd1d499 -- bin/linux/vasmm68k_mot
           chmod +x "$RUNNER_TEMP/amiga-tools/bin/linux/vasmm68k_mot"
           echo "VASM=$RUNNER_TEMP/amiga-tools/bin/linux/vasmm68k_mot" >> "$GITHUB_ENV"
+      - run: bash tools/test_profile_input_public.sh
       - run: bash tools/test_public.sh
