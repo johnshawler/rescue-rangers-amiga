@@ -1,0 +1,31 @@
+{
+  "scope": "New static character dispatch, idle continuation and authentic default confirmation to C5F8; directions stop before A07B resource/SFX dependency. Host-only.",
+  "files": [
+    {
+      "path": "port/src/recovery_character_selection_dispatch.s",
+      "bytes": 2021,
+      "sha256": "76686227cd2797120f1952fff40e54506158b6d3b39633be58978b2d93c19918"
+    },
+    {
+      "path": "port/tests/recovery_test_character_selection_dispatch.py",
+      "bytes": 2874,
+      "sha256": "c900ff0942c22e44a77bcb817597edfd0c75d1951bcb23f72fbfdf423b7c6dd3"
+    },
+    {
+      "path": "port/tests/recovery_test_resident_character_selection.py",
+      "bytes": 25638,
+      "sha256": "2338f8a901694d6d16fb664f7de540fb0bb9f25676fd048932916e3fbf340594"
+    },
+    {
+      "path": "port/analysis/recovery_character_selection_dispatch.md",
+      "bytes": 5198,
+      "sha256": "9dcf602b47b9652a0d8e142b419136d56baf75a1fcd8abde7a9217f9c1741ae2"
+    }
+  ],
+  "composite": {
+    "bytes": 26462,
+    "sha256": "d549ec990c024fc2ede3a3d1a8cfd5e89f61c601391f79903b666a49a05a7413"
+  },
+  "frozen_queue_manifest_sha256": "2bfa8bdd6ff601e7af3e67d9c898a3ca7d8cbd163928472525a58f53f21c0581",
+  "private_rom_sha256": "051ea9bda7e1ae771f4c196e5bd4b35ec8db2b305dd3b1d26ad250f379d06411"
+}

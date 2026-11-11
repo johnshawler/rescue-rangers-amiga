@@ -1,0 +1,35 @@
+{
+  "scope": "Host-only genuine character-menu queued-video NMI and reset-to-A06C proof; existing files frozen",
+  "files": [
+    {
+      "path": "port/src/recovery_queued_video_nmi_prefix.s",
+      "bytes": 6708,
+      "sha256": "ba46f5bc1a82fd2e0477791669be48bfb472401f3f24dd79a6cfbf7c22831a8f"
+    },
+    {
+      "path": "port/tests/recovery_queued_video_harness.py",
+      "bytes": 3963,
+      "sha256": "cdddff0ee916bd71bb44f6356b60095e7163606fed531f3a92cd6c02d79e5ac5"
+    },
+    {
+      "path": "port/tests/recovery_test_queued_video_nmi.py",
+      "bytes": 5367,
+      "sha256": "4802b101a25160afdf82c346fee339d311065db2fc3fdc7825cd2d95a2804f8c"
+    },
+    {
+      "path": "port/tests/recovery_test_resident_character_video_queue.py",
+      "bytes": 25300,
+      "sha256": "da120ddd92e450c04fb109eb1587caa4e017bd8a178a0f82ff28d0f68bed7b03"
+    },
+    {
+      "path": "port/analysis/recovery_character_video_queue.md",
+      "bytes": 5221,
+      "sha256": "424e1118ed42425b609df57dd0f15446e34288544e8bd5a203649316d1badc43"
+    }
+  ],
+  "composite": {
+    "bytes": 26114,
+    "sha256": "20b158936f16e9d76cde73b44aee862657aa9749c187283b25a9809a0395b1ca"
+  },
+  "private_rom_sha256": "051ea9bda7e1ae771f4c196e5bd4b35ec8db2b305dd3b1d26ad250f379d06411"
+}

@@ -59,3 +59,4 @@ PY
 # Reviewed synthetic contracts for repeated audio, startup fade and video setup.
 bash "$ROOT/tools/test_resident_startup_public.sh"
 bash "$ROOT/tools/test_title_chr_public.sh"
+bash "$ROOT/tools/test_native_title_public.sh"
