@@ -11,6 +11,31 @@ native game-code translation and Amiga rendering, not a general NES interpreter.
 
 ## Current verified source
 
+The new [five-neutral-frame target](port/analysis/recovery_play_target_report.md)
+continues from reset through title selection, dialogue and stage loading into five
+authentic gameplay frames. Independent review passes a clean 775-file restore,
+identical rebuild, original state and ordered effects, raw-status publication,
+final display pixels and bounded captured audio checks on an emulated stock PAL
+A1200. It uses 860,160 Chip bytes and zero Fast RAM. Five measured publication
+intervals total 2.753 seconds; final redraw is 336.150 ms and all 400 updates are
+late. This is a bounded diagnostic, not playable speed or a released game disk.
+
+A separate [optimized stage target](port/analysis/recovery_stage_background_target_report.md)
+reduces matched final redraw from 335.616 to 168.230 ms (49.874%) with five-plane
+display DMA active. It retains 862,720 Chip bytes and zero Fast RAM. All 395
+updates remain late. Its narrow finite-loop PCM qualification and historical
+verifier failures are documented. This optimized renderer has not yet been
+qualified together with the five-frame gameplay target in this checkpoint.
+
+The host-tested [input extension](port/analysis/recovery_bank_loader_input_report.md)
+accepts held Right and Right+A through 19 complete frames with full original
+semantic parity, then stops inertly at pending sound command 10. It does not
+establish visible jumping, pickup/throw, full gameplay or target input coverage.
+The delivered Z/X disk stays unchanged. See the
+[checkpoint summary](docs/recovery-progress-2026-11-11.md) for exact scope and tests.
+
+## Earlier preserved title/menu checkpoint
+
 The new [bounded live integration](port/analysis/recovery_live_target.md) uses real
 CIA keyboard input for title/character selection and continues the authentic
 scene preparation through rendering disable, nametable clear and saved-bank
@@ -41,7 +66,7 @@ This live diagnostic has explicit helper, input-log and audio limits; title
 are not fully qualified. All limit/error stops mute and drain audio. Original
 inputs, historical captures and the delivered Z/X disk remain unchanged.
 
-### New host-verified stage loading
+### Preserved host-stage-loading checkpoint
 
 The additive [stage-loading sequence](port/analysis/recovery_bank_loader_finish_report.md)
 continues through authentic dialogue, all 144 map expansions, object spawning,

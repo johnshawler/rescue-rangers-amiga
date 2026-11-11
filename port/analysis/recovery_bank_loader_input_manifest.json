@@ -1,0 +1,18 @@
+{
+  "scope": "Additive success-only helper90 canonical publication;19 continuous input frames to explicit bank5 C0BF queue boundary",
+  "public_allowlist": {
+    "port/src/recovery_bank_loader_input_dispatch.s": "c000d251d90faf914f77af8851c3a1a7735579324593d3bc92c68f42814b758e",
+    "port/tools/recovery_bank_loader_input_public.sh": "eb83e9c6801631790b4ac1e86cca8afbf880423cbe39862ab205677a09bcfdd4",
+    "port/analysis/recovery_bank_loader_input_report.md": "aa408ae8639af5f453a0626b80d4adf27e2858d5bbc15e991399c4efa385b5cb",
+    "port/tests/recovery_bank_loader_input_harness.py": "c13d2abdcb61252aee27ecc22e3c24c17b34e7f8a0b3ea48f32016e58fe84ef8",
+    "port/tests/recovery_bank_loader_input_oracle.py": "13cd82bfce77822a8ad617ca1c634c6b48408870fc3ea032de81f6892835e53e",
+    "port/tests/recovery_bank_loader_input_rom.py": "c3adb211b8ff7e81305725042e625b129f925a15fb57cdb1ab5555cdccc452d2",
+    "port/tests/recovery_bank_loader_input_status_test.py": "da2ed30f4e5229eef98babb8cac3030d49852a165cd9527195d5989356d798fd",
+    "port/tests/recovery_bank_loader_input_public.py": "1f74ec346821e5a88e72c40cc5199b6a00490d3df9b1236e19b126040aa0c13c"
+  },
+  "dependencies": {
+    "port/analysis/recovery_bank_loader_play_manifest.json": "428fc25ff5de74f2bcd64bbb6213207c1b7c0cdc500cfe2df4cd287da9743ba2"
+  },
+  "composite_bytes": 216654,
+  "composite_sha256": "61775a47e8e759891530389f8f38455a5750edd99658c764cb5d5070dce05d46"
+}

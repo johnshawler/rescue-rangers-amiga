@@ -1,0 +1,33 @@
+{
+  "scope": "Five original-first neutral native game frames; source-only; target and moving histories not qualified",
+  "public_allowlist": {
+    "port/analysis/recovery_bank_loader_play_report.md": "dd5130f3a32e5236d7a55321f86a6cc71cf97d71b71e61c76229d96af3947991",
+    "port/src/recovery_bank_loader_play_dispatch.s": "e50c29e305ad9756cc78030cfb0b6ef8acd5255e81d9918a52a277bef30882a1",
+    "port/src/recovery_bank_loader_palette_cycle.s": "671281b32e24d12c3d597bb2afac64def7f8adef84b8f5e13c29dc82576615c1",
+    "port/tools/recovery_bank_loader_palette_cycle_generate.py": "28baa03425242a0844d2d6e0e14d5f3b7db99ee5d3710dfd55065b8f8e31c45c",
+    "port/tools/recovery_bank_loader_play_public.sh": "af6f8a0fefb30b3731bd8e2ddbfa45b4711f08ed4ff799df5cec4be8f36f1861",
+    "port/tests/recovery_bank_loader_play_harness.py": "be7fe3d455e92b752173440a49cdf9b81a3a7127ac38971fe5b33b8759df5d03",
+    "port/tests/recovery_bank_loader_play_oracle.py": "7a409849554bf79f62eab80a9a9fc20c3584d79b65da24758b07217bf321c0a3",
+    "port/tests/recovery_bank_loader_play_rom.py": "34089dcccab55bfc83972005a2dae153ff8471350975ebdf367b7bd9ef4c3a18",
+    "port/tests/recovery_bank_loader_play_scheduler_test.py": "eecf58028f29c13a7bc2dc67915beb42b89517cba0a4a40912d50b9bf0968272",
+    "port/tests/recovery_bank_loader_play_guards.py": "4e7c0a17cf4be1d71f857aff40cce84825b628123ed2beaf5cf2c3d003aa2ada",
+    "port/tests/recovery_bank_loader_palette_cycle_test.py": "dd447abadbc2f2234b67243764a968c4b1a1672701efab28937b1297d1ee0da0"
+  },
+  "dependencies": {
+    "port/analysis/recovery_bank_loader_carry_manifest.json": "c67f160e351a828c520359eeee4abcb2d85c19d7e48b6b95c071f4fa263c91ca",
+    "port/analysis/recovery_stage_scroll_manifest.sha256": "37f010591a740af4e8428caecd55a6eeba42b982c0dc576f0c2fae7448cf2645",
+    "port/tests/test_recovery_general_scheduler_contract.py": "fc108f167c01e243ac44f0d3490394c06c01e64cd3e8d16adcb4b12f2efcec95",
+    "port/tests/recovery_test_general_scheduler.py": "a8258b250e1305d2e68ac50fda223d22e5a47c51a79c60aa19221995cf825ef1",
+    "port/tests/recovery_general_scheduler_harness.py": "aeb6590a64d70959b54b588916e9e6755c1269884fa80bbf83bcb71bd75c53ab",
+    "port/src/recovery_stage_scroll_region.s": "4fda3077003df92c2d0e9a51700619fa8995fb05668fe9130cb893418d8d5a24",
+    "port/tools/recovery_stage_scroll_generate.py": "0b82fac873beeca67a34c8fd26d3127e076e9b494a06317d7a40a3ec7c98be35",
+    "port/tests/recovery_stage_scroll_test.py": "f3dea3a6b6e434ab1c95c30aacab2b9c3f2f61fb10b19c94c2997779b62d9ef0",
+    "port/tools/recovery_stage_scroll_public.sh": "8e7a4e42622e5ce9d07b0d5c042a909bbf9cff1f245283df1a4d72b57e5c6e26",
+    "port/analysis/recovery_stage_scroll_report.md": "fc9c4084133eecf18fcd6319c0abcaa90a044ed5c9072920da7520d67b6a5e19",
+    "port/analysis/recovery_stage_scroll_restore.md": "a9a8e9f5bebd569e4233535eb20e0e2fdad1ff9888b369bc68e1e66a6503a410",
+    "port/tests/recovery_stage_map_test.py": "65fe35f972b6a04b317d60a8138f815da866b4d4dd681e37c7c1f5beea58ce51",
+    "port/tests/recovery_bank_loader_dialogue_harness.py": "6591b4dd525d6389560d9493db552aa994f16a046d9ee33f8198899033d9b228"
+  },
+  "composite_bytes": 216616,
+  "composite_sha256": "5a3ab5ff5204b73dd1223291f42f826f634ff43eaee725c7a503684f80e317f4"
+}

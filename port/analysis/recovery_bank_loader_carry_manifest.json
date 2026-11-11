@@ -1,0 +1,18 @@
+{
+  "scope": "Carry136 and persistent original-first route throughD6A3;137/138/160excluded",
+  "public_allowlist": {
+    "port/analysis/recovery_bank_loader_carry_report.md": "8c5c11582c94bd4f4078833f1e72f2fd8ab6c7e72cc0bb5934df9c44934e0eda",
+    "port/src/recovery_bank_loader_carry_dispatch.s": "378014c9090c2291757ba7fb7bd4b7ef3c045389b0c1a9ff5508c16b80e0d7be",
+    "port/src/recovery_bank_loader_carry_region.s": "922554900fb593b8dded58e6f04fb792783e9d3b4e8a6f8400bda062ff4cbbf7",
+    "port/tools/recovery_bank_loader_carry_generate.py": "552b6a59e8ee670c3ab8c9c764e49f1f60e2114e57aa82797b4f1a6308c9b216",
+    "port/tests/recovery_bank_loader_carry_test.py": "96c0f5aec71078e25f70be79545cc2a94870fb9bc887495764af5803ce6030fc",
+    "port/tests/recovery_bank_loader_carry_harness.py": "94a5205fd92c34ae28d8d1643d085db24071716f05103b33777c749d478bd180",
+    "port/tests/recovery_bank_loader_carry_oracle.py": "def8059f2eb932f6c514db573b8656d6393f6c1a01cc1f54a60c87f832b5e39f",
+    "port/tests/recovery_bank_loader_carry_rom.py": "1beb70388103a356993f38518f7d95b2d917b47604f9db2546a08b0e03994a43"
+  },
+  "dependencies": {
+    "port/analysis/recovery_bank_loader_collision_manifest.json": "8711e506172bb592bbc0d9bf1c7b392aa80b532f9d9079601c85d03acd54d039"
+  },
+  "composite_bytes": 181912,
+  "composite_sha256": "4bdfe758027ff5bada63e863da9a0059107409d511769b6036bcecb33b57cae2"
+}

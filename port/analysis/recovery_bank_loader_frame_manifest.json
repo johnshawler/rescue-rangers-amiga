@@ -1,0 +1,20 @@
+{
+  "scope": "Static frame135 through authentic C940; excludes140/150 and target",
+  "public_allowlist": {
+    "port/analysis/recovery_bank_loader_frame_report.md": "6068d41ba1bbea3921245eb87b516b8d7a0d5335f27f7f59fb8a9a0e88990a51",
+    "port/src/recovery_bank_loader_frame_dispatch.s": "05ab1c2d4ce3650a0713c092b2449ae469a7ec225374e88d19c79a682ba32d17",
+    "port/src/recovery_bank_loader_frame_region.s": "d8849c63d534f53b5029c69d7ceffaae25f49dfd9785856f7409df8b37e7d611",
+    "port/tools/recovery_bank_loader_frame_generate.py": "18c767700ac51831e33c7add392ec478b5f049d43f06bd9f08a14be826ed9767",
+    "port/tests/recovery_bank_loader_frame_harness.py": "b0972661758af6d80b54d93c0ad86a6924fa775d9ebc6043b71966cb6d813d81",
+    "port/tests/recovery_bank_loader_frame_oracle.py": "b93364cffdde0fc78c3c46cd278d502641835893e77fd1b005274510c9702318",
+    "port/tests/recovery_bank_loader_frame_rom.py": "a373fc0526aea755e5a56628eee74a6af498ffc460160fd4381db4152beda853",
+    "port/tests/recovery_bank_loader_frame_contract.py": "4fa386fec873e9d5ddd25ce820c8420d42f9107c9c1e835430019af06cb91add",
+    "port/tests/recovery_bank_loader_frame_public.py": "efd2f5da6d6c89c2c49450a556374b484a3a31fd19daa93e73cd4e9eb66883dc",
+    "port/tests/recovery_bank_loader_frame_variants.py": "4bf2bff17b19618486c897e07672dfd9a64f4166997757ff29afbabacca8a476"
+  },
+  "dependencies": {
+    "port/analysis/recovery_bank_loader_finish_manifest.json": "9c36c12d42619674e2c1c2670f0fb3a0b3de556d596a73b590d2bb3a04a47921"
+  },
+  "composite_bytes": 99220,
+  "composite_sha256": "4f82fd3deb3e357a08cc07583785c1327540c487b36b3ffb0e4e049fb66c88b7"
+}
