@@ -1,0 +1,135 @@
+{
+  "status": "PASS",
+  "scope": "host M68EC020 state-driven first-NMI prefix",
+  "new_files": [
+    {
+      "path": "port/src/recovery_state_dispatch_prefix.s",
+      "bytes": 4602,
+      "sha256": "70c8ed697d2662c89bca7f72378fdeed5c74a94dba512a3e05956438551892c7"
+    },
+    {
+      "path": "port/tests/recovery_test_state_dispatch_prefix.py",
+      "bytes": 9300,
+      "sha256": "c91f67cc64e1e5dac387dbd8dcca220d7f6c74a0a2037d5c92784601126308f4"
+    },
+    {
+      "path": "port/tests/recovery_state_dispatch_prefix_oracle.py",
+      "bytes": 4921,
+      "sha256": "9a02b7cab5bc2fb94e48f31617b09c1f750139165fc792836178a87a67ff6013"
+    },
+    {
+      "path": "port/analysis/recovery_state_dispatch_prefix.md",
+      "bytes": 7686,
+      "sha256": "a7acc6ba8d085be76ba786772dddbf05affc20533786bbc9b2115106a582eaff"
+    },
+    {
+      "path": "port/analysis/recovery_state_dispatch_prefix_results.json",
+      "bytes": 3444,
+      "sha256": "b3e2e34a170953a2b8d46b75d08896d8dcd0106d82135a883a0c01a14f047cc0"
+    },
+    {
+      "path": "port/tests/recovery_test_state_dispatch_prefix_independent.py",
+      "bytes": 6216,
+      "sha256": "62a918bb4b0f1366a201a808d98f977044f35d4ee40bc038de61a329ec3b09e2"
+    },
+    {
+      "path": "port/analysis/recovery_state_dispatch_prefix_independent_results.json",
+      "bytes": 536,
+      "sha256": "ddd789b2adf440476f11f597889201815fe23f02bdfd58a076f833ce47eb7fe6"
+    }
+  ],
+  "frozen_helpers": [
+    {
+      "path": "port/src/recovery_audio_reset_command.s",
+      "bytes": 3599,
+      "sha256": "9c5148ecd1108fc92b604bdca57931e0217554c01294c5d5a8044a33450f5080"
+    },
+    {
+      "path": "port/src/recovery_reset_ram.s",
+      "bytes": 1662,
+      "sha256": "6dc8974aeebb0be917011b518361618443fabb8f20eba70a5133b0d11d6bfbea"
+    },
+    {
+      "path": "port/src/recovery_reset_mapper.s",
+      "bytes": 2275,
+      "sha256": "4d1a4cf7e03a286d5a889f826324039d26c94dac4632aa6b498e250fe9249d0a"
+    },
+    {
+      "path": "port/src/recovery_reset_video.s",
+      "bytes": 3012,
+      "sha256": "bdf63828ccae88389108529b9c87693995d206b9e19f885d201babc1d4a4749d"
+    },
+    {
+      "path": "port/src/recovery_reset_dispatch.s",
+      "bytes": 1636,
+      "sha256": "e6751034246add44222f7c534bd9f5c040521e3ea232ec6b33f37c1f391cb9f2"
+    },
+    {
+      "path": "port/src/recovery_first_yield.s",
+      "bytes": 2090,
+      "sha256": "5fe7f904dcb44925c0ef589075c88d470910a5db9fb8812bce1053ef4daa108e"
+    },
+    {
+      "path": "port/src/recovery_first_nmi_prefix.s",
+      "bytes": 3840,
+      "sha256": "ac1872087561afa2064cff253056a6c9cf89066a32a93c92e70954472278ffc7"
+    },
+    {
+      "path": "port/src/recovery_nmi_audio_entry.s",
+      "bytes": 1897,
+      "sha256": "d0c1c3da60f020448d9e12bdf31798c8a988eba31efe31e458c5a60328714a83"
+    },
+    {
+      "path": "port/src/recovery_silent_tick_rti.s",
+      "bytes": 3060,
+      "sha256": "4d97d7b6b87b83079a0b56d598623132e2a0e4438d102ac1919362caf6722f0f"
+    },
+    {
+      "path": "port/src/recovery_scheduler_resume.s",
+      "bytes": 3244,
+      "sha256": "0836efbe53dac974fb692a027bf2bd7da3f87122ec7feb5000191ce7da19be8a"
+    },
+    {
+      "path": "port/src/recovery_resumed_task_setup.s",
+      "bytes": 2670,
+      "sha256": "97cb8a421e32ca9da08de69660c4c9ffc88b382f781f2fd8e22a09bbea6cb6f7"
+    }
+  ],
+  "frozen_confirmation_manifest": {
+    "path": "port/analysis/recovery_character_confirmation_target_manifest.json",
+    "bytes": 31607,
+    "sha256": "9c3203ed72bc3cb6fa152865081b070f7a1ff63afac4792e18214d39987db320"
+  },
+  "frozen_build_dependencies_verified": 59,
+  "code_bytes": 3734,
+  "composite_sha256": "834ab65a90c73b38a2b35ff2c13fff495970d844d2c2d235cfeb72a97218a5a5",
+  "cases": 7,
+  "native_helper_completions": 77,
+  "inert_rejection_cases": 770,
+  "limitations": [
+    "No title or character-menu reachability",
+    "No release/repress edge across repeated controller polls",
+    "No timeout path",
+    "No resource-reading helper admitted",
+    "No physical target, display, audio or timing claim"
+  ],
+  "independent_regression": {
+    "status": "PASS",
+    "continuous_reference_selected_completions": 77,
+    "boundary_probes": {
+      "event": 108,
+      "unexpected_nmi": 11,
+      "mapper_latch": 12240,
+      "wrong_pc": 6240,
+      "status_all_values": 1024,
+      "pending_queues": 2040
+    },
+    "extra_original_status_comparisons": 73,
+    "frozen_dependencies_verified": 59,
+    "composite_bytes": 3734,
+    "composite_sha256": "834ab65a90c73b38a2b35ff2c13fff495970d844d2c2d235cfeb72a97218a5a5",
+    "mapper_bit7_reset": "Static review only; not emitted by admitted prefix helpers"
+  },
+  "reference_endpoint_selection": "Before native execution, from original PC/RAM and external event only; native metadata asserted afterward.",
+  "mapper_bit7_reset_coverage": "Static review only; no admitted helper emits bit-7 serial write."
+}

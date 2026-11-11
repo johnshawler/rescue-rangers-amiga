@@ -1,0 +1,68 @@
+{
+  "scope": "Host-only static SFX duration multiplication and mask-fetch tail, authentic returns and JSR81A3; no injection.",
+  "files": [
+    {
+      "path": "port/src/recovery_sfx_duration_math.s",
+      "bytes": 3312,
+      "sha256": "c5fab913baffdee57d5a51fb8f7bbde638c0d0c953753d7bc41fd45b20c7b11e"
+    },
+    {
+      "path": "port/tests/recovery_test_sfx_duration_math.py",
+      "bytes": 5111,
+      "sha256": "58ce75442ed42e834c2e4ed756c8c42ced32646ee0872dbe9b7311a1d0531d92"
+    },
+    {
+      "path": "port/tests/recovery_test_resident_sfx_duration_math.py",
+      "bytes": 29993,
+      "sha256": "cef822ec8a853e64cdfb3c3428cd3bfee9f18777bcd489c0b8ee7f189e090e6a"
+    },
+    {
+      "path": "port/analysis/recovery_sfx_duration_math.md",
+      "bytes": 5870,
+      "sha256": "fee5615231de8b97339e53c680d6fcaaf2ed96f1f0e2e916f6ed3bcb8421f20e"
+    }
+  ],
+  "predecessor_manifest": {
+    "path": "port/analysis/recovery_sfx_stream_entry_manifest.json",
+    "bytes": 2104,
+    "sha256": "58b21442d22b9017021597497d7b52512ca55714a932764940201542325eacd8"
+  },
+  "composite": {
+    "bytes": 28506,
+    "sha256": "5baf0e1aa0d6730ee3c2f35d1dc3015aebd920dfe45074339223f23f6fb5444a"
+  },
+  "standalone": {
+    "bytes": 486,
+    "sha256": "d8458ee57233f60261d0cf890168ef7a3ee5044fc5dc0246c9817e74b4db6136"
+  },
+  "boundary": "81A302030024F1A7: bank3 before81A3 LDA CF channel reconfiguration; CF02,D0/D1AF60,C1/C20001,D501,C005; authentic82AB frame and saved mask02 live.",
+  "coverage": {
+    "declarative": 425984,
+    "original_rom": 425984,
+    "inert_rejects": 375806,
+    "source_only_declarative": 425984,
+    "source_only_inert_rejects": 375806,
+    "continuous_inputs": [
+      0,
+      16,
+      1,
+      2
+    ],
+    "frozen_continuous_inputs": [
+      0,
+      16,
+      1,
+      2
+    ],
+    "frozen_stream_rom": 82941,
+    "frozen_header_rom": 81920,
+    "frozen_tail_rom": 65536,
+    "verified_frozen_manifest_files": 52
+  },
+  "limits": [
+    "Host-only native correctness; no audible Paula or target execution",
+    "No additional completed audio return; no full gameplay or stock-speed claim",
+    "Next channel reconfiguration81A3 remains unsupported",
+    "Separate equal-mask path stops8060 before phase/channel tick"
+  ]
+}

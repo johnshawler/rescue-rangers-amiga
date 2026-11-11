@@ -33,13 +33,24 @@ zero Fast RAM. The original display and delivered Z/X disk remain unchanged.
 New host-native comparisons separately cover the complete [title/music timeout](port/analysis/recovery_music_command0f_loop.md):
 900 countdowns, 28,818 calls and 935 logical NMIs. Default character confirmation
 continues through [scene fading and sprite hiding](port/analysis/recovery_scene_sprite_hide.md)
-to F3D5. Genuine Left/Right input reaches [SFX27 stream initialization](port/analysis/recovery_sfx_header_initialize.md)
-at 8224, without skipping the queued sound. These longer paths remain host proofs.
-The next untranslated boundaries are rendering disable at F3D5 and SFX stream
-handling at 8224; alternate-character confirmation and live gameplay are unfinished.
-Run tools/test_native_title_public.sh and tools/test_scene_sound_public.sh for
-ROM-free contracts. The corresponding private extensions are validate_native_title.sh
-and validate_scene_sound.sh.
+to F3D5. Genuine Left/Right input now reaches [SFX duration multiplication and
+channel setup](port/analysis/recovery_sfx_duration_math.md) at 81A3 without skipping
+the queued sound. These longer paths remain host proofs. Rendering disable at
+F3D5 and SFX channel reconfiguration at 81A3 remain untranslated;
+alternate-character confirmation and live gameplay are unfinished.
+
+A separate [state-driven native dispatcher](port/analysis/recovery_state_dispatch_active.md)
+now completes the first active music tick and real interrupt return from FE24.
+Eight original-code comparisons cover 66 helper calls and two logical NMIs each.
+It selects helpers from PC, RAM, stack, mapper and external events rather than
+a fixed diagnostic schedule. The next generalized scheduler operation remains
+outside this dispatcher. This is host-only logical execution, not live Amiga
+controls, audible audio, or stock-speed evidence.
+
+Run tools/test_native_title_public.sh, tools/test_scene_sound_public.sh and
+tools/test_runtime_sound_public.sh for ROM-free contracts. Their corresponding
+private extensions are validate_native_title.sh, validate_scene_sound.sh and
+validate_runtime_sound.sh.
 
 An earlier isolated [resident startup diagnostic](port/analysis/recovery_resident_chr_fade_target.md)
 reaches $C5D1 through 1,024 native helper calls and 35 logical NMIs. Four

@@ -1,0 +1,342 @@
+{
+  "public_contract": {
+    "status": "PASS",
+    "scope": "PUBLIC ROM-free synthetic contract",
+    "successful_cases": 259,
+    "inert_rejections": 3687,
+    "delayed_waits": 31,
+    "code_bytes": 4982,
+    "code_sha256": "16101c9b8bc7acf83fa42368812a4a48889ed9cf7dac11c67ce16920533fda4e"
+  },
+  "private_rom": {
+    "status": "PASS",
+    "scope": "PRIVATE original-ROM, host M68EC020",
+    "code_bytes": 4982,
+    "code_sha256": "16101c9b8bc7acf83fa42368812a4a48889ed9cf7dac11c67ce16920533fda4e",
+    "cases": [
+      {
+        "pads": [
+          0,
+          0
+        ],
+        "delayed_polls": 0,
+        "waits": 2,
+        "advanced_calls": 14,
+        "logical_NMIs": 2,
+        "original_instructions": 15086,
+        "inert_rejections": 165,
+        "final_context": "c0f30fff0c24b1a7",
+        "final_mapper": [
+          30,
+          0,
+          16,
+          3
+        ]
+      },
+      {
+        "pads": [
+          0,
+          0
+        ],
+        "delayed_polls": 13,
+        "waits": 28,
+        "advanced_calls": 14,
+        "logical_NMIs": 2,
+        "original_instructions": 15086,
+        "inert_rejections": 165,
+        "final_context": "c0f30fff0c24b1a7",
+        "final_mapper": [
+          30,
+          0,
+          16,
+          3
+        ]
+      },
+      {
+        "pads": [
+          16,
+          0
+        ],
+        "delayed_polls": 7,
+        "waits": 16,
+        "advanced_calls": 14,
+        "logical_NMIs": 2,
+        "original_instructions": 15086,
+        "inert_rejections": 165,
+        "final_context": "c0f30fff0c24b1a7",
+        "final_mapper": [
+          30,
+          0,
+          16,
+          3
+        ]
+      },
+      {
+        "pads": [
+          1,
+          0
+        ],
+        "delayed_polls": 2,
+        "waits": 6,
+        "advanced_calls": 14,
+        "logical_NMIs": 2,
+        "original_instructions": 15086,
+        "inert_rejections": 165,
+        "final_context": "c0f30fff0c24b1a7",
+        "final_mapper": [
+          30,
+          0,
+          16,
+          3
+        ]
+      },
+      {
+        "pads": [
+          2,
+          0
+        ],
+        "delayed_polls": 3,
+        "waits": 8,
+        "advanced_calls": 14,
+        "logical_NMIs": 2,
+        "original_instructions": 15086,
+        "inert_rejections": 165,
+        "final_context": "c0f30fff0c24b1a7",
+        "final_mapper": [
+          30,
+          0,
+          16,
+          3
+        ]
+      },
+      {
+        "pads": [
+          4,
+          8
+        ],
+        "delayed_polls": 1,
+        "waits": 4,
+        "advanced_calls": 14,
+        "logical_NMIs": 2,
+        "original_instructions": 15086,
+        "inert_rejections": 165,
+        "final_context": "c0f30fff0c24b1a7",
+        "final_mapper": [
+          30,
+          0,
+          16,
+          3
+        ]
+      },
+      {
+        "pads": [
+          128,
+          64
+        ],
+        "delayed_polls": 0,
+        "waits": 2,
+        "advanced_calls": 14,
+        "logical_NMIs": 2,
+        "original_instructions": 15086,
+        "inert_rejections": 165,
+        "final_context": "c0f30fff0c24b1a7",
+        "final_mapper": [
+          30,
+          0,
+          16,
+          3
+        ]
+      },
+      {
+        "pads": [
+          255,
+          255
+        ],
+        "delayed_polls": 4,
+        "waits": 10,
+        "advanced_calls": 14,
+        "logical_NMIs": 2,
+        "original_instructions": 15082,
+        "inert_rejections": 165,
+        "final_context": "c0f30fff0c24b1a7",
+        "final_mapper": [
+          30,
+          0,
+          16,
+          3
+        ]
+      }
+    ]
+  },
+  "frozen_prefix_regression": {
+    "status": "PASS",
+    "scope": "host M68EC020 state-driven first-NMI prefix",
+    "code_bytes": 3734,
+    "cases": [
+      {
+        "pads": [
+          0,
+          0
+        ],
+        "delayed_NMI_polls": 0,
+        "advanced_calls": 11,
+        "logical_NMIs": 1,
+        "waits": 1,
+        "inert_rejections": 110,
+        "original_instructions": 14384,
+        "final_context": "fe8d00b800a4b8a7",
+        "final_mapper": [
+          30,
+          0,
+          16,
+          6
+        ],
+        "code_sha256": "834ab65a90c73b38a2b35ff2c13fff495970d844d2c2d235cfeb72a97218a5a5"
+      },
+      {
+        "pads": [
+          0,
+          0
+        ],
+        "delayed_NMI_polls": 7,
+        "advanced_calls": 11,
+        "logical_NMIs": 1,
+        "waits": 8,
+        "inert_rejections": 110,
+        "original_instructions": 14384,
+        "final_context": "fe8d00b800a4b8a7",
+        "final_mapper": [
+          30,
+          0,
+          16,
+          6
+        ],
+        "code_sha256": "834ab65a90c73b38a2b35ff2c13fff495970d844d2c2d235cfeb72a97218a5a5"
+      },
+      {
+        "pads": [
+          16,
+          0
+        ],
+        "delayed_NMI_polls": 2,
+        "advanced_calls": 11,
+        "logical_NMIs": 1,
+        "waits": 3,
+        "inert_rejections": 110,
+        "original_instructions": 14384,
+        "final_context": "fe8d00b800a4b8a7",
+        "final_mapper": [
+          30,
+          0,
+          16,
+          6
+        ],
+        "code_sha256": "834ab65a90c73b38a2b35ff2c13fff495970d844d2c2d235cfeb72a97218a5a5"
+      },
+      {
+        "pads": [
+          1,
+          0
+        ],
+        "delayed_NMI_polls": 1,
+        "advanced_calls": 11,
+        "logical_NMIs": 1,
+        "waits": 2,
+        "inert_rejections": 110,
+        "original_instructions": 14384,
+        "final_context": "fe8d00b800a4b8a7",
+        "final_mapper": [
+          30,
+          0,
+          16,
+          6
+        ],
+        "code_sha256": "834ab65a90c73b38a2b35ff2c13fff495970d844d2c2d235cfeb72a97218a5a5"
+      },
+      {
+        "pads": [
+          2,
+          0
+        ],
+        "delayed_NMI_polls": 3,
+        "advanced_calls": 11,
+        "logical_NMIs": 1,
+        "waits": 4,
+        "inert_rejections": 110,
+        "original_instructions": 14384,
+        "final_context": "fe8d00b800a4b8a7",
+        "final_mapper": [
+          30,
+          0,
+          16,
+          6
+        ],
+        "code_sha256": "834ab65a90c73b38a2b35ff2c13fff495970d844d2c2d235cfeb72a97218a5a5"
+      },
+      {
+        "pads": [
+          4,
+          8
+        ],
+        "delayed_NMI_polls": 0,
+        "advanced_calls": 11,
+        "logical_NMIs": 1,
+        "waits": 1,
+        "inert_rejections": 110,
+        "original_instructions": 14384,
+        "final_context": "fe8d00b800a4b8a7",
+        "final_mapper": [
+          30,
+          0,
+          16,
+          6
+        ],
+        "code_sha256": "834ab65a90c73b38a2b35ff2c13fff495970d844d2c2d235cfeb72a97218a5a5"
+      },
+      {
+        "pads": [
+          255,
+          255
+        ],
+        "delayed_NMI_polls": 1,
+        "advanced_calls": 11,
+        "logical_NMIs": 1,
+        "waits": 2,
+        "inert_rejections": 110,
+        "original_instructions": 14380,
+        "final_context": "fe8d00b800a4b8a7",
+        "final_mapper": [
+          30,
+          0,
+          16,
+          6
+        ],
+        "code_sha256": "834ab65a90c73b38a2b35ff2c13fff495970d844d2c2d235cfeb72a97218a5a5"
+      }
+    ],
+    "limits": [
+      "No title or character-menu reachability",
+      "No release/repress edge across repeated controller polls",
+      "No timeout path",
+      "No resource-reading helper admitted",
+      "No physical target, display, audio or timing claim"
+    ]
+  },
+  "frozen_prefix_independent": {
+    "status": "PASS",
+    "continuous_reference_selected_completions": 77,
+    "boundary_probes": {
+      "event": 108,
+      "unexpected_nmi": 11,
+      "mapper_latch": 12240,
+      "wrong_pc": 6240,
+      "status_all_values": 1024,
+      "pending_queues": 2040
+    },
+    "extra_original_status_comparisons": 73,
+    "frozen_dependencies_verified": 59,
+    "composite_bytes": 3734,
+    "composite_sha256": "834ab65a90c73b38a2b35ff2c13fff495970d844d2c2d235cfeb72a97218a5a5",
+    "mapper_bit7_reset": "Static review only; not emitted by admitted prefix helpers"
+  }
+}

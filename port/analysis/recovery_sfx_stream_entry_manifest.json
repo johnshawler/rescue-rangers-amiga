@@ -1,0 +1,70 @@
+{
+  "scope": "Host-only static SFX stream entry and duration-parameter setup; authentic fetch returns and JSR8006; no state injection.",
+  "files": [
+    {
+      "path": "port/src/recovery_sfx_stream_entry.s",
+      "bytes": 2808,
+      "sha256": "b4c5e68da9f7c51a49091fe721b830f661cc94286dbfcc64b646f58b7ea9ec29"
+    },
+    {
+      "path": "port/tests/recovery_test_sfx_stream_entry.py",
+      "bytes": 4361,
+      "sha256": "ad528981af1624413717d56b247d849c512b0a476d5e13212bf1acb6e32e190e"
+    },
+    {
+      "path": "port/tests/recovery_test_resident_sfx_stream_entry.py",
+      "bytes": 29238,
+      "sha256": "4eca65d0177977856211203c9e09218f28102fbbd135fc31b7398fc5c7de60cb"
+    },
+    {
+      "path": "port/analysis/recovery_sfx_stream_entry.md",
+      "bytes": 6326,
+      "sha256": "1c13b498f60b40a25972c04282f8ff6846c6dfc0b2bf5a8460fc00441da6cb55"
+    }
+  ],
+  "predecessor_manifest": {
+    "path": "port/analysis/recovery_sfx_header_initialize_manifest.json",
+    "bytes": 1640,
+    "sha256": "94a2d5f1d69d987e51088fd12e17375b659774b8d2d2fa4e550373148ecc7403"
+  },
+  "composite": {
+    "bytes": 28016,
+    "sha256": "98b9f24e5c552bb110cd94bee7f8204cab900175c54c6c1bcee4df094fadad50"
+  },
+  "boundary": "800601030024F2A7: before8006 LDA #00 in duration multiplication; D0/D1=AF5F, D4=01, D3=01;8297 frame live.",
+  "coverage": {
+    "declarative": 82941,
+    "original_rom": 82941,
+    "inert_rejects": 245250,
+    "continuous_inputs": [
+      0,
+      16,
+      1,
+      2
+    ],
+    "frozen_continuous_inputs": [
+      0,
+      16,
+      1,
+      2
+    ]
+  },
+  "portability_validation": {
+    "default_requires_private_rom": false,
+    "source_only_files": [
+      "port/src/recovery_sfx_stream_entry.s",
+      "port/tests/recovery_test_sfx_stream_entry.py",
+      "port/tests/recovery_test_sfx_header_initialize.py"
+    ],
+    "declarative_cases": 82941,
+    "inert_rejects": 245250,
+    "private_rom_cases": 82941,
+    "resident_inputs": [
+      0,
+      16,
+      1,
+      2
+    ],
+    "reviewed_manifest_sha256": "90906c001978eafaf8ba49d1b74f863518b6118760d5ee5f0aa0338ac8608761"
+  }
+}
