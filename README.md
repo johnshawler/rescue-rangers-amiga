@@ -11,6 +11,17 @@ native game-code translation and Amiga rendering, not a general NES interpreter.
 
 ## Current recovery checkpoint
 
+The additive [public source checkpoint](docs/public-source-checkpoint-2026-11-11.md)
+contains bounded noise-planner wrappers, compiled synthetic adapter/runtime/layout
+checks and a separate public-source consistency/restore contract. Its new manifest
+records public source identities only, not authentic private asset or capture
+identities. The compiled suites require the pinned recovery GCC 14 toolchain and
+are separate from the Python/assembler CI. Previously verified private 240-frame
+results are not reproduced by these public tests; every target update was still
+late, and no new playable disk is released. The earlier failed neutral run remains
+a failure. This is new work on recovered early source, not recovery of the missing
+later gameplay/audio source.
+
 The [corrected audio verification](port/analysis/recovery_audio_clock_report.md)
 supersedes the earlier total PCM-window alignment claim. Independent source and
 runtime audit found that the emulator callback clock differs from nominal PAL

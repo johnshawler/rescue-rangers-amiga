@@ -7,12 +7,22 @@ permissions:
 jobs:
   synthetic:
     runs-on: ubuntu-latest
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
       - run: python -m pip install -r requirements-dev.txt
+      - name: Public source contract and fresh restore (no GCC requirement)
+        run: |
+          python port/tools/public_source_checkpoint.py check --exact
+          python port/tests/public_source_checkpoint_test.py
+          python port/tools/public_source_checkpoint.py restore "$RUNNER_TEMP/public-source-restored"
+          python "$RUNNER_TEMP/public-source-restored/port/tools/public_source_checkpoint.py" check --exact
+      # The GCC 14 compiled gameplay suites are separate local prerequisites;
+      # this Python/assembler job does not claim their coverage.
       - name: Fetch pinned assembler tool bundle
         run: |
           git clone --filter=blob:none --no-checkout https://github.com/BartmanAbyss/vscode-amiga-debug.git "$RUNNER_TEMP/amiga-tools"
