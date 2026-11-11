@@ -1,0 +1,17 @@
+{
+  "scope": "Genuine bank5 C0BF queue entry to bank3:8003 command10; decoder unsupported",
+  "public_allowlist": {
+    "port/src/recovery_bank_loader_queue5_dispatch.s": "91caf755b489c3d2628e68651aa84f642d945b883b9994d08ef8f92a35fad731",
+    "port/tools/recovery_bank_loader_queue5_public.sh": "1d4eeb8edf60db4847b86458fb488103a21070409e658c63ade798b51f64ca03",
+    "port/analysis/recovery_bank_loader_queue5_report.md": "b5078755bf8f5c937fb91a106fab60a94709201f2bddfd83b6fbf4806481d0c5",
+    "port/tests/recovery_bank_loader_queue5_harness.py": "18caa74a6475bb0b503d1faf150d9807b4abe82cb39ead2d44c40c1572434453",
+    "port/tests/recovery_bank_loader_queue5_oracle.py": "fbec6191d76c23cb75a0d1c96088d7e3ab1b1556b076cb832bdf9d5931452367",
+    "port/tests/recovery_bank_loader_queue5_rom.py": "7b0870f5840d3e5a23c0d0b63b37edb366dbcf9ba1933e2ac9d9b77b7e045e27",
+    "port/tests/recovery_bank_loader_queue5_test.py": "0e0bcdbdafd32f45c6b5608452de8c66f1f3205fa099e25ce7c1a670d761db7e"
+  },
+  "dependencies": {
+    "port/analysis/recovery_bank_loader_input_manifest.json": "f81afc810d774e1688b69488c636cc39fd114a6ee6d6751d566b3e62d0bad51e"
+  },
+  "composite_bytes": 216898,
+  "composite_sha256": "06d7e3871eda77f7fcd8765d58f00d9206811c532408c3bc4bd1cb778e1e3a1d"
+}

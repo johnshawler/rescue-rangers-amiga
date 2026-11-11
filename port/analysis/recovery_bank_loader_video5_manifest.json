@@ -1,0 +1,18 @@
+{
+  "scope": "Actual bank5 queued NMI;104 continuous input frames to inert F328 boundary",
+  "public_allowlist": {
+    "port/src/recovery_bank_loader_video5_dispatch.s": "56620140128330d0118312bb38e98f21556ae68b15104cbf79b3b8ded2a46aaf",
+    "port/src/recovery_bank_loader_video5_preflight.s": "9a732403392face05524da8c7b1c99cffab6043ac024e6033f2524f7f6894b45",
+    "port/tools/recovery_bank_loader_video5_public.sh": "cf822bb03ec926d12343c4de0cffd623b3a81461b0645c89ffd244dce65d8663",
+    "port/analysis/recovery_bank_loader_video5_report.md": "d9f57a0323637bf6484a885327ea4b632376e6a2d75e6cfa008cdb2cc11b5195",
+    "port/tests/recovery_bank_loader_video5_harness.py": "0c78fadb1b3af0cb28e64165ffd5cd791cab96fafe808ac5d68c695ce1372189",
+    "port/tests/recovery_bank_loader_video5_oracle.py": "58146c5356b56b8eda15a585b550c89def8113f421981c761a79f6ce70629984",
+    "port/tests/recovery_bank_loader_video5_rom.py": "0dbfd3505859529d51011cd27e569191ee38870e1379119ab42a49e0dd88c938",
+    "port/tests/recovery_bank_loader_video5_test.py": "a45f8027ad77ab1163ed36ede0d8c978432f94622b53b861d82bdaf5306e9aa8"
+  },
+  "dependencies": {
+    "port/analysis/recovery_bank_loader_scroll_status_manifest.json": "96a87891635aab018e9fd6f6ee6010959c409f9a56d489c6320ba9e44ccb5f75"
+  },
+  "composite_bytes": 217800,
+  "composite_sha256": "c3fa0e31c4c42928f0d2440ec59e9b6a8e04a65c42b08ebb4d125c5a47957ff9"
+}

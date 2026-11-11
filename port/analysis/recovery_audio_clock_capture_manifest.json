@@ -1,0 +1,49 @@
+{
+  "scope": "Read-only identities of four existing captures; no copyrighted payloads included.",
+  "captures": {
+    "recovery-stage-target-v3": {
+      "full.log": "a11d67c6b6a908873a23944dcdcb01c1b5114777231366fbbb135f538cc79eee",
+      "full-CHIP.bin": "efad772be5f7a8ab7aba604bc4c49e8cd433043ed10daeb8dca95332c4da0446",
+      "full-capture.s16le": "54ad3ac21f1133b1f8e4d5dcc437c819570a107498445ba88f60811e2217d875",
+      "full-screen.ppm": "ec9036601d29d747d37160a59f5047c4d06c0017f2db3b039cde5dc9710cf611",
+      "target.bin": "9f36a179fbbf169c3d243e761b8c7d9eb63ebb4a528d0a5fbac594878e05e936",
+      "adapter.bin": "cb0ee1dbef484f0a54ad764408d1d20112af87c4f35396d33a513b3d915bce12",
+      "boot.bin": "5faec4119c7cd3a455a0dde7a2d87f518cf7996fad5c011fc08cadf36ec1d7aa",
+      "target.adf": "4c14710a3bd3677a39c6f98f9963baae7dbad9dc5b3c494c2a26398596240955",
+      "build.json": "7403e8440f2c60f20dbe8098be98baee45e4c8518d68f0daace4df8cf2b7053c"
+    },
+    "recovery-stage-background-v1": {
+      "full.log": "2aa40540bbbea695a2990eb30e9bb1cc1b93abee03fd215a5212092a080a547d",
+      "full-CHIP.bin": "bb85a6faba9ba08e44f0aa706defd058cade04568606c9421c6eb90d65e20d4a",
+      "full-capture.s16le": "1e6560a9f65081ab02ac654252442016a92fe12c52eb86acf5d28a88355278c4",
+      "full-screen.ppm": "ec9036601d29d747d37160a59f5047c4d06c0017f2db3b039cde5dc9710cf611",
+      "target.bin": "4c932a30bafb180dd39071c76784b184a73d589a907f9748adedcf54108cb7e1",
+      "adapter.bin": "cb0ee1dbef484f0a54ad764408d1d20112af87c4f35396d33a513b3d915bce12",
+      "boot.bin": "5faec4119c7cd3a455a0dde7a2d87f518cf7996fad5c011fc08cadf36ec1d7aa",
+      "target.adf": "c9e06472f82315f36adfa2a57d4a5c8aa2deabe54d6c2dc1befcf5db3d656c9c",
+      "build.json": "d978af25c0e91d63545edca65c4aeff0ec8b041e95f8a2ba4e1ff9e44fdac3d4"
+    },
+    "recovery-play-target-v3": {
+      "full.log": "a4a228be499b07bfe11f89ca0b05a5513f3f751dd558c418d93c4836d2729d8f",
+      "full-CHIP.bin": "de7eaacc49bcc73264900f06ca52c8bb3243cf20eaa0269e5a3793fcf1cc2ed1",
+      "full-capture.s16le": "13d9d75626c291721ccfde3a08892e4cd959b6bedf072796dd72c306793604bd",
+      "full-screen.ppm": "7fb581fc41186d998a0b5e3245b38a0d8a9685e2129c8eca8df6f669ce1098bb",
+      "target.bin": "04ededa6ffd8556318bd4f3a7b0e19576dfe97acceaa0b2a90a86c830c1403ea",
+      "adapter.bin": "cb0ee1dbef484f0a54ad764408d1d20112af87c4f35396d33a513b3d915bce12",
+      "boot.bin": "19596d9df82b643b71cd5f33e779e128e0d3305d525b05cfabdc9bb6ab4376ca",
+      "target.adf": "efeaf598d52723f0cf4d3eadfac448d5b82e9fbbfd5309c49357ada3af51884f",
+      "build.json": "7a92704cb64a11087e2d4283f47cdff554f0534286d156dc4730accb6dc46500"
+    },
+    "recovery-play-background-v1": {
+      "full.log": "79a352bf447caa1e70cf3581f2000554a28dedae823a035f206f469760a2da07",
+      "full-CHIP.bin": "32f138813e5454c6ac147db20f548e214ad85b81b6ae96e44315843bc8b9d759",
+      "full-capture.s16le": "f66f0ee30cc73dbcac245852980dfad92b1e135a583c5fb16e3c708e70d55a22",
+      "full-screen.ppm": "7fb581fc41186d998a0b5e3245b38a0d8a9685e2129c8eca8df6f669ce1098bb",
+      "target.bin": "303d94b95e96854f1868f556ace4c96204a06e70a475016b076cbd71ec19eec4",
+      "adapter.bin": "cb0ee1dbef484f0a54ad764408d1d20112af87c4f35396d33a513b3d915bce12",
+      "boot.bin": "19596d9df82b643b71cd5f33e779e128e0d3305d525b05cfabdc9bb6ab4376ca",
+      "target.adf": "b6e5217b625735d77b566cd00e2602a16cf39fbbc161bdc0c9fba028f19d7f10",
+      "build.json": "b16e7bfb32d15a5af6a8c7ae8b46051b4e8c9cc823144e4f3106b855a1b148ee"
+    }
+  }
+}

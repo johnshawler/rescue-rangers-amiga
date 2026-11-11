@@ -1,0 +1,20 @@
+{
+  "scope": "Success160-only canonical publication; genuine map external returns; continuous input to pending-video bank5 FE8D",
+  "public_allowlist": {
+    "port/src/recovery_bank_loader_scroll_status_dispatch.s": "23052188a516aba866189c54dd7effa6ff1d83f8d2b12bf90303648d05e633dd",
+    "port/tools/recovery_bank_loader_scroll_status_public.sh": "c2c27f4e02a2daecc49efc8466e9bc42caf5f95e39295aad59d69e3e5769388c",
+    "port/analysis/recovery_bank_loader_scroll_status_report.md": "c67ef99254158788fbd0391d476e72d33170d917de1e3e69e857d19613e13c72",
+    "port/tests/recovery_bank_loader_scroll_status_harness.py": "3f1a864a29d224f86c8d5a7e8ffab5b9f56e463da879f8c21c02ba300a1bb751",
+    "port/tests/recovery_bank_loader_scroll_status_oracle.py": "daf270d14893e73e6a595f14ab0e9ae17f92fd98b18519bc643c0661be007cb4",
+    "port/tests/recovery_bank_loader_scroll_status_rom.py": "004d8b546a16534580b89ee9725dca3b607e49e587b42470e50b286da434a36e",
+    "port/tests/recovery_bank_loader_scroll_status_test.py": "b0dcccc31e527c9c9a73c563a45bf3d66e6c72a0f3d8c205df66b7294938c72e",
+    "port/tests/recovery_bank_loader_scroll_status_public.py": "dd0c3ca7ed9a401546b64af1fa1d851814cc6144be7648dd5051d72f0d1609e3",
+    "port/tests/recovery_bank_loader_scroll_map_trace.py": "ecb5cb85388f3db82a24ad643ece6528be5bf33ea383268d7869dd2b362ef026",
+    "port/tests/recovery_bank_loader_scroll_map_returns.py": "1cdc99f5b8c011d0db9b122e62b010a3db947aa30d20e36946f849944756c203"
+  },
+  "dependencies": {
+    "port/analysis/recovery_bank_loader_envelope_manifest.json": "67bb3607602b4b309a26d0f6a8151b8dfbd3f2100fa40f816655a6cb985e24f6"
+  },
+  "composite_bytes": 217382,
+  "composite_sha256": "84a4bd3c1add44e8320c066d527b0b34e22e1f3764893894a592778b8027e165"
+}

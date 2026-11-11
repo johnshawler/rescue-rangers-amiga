@@ -9,30 +9,42 @@ Target: PAL Amiga A1200, 68020, AGA and 2 MiB Chip RAM. Stock hardware is prefer
 optional Fast RAM must remain within 8 MiB. The intended architecture is static
 native game-code translation and Amiga rendering, not a general NES interpreter.
 
-## Current verified source
+## Current recovery checkpoint
 
-The new [five-neutral-frame target](port/analysis/recovery_play_target_report.md)
-continues from reset through title selection, dialogue and stage loading into five
-authentic gameplay frames. Independent review passes a clean 775-file restore,
-identical rebuild, original state and ordered effects, raw-status publication,
-final display pixels and bounded captured audio checks on an emulated stock PAL
-A1200. It uses 860,160 Chip bytes and zero Fast RAM. Five measured publication
-intervals total 2.753 seconds; final redraw is 336.150 ms and all 400 updates are
-late. This is a bounded diagnostic, not playable speed or a released game disk.
+The [corrected audio verification](port/analysis/recovery_audio_clock_report.md)
+supersedes the earlier total PCM-window alignment claim. Independent source and
+runtime audit found that the emulator callback clock differs from nominal PAL
+hardware. The additive verifier corrects both timestamp mapping and signal
+frequencies. All four unchanged captures pass, with the same thresholds and
+negative controls. Earlier reports and failed tests remain preserved. Printed
+legacy milliseconds are **nominal PAL hardware-equivalent** conversions, not
+measured physical-Amiga performance or callback wall-time.
 
-A separate [optimized stage target](port/analysis/recovery_stage_background_target_report.md)
-reduces matched final redraw from 335.616 to 168.230 ms (49.874%) with five-plane
-display DMA active. It retains 862,720 Chip bytes and zero Fast RAM. All 395
-updates remain late. Its narrow finite-loop PCM qualification and historical
-verifier failures are documented. This optimized renderer has not yet been
-qualified together with the five-frame gameplay target in this checkpoint.
+The [five-neutral-frame target](port/analysis/recovery_play_target_report.md)
+continues from reset through title selection, dialogue and stage loading into
+five authentic gameplay frames. Its stock PAL A1200 emulator capture uses
+860,160 Chip bytes and zero Fast RAM. Five publication intervals total 2.753
+seconds in nominal PAL-equivalent units, and every update is late. The
+[optimized stage target](port/analysis/recovery_stage_background_target_report.md)
+reduces matched final redraw by 49.874%, with five-plane display DMA active and
+zero Fast RAM. This is redraw cost, not game FPS or playable speed.
 
-The host-tested [input extension](port/analysis/recovery_bank_loader_input_report.md)
-accepts held Right and Right+A through 19 complete frames with full original
-semantic parity, then stops inertly at pending sound command 10. It does not
-establish visible jumping, pickup/throw, full gameplay or target input coverage.
-The delivered Z/X disk stays unchanged. See the
-[checkpoint summary](docs/recovery-progress-2026-11-11.md) for exact scope and tests.
+The additive [native host continuation](port/analysis/recovery_bank_loader_video5_report.md)
+handles queued sound commands, status publication and queued video service
+through 104 complete frames for held Right and Right+A, retaining original
+state and ordered effects. It then stops inertly at the untranslated F328
+routine. These are host semantic tests, not 104 displayed target frames or
+proof of jumping, pickup/throw or complete gameplay.
+
+The [combined optimized five-frame comparison](port/analysis/recovery_play_clock_report.md)
+now joins separately reviewed runtime evidence with the corrected audio gates
+and complete matched original execution histories. In this bounded diagnostic,
+final redraw costs 50.070% less and the five publication intervals cost 30.562%
+less in raw CIA ticks than the original-renderer control. Both still miss every
+update deadline. Historical frozen reports retain their original pending or
+failed labels; the [current correction summary](docs/recovery-clock-correction-2026-11-11.md)
+records the superseding evidence and limits. No replacement game disk is released.
+The delivered Z/X disk and all original inputs remain unchanged.
 
 ## Earlier preserved title/menu checkpoint
 

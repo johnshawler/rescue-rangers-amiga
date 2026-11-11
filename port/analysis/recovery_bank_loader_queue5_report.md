@@ -1,0 +1,17 @@
+# Actual bank5 pending audio queue entry
+
+This separate additive wrapper handles C0BF while actual runtime bank5 is selected. It validates event0, canonical status, mapper control1E, empty serial state, runtime magic, DB<8 and F6=0, then calls unchanged helper70 for a pending command or unchanged41 for an empty queue. Existing helpers enforce F5=0. Every other PC/bank delegates unchanged to the reviewed input-path dispatcher. There is no new helper ID or journal size.
+
+Successful pending entry applies the actual five ordered MMC1 writes from the22-byte counted journal to runtime. It does not assign a fabricated bank or saved F1, skip sound, clear F6, mute output or bypass a decoder. Original queue consumption, stack pushes, flags and context remain unchanged.
+
+Exact native composition216898 bytes, SHA25606d7e3871eda77f7fcd8765d58f00d9206811c532408c3bc4bd1cb778e1e3a1d. ABI, native stack4096, memory layout and all USER/register/width-aware/code-resource immutability guards are retained. Earlier freezes and raw modules are unchanged.
+
+Public512 cases cover each input status/SP byte paired with empty and pending queues, all command bytes except88 on the pending branch and all eight DB slots. Private512 original-first cases verify full RAM/context/ordered events against the original fixed-bank routine. Each suite adds4608 inert validation failures and255 exact-wrapper delegation checks for every non-bank5 value. Those255 are scope/delegation checks, not claims that other existing bank paths must reject. Valid pending commands stop at8003 before their decoder executes.
+
+Both genuine reset-to-gameplay histories, Right01 and Right+A81 sampled through real controller ports after initial C77B, progress to15969 accepted helper calls/414 logical NMIs/3005 APU writes/19 completed frames. At the genuine pending10 entry, DB advances00→01 and queue10 becomes88 as part of original consumption; the original stack carries returnC0F2 and mapper5→3 is journal-derived while savedF1 stays5. Raw90/150/151 checks remain active before their separately approved canonical publication.
+
+The next unsupported boundary is bank3:8003, command10, context800310010024b2a7. The frozen fallback reference selector mistakenly labels unknown8003 commands as reset helper0, but the native dispatcher rejects with no mutation, reads or effects. The continuous comparison therefore deliberately terminates with an assertion capturing this unsupported entry. This is not a command10 decoder or completed-sound claim. Private evidence is port/build/recovery_bank_loader_queue5_route_Ri9zEv/{right,right_a}; snapshots never feed the continuing native chain.
+
+Reproduce public restoration with VASM and PYTHONPATH set to the approved tools: bash port/tools/recovery_bank_loader_queue5_public.sh. It verifies recursive source hashes, rebuilds exact code and denies cartridge/oracle access. Private differential: python port/tests/recovery_bank_loader_queue5_test.py --rom. Continuous: create a new empty output directory, set RECOVERY_PRIVATE_SNAPSHOT_DIR and PROBE_PAD=1 or129, and run python port/tests/recovery_bank_loader_queue5_rom.py default. Expected current outcome is the captured unsupported8003/10 assertion.
+
+No target artifact, emulator capture, delivered disk or public repository was changed. Independent composition review is required. Input delivery and host semantic progression do not establish visible jumping, pickup/throw, real-time target performance or a full game.

@@ -1,0 +1,58 @@
+{
+  "recovery-play-background-v1": {
+    "capture_identity": {
+      "full.log": "79a352bf447caa1e70cf3581f2000554a28dedae823a035f206f469760a2da07",
+      "full-CHIP.bin": "32f138813e5454c6ac147db20f548e214ad85b81b6ae96e44315843bc8b9d759",
+      "full-capture.s16le": "f66f0ee30cc73dbcac245852980dfad92b1e135a583c5fb16e3c708e70d55a22",
+      "full-screen.ppm": "7fb581fc41186d998a0b5e3245b38a0d8a9685e2129c8eca8df6f669ce1098bb",
+      "target.bin": "303d94b95e96854f1868f556ace4c96204a06e70a475016b076cbd71ec19eec4",
+      "adapter.bin": "cb0ee1dbef484f0a54ad764408d1d20112af87c4f35396d33a513b3d915bce12",
+      "boot.bin": "19596d9df82b643b71cd5f33e779e128e0d3305d525b05cfabdc9bb6ab4376ca",
+      "target.adf": "b6e5217b625735d77b566cd00e2602a16cf39fbbc161bdc0c9fba028f19d7f10",
+      "build.json": "b16e7bfb32d15a5af6a8c7ae8b46051b4e8c9cc823144e4f3106b855a1b148ee"
+    },
+    "capture_and_evidence": {
+      "full.log": "79a352bf447caa1e70cf3581f2000554a28dedae823a035f206f469760a2da07",
+      "full-CHIP.bin": "32f138813e5454c6ac147db20f548e214ad85b81b6ae96e44315843bc8b9d759",
+      "full-capture.s16le": "f66f0ee30cc73dbcac245852980dfad92b1e135a583c5fb16e3c708e70d55a22",
+      "full-screen.ppm": "7fb581fc41186d998a0b5e3245b38a0d8a9685e2129c8eca8df6f669ce1098bb",
+      "target.bin": "303d94b95e96854f1868f556ace4c96204a06e70a475016b076cbd71ec19eec4",
+      "adapter.bin": "cb0ee1dbef484f0a54ad764408d1d20112af87c4f35396d33a513b3d915bce12",
+      "boot.bin": "19596d9df82b643b71cd5f33e779e128e0d3305d525b05cfabdc9bb6ab4376ca",
+      "target.adf": "b6e5217b625735d77b566cd00e2602a16cf39fbbc161bdc0c9fba028f19d7f10",
+      "build.json": "b16e7bfb32d15a5af6a8c7ae8b46051b4e8c9cc823144e4f3106b855a1b148ee",
+      "play-target-verification.json": "2dc1cbac6205a27a63d1efa2cca4d01dc5568c9c25f3de2c0c4233588288ec63",
+      "play-target-replay.json": "5a88bec4f36b44ded720c683a06b51f53d78fe342bbe5669d4dd3c0a27c16782",
+      "target.symbols.json": "8d7cb50ae1ba891a6a36aad7a978a75c36aad746df702143b94a039c62243c9b"
+    },
+    "corrected_report_sha256": "a46f53de02c713372b46d33cca661decc83acf7c45e2d82f1b7264eb5ecb7a5a"
+  },
+  "recovery-play-target-v3": {
+    "capture_identity": {
+      "full.log": "a4a228be499b07bfe11f89ca0b05a5513f3f751dd558c418d93c4836d2729d8f",
+      "full-CHIP.bin": "de7eaacc49bcc73264900f06ca52c8bb3243cf20eaa0269e5a3793fcf1cc2ed1",
+      "full-capture.s16le": "13d9d75626c291721ccfde3a08892e4cd959b6bedf072796dd72c306793604bd",
+      "full-screen.ppm": "7fb581fc41186d998a0b5e3245b38a0d8a9685e2129c8eca8df6f669ce1098bb",
+      "target.bin": "04ededa6ffd8556318bd4f3a7b0e19576dfe97acceaa0b2a90a86c830c1403ea",
+      "adapter.bin": "cb0ee1dbef484f0a54ad764408d1d20112af87c4f35396d33a513b3d915bce12",
+      "boot.bin": "19596d9df82b643b71cd5f33e779e128e0d3305d525b05cfabdc9bb6ab4376ca",
+      "target.adf": "efeaf598d52723f0cf4d3eadfac448d5b82e9fbbfd5309c49357ada3af51884f",
+      "build.json": "7a92704cb64a11087e2d4283f47cdff554f0534286d156dc4730accb6dc46500"
+    },
+    "capture_and_evidence": {
+      "full.log": "a4a228be499b07bfe11f89ca0b05a5513f3f751dd558c418d93c4836d2729d8f",
+      "full-CHIP.bin": "de7eaacc49bcc73264900f06ca52c8bb3243cf20eaa0269e5a3793fcf1cc2ed1",
+      "full-capture.s16le": "13d9d75626c291721ccfde3a08892e4cd959b6bedf072796dd72c306793604bd",
+      "full-screen.ppm": "7fb581fc41186d998a0b5e3245b38a0d8a9685e2129c8eca8df6f669ce1098bb",
+      "target.bin": "04ededa6ffd8556318bd4f3a7b0e19576dfe97acceaa0b2a90a86c830c1403ea",
+      "adapter.bin": "cb0ee1dbef484f0a54ad764408d1d20112af87c4f35396d33a513b3d915bce12",
+      "boot.bin": "19596d9df82b643b71cd5f33e779e128e0d3305d525b05cfabdc9bb6ab4376ca",
+      "target.adf": "efeaf598d52723f0cf4d3eadfac448d5b82e9fbbfd5309c49357ada3af51884f",
+      "build.json": "7a92704cb64a11087e2d4283f47cdff554f0534286d156dc4730accb6dc46500",
+      "play-target-verification.json": "4c5cc454876588c57432db804d9d15389a776e31b65cbd5b73a3571c13c65431",
+      "play-target-replay.json": "5a88bec4f36b44ded720c683a06b51f53d78fe342bbe5669d4dd3c0a27c16782",
+      "target.symbols.json": "36fc2b7c46dbd51760efce6835479ea24101c72f9e8637c4f107cc94b65db420"
+    },
+    "corrected_report_sha256": "549dd3e2201cc7036a5c7a1aa9fb36408159233331be678ffe2d24af09e5ce2f"
+  }
+}

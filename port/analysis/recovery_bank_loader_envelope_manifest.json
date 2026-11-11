@@ -1,0 +1,18 @@
+{
+  "scope": "Success-only helper68 canonical publication;63 continuous input frames to raw160 ABI boundary",
+  "public_allowlist": {
+    "port/src/recovery_bank_loader_envelope_dispatch.s": "635dde472e46fddef1c2c1e9620e77de4ad6d50f5104f6e0aed189c1dc03918a",
+    "port/tools/recovery_bank_loader_envelope_public.sh": "bdddf3622e817dcb40d0b3eaead98035ed23cb0ea078858d257ea097feaf10e9",
+    "port/analysis/recovery_bank_loader_envelope_report.md": "a315e163337ff3888287cc6692e1973f47f363f06d71dbeb412fb84a6c6b94fa",
+    "port/tests/recovery_bank_loader_envelope_harness.py": "2ca795b79022d0eb664d6d330bc89a9382f279a14986e83ed17b6a324236e6ac",
+    "port/tests/recovery_bank_loader_envelope_oracle.py": "6d7d1308d323945bf0f3373dd7e9aa2f0f81fdfb411c7118c459d41ec02c9af6",
+    "port/tests/recovery_bank_loader_envelope_rom.py": "7c103fd34a548c9b691a8b6dd53449ff170a4ef757087f5794d425a072c624c5",
+    "port/tests/recovery_bank_loader_envelope_status_test.py": "511e5d2e5555cb668f395b28c638bb664ffc54fd7e4ec6f5e0631ec99028d44a",
+    "port/tests/recovery_bank_loader_envelope_public.py": "8d4d83807325bc66bf682a5353ce19ec65b989082ac2ecdb5e999d7ab6d238b4"
+  },
+  "dependencies": {
+    "port/analysis/recovery_bank_loader_sfx_manifest.json": "25066d13c602dc42e2d0a1c11b0a15478aa4c11867b02423359aff1c4c006123"
+  },
+  "composite_bytes": 217344,
+  "composite_sha256": "eb215051b491c5e08c1aa0f546735b2f129099e659b19cda8e22ae1db603f755"
+}

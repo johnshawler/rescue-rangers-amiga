@@ -1,0 +1,19 @@
+{
+  "scope": "Ordinary bank3 resource-table entry139 only; decoder continuation separately qualified",
+  "public_allowlist": {
+    "port/src/recovery_bank_loader_sfx_entry.s": "8d1ca0f0794b98eedc71fdda0c6e8b4796fa9526dfea9a84d52ea9fbd4e25b66",
+    "port/src/recovery_bank_loader_sfx_dispatch.s": "e580b2382094ff72cf6398d357b7a8f69d03b9ad1dbb6b84a5a7a987996817ae",
+    "port/tools/recovery_bank_loader_sfx_public.sh": "f0333b7a989f75d0ce9224a63ec515cdf2814561e1ecc0b91a82be06931f9174",
+    "port/analysis/recovery_bank_loader_sfx_report.md": "79509407167252eac42ee8cee4ff27251688022c81e3d9270395253f161e6e10",
+    "port/tests/recovery_bank_loader_sfx_harness.py": "cb8df2ac7c97ff439934cdeb39a59dd99ebdded852e96a6076bc14c9241153f0",
+    "port/tests/recovery_bank_loader_sfx_oracle.py": "a57cfea460399308205512ae83516d99761a208a6ccd4dff96f2401f79aa419d",
+    "port/tests/recovery_bank_loader_sfx_rom.py": "e052f0340069585284b356f89fb0cf5e8704b96873eb8f6c255fea23320fe11f",
+    "port/tests/recovery_bank_loader_sfx_test.py": "61880d70a49d5a3bc7a79bdc019f91858b3490210a4894f3c961a4a94f9b66e4",
+    "port/tests/recovery_bank_loader_sfx_guards.py": "7de4b3e0c755f6219963c2b996b712523212ce418f5d477a734650a7408465d5"
+  },
+  "dependencies": {
+    "port/analysis/recovery_bank_loader_queue5_manifest.json": "1c0cde929755b3cac90d056a847ff0940f0a21d26550a8757d184dc740185cfb"
+  },
+  "composite_bytes": 217306,
+  "composite_sha256": "a2efd44d1a1a143672167d3181d4018e769c7b4ddab07f1a610aa24393e6241b"
+}
