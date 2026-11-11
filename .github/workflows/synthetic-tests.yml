@@ -29,6 +29,12 @@ jobs:
           git -C "$RUNNER_TEMP/amiga-tools" checkout 055097bba74dd1b2f764dcb90781d2017bd1d499 -- bin/linux/vasmm68k_mot
           chmod +x "$RUNNER_TEMP/amiga-tools/bin/linux/vasmm68k_mot"
           echo "VASM=$RUNNER_TEMP/amiga-tools/bin/linux/vasmm68k_mot" >> "$GITHUB_ENV"
+      - name: Public aligned-renderer source preparation
+        run: python port/tests/public_aligned_background_source_test.py
+      - name: Synthetic linked-code size contract cases
+        run: python port/tests/public_aligned_code_size_test.py
+      - name: Assembled aligned-renderer pixel, ABI and bounds checks
+        run: python port/tests/recovery_aligned_background_test.py
       - run: bash port/tools/recovery_audio_clock_public.sh
       - run: python port/tests/recovery_play_clock_compare_test.py
       - run: bash port/tools/recovery_bank_loader_queue5_public.sh

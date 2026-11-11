@@ -11,6 +11,14 @@ native game-code translation and Amiga rendering, not a general NES interpreter.
 
 ## Current recovery checkpoint
 
+The [aligned synthetic-source checkpoint](docs/public-aligned-synthetic-checkpoint-2026-11-11.md)
+adds a fine-scroll-zero renderer and pure source-preparation helper. Public tests
+cover 1,084 assembled pixel/ABI calls, compiled synthetic integration and a strict
+linked-code size bound. The Python/assembler checks run in CI; GCC 14 integration
+remains a separate local check. This addition reports no private-run findings and
+makes no runtime speed or playability qualification. Historical content below is
+preserved rather than sanitized.
+
 The additive [public source checkpoint](docs/public-source-checkpoint-2026-11-11.md)
 contains bounded noise-planner wrappers, compiled synthetic adapter/runtime/layout
 checks and a separate public-source consistency/restore contract. Its new manifest

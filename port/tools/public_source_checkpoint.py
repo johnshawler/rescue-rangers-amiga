@@ -12,7 +12,7 @@ import tempfile
 
 MANIFEST = 'port/analysis/public_source_checkpoint.json'
 INVENTORY = 'port/analysis/public_source_inventory.txt'
-INVENTORY_SHA256 = '065d5577000d365a6b4cb5034b81db561484a3f844aaf9074e502734613f15cd'
+INVENTORY_SHA256 = '2302a4515d7208b59247090d7f10c9c07b6dde134c854eab0af358688e512c3d'
 SCHEMA = 'rescue-public-source-v1'
 
 

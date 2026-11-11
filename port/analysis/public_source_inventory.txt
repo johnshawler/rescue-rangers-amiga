@@ -5,6 +5,7 @@ docs/RECOVERY.md
 docs/RESTORE_CHECKPOINT.md
 docs/native-gameplay-checkpoint-2026-11-11.md
 docs/native-input-continuation-2026-11-11.md
+docs/public-aligned-synthetic-checkpoint-2026-11-11.md
 docs/public-source-checkpoint-2026-11-11.md
 docs/recovery-clock-correction-2026-11-11.md
 docs/recovery-progress-2026-11-11.md
@@ -306,6 +307,7 @@ port/src/native_rescue_title_queue.s
 port/src/native_sprite_blitter.s
 port/src/native_sprite_emptyrow_experiment.s
 port/src/recovery_active_nmi_return.s
+port/src/recovery_aligned_background_draw.s
 port/src/recovery_audio_reset_command.s
 port/src/recovery_background_single_read.s
 port/src/recovery_bank_loader_action_dispatch.s
@@ -481,8 +483,11 @@ port/src/recovery_zx_probe.s
 port/src/title.s
 port/tests/experimental_direct_paula_capture.py
 port/tests/experimental_direct_paula_test.py
+port/tests/public_aligned_background_source_test.py
+port/tests/public_aligned_code_size_test.py
 port/tests/public_source_checkpoint_test.py
 port/tests/recovery_active_return_harness.py
+port/tests/recovery_aligned_background_test.py
 port/tests/recovery_audio_clock_classifier.py
 port/tests/recovery_audio_clock_model.py
 port/tests/recovery_audio_clock_test.py
@@ -970,6 +975,8 @@ port/tools/experimental_direct_paula_build.py
 port/tools/experimental_direct_paula_profile.py
 port/tools/experimental_direct_paula_run.sh
 port/tools/experimental_paula_headless.c
+port/tools/public_aligned_background_check.sh
+port/tools/public_aligned_background_source.py
 port/tools/public_source_checkpoint.py
 port/tools/recovery_audio_clock_public.sh
 port/tools/recovery_background_build.py

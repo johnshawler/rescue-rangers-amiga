@@ -3,8 +3,8 @@
   "files": [
     {
       "path": ".github/workflows/synthetic-tests.yml",
-      "size": 2806,
-      "sha256": "bc2188242025ca5c167876236cbca582255504ea21df27e372923d02be3c9e97",
+      "size": 3192,
+      "sha256": "addc28a96dfa0b55039be0229b981c9bec590fa3206f8aaa5813d023b255ac5d",
       "executable": false
     },
     {
@@ -15,8 +15,8 @@
     },
     {
       "path": "README.md",
-      "size": 35094,
-      "sha256": "3bb8b91d6e6119a4aa272713ede34351e5f074f7ca0567dc06e2fdcd9b979c87",
+      "size": 35636,
+      "sha256": "9692a1791d1954e4d9a3427eb0ef60c20117f495b942862abc44e33fb2bcafa7",
       "executable": false
     },
     {
@@ -41,6 +41,12 @@
       "path": "docs/native-input-continuation-2026-11-11.md",
       "size": 2339,
       "sha256": "4dcba97c7bb3f95ea2e38a5c1dd7c0776066cd04c101e03fcbe3039016d39524",
+      "executable": false
+    },
+    {
+      "path": "docs/public-aligned-synthetic-checkpoint-2026-11-11.md",
+      "size": 5373,
+      "sha256": "30d44238ec997367aee739a1a4b4213b0dbefb653bce21a7d4f8def1a65aee4c",
       "executable": false
     },
     {
@@ -117,8 +123,8 @@
     },
     {
       "path": "port/analysis/public_source_inventory.txt",
-      "size": 51177,
-      "sha256": "065d5577000d365a6b4cb5034b81db561484a3f844aaf9074e502734613f15cd",
+      "size": 51512,
+      "sha256": "2302a4515d7208b59247090d7f10c9c07b6dde134c854eab0af358688e512c3d",
       "executable": false
     },
     {
@@ -1850,6 +1856,12 @@
       "executable": false
     },
     {
+      "path": "port/src/recovery_aligned_background_draw.s",
+      "size": 4544,
+      "sha256": "67e79791b36606fce8b883fd5a3184aafee84d8893f19b45d97ccc59db6673b6",
+      "executable": false
+    },
+    {
       "path": "port/src/recovery_audio_reset_command.s",
       "size": 3599,
       "sha256": "9c5148ecd1108fc92b604bdca57931e0217554c01294c5d5a8044a33450f5080",
@@ -2900,6 +2912,18 @@
       "executable": false
     },
     {
+      "path": "port/tests/public_aligned_background_source_test.py",
+      "size": 2952,
+      "sha256": "dbc57a0a8a6a7a9201f0db8f53ac2618dd4cefedc301c361eab0a694b52afc03",
+      "executable": false
+    },
+    {
+      "path": "port/tests/public_aligned_code_size_test.py",
+      "size": 7652,
+      "sha256": "28c0a803ef8f7ba99bacc8e5018e5b20178a8fd27f7948fc132bced2d621ac9d",
+      "executable": false
+    },
+    {
       "path": "port/tests/public_source_checkpoint_test.py",
       "size": 12702,
       "sha256": "87ca13051947b94b07a27ef5f6cb904f9e4cfb98d877785d39e0e8ad56958808",
@@ -2909,6 +2933,12 @@
       "path": "port/tests/recovery_active_return_harness.py",
       "size": 1339,
       "sha256": "e23d8bca3f24a01c021a0e13c73327c1d84fc7b1a408cd41b1fad947a24c76d1",
+      "executable": false
+    },
+    {
+      "path": "port/tests/recovery_aligned_background_test.py",
+      "size": 702,
+      "sha256": "0801f3e68c4d68414e3769d5ff88fbe431af272b3af09e4ba7260814a3e8ae3f",
       "executable": false
     },
     {
@@ -5834,9 +5864,21 @@
       "executable": false
     },
     {
+      "path": "port/tools/public_aligned_background_check.sh",
+      "size": 6235,
+      "sha256": "354ba061ca5220e7f038727eccbbb9d95c956ac7df24f03908839fca564d2047",
+      "executable": false
+    },
+    {
+      "path": "port/tools/public_aligned_background_source.py",
+      "size": 1024,
+      "sha256": "43ceba411dc8a54efab1c9b7cbac55ee9da23d1293c36630e2fda2e30f2f8718",
+      "executable": false
+    },
+    {
       "path": "port/tools/public_source_checkpoint.py",
       "size": 8036,
-      "sha256": "3e057f6c1738a27884562439bbf913413b04536136294f307b9b5bb54d05f1cc",
+      "sha256": "40374aedfb4dabfabe4bf2a3dc33bca371e99f32d1cfd00677c9d71f03b7e1d0",
       "executable": false
     },
     {
