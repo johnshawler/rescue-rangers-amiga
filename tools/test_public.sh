@@ -60,3 +60,4 @@ PY
 bash "$ROOT/tools/test_resident_startup_public.sh"
 bash "$ROOT/tools/test_title_chr_public.sh"
 bash "$ROOT/tools/test_native_title_public.sh"
+bash "$ROOT/tools/test_scene_sound_public.sh"

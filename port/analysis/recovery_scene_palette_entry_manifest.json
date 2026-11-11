@@ -1,0 +1,36 @@
+{
+  "scope": "Static C274 entry and continuous genuine reset/default-confirm scene fade to F3CF. Host M68EC020 only.",
+  "files": [
+    {
+      "path": "port/src/recovery_scene_palette_entry.s",
+      "bytes": 2206,
+      "sha256": "b3ecc0bb4344f7201c449e6fa01f8f7ca1dcb4d41279bebb4bc50e83bca3bfd7"
+    },
+    {
+      "path": "port/tests/recovery_test_scene_palette_entry.py",
+      "bytes": 2486,
+      "sha256": "36a3035c484d0b3506ac5cd83b8ff32d84f85cbb702c8adad05f6cb0eac1da17"
+    },
+    {
+      "path": "port/tests/recovery_test_resident_scene_palette.py",
+      "bytes": 27526,
+      "sha256": "6555af60dc7842d8e56c01f44081ccd633b0fc2c25722bb3d465ef06903d2a46"
+    },
+    {
+      "path": "port/analysis/recovery_scene_palette_entry.md",
+      "bytes": 5228,
+      "sha256": "f40d3e7b14761f815a70e087a076c9077464a867adb7407b698d10ffbc5e6362"
+    }
+  ],
+  "entry_binary": {
+    "bytes": 238,
+    "sha256": "0b35f83dbcef5defd5d50c3212a4dac9eb740be37b2a027b74ccf9c8e55e35d9"
+  },
+  "composite": {
+    "bytes": 26986,
+    "sha256": "29dd307aeb83a5c618239cc925a02f1b3d88e852686f13fc23d1f32201c33196"
+  },
+  "frozen_predecessor_manifest_sha256": "8f66687ab68453ac3372d1dce77d973263bf5d2e4d3690329abf6835b1baa216",
+  "unchanged_preexisting_source_test_analysis_files": 361,
+  "private_rom_sha256": "051ea9bda7e1ae771f4c196e5bd4b35ec8db2b305dd3b1d26ad250f379d06411"
+}

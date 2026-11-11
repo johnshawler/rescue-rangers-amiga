@@ -1,0 +1,45 @@
+{
+  "scope": "Host-only native SFX27 header initialization, authentic nested returns and next tick entry; stop before8224.",
+  "files": [
+    {
+      "path": "port/src/recovery_sfx_header_initialize.s",
+      "bytes": 1818,
+      "sha256": "865591674a5f0f6e99c5d6f9ec7427f380588a0b9dc6630f44b6cfc3a7e65911"
+    },
+    {
+      "path": "port/src/recovery_sfx_initialized_tail.s",
+      "bytes": 1276,
+      "sha256": "c904de178646ff2dfc02a9140a379bc244e1f421f9b0c6d5c2e061112402247e"
+    },
+    {
+      "path": "port/tests/recovery_test_sfx_header_initialize.py",
+      "bytes": 7356,
+      "sha256": "adaae1a8f10178e5c65f84134170d95740ff417ecb9527f8fb145ef8e774476c"
+    },
+    {
+      "path": "port/tests/recovery_test_sfx_initialized_tail.py",
+      "bytes": 6342,
+      "sha256": "c5e407a3914a8d43588791d8058ebf01bf6596810c98dc09105e62edcc196fe6"
+    },
+    {
+      "path": "port/tests/recovery_test_resident_sfx_header.py",
+      "bytes": 28685,
+      "sha256": "193fc24284e60a04a15f40dd98d8176e441e3079b56a699f6a42fb63169bca8a"
+    },
+    {
+      "path": "port/analysis/recovery_sfx_header_initialize.md",
+      "bytes": 6812,
+      "sha256": "ce526524024991036fcfc08c67fecc95f7c6d0cdda0da0a0904601122d0c1f31"
+    }
+  ],
+  "predecessor_manifest": {
+    "path": "port/analysis/recovery_pending_sfx27_dispatch_manifest.json",
+    "bytes": 2107,
+    "sha256": "1cbabbc4b0c7cc85a5befcd885403fec098c016567970de5150624470e14c227"
+  },
+  "composite": {
+    "bytes": 27542,
+    "sha256": "077099b2333b6d7fd264e00d0ddc8afc4d6b5830b3222583551384bff5e74de2"
+  },
+  "boundary": "8224FF0304A4F4A7: before LDA D3; SFX stream remains untranslated."
+}

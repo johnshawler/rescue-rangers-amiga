@@ -1,0 +1,31 @@
+{
+  "scope": "Static post-confirmation C5F8/9000/F3C9 entry, continuous reset to C274; host M68EC020 only.",
+  "files": [
+    {
+      "path": "port/src/recovery_post_confirmation_entry.s",
+      "bytes": 1842,
+      "sha256": "432a67413d24cab4f104a4aad8df9f28dcbacd23d5e96f71e6408f59cab2b6a7"
+    },
+    {
+      "path": "port/tests/recovery_test_post_confirmation_entry.py",
+      "bytes": 2712,
+      "sha256": "df00485b62044659a514da0c16391795e6630ef1eb3d7a0e8d755336daa1a484"
+    },
+    {
+      "path": "port/tests/recovery_test_resident_post_confirmation.py",
+      "bytes": 26634,
+      "sha256": "255b22e5defb99f04543b0e17fc9e710997943717fbe83f11d76e3ce534a5f6f"
+    },
+    {
+      "path": "port/analysis/recovery_post_confirmation_entry.md",
+      "bytes": 5237,
+      "sha256": "517f084fa9b9de07dd0be85aa2542d8aa9855f0dfa2ce8c5f9b4317e0fe0b279"
+    }
+  ],
+  "composite": {
+    "bytes": 26744,
+    "sha256": "0d5a8b0c8c90024b0f8d28955b56eac1fc6a3575ec0dda7fb834793323733218"
+  },
+  "frozen_character_selection_manifest_sha256": "924433fb5afa4b76213bb7639036ce26375341f0e0397f3e209c3753e836e28c",
+  "private_rom_sha256": "051ea9bda7e1ae771f4c196e5bd4b35ec8db2b305dd3b1d26ad250f379d06411"
+}

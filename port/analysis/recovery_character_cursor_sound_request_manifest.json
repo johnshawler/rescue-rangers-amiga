@@ -1,0 +1,30 @@
+{
+  "scope": "Native cursor and sound request; stop at genuine nonempty C0BF. Host-only.",
+  "files": [
+    {
+      "path": "port/src/recovery_character_cursor_sound_request.s",
+      "bytes": 2373,
+      "sha256": "600b430d8c2521ddcfaf32cc6792139216f8a882d569c551e3e2c987611b2aa7"
+    },
+    {
+      "path": "port/tests/recovery_test_character_cursor_sound_request.py",
+      "bytes": 6307,
+      "sha256": "afc16666927b61fdc8010677d6d128e2defb6264902fe5d54e33663edb3f8ed0"
+    },
+    {
+      "path": "port/tests/recovery_test_resident_character_cursor_sound.py",
+      "bytes": 26712,
+      "sha256": "2a9a0d43d46137f645d79260249f8099afcfc4447051a9ec24fb2a6dfc885ae0"
+    },
+    {
+      "path": "port/analysis/recovery_character_cursor_sound_request.md",
+      "bytes": 4281,
+      "sha256": "c4cef55040bf5609eb1bb21094e5fd5b874a2b965dac0346ecdb281acd4fd494"
+    }
+  ],
+  "predecessor_manifest_sha256": "924433fb5afa4b76213bb7639036ce26375341f0e0397f3e209c3753e836e28c",
+  "composite": {
+    "bytes": 26800,
+    "sha256": "e742111ae4dc5ec05cc3c821038ff450aefa80b8453ef5817b159e809960fc21"
+  }
+}

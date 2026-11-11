@@ -11,6 +11,13 @@ native game-code translation and Amiga rendering, not a general NES interpreter.
 
 ## Current verified source
 
+The new [stock character-confirmation diagnostic](port/analysis/recovery_character_confirmation_target.md)
+executes 1,196 native calls on the emulated PAL 68020/AGA A1200. Five complete
+Amiga resets collectively verify every full-RAM boundary, with zero Fast RAM and
+a maximum 1,299,456-byte Chip allocation. Its declared original-code start is
+FE24 after hardware warmup. It uses fixed diagnostic scheduling and scripted
+controller release/repress, not live controls, displayed menus or game-speed evidence.
+
 The separate [fixture-free native startup display](port/analysis/recovery_startup_display_native.md)
 now draws a frozen title from the real native startup's video state on the
 emulated stock A1200. Original-ROM device replay matches every framebuffer byte
@@ -23,16 +30,18 @@ saves 6.39% against its identically instrumented control, but still takes about
 real-time game result. Its allocation remains 1,283,072 bytes of Chip RAM with
 zero Fast RAM. The original display and delivered Z/X disk remain unchanged.
 
-New host-native comparisons separately cover the [title/music loop](port/analysis/recovery_music_command13_loop.md)
-through 14,584 helper calls and 473 logical NMIs, and genuine input-driven
-[character confirmation](port/analysis/recovery_character_selection_dispatch.md)
-through the original C5F8 return. Those longer paths are not yet stock-target
-gameplay. The next boundaries are music command0F, post-menu initialization at
-C5F8, and the alternate-character resource/SFX path at A07B.
-Run tools/test_native_title_public.sh for the new ROM-free contracts, or
-validate_native_title.sh for the private host and native-display checks.
+New host-native comparisons separately cover the complete [title/music timeout](port/analysis/recovery_music_command0f_loop.md):
+900 countdowns, 28,818 calls and 935 logical NMIs. Default character confirmation
+continues through [scene fading and sprite hiding](port/analysis/recovery_scene_sprite_hide.md)
+to F3D5. Genuine Left/Right input reaches [SFX27 stream initialization](port/analysis/recovery_sfx_header_initialize.md)
+at 8224, without skipping the queued sound. These longer paths remain host proofs.
+The next untranslated boundaries are rendering disable at F3D5 and SFX stream
+handling at 8224; alternate-character confirmation and live gameplay are unfinished.
+Run tools/test_native_title_public.sh and tools/test_scene_sound_public.sh for
+ROM-free contracts. The corresponding private extensions are validate_native_title.sh
+and validate_scene_sound.sh.
 
-The newest isolated [resident startup diagnostic](port/analysis/recovery_resident_chr_fade_target.md)
+An earlier isolated [resident startup diagnostic](port/analysis/recovery_resident_chr_fade_target.md)
 reaches $C5D1 through 1,024 native helper calls and 35 logical NMIs. Four
 independent full-reset stock A1200 runs collectively capture every complete RAM
 boundary while each checks every context and journal. Maximum diagnostic

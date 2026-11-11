@@ -1,0 +1,72 @@
+{
+  "scope": "Host-only native nonempty dequeue and bounded SFX27 table dispatch; stop before 810D header read.",
+  "files": [
+    {
+      "path": "port/src/recovery_sfx27_table_dispatch.s",
+      "bytes": 1343,
+      "sha256": "a3678ef164a3a2d0486c001fcc25fba9cfe2eab899369c3c12eb888da45df6c7"
+    },
+    {
+      "path": "port/tests/recovery_test_pending_sfx27_dispatch.py",
+      "bytes": 7721,
+      "sha256": "4fb9a9c7e25c28930f3e3dfdddc7151c9544c8856e4da8fc50be9ad5dd032686"
+    },
+    {
+      "path": "port/tests/recovery_test_resident_pending_sfx27.py",
+      "bytes": 27630,
+      "sha256": "9bcb4c1a8361dbb8b313d42d62a87eb4f808273adeb439c9045372fe60425339"
+    },
+    {
+      "path": "port/analysis/recovery_pending_sfx27_dispatch.md",
+      "bytes": 5560,
+      "sha256": "a38cea2f7165a8d893acbc2bf6e13f9b9ffc7b30d63a394a4e7a6975b597a667"
+    }
+  ],
+  "reused_unchanged": [
+    {
+      "path": "port/src/recovery_nmi_audio_entry.s",
+      "bytes": 1897,
+      "sha256": "d0c1c3da60f020448d9e12bdf31798c8a988eba31efe31e458c5a60328714a83"
+    }
+  ],
+  "predecessor_manifest": {
+    "path": "port/analysis/recovery_character_cursor_sound_request_manifest.json",
+    "bytes": 1097,
+    "sha256": "d7c931e5c8de4dae091af5d3f14fa5088020dbd3ade917985fcbde2ec26401b6"
+  },
+  "composite": {
+    "bytes": 26980,
+    "sha256": "4530c81299c7a6c2bc4799fdcada9a50b2ddf7b11568f2b571daec1d95871706"
+  },
+  "tests": {
+    "declarative_cases": 8192,
+    "original_rom_cases": 8192,
+    "inert_rejections": 131869,
+    "continuous_inputs": [
+      0,
+      16,
+      1,
+      2
+    ],
+    "frozen_continuous_inputs": [
+      0,
+      16,
+      1,
+      2
+    ],
+    "frozen_cursor_cases_each": 6144,
+    "frozen_cursor_rejects": 65533,
+    "frozen_audio_entry_cases": 2296,
+    "frozen_reset_nmi_cases": 256,
+    "frozen_audio_entry_rejects": 68342
+  },
+  "direction_boundary": {
+    "context": "810DFF4E0026F4A7",
+    "native_calls": 1203,
+    "logical_nmis": 41,
+    "completed_audio_returns": 38,
+    "queue": "03038888888888888888",
+    "resource_pointer": "AF5B",
+    "next_instruction": "810D LDA (C1),Y"
+  }
+}
