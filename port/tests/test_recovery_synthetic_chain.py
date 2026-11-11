@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Public contract regression for ten native helpers. No ROM or fixtures.
+"""Public contract regression for eleven native helpers. No ROM or fixtures.
 
 Private original-ROM differential tests establish semantic equivalence; this
 synthetic contract test makes basic chain regressions visible in public CI.
@@ -14,7 +14,8 @@ import machine68k
 P = Path(__file__).resolve().parents[1]
 NAMES = ('recovery_reset_ram','recovery_reset_mapper','recovery_reset_video',
          'recovery_reset_dispatch','recovery_first_yield','recovery_first_nmi_prefix',
-         'recovery_nmi_audio_entry','recovery_audio_reset_command','recovery_silent_tick_rti','recovery_scheduler_resume')
+         'recovery_nmi_audio_entry','recovery_audio_reset_command','recovery_silent_tick_rti','recovery_scheduler_resume',
+         'recovery_resumed_task_setup')
 RAM,CTX,JOURNAL,STACK,STOP = 0x10000,0x12000,0x13000,0x1f0000,0x800
 
 def main():
@@ -59,12 +60,12 @@ def main():
         return struct.pack('>HBB',address,value,kind)
     contexts = ('fe431eff0025fda7','fe6700ff0026fda7','fe7cc0000026fda7',
                 'c574c50008a5ffa7','fe8d00bb00a4bba7','c0bf00100026b4a7',
-                '8003f00100a5b2a7','c0f300ff0c26b4a7','fe8d00bb00a4bba7','c584bfbf08a4bfa7')
-    for index in range(10):
+                '8003f00100a5b2a7','c0f300ff0c26b4a7','fe8d00bb00a4bba7','c584bfbf08a4bfa7','fe8d00b800a4b8a7')
+    for index in range(11):
         journal_before = bytes(mem.r_block(JOURNAL,8754))
         call(index,1)
         assert bytes(mem.r_block(CTX,8)) == bytes.fromhex(contexts[index])
-        written_size = (0,82,8754,0,6,298,22,30,22,74)[index]
+        written_size = (0,82,8754,0,6,298,22,30,22,74,0)[index]
         assert bytes(mem.r_block(JOURNAL+written_size,8754-written_size)) == journal_before[written_size:]
         if index == 1:
             expected = struct.pack('>H',20)
@@ -113,18 +114,20 @@ def main():
     # Explicit reset/startup contract, not a model that replays native opcodes.
     expected_ram = bytearray(2048)
     expected_ram[0xdc:0xe4] = bytes([0x88])*8
+    expected_ram[0x300:0x320] = bytes([0x0f])*32
     expected_ram[0x200:0x300:4] = bytes([0xf8])*64
-    values = {0x00:0,0x01:0,0x80:2,0x82:0xbb,0x83:0xc5,0x90:0,0x92:1,
-              0x93:1,0x94:0xc5,0xc0:4,0xc1:0x94,0xc2:0x81,0xd9:0xf0,0xda:1,0xdb:1,
+    values = {0x00:0xbf,0x01:7,0x0d:0x10,0x0e:4,0x0f:0x10,0x18:0xff,
+              0x80:1,0x81:1,0x82:0xb8,0x83:0xc5,0x90:0,0x92:1,
+              0x93:1,0x94:0xc5,0xc0:4,0xc1:0x94,0xc2:0x81,0xd9:7,0xda:2,0xdb:1,0xdd:7,0xe4:0x88,0xf8:2,
               0xf1:6,0xf3:0x10,0xf4:6,0xfe:0x1e,0xff:0x90,
               0x1fd:0xfe,0x1fc:0x88,0x1fb:0xfe,0x1fa:0xd7,
-              0x1bf:0xc5,0x1be:0x83,0x1bd:0xbf,0x1bc:8,0x1bb:0xfe,0x1ba:0xcf,
-              0x1b9:0xa4,0x1b8:0xb4,0x1b6:0xbb,0x1b4:0xc0,0x1b3:0xf8,
+              0x1bf:0xc5,0x1be:0x93,0x1bd:4,0x1bc:0xc2,0x1bb:0xa7,0x1ba:0x10,
+              0x1b9:0xff,0x1b8:0xff,0x1b7:0x0e,0x1b6:0xbb,0x1b4:0xc0,0x1b3:0xf8,
               0x1b0:0x80,0x1af:0x84,0x1ad:0x81,0x1ac:0xcc}
     for address,value in values.items():
         expected_ram[address] = value
     assert bytes(mem.r_block(RAM,2048)) == expected_ram
-    print('PASS public synthetic ten-helper chain: full RAM/canonical RTI context, ordered journal/DMA/APU contents, guards, ABI and ten inert rejections; no ROM/firmware.')
+    print('PASS public synthetic eleven-helper chain: full RAM/canonical RTI context, ordered journal/DMA/APU contents, guards, ABI and eleven inert rejections; no ROM/firmware.')
     print('Contract regression only; private original-ROM and target tests remain required.')
 
 if __name__ == '__main__':

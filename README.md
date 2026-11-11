@@ -48,7 +48,12 @@ native game-code translation and Amiga rendering, not a general NES interpreter.
 - An opt-in [scheduler-resume probe](port/analysis/recovery_scheduler_resume_target.md)
   continues through task selection and complete standard-controller polling,
   preserving all eighteen serial-input records and the original task stack.
-  Ten helpers now reach $C584; the resumed task remains untranslated.
+  Ten helpers reach $C584 before the resumed task.
+- An opt-in [resumed-task setup probe](port/analysis/recovery_resumed_task_setup_target.md)
+  adds native sound-request enqueue and palette preparation through the next
+  nested scheduler yield. Eleven helpers preserve the pending palette and audio
+  requests, which still need later interrupt support. This slice guards D=0 to
+  avoid generic py65 decimal arithmetic differing from the NES CPU.
 - Captured initial title state remains a private development fixture. New work
   will replace that dependency with verified original reset/resource logic.
 
@@ -69,7 +74,7 @@ See [recovery provenance](docs/RECOVERY.md) and the validation summary. The new 
 
 Install Python dependencies from `requirements-dev.txt`. Supply vasm via the
 `VASM` environment variable. `bash tools/test_public.sh` runs the two synthetic
-assembled-code renderer suites, restore-safety tests, a synthetic ten-helper
+assembled-code renderer suites, restore-safety tests, a synthetic eleven-helper
 contract regression and reset-probe assembly
 without a game ROM or firmware.
 

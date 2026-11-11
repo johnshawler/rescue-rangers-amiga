@@ -120,6 +120,30 @@
         bne.w   probe_fail
         addq.l  #1,12(a6)
         endc
+        ifd RESUMED_TASK_SETUP
+; Independently check the new helper's preserved native register ABI.
+        movem.l d1-d7/a0-a6,-(sp)
+        bsr.w   recovery_resumed_task_setup
+        cmpi.l  #1,d0
+        bne.w   probe_fail
+        movem.l d1-d7/a0-a6,-(sp)
+        move.l  sp,a3
+        lea     56(sp),a4
+        moveq   #13,d0
+probe_setup_abi:
+        move.l  (a3)+,d1
+        cmp.l   (a4)+,d1
+        bne.w   probe_setup_abi_fail
+        dbra    d0,probe_setup_abi
+        movem.l (sp)+,d1-d7/a0-a6
+        lea     56(sp),sp
+        addq.l  #1,12(a6)
+        bra.s   probe_setup_abi_done
+probe_setup_abi_fail:
+        moveq   #-2,d0
+        bra.w   probe_fail
+probe_setup_abi_done:
+        endc
         move.l  sp,40(a6)
         clr.l   8(a6)
         move.w  #$0070,$180(a5)
@@ -156,8 +180,15 @@ probe_fail:
         include "recovery_scheduler_resume.s"
         endc
 
+        ifd RESUMED_TASK_SETUP
+        include "recovery_resumed_task_setup.s"
+        endc
+
         even
 probe_report:
+        ifd RESUMED_TASK_SETUP
+        dc.b    'CDRRSET1'
+        else
         ifd SCHEDULER_RESUME
         dc.b    'CDRRRES1'
         else
@@ -174,6 +205,7 @@ probe_report:
         dc.b    'CDRRYLD1'
         else
         dc.b    'CDRRST01'
+        endc
         endc
         endc
         endc
