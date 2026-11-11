@@ -1,0 +1,1984 @@
+{
+  "status": "PASS",
+  "public": {
+    "status": "PASS",
+    "scope": "PUBLIC ROM-free host M68EC020",
+    "successes": 12288,
+    "audio_operations": 6144,
+    "audio_by_pc": {
+      "49343": 1024,
+      "49398": 1024,
+      "32901": 1024,
+      "33652": 1024,
+      "34482": 1024,
+      "33663": 1024
+    },
+    "scheduler_resumes": 2048,
+    "fade_continuations": 2048,
+    "live_frame_yields": 2048,
+    "inert_rejections": 143863,
+    "code_bytes": 18952,
+    "code_sha256": "18229592a497e26c19c57b274c4d11072bcbb293dad9e18f4b4da1e72f4772e4"
+  },
+  "private": {
+    "status": "PASS",
+    "scope": "PRIVATE original-ROM, host M68EC020",
+    "code_bytes": 18952,
+    "code_sha256": "18229592a497e26c19c57b274c4d11072bcbb293dad9e18f4b4da1e72f4772e4",
+    "cases": [
+      {
+        "pads": [
+          0,
+          0
+        ],
+        "resume_pads": [
+          0,
+          0
+        ],
+        "delayed_polls": 0,
+        "waits": 11,
+        "advanced_calls": 292,
+        "logical_NMIs": 11,
+        "original_instructions": 25846,
+        "APU_writes": 40,
+        "inert_rejections": 3008,
+        "final_context": "83a0032b00a4aba7",
+        "helper_completions": {
+          "1": 1,
+          "2": 1,
+          "3": 1,
+          "4": 1,
+          "5": 1,
+          "6": 8,
+          "7": 2,
+          "0": 1,
+          "8": 1,
+          "9": 1,
+          "10": 1,
+          "11": 3,
+          "12": 1,
+          "13": 1,
+          "15": 19,
+          "14": 23,
+          "16": 3,
+          "25": 53,
+          "17": 1,
+          "18": 1,
+          "20": 9,
+          "21": 9,
+          "22": 9,
+          "23": 9,
+          "24": 9,
+          "26": 41,
+          "27": 41,
+          "28": 41
+        },
+        "new_boundaries": [
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50310ff25bca7",
+            "instructions": 5
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 6,
+            "context": "c0bf00100026b1a7",
+            "instructions": 86
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50210ff25bca7",
+            "instructions": 5
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50110ff25bca7",
+            "instructions": 5
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50410ff24bca7",
+            "instructions": 401
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50310ff25bca7",
+            "instructions": 5
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50210ff25bca7",
+            "instructions": 5
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50110ff25bca7",
+            "instructions": 5
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50410ff24bca7",
+            "instructions": 401
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50310ff25bca7",
+            "instructions": 5
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          }
+        ],
+        "final_mapper": [
+          30,
+          0,
+          16,
+          3
+        ],
+        "next_original_boundary": "0x839d",
+        "next_original_instructions": 26
+      },
+      {
+        "pads": [
+          0,
+          0
+        ],
+        "resume_pads": [
+          0,
+          0
+        ],
+        "delayed_polls": 13,
+        "waits": 154,
+        "advanced_calls": 292,
+        "logical_NMIs": 11,
+        "original_instructions": 25846,
+        "APU_writes": 40,
+        "inert_rejections": 3008,
+        "final_context": "83a0032b00a4aba7",
+        "helper_completions": {
+          "1": 1,
+          "2": 1,
+          "3": 1,
+          "4": 1,
+          "5": 1,
+          "6": 8,
+          "7": 2,
+          "0": 1,
+          "8": 1,
+          "9": 1,
+          "10": 1,
+          "11": 3,
+          "12": 1,
+          "13": 1,
+          "15": 19,
+          "14": 23,
+          "16": 3,
+          "25": 53,
+          "17": 1,
+          "18": 1,
+          "20": 9,
+          "21": 9,
+          "22": 9,
+          "23": 9,
+          "24": 9,
+          "26": 41,
+          "27": 41,
+          "28": 41
+        },
+        "new_boundaries": [
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50310ff25bca7",
+            "instructions": 5
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 6,
+            "context": "c0bf00100026b1a7",
+            "instructions": 86
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50210ff25bca7",
+            "instructions": 5
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50110ff25bca7",
+            "instructions": 5
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50410ff24bca7",
+            "instructions": 401
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50310ff25bca7",
+            "instructions": 5
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50210ff25bca7",
+            "instructions": 5
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50110ff25bca7",
+            "instructions": 5
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50410ff24bca7",
+            "instructions": 401
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50310ff25bca7",
+            "instructions": 5
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          }
+        ],
+        "final_mapper": [
+          30,
+          0,
+          16,
+          3
+        ],
+        "next_original_boundary": "0x839d",
+        "next_original_instructions": 26
+      },
+      {
+        "pads": [
+          16,
+          0
+        ],
+        "resume_pads": [
+          0,
+          0
+        ],
+        "delayed_polls": 7,
+        "waits": 88,
+        "advanced_calls": 292,
+        "logical_NMIs": 11,
+        "original_instructions": 25846,
+        "APU_writes": 40,
+        "inert_rejections": 3008,
+        "final_context": "83a0032b00a4aba7",
+        "helper_completions": {
+          "1": 1,
+          "2": 1,
+          "3": 1,
+          "4": 1,
+          "5": 1,
+          "6": 8,
+          "7": 2,
+          "0": 1,
+          "8": 1,
+          "9": 1,
+          "10": 1,
+          "11": 3,
+          "12": 1,
+          "13": 1,
+          "15": 19,
+          "14": 23,
+          "16": 3,
+          "25": 53,
+          "17": 1,
+          "18": 1,
+          "20": 9,
+          "21": 9,
+          "22": 9,
+          "23": 9,
+          "24": 9,
+          "26": 41,
+          "27": 41,
+          "28": 41
+        },
+        "new_boundaries": [
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50310ff25bca7",
+            "instructions": 5
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 6,
+            "context": "c0bf00100026b1a7",
+            "instructions": 86
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50210ff25bca7",
+            "instructions": 5
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50110ff25bca7",
+            "instructions": 5
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50410ff24bca7",
+            "instructions": 401
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50310ff25bca7",
+            "instructions": 5
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50210ff25bca7",
+            "instructions": 5
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50110ff25bca7",
+            "instructions": 5
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50410ff24bca7",
+            "instructions": 401
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50310ff25bca7",
+            "instructions": 5
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          }
+        ],
+        "final_mapper": [
+          30,
+          0,
+          16,
+          3
+        ],
+        "next_original_boundary": "0x839d",
+        "next_original_instructions": 26
+      },
+      {
+        "pads": [
+          1,
+          0
+        ],
+        "resume_pads": [
+          2,
+          0
+        ],
+        "delayed_polls": 2,
+        "waits": 33,
+        "advanced_calls": 292,
+        "logical_NMIs": 11,
+        "original_instructions": 25846,
+        "APU_writes": 40,
+        "inert_rejections": 3008,
+        "final_context": "83a0032b00a4aba7",
+        "helper_completions": {
+          "1": 1,
+          "2": 1,
+          "3": 1,
+          "4": 1,
+          "5": 1,
+          "6": 8,
+          "7": 2,
+          "0": 1,
+          "8": 1,
+          "9": 1,
+          "10": 1,
+          "11": 3,
+          "12": 1,
+          "13": 1,
+          "15": 19,
+          "14": 23,
+          "16": 3,
+          "25": 53,
+          "17": 1,
+          "18": 1,
+          "20": 9,
+          "21": 9,
+          "22": 9,
+          "23": 9,
+          "24": 9,
+          "26": 41,
+          "27": 41,
+          "28": 41
+        },
+        "new_boundaries": [
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50310ff25bca7",
+            "instructions": 5
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 6,
+            "context": "c0bf00100026b1a7",
+            "instructions": 86
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50210ff25bca7",
+            "instructions": 5
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50110ff25bca7",
+            "instructions": 5
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50410ff24bca7",
+            "instructions": 401
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50310ff25bca7",
+            "instructions": 5
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50210ff25bca7",
+            "instructions": 5
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50110ff25bca7",
+            "instructions": 5
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50410ff24bca7",
+            "instructions": 401
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50310ff25bca7",
+            "instructions": 5
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          }
+        ],
+        "final_mapper": [
+          30,
+          0,
+          16,
+          3
+        ],
+        "next_original_boundary": "0x839d",
+        "next_original_instructions": 26
+      },
+      {
+        "pads": [
+          2,
+          0
+        ],
+        "resume_pads": [
+          2,
+          0
+        ],
+        "delayed_polls": 3,
+        "waits": 44,
+        "advanced_calls": 292,
+        "logical_NMIs": 11,
+        "original_instructions": 25846,
+        "APU_writes": 40,
+        "inert_rejections": 3008,
+        "final_context": "83a0032b00a4aba7",
+        "helper_completions": {
+          "1": 1,
+          "2": 1,
+          "3": 1,
+          "4": 1,
+          "5": 1,
+          "6": 8,
+          "7": 2,
+          "0": 1,
+          "8": 1,
+          "9": 1,
+          "10": 1,
+          "11": 3,
+          "12": 1,
+          "13": 1,
+          "15": 19,
+          "14": 23,
+          "16": 3,
+          "25": 53,
+          "17": 1,
+          "18": 1,
+          "20": 9,
+          "21": 9,
+          "22": 9,
+          "23": 9,
+          "24": 9,
+          "26": 41,
+          "27": 41,
+          "28": 41
+        },
+        "new_boundaries": [
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50310ff25bca7",
+            "instructions": 5
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 6,
+            "context": "c0bf00100026b1a7",
+            "instructions": 86
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50210ff25bca7",
+            "instructions": 5
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50110ff25bca7",
+            "instructions": 5
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50410ff24bca7",
+            "instructions": 401
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50310ff25bca7",
+            "instructions": 5
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50210ff25bca7",
+            "instructions": 5
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50110ff25bca7",
+            "instructions": 5
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50410ff24bca7",
+            "instructions": 401
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50310ff25bca7",
+            "instructions": 5
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          }
+        ],
+        "final_mapper": [
+          30,
+          0,
+          16,
+          3
+        ],
+        "next_original_boundary": "0x839d",
+        "next_original_instructions": 26
+      },
+      {
+        "pads": [
+          4,
+          8
+        ],
+        "resume_pads": [
+          8,
+          4
+        ],
+        "delayed_polls": 1,
+        "waits": 22,
+        "advanced_calls": 292,
+        "logical_NMIs": 11,
+        "original_instructions": 25846,
+        "APU_writes": 40,
+        "inert_rejections": 3008,
+        "final_context": "83a0032b00a4aba7",
+        "helper_completions": {
+          "1": 1,
+          "2": 1,
+          "3": 1,
+          "4": 1,
+          "5": 1,
+          "6": 8,
+          "7": 2,
+          "0": 1,
+          "8": 1,
+          "9": 1,
+          "10": 1,
+          "11": 3,
+          "12": 1,
+          "13": 1,
+          "15": 19,
+          "14": 23,
+          "16": 3,
+          "25": 53,
+          "17": 1,
+          "18": 1,
+          "20": 9,
+          "21": 9,
+          "22": 9,
+          "23": 9,
+          "24": 9,
+          "26": 41,
+          "27": 41,
+          "28": 41
+        },
+        "new_boundaries": [
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50310ff25bca7",
+            "instructions": 5
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 6,
+            "context": "c0bf00100026b1a7",
+            "instructions": 86
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50210ff25bca7",
+            "instructions": 5
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50110ff25bca7",
+            "instructions": 5
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50410ff24bca7",
+            "instructions": 401
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50310ff25bca7",
+            "instructions": 5
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50210ff25bca7",
+            "instructions": 5
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50110ff25bca7",
+            "instructions": 5
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50410ff24bca7",
+            "instructions": 401
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50310ff25bca7",
+            "instructions": 5
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          }
+        ],
+        "final_mapper": [
+          30,
+          0,
+          16,
+          3
+        ],
+        "next_original_boundary": "0x839d",
+        "next_original_instructions": 26
+      },
+      {
+        "pads": [
+          128,
+          64
+        ],
+        "resume_pads": [
+          64,
+          128
+        ],
+        "delayed_polls": 0,
+        "waits": 11,
+        "advanced_calls": 292,
+        "logical_NMIs": 11,
+        "original_instructions": 25846,
+        "APU_writes": 40,
+        "inert_rejections": 3008,
+        "final_context": "83a0032b00a4aba7",
+        "helper_completions": {
+          "1": 1,
+          "2": 1,
+          "3": 1,
+          "4": 1,
+          "5": 1,
+          "6": 8,
+          "7": 2,
+          "0": 1,
+          "8": 1,
+          "9": 1,
+          "10": 1,
+          "11": 3,
+          "12": 1,
+          "13": 1,
+          "15": 19,
+          "14": 23,
+          "16": 3,
+          "25": 53,
+          "17": 1,
+          "18": 1,
+          "20": 9,
+          "21": 9,
+          "22": 9,
+          "23": 9,
+          "24": 9,
+          "26": 41,
+          "27": 41,
+          "28": 41
+        },
+        "new_boundaries": [
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50310ff25bca7",
+            "instructions": 5
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 6,
+            "context": "c0bf00100026b1a7",
+            "instructions": 86
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50210ff25bca7",
+            "instructions": 5
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50110ff25bca7",
+            "instructions": 5
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50410ff24bca7",
+            "instructions": 401
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50310ff25bca7",
+            "instructions": 5
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50210ff25bca7",
+            "instructions": 5
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50110ff25bca7",
+            "instructions": 5
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50410ff24bca7",
+            "instructions": 401
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff24bca7",
+            "instructions": 196
+          },
+          {
+            "helper": 22,
+            "context": "c2a50310ff25bca7",
+            "instructions": 5
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          }
+        ],
+        "final_mapper": [
+          30,
+          0,
+          16,
+          3
+        ],
+        "next_original_boundary": "0x839d",
+        "next_original_instructions": 26
+      },
+      {
+        "pads": [
+          255,
+          255
+        ],
+        "resume_pads": [
+          255,
+          255
+        ],
+        "delayed_polls": 4,
+        "waits": 55,
+        "advanced_calls": 292,
+        "logical_NMIs": 11,
+        "original_instructions": 25806,
+        "APU_writes": 40,
+        "inert_rejections": 3008,
+        "final_context": "83a0032b00a4aba7",
+        "helper_completions": {
+          "1": 1,
+          "2": 1,
+          "3": 1,
+          "4": 1,
+          "5": 1,
+          "6": 8,
+          "7": 2,
+          "0": 1,
+          "8": 1,
+          "9": 1,
+          "10": 1,
+          "11": 3,
+          "12": 1,
+          "13": 1,
+          "15": 19,
+          "14": 23,
+          "16": 3,
+          "25": 53,
+          "17": 1,
+          "18": 1,
+          "20": 9,
+          "21": 9,
+          "22": 9,
+          "23": 9,
+          "24": 9,
+          "26": 41,
+          "27": 41,
+          "28": 41
+        },
+        "new_boundaries": [
+          {
+            "helper": 21,
+            "context": "c2a81010ff25bca7",
+            "instructions": 192
+          },
+          {
+            "helper": 22,
+            "context": "c2a50310ff25bca7",
+            "instructions": 5
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 6,
+            "context": "c0bf00100026b1a7",
+            "instructions": 86
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff25bca7",
+            "instructions": 192
+          },
+          {
+            "helper": 22,
+            "context": "c2a50210ff25bca7",
+            "instructions": 5
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff25bca7",
+            "instructions": 192
+          },
+          {
+            "helper": 22,
+            "context": "c2a50110ff25bca7",
+            "instructions": 5
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff25bca7",
+            "instructions": 192
+          },
+          {
+            "helper": 22,
+            "context": "c2a50410ff24bca7",
+            "instructions": 401
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff25bca7",
+            "instructions": 192
+          },
+          {
+            "helper": 22,
+            "context": "c2a50310ff25bca7",
+            "instructions": 5
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff25bca7",
+            "instructions": 192
+          },
+          {
+            "helper": 22,
+            "context": "c2a50210ff25bca7",
+            "instructions": 5
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff25bca7",
+            "instructions": 192
+          },
+          {
+            "helper": 22,
+            "context": "c2a50110ff25bca7",
+            "instructions": 5
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff25bca7",
+            "instructions": 192
+          },
+          {
+            "helper": 22,
+            "context": "c2a50410ff24bca7",
+            "instructions": 401
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          },
+          {
+            "helper": 21,
+            "context": "c2a81010ff25bca7",
+            "instructions": 192
+          },
+          {
+            "helper": 22,
+            "context": "c2a50310ff25bca7",
+            "instructions": 5
+          },
+          {
+            "helper": 23,
+            "context": "fe8d00b800a4b8a7",
+            "instructions": 22
+          }
+        ],
+        "final_mapper": [
+          30,
+          0,
+          16,
+          3
+        ],
+        "next_original_boundary": "0x839d",
+        "next_original_instructions": 26
+      }
+    ]
+  },
+  "frozen_active_public": {
+    "status": "PASS",
+    "scope": "PUBLIC synthetic ROM-free",
+    "successes": 4608,
+    "inert_rejections": 59780,
+    "code_bytes": 9984,
+    "code_sha256": "8f8942bf41426a6efd42e36c1338336db3705a054ff20d305bf1413307a1cc7d"
+  },
+  "frozen_active_private": {
+    "status": "PASS",
+    "scope": "PRIVATE original-ROM, host M68EC020",
+    "code_bytes": 9984,
+    "code_sha256": "8f8942bf41426a6efd42e36c1338336db3705a054ff20d305bf1413307a1cc7d",
+    "cases": [
+      {
+        "pads": [
+          0,
+          0
+        ],
+        "delayed_polls": 0,
+        "waits": 2,
+        "advanced_calls": 66,
+        "logical_NMIs": 2,
+        "original_instructions": 16590,
+        "inert_rejections": 675,
+        "final_context": "fe8d00b800a4b8a7",
+        "helper_completions": {
+          "1": 1,
+          "2": 1,
+          "3": 1,
+          "4": 1,
+          "5": 1,
+          "6": 1,
+          "7": 2,
+          "0": 1,
+          "8": 1,
+          "9": 1,
+          "10": 1,
+          "11": 1,
+          "12": 1,
+          "13": 1,
+          "15": 19,
+          "14": 22,
+          "16": 3,
+          "19": 4,
+          "17": 1,
+          "18": 1,
+          "20": 1
+        },
+        "final_mapper": [
+          30,
+          0,
+          16,
+          6
+        ],
+        "next_original_boundary": "0xc2a8",
+        "next_original_instructions": 196
+      },
+      {
+        "pads": [
+          0,
+          0
+        ],
+        "delayed_polls": 13,
+        "waits": 28,
+        "advanced_calls": 66,
+        "logical_NMIs": 2,
+        "original_instructions": 16590,
+        "inert_rejections": 675,
+        "final_context": "fe8d00b800a4b8a7",
+        "helper_completions": {
+          "1": 1,
+          "2": 1,
+          "3": 1,
+          "4": 1,
+          "5": 1,
+          "6": 1,
+          "7": 2,
+          "0": 1,
+          "8": 1,
+          "9": 1,
+          "10": 1,
+          "11": 1,
+          "12": 1,
+          "13": 1,
+          "15": 19,
+          "14": 22,
+          "16": 3,
+          "19": 4,
+          "17": 1,
+          "18": 1,
+          "20": 1
+        },
+        "final_mapper": [
+          30,
+          0,
+          16,
+          6
+        ],
+        "next_original_boundary": "0xc2a8",
+        "next_original_instructions": 196
+      },
+      {
+        "pads": [
+          16,
+          0
+        ],
+        "delayed_polls": 7,
+        "waits": 16,
+        "advanced_calls": 66,
+        "logical_NMIs": 2,
+        "original_instructions": 16590,
+        "inert_rejections": 675,
+        "final_context": "fe8d00b800a4b8a7",
+        "helper_completions": {
+          "1": 1,
+          "2": 1,
+          "3": 1,
+          "4": 1,
+          "5": 1,
+          "6": 1,
+          "7": 2,
+          "0": 1,
+          "8": 1,
+          "9": 1,
+          "10": 1,
+          "11": 1,
+          "12": 1,
+          "13": 1,
+          "15": 19,
+          "14": 22,
+          "16": 3,
+          "19": 4,
+          "17": 1,
+          "18": 1,
+          "20": 1
+        },
+        "final_mapper": [
+          30,
+          0,
+          16,
+          6
+        ],
+        "next_original_boundary": "0xc2a8",
+        "next_original_instructions": 196
+      },
+      {
+        "pads": [
+          1,
+          0
+        ],
+        "delayed_polls": 2,
+        "waits": 6,
+        "advanced_calls": 66,
+        "logical_NMIs": 2,
+        "original_instructions": 16590,
+        "inert_rejections": 675,
+        "final_context": "fe8d00b800a4b8a7",
+        "helper_completions": {
+          "1": 1,
+          "2": 1,
+          "3": 1,
+          "4": 1,
+          "5": 1,
+          "6": 1,
+          "7": 2,
+          "0": 1,
+          "8": 1,
+          "9": 1,
+          "10": 1,
+          "11": 1,
+          "12": 1,
+          "13": 1,
+          "15": 19,
+          "14": 22,
+          "16": 3,
+          "19": 4,
+          "17": 1,
+          "18": 1,
+          "20": 1
+        },
+        "final_mapper": [
+          30,
+          0,
+          16,
+          6
+        ],
+        "next_original_boundary": "0xc2a8",
+        "next_original_instructions": 196
+      },
+      {
+        "pads": [
+          2,
+          0
+        ],
+        "delayed_polls": 3,
+        "waits": 8,
+        "advanced_calls": 66,
+        "logical_NMIs": 2,
+        "original_instructions": 16590,
+        "inert_rejections": 675,
+        "final_context": "fe8d00b800a4b8a7",
+        "helper_completions": {
+          "1": 1,
+          "2": 1,
+          "3": 1,
+          "4": 1,
+          "5": 1,
+          "6": 1,
+          "7": 2,
+          "0": 1,
+          "8": 1,
+          "9": 1,
+          "10": 1,
+          "11": 1,
+          "12": 1,
+          "13": 1,
+          "15": 19,
+          "14": 22,
+          "16": 3,
+          "19": 4,
+          "17": 1,
+          "18": 1,
+          "20": 1
+        },
+        "final_mapper": [
+          30,
+          0,
+          16,
+          6
+        ],
+        "next_original_boundary": "0xc2a8",
+        "next_original_instructions": 196
+      },
+      {
+        "pads": [
+          4,
+          8
+        ],
+        "delayed_polls": 1,
+        "waits": 4,
+        "advanced_calls": 66,
+        "logical_NMIs": 2,
+        "original_instructions": 16590,
+        "inert_rejections": 675,
+        "final_context": "fe8d00b800a4b8a7",
+        "helper_completions": {
+          "1": 1,
+          "2": 1,
+          "3": 1,
+          "4": 1,
+          "5": 1,
+          "6": 1,
+          "7": 2,
+          "0": 1,
+          "8": 1,
+          "9": 1,
+          "10": 1,
+          "11": 1,
+          "12": 1,
+          "13": 1,
+          "15": 19,
+          "14": 22,
+          "16": 3,
+          "19": 4,
+          "17": 1,
+          "18": 1,
+          "20": 1
+        },
+        "final_mapper": [
+          30,
+          0,
+          16,
+          6
+        ],
+        "next_original_boundary": "0xc2a8",
+        "next_original_instructions": 196
+      },
+      {
+        "pads": [
+          128,
+          64
+        ],
+        "delayed_polls": 0,
+        "waits": 2,
+        "advanced_calls": 66,
+        "logical_NMIs": 2,
+        "original_instructions": 16590,
+        "inert_rejections": 675,
+        "final_context": "fe8d00b800a4b8a7",
+        "helper_completions": {
+          "1": 1,
+          "2": 1,
+          "3": 1,
+          "4": 1,
+          "5": 1,
+          "6": 1,
+          "7": 2,
+          "0": 1,
+          "8": 1,
+          "9": 1,
+          "10": 1,
+          "11": 1,
+          "12": 1,
+          "13": 1,
+          "15": 19,
+          "14": 22,
+          "16": 3,
+          "19": 4,
+          "17": 1,
+          "18": 1,
+          "20": 1
+        },
+        "final_mapper": [
+          30,
+          0,
+          16,
+          6
+        ],
+        "next_original_boundary": "0xc2a8",
+        "next_original_instructions": 196
+      },
+      {
+        "pads": [
+          255,
+          255
+        ],
+        "delayed_polls": 4,
+        "waits": 10,
+        "advanced_calls": 66,
+        "logical_NMIs": 2,
+        "original_instructions": 16586,
+        "inert_rejections": 675,
+        "final_context": "fe8d00b800a4b8a7",
+        "helper_completions": {
+          "1": 1,
+          "2": 1,
+          "3": 1,
+          "4": 1,
+          "5": 1,
+          "6": 1,
+          "7": 2,
+          "0": 1,
+          "8": 1,
+          "9": 1,
+          "10": 1,
+          "11": 1,
+          "12": 1,
+          "13": 1,
+          "15": 19,
+          "14": 22,
+          "16": 3,
+          "19": 4,
+          "17": 1,
+          "18": 1,
+          "20": 1
+        },
+        "final_mapper": [
+          30,
+          0,
+          16,
+          6
+        ],
+        "next_original_boundary": "0xc2a8",
+        "next_original_instructions": 192
+      }
+    ]
+  },
+  "public_import_isolation": "No py65 or private oracle modules in imported public contract closure"
+}

@@ -1,0 +1,67 @@
+{
+  "scope": "Host-only static bank3 channel reconfiguration, complete authentic call/return chain81A3 to8060; no state injection.",
+  "files": [
+    {
+      "path": "port/src/recovery_sfx_channel_reconfigure.s",
+      "bytes": 2467,
+      "sha256": "9c145d17925ed50aa93b02e6def306dd9d9ddb8b96a584f21f7c798603eabf97"
+    },
+    {
+      "path": "port/tests/recovery_test_sfx_channel_reconfigure.py",
+      "bytes": 7011,
+      "sha256": "fd9b5f5016dadb35f13348e48633c51003d3910a62f745c0063034cc60987a46"
+    },
+    {
+      "path": "port/tests/recovery_test_resident_sfx_channel_reconfigure.py",
+      "bytes": 30493,
+      "sha256": "34a751f8b8dcb02736941d50a3764f250648cf431089d8e34a57ed28b3b2f5e4"
+    },
+    {
+      "path": "port/analysis/recovery_sfx_channel_reconfigure.md",
+      "bytes": 6177,
+      "sha256": "ecade84439726157cc026334ddc18d00f8640e6636018ad70381cfeb375048aa"
+    }
+  ],
+  "predecessor_manifest": {
+    "path": "port/analysis/recovery_sfx_duration_math_manifest.json",
+    "bytes": 2245,
+    "sha256": "f03d7c96491d0aca195f6eea7c1ea8d801873026d18cd46745e4f5832a64cdda"
+  },
+  "composite": {
+    "bytes": 28908,
+    "sha256": "45f5bf0ec7395adfaf1d324db22c377f1d65c33cba358b942e6102aa05b43b7b"
+  },
+  "standalone": {
+    "bytes": 398,
+    "sha256": "2ee6645f917604f4734cb8f4a38a34697851b0162286d678a613881d034f35bf"
+  },
+  "boundary": "806002FF0425F6A7: bank3 before8060 CLC and phase accumulation/mixed channel tick; CF02,C005,D501,C1:C20001,pointerAF60,C0F8 frame live.",
+  "coverage": {
+    "declarative": 196609,
+    "original_rom": 196608,
+    "inert_rejects": 326655,
+    "source_only_declarative": 196609,
+    "source_only_inert_rejects": 326655,
+    "continuous_inputs": [
+      0,
+      16,
+      1,
+      2
+    ],
+    "frozen_continuous_inputs": [
+      0,
+      16,
+      1,
+      2
+    ],
+    "frozen_manifest_file_entries_verified": 56
+  },
+  "claims_excluded": [
+    "Audible Paula output",
+    "Full-game completion",
+    "Amiga target execution",
+    "Stock speed",
+    "Recovered missing later playable/audio source",
+    "Completed pending NMI or later SFX tick"
+  ]
+}

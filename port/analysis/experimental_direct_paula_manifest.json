@@ -1,0 +1,65 @@
+{
+  "scope": "Generic source and pinned frontend dependency only; excludes game profile, generated data, binaries, captures and firmware",
+  "files": [
+    {
+      "path": "port/analysis/experimental_direct_paula_lab.md",
+      "bytes": 13457,
+      "sha256": "f7b16274f11a1ddb7a53609f2cbfdd495c762ab0855c8d844d8bc2a7105a0cdb"
+    },
+    {
+      "path": "port/src/experimental_direct_paula.c",
+      "bytes": 984,
+      "sha256": "5c5be6ac34df5fc7d9b72a081343abc262c762d8b67b142c9e585e6a24080420"
+    },
+    {
+      "path": "port/src/experimental_direct_paula.h",
+      "bytes": 618,
+      "sha256": "0bc4e5c7380e3ff681ac7bedfda6f348e6ce8076be1b7906501aac4f90aade2a"
+    },
+    {
+      "path": "port/src/experimental_direct_paula_entry.s",
+      "bytes": 169,
+      "sha256": "d3637717b4143b3cab8631116d767c1532b144e94f27603ce06a8d5fc95c5479"
+    },
+    {
+      "path": "port/src/experimental_direct_paula_probe.c",
+      "bytes": 2692,
+      "sha256": "b09d3b483bed3262edf83ebb839bb8ca8328c39c274cdfc5688972f66b729010"
+    },
+    {
+      "path": "port/tests/experimental_direct_paula_capture.py",
+      "bytes": 6390,
+      "sha256": "abec2797884e696d2403ffac3f3f5b04096ccc7e53d3ef320fa5326a04cd1d38"
+    },
+    {
+      "path": "port/tests/experimental_direct_paula_test.py",
+      "bytes": 4207,
+      "sha256": "f19111a498c0bd98c54f780a0708eeb87edc1e58deaa919ba9d9c67d09b8eb38"
+    },
+    {
+      "path": "port/tools/experimental_direct_paula_build.py",
+      "bytes": 5053,
+      "sha256": "a7cf1698b50ce28a3a439c1c7373a9375f08385448553550f9512b6e25e909a6"
+    },
+    {
+      "path": "port/tools/experimental_direct_paula_run.sh",
+      "bytes": 1296,
+      "sha256": "e9e04d747ab8f2fd463a1e80ef8a9cd2f1b7d386bdf648cd105b653171a81c7d"
+    },
+    {
+      "path": "port/tools/experimental_direct_paula_profile.py",
+      "bytes": 2072,
+      "sha256": "9fa70196a3b70a6ba967c5af5ca67fa982355907fa2fdcbed4622615e8eb8f4d"
+    },
+    {
+      "path": "port/analysis/experimental_direct_paula_restore.md",
+      "bytes": 1965,
+      "sha256": "35573fd64b0144f334663c6651349bcd1c793195d54e90450d4dbe918ddf1ecd"
+    },
+    {
+      "path": "port/tools/experimental_paula_headless.c",
+      "bytes": 12027,
+      "sha256": "58ce7adb87e69c584cbe6cbb081d1c66632abeb7d76f9f6d312a2722ce250939"
+    }
+  ]
+}

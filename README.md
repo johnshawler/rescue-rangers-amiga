@@ -11,6 +11,27 @@ native game-code translation and Amiga rendering, not a general NES interpreter.
 
 ## Current verified source
 
+The new [state-driven startup display](port/analysis/recovery_state_startup_display.md)
+executes 990 native operations selected from live game state, completes startup
+resource loading and fade-in, then draws the title on an emulated stock PAL A1200.
+Two fresh runs match the independent original-code/device replay and every
+captured viewport pixel. It allocates 1,187,840 bytes of Chip RAM and zero Fast RAM.
+It uses neutral input and 35 scripted logical NMIs, then holds the title. It is
+not an interactive game, an audio integration, or a speed measurement. The old
+fixed-schedule display remains preserved separately.
+
+An isolated [direct-Paula audio experiment](port/analysis/experimental_direct_paula_lab.md)
+replays 935 title-frame register snapshots through four hardware DMA voices.
+Independent stock-configured emulator capture verifies the tones, finite noise
+loops and channel separation. Instrumented backend updates peak at 221.32 us
+with display DMA off and no concurrent game workload. Its 32 KiB Chip allocation
+excludes OS/boot memory. This is an approximation with frame-final snapshots,
+noise bias and simplified phase/counter handling, not integrated game audio or
+NES fidelity. [Reproduction instructions](port/analysis/experimental_direct_paula_restore.md)
+regenerate the private profile from the approved cartridge; no music data is
+included in the repository. Its dedicated C-toolchain checks are separate from
+the assembler-only public aggregate.
+
 The new [stock character-confirmation diagnostic](port/analysis/recovery_character_confirmation_target.md)
 executes 1,196 native calls on the emulated PAL 68020/AGA A1200. Five complete
 Amiga resets collectively verify every full-RAM boundary, with zero Fast RAM and
@@ -33,24 +54,26 @@ zero Fast RAM. The original display and delivered Z/X disk remain unchanged.
 New host-native comparisons separately cover the complete [title/music timeout](port/analysis/recovery_music_command0f_loop.md):
 900 countdowns, 28,818 calls and 935 logical NMIs. Default character confirmation
 continues through [scene fading and sprite hiding](port/analysis/recovery_scene_sprite_hide.md)
-to F3D5. Genuine Left/Right input now reaches [SFX duration multiplication and
-channel setup](port/analysis/recovery_sfx_duration_math.md) at 81A3 without skipping
-the queued sound. These longer paths remain host proofs. Rendering disable at
-F3D5 and SFX channel reconfiguration at 81A3 remain untranslated;
+to F3D5. Genuine Left/Right input now completes [SFX channel reconfiguration](port/analysis/recovery_sfx_channel_reconfigure.md)
+and authentic returns to 8060 without skipping the queued sound. Rendering
+disable at F3D5 and mixed music/SFX tick handling at 8060 remain untranslated;
 alternate-character confirmation and live gameplay are unfinished.
 
-A separate [state-driven native dispatcher](port/analysis/recovery_state_dispatch_active.md)
-now completes the first active music tick and real interrupt return from FE24.
-Eight original-code comparisons cover 66 helper calls and two logical NMIs each.
-It selects helpers from PC, RAM, stack, mapper and external events rather than
-a fixed diagnostic schedule. The next generalized scheduler operation remains
-outside this dispatcher. This is host-only logical execution, not live Amiga
-controls, audible audio, or stock-speed evidence.
+The [state-driven startup dispatcher](port/analysis/recovery_state_dispatch_startup.md)
+completes resource loading, genuine CHR requests and title fade-in through C5D1.
+Eight original-first histories each match 990 native operations and 35 logical
+NMIs. C5D1 title-engine/menu processing remains outside this dispatcher. Its
+32,770-byte journal and 1 KiB native scratch stack are caller requirements.
+Helper boundaries differ from the old fixed-schedule probes, so the lower call
+count is not a speedup. Full host correctness and the bounded target evidence
+are reported separately.
 
-Run tools/test_native_title_public.sh, tools/test_scene_sound_public.sh and
-tools/test_runtime_sound_public.sh for ROM-free contracts. Their corresponding
-private extensions are validate_native_title.sh, validate_scene_sound.sh and
-validate_runtime_sound.sh.
+Run tools/test_native_title_public.sh, tools/test_scene_sound_public.sh,
+tools/test_runtime_sound_public.sh and tools/test_state_startup_public.sh for
+ROM-free contracts. Their corresponding private extensions are
+validate_native_title.sh, validate_scene_sound.sh, validate_runtime_sound.sh and
+validate_state_startup.sh. The new startup/display extension needs only the
+approved private cartridge and firmware, not old captured fixtures.
 
 An earlier isolated [resident startup diagnostic](port/analysis/recovery_resident_chr_fade_target.md)
 reaches $C5D1 through 1,024 native helper calls and 35 logical NMIs. Four
